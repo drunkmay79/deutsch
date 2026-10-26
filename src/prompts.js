@@ -161,6 +161,28 @@ var Prompts = {
     ].join('\n');
   },
 
+  examPhoto: function () {
+    return [
+      'Auf dem Foto sind Multiple-Choice-Prüfungsfragen zur Immobilienbewertung (z. B. DEKRA D1, Folie oder Buchseite). Grün oder anders markierte Antworten sind die richtigen.',
+      '„(1+)“ bedeutet: eine oder mehrere Antworten sind richtig, „(1)“: genau eine.',
+      'Antworte nur mit einem JSON-Array, ein Objekt pro Frage:',
+      '[{"id":"Fragecode vom Foto oder leer","q":"Fragetext","multi":true|false,"o":["Antwort 1","Antwort 2","…"],"a":[Indizes der richtigen Antworten, ab 0],"marked":true|false,"ru":"Erklärung auf Russisch, 2–4 Sätze: warum richtig/falsch","say":"Begründung auf Deutsch in 1–2 Sätzen, die der Lerner mündlich sagen kann"}]',
+      'Texte genau abschreiben. Wenn keine Markierung erkennbar ist, bestimme die richtigen Antworten fachlich, setze "marked": false und schreibe in "ru", dass dies Claudes Einschätzung ist.',
+      'Wenn nichts lesbar ist, antworte mit [].'
+    ].join('\n');
+  },
+  examExplain: function (x, user) {
+    return [
+      'Prüfungstraining Immobilienbewertung (DEKRA D1). Der Lerner (Deutsch B1–B2) begründet mündlich (diktiert) die richtige Lösung einer Prüfungsfrage.',
+      'FRAGE: ' + x.q,
+      'RICHTIGE ANTWORT(EN): ' + x.a.map(function (i) { return x.o[i]; }).join(' | '),
+      'FALSCHE ANTWORTEN: ' + x.o.filter(function (_, i) { return x.a.indexOf(i) < 0; }).join(' | '),
+      'BEGRÜNDUNG DES LERNERS: ' + user,
+      'Antworte nur mit JSON: {"score":1-5,"ru":"Rückmeldung auf Russisch: fachlich richtig? sprachlich? 2–3 Sätze","de":"fachlich präzise, gut sprechbare Musterbegründung in 2–4 Sätzen, nah an der Formulierung des Lerners","errors":[{"wrong":"…","right":"…","why_ru":"…","cat":"adj|kasus|verbstellung|tempus|praep|artikel|wortwahl|rektion|konj|andere"}]}',
+      'Höchstens 6 errors.'
+    ].join('\n');
+  },
+
   improvePitch: function (pitch) {
     return [
       'Verbessere diese Selbstpräsentation für ein Vorstellungsgespräch (Stelle: Gutachter / Sachbearbeiter Kreditsicherheiten bei einer Sparkasse).',

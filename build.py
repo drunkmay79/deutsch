@@ -6,8 +6,10 @@ import io, os, sys, time
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, 'src')
 OUT = os.path.join(ROOT, 'dist', 'gutachter-deutsch.html')
-JS = ['data/course.js', 'data/vocab_w1_2.js', 'data/grammar_w1_2.js', 'data/practice_w1_2.js',
-      'core.js', 'content.js', 'prompts.js', 'ui.js', 'blocks.js', 'app.js']
+# --no-days: ohne die Tagesdateien ab Tag 15 bauen (z. B. während sie noch entstehen)
+DAYS = [] if '--no-days' in sys.argv else sorted('data/days/' + f for f in os.listdir(os.path.join(SRC, 'data', 'days')) if f.endswith('.js')) if os.path.isdir(os.path.join(SRC, 'data', 'days')) else []
+JS = ['data/course.js', 'data/vocab_w1_2.js', 'data/grammar_w1_2.js', 'data/practice_w1_2.js'] + DAYS + \
+     ['core.js', 'content.js', 'prompts.js', 'ui.js', 'blocks.js', 'app.js']
 
 
 def rd(p):

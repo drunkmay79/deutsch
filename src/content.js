@@ -28,6 +28,26 @@ function sessionsFor(type) {
   };
 }
 
+/* Fertige Tagesdateien (src/data/days/dNN.js) in die gemeinsamen Sammlungen und den Plan einhängen */
+(function registerDays() {
+  var days = D.days || {};
+  D.vocab = D.vocab || []; D.grammar = D.grammar || {}; D.texts = D.texts || {}; D.scenarios = D.scenarios || {}; D.fluency = D.fluency || {};
+  Object.keys(days).map(Number).sort(function (a, b) { return a - b; }).forEach(function (d) {
+    var x = days[d];
+    if (!x || (D.course.plan || []).some(function (p) { return p.d === d; })) return;
+    (x.vocab || []).forEach(function (v) { v.day = d; D.vocab.push(v); });
+    if (x.grammar) { x.grammar.day = d; D.grammar[x.grammar.id] = x.grammar; }
+    if (x.text) D.texts[x.text.id] = x.text;
+    if (x.scenario) D.scenarios[x.scenario.id] = x.scenario;
+    if (x.fluency) D.fluency[x.fluency.id] = x.fluency;
+    D.course.plan.push({
+      d: d, type: x.type || 'lesson', de: x.de, ru: x.ru || '',
+      grammar: x.grammar ? x.grammar.id : 'mix:' + Math.ceil(d / 7),
+      text: x.text && x.text.id, scenario: x.scenario && x.scenario.id, fluency: x.fluency && x.fluency.id
+    });
+  });
+})();
+
 var Content = {
   gen: {},     // erzeugte Tagesinhalte, nach Tag
   vocabById: null,

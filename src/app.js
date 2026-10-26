@@ -252,6 +252,7 @@ Views.gespraech = function (el, opts) {
     return;
   }
   if (opts.qbank) return qbank(el);
+  if (opts.exam) return examView(el);
   var cur = Store.get('chats').cur;
   var grid = h('div', { class: 'partners' });
   FREE.forEach(function (sc) {
@@ -260,6 +261,9 @@ Views.gespraech = function (el, opts) {
   });
   grid.appendChild(h('button', { class: 'partner', type: 'button', onclick: function () { App.go('gespraech', { qbank: true }); } },
     h('b', { text: 'Interview-Fragenbank' }), h('span', { class: 'ru small', text: 'Банк вопросов: ответ голосом → оценка и образец' })));
+  var nEx = (Store.get('exam').list || []).length;
+  grid.appendChild(h('button', { class: 'partner', type: 'button', onclick: function () { App.go('gespraech', { exam: true }); } },
+    h('b', { text: 'DEKRA-Prüfungsfragen' }), h('span', { class: 'ru small', text: 'Тест + обоснование вслух по-немецки' }), h('span', { class: 'pill', text: nEx + ' Fragen' })));
   el.appendChild(grid);
 };
 
@@ -295,6 +299,110 @@ function qbank(el) {
     TTS.speak(q.q);
   }
   pick();
+}
+
+/* ---------- DEKRA-Prüfungsfragen: auswählen, prüfen, mündlich begründen ---------- */
+function examView(el) {
+  el.appendChild(h('button', { class: 'btn ghost', type: 'button', text: '← Andere Gesprächspartner', onclick: function () { App.go('gespraech'); } }));
+  var stage = h('div', { class: 'stage' }), tools = h('div', { class: 'panel' });
+  el.appendChild(stage); el.appendChild(tools);
+  var list = function () { return Store.get('exam').list || []; };
+  var cur = null;
+  function stats() { var p = Store.get('prog'); p.exam = p.exam || {}; return p.exam; }
+  function pick() {
+    var l = list(), st = stats();
+    if (!l.length) return null;
+    /* noch nie gesehene und oft falsche Fragen zuerst */
+    var scored = l.map(function (x) { var s = st[x.id] || [0, 0]; return { x: x, w: (s[1] ? s[0] / s[1] : -1) + Math.random() * 0.3 }; });
+    scored.sort(function (a, b) { return a.w - b.w; });
+    var c = scored[0].x;
+    if (cur && c.id === cur.id && scored[1]) c = scored[1].x;
+    return c;
+  }
+  function show() {
+    stage.textContent = '';
+    cur = pick();
+    if (!cur) { stage.appendChild(h('div', { class: 'empty' }, h('p', { text: 'Noch keine Prüfungsfragen. Fotografieren Sie unten eine Folie oder Buchseite mit Fragen.' }))); return; }
+    var st = stats()[cur.id] || [0, 0], chosen = {};
+    var card = h('div', { class: 'rcard' },
+      h('p', { class: 'eyebrow', text: (cur.id ? cur.id + ' · ' : '') + (cur.multi ? 'eine oder mehrere Antworten richtig' : 'genau eine Antwort richtig') + (st[1] ? ' · bisher ' + st[0] + '/' + st[1] : '') }),
+      h('p', { class: 'doc big', text: cur.q }), speakBtn(cur.q));
+    var opts = h('div', { class: 'choices' });
+    cur.o.forEach(function (o, i) {
+      var b = h('button', { class: 'choice', type: 'button', 'aria-pressed': 'false', text: (i + 1) + '. ' + o });
+      b.addEventListener('click', function () {
+        if (checked) return;
+        if (!cur.multi) { Object.keys(chosen).forEach(function (k) { delete chosen[k]; }); Array.prototype.forEach.call(opts.children, function (c) { c.classList.remove('on'); c.setAttribute('aria-pressed', 'false'); }); }
+        chosen[i] = !chosen[i];
+        b.classList.toggle('on', !!chosen[i]); b.setAttribute('aria-pressed', chosen[i] ? 'true' : 'false');
+      });
+      opts.appendChild(b);
+    });
+    card.appendChild(opts);
+    var res = h('div', { class: 'result' }), checked = false;
+    var ck = h('button', { class: 'btn primary', type: 'button', text: 'Prüfen' });
+    ck.addEventListener('click', function () {
+      if (checked) return; checked = true; ck.remove();
+      var ok = true;
+      Array.prototype.forEach.call(opts.children, function (c, i) {
+        var right = cur.a.indexOf(i) >= 0, sel = !!chosen[i];
+        if (right !== sel) ok = false;
+        c.disabled = true;
+        if (right) c.classList.add('right'); else if (sel) c.classList.add('wrong');
+      });
+      var s = stats(); s[cur.id] = s[cur.id] || [0, 0]; s[cur.id][1]++; if (ok) s[cur.id][0]++; Store.save('prog');
+      res.appendChild(h('p', { class: 'verdict ' + (ok ? 'ok' : 'wrong'), role: 'status', text: ok ? 'Richtig' : 'Nicht ganz. Richtig: ' + cur.a.map(function (i) { return i + 1; }).join(', ') }));
+      if (cur.ru) res.appendChild(h('p', { class: 'ru', text: cur.ru }));
+      if (cur.marked === false) res.appendChild(h('p', { class: 'note', text: 'Lösung von Claude bestimmt (auf dem Foto war nichts markiert).' }));
+      if (cur.say) res.appendChild(h('div', { class: 'model' }, h('p', { class: 'eyebrow', text: 'Musterbegründung' }), h('p', { class: 'doc', text: cur.say }), speakBtn(cur.say)));
+      res.appendChild(h('p', { class: 'instr', text: 'Begründen Sie Ihre Antwort laut auf Deutsch, wie im Fachgespräch mit dem Prüfer. Dann diktieren und prüfen lassen.' }));
+      var ta = answerBox({ rows: 4, focus: false, ph: 'Meine Begründung …' });
+      res.appendChild(ta); res.appendChild(dictHint());
+      var row = h('div', { class: 'row' });
+      if (AI.ready()) {
+        var fb = h('button', { class: 'btn', type: 'button', text: 'Begründung bewerten lassen' });
+        fb.addEventListener('click', function () { if (ta.value.trim().length < 15) { toast('Bitte etwas ausführlicher.'); return; } fb.disabled = true; res.insertBefore(feedbackPanel(Prompts.examExplain(cur, ta.value), { src: 'pruefung', modelLabel: 'Musterbegründung von Claude' }), row); });
+        row.appendChild(fb);
+      }
+      row.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Nächste Frage', onclick: show }));
+      res.appendChild(row);
+      if (Store.get('settings').autoTts !== false && cur.say) TTS.speak(cur.say);
+    });
+    card.appendChild(ck); card.appendChild(res);
+    stage.appendChild(card);
+  }
+  /* neue Fragen per Foto */
+  tools.appendChild(h('h2', { class: 'sub', text: 'Neue Fragen vom Foto' }));
+  tools.appendChild(h('p', { class: 'ru small', text: 'Сфотографируйте слайд или страницу с тестовыми вопросами: Claude перепишет вопрос и отмеченные ответы.' }));
+  var file = h('input', { type: 'file', id: 'exam-file', accept: 'image/jpeg,image/png,image/webp' });
+  var pickBtn = h('label', { class: 'btn', for: 'exam-file', hidden: true }, 'Foto aufnehmen oder wählen', file);
+  var info = h('p', { class: 'note', text: AI.ready() ? 'Prüfe, ob Fotos an Claude gesendet werden können …' : 'Dafür braucht die App Claude.' });
+  var out = h('div', {});
+  tools.appendChild(pickBtn); tools.appendChild(info); tools.appendChild(out);
+  if (AI.ready() && AI.fn.limits) AI.fn.limits().then(function (l) { if (l && l.images) { pickBtn.hidden = false; info.remove(); } else info.textContent = 'Fotos können in dieser Ansicht nicht an Claude gesendet werden.'; }).catch(function () { info.textContent = 'Fotos können in dieser Ansicht nicht an Claude gesendet werden.'; });
+  file.addEventListener('change', function () {
+    var f = file.files && file.files[0]; if (!f) return;
+    file.value = '';
+    out.textContent = ''; out.appendChild(h('p', { class: 'muted', text: 'Claude liest das Foto …' }));
+    AI.fn.json(Prompts.examPhoto(), { images: [f], modelTier: 'default', cache: false }).then(function (arr) {
+      arr = (Array.isArray(arr) ? arr : []).filter(function (x) { return x && typeof x.q === 'string' && Array.isArray(x.o) && x.o.length >= 2 && Array.isArray(x.a) && x.a.length && x.a.every(function (i) { return i === +i && i >= 0 && i < x.o.length; }); });
+      out.textContent = '';
+      if (!arr.length) return out.appendChild(h('p', { text: 'Keine Frage erkannt. Bitte ein schärferes Foto versuchen.' }));
+      var ex = Store.get('exam'); ex.list = ex.list || [];
+      var have = {}; ex.list.forEach(function (x) { have[x.id] = 1; });
+      var added = 0;
+      arr.forEach(function (x) {
+        x.id = (x.id && String(x.id).trim()) || ('F-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5));
+        x.multi = x.multi !== false && (x.multi === true || x.a.length > 1);
+        if (have[x.id]) return;
+        ex.list.push(x); have[x.id] = 1; added++;
+      });
+      Store.save('exam');
+      out.appendChild(h('p', { class: 'verdict ok', role: 'status', text: added ? added + ' neue Frage(n) aufgenommen.' : 'Diese Fragen waren schon da.' }));
+      if (!cur) show();
+    }).catch(function (e) { out.textContent = ''; out.appendChild(h('p', { text: AI.msg(e) || 'Abgebrochen.' })); });
+  });
+  show();
 }
 
 /* ---------- Karten ---------- */

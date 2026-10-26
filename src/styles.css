@@ -191,6 +191,7 @@ p.verdict { flex-direction: row; align-items: center; gap: 6px; }
 .grade.primary { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .choices { display: flex; flex-direction: column; gap: 8px; }
 .choice { text-align: left; border: 1px solid var(--line); background: var(--sheet); border-radius: var(--r); padding: 11px 14px; cursor: pointer; min-height: 44px; }
+.choice.on { background: var(--accent-soft); border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .choice.right { background: var(--ok-soft); border-color: var(--ok); }
 .choice.wrong { background: var(--bad-soft); border-color: var(--bad); }
 textarea.answer, input.search, .form input[type=text], select { width: 100%; border: 1px solid var(--line); border-radius: var(--r); padding: 10px 12px; background: var(--paper); font-size: 17px; resize: vertical; }

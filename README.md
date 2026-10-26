@@ -25,6 +25,9 @@
 python3 build.py      # → dist/gutachter-deutsch.html
 ```
 
+Исправления учебных материалов применяются скриптом: `node tools/apply_patches.js patches.json --write`
+(без `--write` — только проверка). Он же проверяет целостность данных.
+
 Исходники в `src/`, порядок склейки задан в `build.py`:
 
 | Файл | Что внутри |

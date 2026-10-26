@@ -53,7 +53,8 @@ var Content = {
     if (m.fixed) return Promise.resolve(this.fixedDay(m));
     return this.loadGen(d).then(function (g) {
       if (!g) return null;
-      return self.genDay(m, g);
+      /* Wochenrückblick: erst die Tage der Woche laden, sonst fehlt die Grammatikmischung */
+      return (m.type === 'review' ? self.preloadWeek(d) : Promise.resolve()).then(function () { return self.genDay(m, g); });
     });
   },
   fixedDay: function (m) {
@@ -181,16 +182,18 @@ var Cards = {
     this.learn(id, 2);
     return id;
   },
+  /* Dokumentgrenze 256 KiB in Bytes: die sichersten Karten zuerst entfernen */
   trimX: function (x) {
-    var ids = Object.keys(x.items);
-    if (JSON.stringify(x).length < 200000) return;
+    var bytes = function () { var s = JSON.stringify(x); return window.TextEncoder ? new TextEncoder().encode(s).length : s.length * 2; };
+    if (bytes() < 220000) return;
     var c = this.srs();
-    ids.sort(function (a, b) { return ((c[b] && c[b].s) || 0) - ((c[a] && c[a].s) || 0); });
-    ids.slice(0, 40).forEach(function (id) { delete x.items[id]; delete c[id]; });
+    var ids = Object.keys(x.items).sort(function (a, b) { return ((c[b] && c[b].s) || 0) - ((c[a] && c[a].s) || 0); });
+    while (ids.length && bytes() >= 200000) { var batch = ids.splice(0, 20); batch.forEach(function (id) { delete x.items[id]; delete c[id]; }); }
+    Store.save('srs');
   },
   label: function (c) {
     if (!c) return '';
-    if (c.type === 'vocab' || c.type === 'cust') return (c.art ? c.art + ' ' : '') + c.de;
+    if (c.art) return c.art + ' ' + c.de;
     return c.de || c.right || '';
   }
 };

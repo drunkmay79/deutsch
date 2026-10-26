@@ -77,7 +77,10 @@ function wordCard(c) {
 
 /* Verteiler für Wiederholungskarten.
    Liefert ein Element; ruft onGrade(g) einmal auf. */
-function reviewCard(id, card, mode, onGrade) {
+function reviewCard(id, card, mode, onGrade0) {
+  /* jede Karte wird genau einmal bewertet */
+  var graded = false;
+  var onGrade = function (g) { if (graded) return; graded = true; onGrade0(g); };
   var st = (Cards.srs()[id] || {}).st || 1;
   var reps = (Cards.srs()[id] || {}).reps || 0;
   var wrap = h('div', { class: 'rcard' });
@@ -129,22 +132,28 @@ function reviewCard(id, card, mode, onGrade) {
       showBtn.remove();
       res.appendChild(solution());
       if (Store.get('settings').autoTts !== false) TTS.speak(sayText);
-      res.appendChild(gradeRow(id, onGrade, 3));
+      var row = gradeRow(id, onGrade, 3);
+      res.appendChild(row);
+      row.querySelector('.primary').focus();
     });
     wrap.appendChild(h('p', { class: 'hint', text: 'Sprechen Sie die Antwort laut aus, dann aufdecken und ehrlich bewerten.' }));
     wrap.appendChild(showBtn);
   } else {
+    var checked = false;
     var ta = answerBox({ rows: card.type === 'vocab' ? 1 : 2, value: card.type === 'fix' ? card.wrong : '', onEnter: function () { chk.click(); } });
     var chk = h('button', { class: 'btn primary', type: 'button', text: 'Prüfen' });
     chk.addEventListener('click', function () {
+      if (checked) return; checked = true;
       var r = checkAnswer(ta.value, answers);
       chk.remove(); ta.readOnly = true;
       res.appendChild(verdict(r, ta.value));
       res.appendChild(solution());
       if (Store.get('settings').autoTts !== false) TTS.speak(sayText);
       var prim = r.res === 'ok' ? 3 : r.res === 'near' ? 2 : 1;
-      res.appendChild(gradeRow(id, onGrade, prim));
-      if (r.res === 'wrong' && !isWord && AI.ready()) res.appendChild(aiCheckBtn(kindLabel + ': ' + (card.ru || card.wrong || card.q), answers, ta.value, function (ok) { if (ok) onGrade(3); }));
+      var row = gradeRow(id, onGrade, prim);
+      res.appendChild(row);
+      if (r.res === 'wrong' && !isWord && AI.ready()) res.appendChild(aiCheckBtn(kindLabel + ': ' + (card.ru || card.wrong || card.q), answers, ta.value, function (ok) { if (ok && wrap.isConnected) onGrade(3); }));
+      row.querySelector('.primary').focus();
     });
     wrap.appendChild(ta);
     wrap.appendChild(dictHint());
@@ -197,9 +206,10 @@ function mcCard(card, pool, onGrade) {
     var b = h('button', { class: 'choice', type: 'button', text: o });
     b.addEventListener('click', function () {
       Array.prototype.forEach.call(list.children, function (x) { x.disabled = true; if (x.textContent === card.ru) x.classList.add('right'); });
-      if (o === card.ru) { b.classList.add('right'); setTimeout(function () { onGrade(3); }, 650); }
+      if (o === card.ru) { b.classList.add('right'); res.appendChild(h('p', { class: 'verdict ok', role: 'status' }, icon('check', 'sm'), ' Richtig')); setTimeout(function () { onGrade(3); }, 700); }
       else {
         b.classList.add('wrong');
+        res.appendChild(h('p', { class: 'verdict wrong', role: 'status', text: 'Falsch. Richtig ist: ' + card.ru }));
         res.appendChild(wordCard(card));
         res.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Weiter', onclick: function () { onGrade(1); } }));
       }
@@ -211,10 +221,14 @@ function mcCard(card, pool, onGrade) {
 }
 
 /* ---------- Chat mit Claude ---------- */
+/* laufende Antwort beim Verlassen der Ansicht abbrechen */
+var Chat = { ctl: null, stop: function () { if (this.ctl) { try { this.ctl.abort(); } catch (e) { } this.ctl = null; } } };
+function setCur(cur) { var c = Store.get('chats'); c.cur = cur; c.curT = Date.now(); Store.save('chats'); }
+
 function chatPanel(sc, opts) {
   opts = opts || {};
   var key = opts.key;
-  var chats = Store.get('chats');
+  var chats = Store.get('chats'), dead = false;
   var turns = (chats.cur && chats.cur.key === key && chats.cur.turns && chats.cur.turns.length) ? chats.cur.turns.slice() : [{ role: 'assistant', content: sc.open || 'Guten Tag! Schön, dass Sie da sind.' }];
   var rules = Prompts.chatRules(sc, opts.words);
   var ctl = null, busy = false;
@@ -225,8 +239,8 @@ function chatPanel(sc, opts) {
   tts.addEventListener('change', function () { var s = Store.get('settings'); s.chatTts = tts.checked; Store.save('settings'); });
 
   function persist() {
-    chats.cur = { key: key, turns: turns.slice(-40), t: Date.now() };
-    Store.save('chats');
+    if (dead) return;
+    setCur({ key: key, turns: turns.slice(-40), t: Date.now() });
   }
   function bubble(t) {
     var b = h('div', { class: 'msg ' + (t.role === 'user' ? 'me' : 'them') });
@@ -257,40 +271,52 @@ function chatPanel(sc, opts) {
     ta.value = '';
     turns.push({ role: 'user', content: text });
     log.appendChild(bubble(turns[turns.length - 1]));
-    var b = h('div', { class: 'msg them pending' }, h('p', { class: 'muted', text: 'schreibt …' }));
+    var b = h('div', { class: 'msg them pending', 'aria-busy': 'true' }, h('p', { class: 'muted', text: 'schreibt …' }));
     log.appendChild(b); b.scrollIntoView({ block: 'end', behavior: 'smooth' });
     busy = true; sendBtn.disabled = true; stopBtn.hidden = false;
-    ctl = new AbortController();
+    ctl = new AbortController(); Chat.ctl = ctl;
+    persist();
     var input = [{ role: 'user', content: rules }].concat(turns.slice(-30));
     if (input[1] && input[1].role === 'assistant' && turns.length > 30) input.splice(1, 0, { role: 'user', content: '(Früherer Teil des Gesprächs ausgelassen.)' });
     AI.fn(input, {
       modelTier: Store.get('settings').chatTier || 'quick', cache: false, signal: ctl.signal,
       onText: function (u) { b.classList.remove('pending'); fillBubble(b, u.text); }
     }).then(function (r) {
+      if (dead) return;
       turns.push({ role: 'assistant', content: r.text });
       fillBubble(b, r.text); persist();
-      if (tts.checked) TTS.speak(r.text.split(/\n✎ /)[0]);
+      if (tts.checked && wrap.isConnected) TTS.speak(r.text.split(/\n✎ /)[0]);
     }).catch(function (e) {
+      if (dead) return;
       if (e && e.text) { turns.push({ role: 'assistant', content: e.text }); fillBubble(b, e.text); }
       else b.remove();
-      var m = AI.msg(e); if (m) toast(m);
+      var m = AI.msg(e); if (m && wrap.isConnected) toast(m);
       persist();
-    }).then(function () { busy = false; sendBtn.disabled = false; stopBtn.hidden = true; b.scrollIntoView({ block: 'end' }); });
+    }).then(function () {
+      b.removeAttribute('aria-busy');
+      busy = false; sendBtn.disabled = false; stopBtn.hidden = true;
+      if (Chat.ctl === ctl) Chat.ctl = null;
+      if (wrap.isConnected) b.scrollIntoView({ block: 'end' });
+    });
   }
 
   var endBtn = h('button', { class: 'btn', type: 'button', text: 'Beenden und auswerten' });
   endBtn.addEventListener('click', function () {
-    if (ctl) ctl.abort();
     var learnerTurns = turns.filter(function (t) { return t.role === 'user'; }).length;
     if (learnerTurns < 2) { toast('Für eine Auswertung bitte mindestens zwei Antworten schreiben.'); return; }
-    wrap.replaceWith(evaluationPanel(sc, turns, function () {
-      chats.cur = null; Store.save('chats');
+    if (ctl) ctl.abort();
+    dead = true;
+    wrap.replaceWith(evaluationPanel(sc, turns.slice(), function () {
+      setCur(null);
       if (opts.onDone) opts.onDone();
     }));
   });
   var resetBtn = h('button', { class: 'btn ghost', type: 'button', text: 'Neu beginnen' });
   resetBtn.addEventListener('click', function () {
-    chats.cur = null; Store.save('chats');
+    dead = true;
+    if (ctl) ctl.abort();
+    TTS.stop();
+    setCur(null);
     wrap.replaceWith(chatPanel(sc, opts));
   });
 
@@ -396,6 +422,10 @@ function feedbackPanel(promptText, opts) {
         }
       }));
     }
-  }).catch(function (e) { wrap.textContent = ''; wrap.appendChild(h('p', { text: AI.msg(e) || 'Abgebrochen.' })); });
+  }).catch(function (e) {
+    wrap.textContent = '';
+    wrap.appendChild(h('p', { text: AI.msg(e) || 'Abgebrochen.' }));
+    if (!AI.off && !(e && e.code === 'cancelled')) wrap.appendChild(h('button', { class: 'btn', type: 'button', text: 'Erneut prüfen', onclick: function () { wrap.replaceWith(feedbackPanel(promptText, opts)); } }));
+  });
   return wrap;
 }

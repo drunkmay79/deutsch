@@ -52,8 +52,59 @@ var Pack = {
     }
   }
 };
+/* Zusammenführen zweier Stände desselben Dokuments (lokal, entfernt), damit Handy und PC sich nicht überschreiben */
+function uniq(list, keyf) { var m = {}, out = []; (list || []).forEach(function (x) { var k = keyf(x); if (!m[k]) { m[k] = 1; out.push(x); } }); return out; }
+function maxMap(a, b) { var o = Object.assign({}, a || {}); for (var k in b || {}) o[k] = Math.max(o[k] || 0, b[k] || 0); return o; }
+var Merge = {
+  srs: function (l, r) {
+    var c = Object.assign({}, r.c || {}), lc = l.c || {};
+    for (var id in lc) if (!c[id] || (lc[id].last || 0) >= (c[id].last || 0)) c[id] = lc[id];
+    return { c: c };
+  },
+  prog: function (l, r) {
+    var o = Object.assign({}, r, l);
+    o.min = maxMap(r.min, l.min); o.rev = maxMap(r.rev, l.rev); o.mdone = maxMap(r.mdone, l.mdone);
+    o.g = Object.assign({}, r.g || {});
+    for (var k in l.g || {}) if (!o.g[k] || l.g[k][1] >= o.g[k][1]) o.g[k] = l.g[k];
+    o.seenRule = Object.assign({}, r.seenRule || {}, l.seenRule || {});
+    o.diag = l.diag || r.diag;
+    o.days = {};
+    [r.days || {}, l.days || {}].forEach(function (src) {
+      for (var d in src) {
+        var x = src[d], y = o.days[d] || (o.days[d] = {});
+        ['s1', 's2'].forEach(function (s) {
+          if (!x[s]) return;
+          var ys = y[s] || (y[s] = { b: {} }); ys.b = ys.b || {};
+          for (var b in x[s].b || {}) ys.b[b] = Math.max(ys.b[b] || 0, x[s].b[b] || 0);
+          if (x[s].done) ys.done = Math.max(ys.done || 0, x[s].done);
+        });
+      }
+    });
+    o.misses = uniq((r.misses || []).concat(l.misses || []), function (m) { return m.day + '|' + m.q; })
+      .filter(function (m) { return !(o.mdone[m.day] >= (m.at || 0)); }).slice(-80);
+    return o;
+  },
+  errs: function (l, r) {
+    return { list: uniq((r.list || []).concat(l.list || []), function (e) { return e.t + '|' + e.wrong; }).sort(function (a, b) { return a.t - b.t; }).slice(-400) };
+  },
+  chats: function (l, r) {
+    var o = { list: uniq((r.list || []).concat(l.list || []), function (e) { return e.t + '|' + e.sc; }).sort(function (a, b) { return a.t - b.t; }).slice(-150) };
+    var lt = l.curT || 0, rt = r.curT || 0;
+    o.cur = lt >= rt ? (l.cur || null) : (r.cur || null); o.curT = Math.max(lt, rt);
+    return o;
+  },
+  xcards: function (l, r) { return { items: Object.assign({}, r.items || {}, l.items || {}) }; },
+  custom: function (l, r) {
+    var srs = (Store.get('srs').c) || {};
+    return {
+      items: Object.assign({}, r.items || {}, l.items || {}),
+      queue: uniq((r.queue || []).concat(l.queue || []), function (x) { return x; }).filter(function (id) { return !srs[id]; })
+    };
+  }
+};
+
 var Store = {
-  data: {}, db: null, uid: null, dirty: {}, timers: {}, busy: {}, online: false, listeners: [],
+  data: {}, db: null, uid: null, dirty: {}, timers: {}, busy: {}, online: false, ready: false, listeners: [], lastT: {}, dead: {}, tooBig: {},
   key: function (n) { return 'gd1:' + n; },
   enc: function (n, d) { return Pack[n] ? Pack[n].out(d) : d; },
   dec: function (n, d) { return Pack[n] ? Pack[n].in(d) : d; },
@@ -66,58 +117,128 @@ var Store = {
     });
   },
   get: function (n) { return this.data[n] || (this.data[n] = { t: 0 }); },
+  local: function (n) { try { localStorage.setItem(this.key(n), JSON.stringify(this.enc(n, this.get(n)))); } catch (e) { /* voll oder gesperrt */ } },
   save: function (n) {
     var d = this.get(n); d.t = Date.now();
-    try { localStorage.setItem(this.key(n), JSON.stringify(this.enc(n, d))); } catch (e) { /* voll oder gesperrt */ }
-    this.dirty[n] = true;
+    this.local(n);
+    this.dirty[n] = true; this.tooBig[n] = false;
     var self = this;
     clearTimeout(this.timers[n]);
     this.timers[n] = setTimeout(function () { self.push(n); }, 4000);
   },
   push: function (n) {
     var self = this;
-    if (!this.db || !this.uid || !this.dirty[n]) return Promise.resolve();
+    if (!this.db || !this.uid || !this.dirty[n] || this.tooBig[n]) return Promise.resolve();
     if (this.busy[n]) { this.busy[n].then(function () { self.push(n); }); return this.busy[n]; }
     this.dirty[n] = false;
     var body = JSON.parse(JSON.stringify(this.enc(n, this.get(n))));
+    this.lastT[n] = body.t;
     var p = this.ref(n).set(body).catch(function (e) {
-      self.dirty[n] = true;
-      if (e && e.code === 'quota_exceeded') toast('Online-Speicher ist voll. Daten bleiben auf diesem Gerät.');
+      var c = e && e.code;
+      if (c === 'quota_exceeded' || c === 'invalid_argument') {
+        self.tooBig[n] = true;
+        toast('Online-Speicher: Dokument „' + n + '“ ist zu groß. Daten bleiben auf diesem Gerät.');
+      } else self.dirty[n] = true;
     }).then(function () { self.busy[n] = null; });
     this.busy[n] = p;
     return p;
   },
   flush: function () { var self = this; DOCS.concat(Object.keys(this.dirty)).forEach(function (n) { clearTimeout(self.timers[n]); self.push(n); }); },
   ref: function (n) { return this.db.doc('data/users/' + this.uid + '/' + n); },
-  /* Online-Speicher verbinden und neuere Stände übernehmen */
+  /* Objekt an Ort und Stelle ersetzen: Ansichten behalten ihre Referenz */
+  replaceIn: function (n, obj) {
+    var cur = this.get(n);
+    Object.keys(cur).forEach(function (k) { delete cur[k]; });
+    Object.assign(cur, obj);
+  },
+  /* entfernten Stand einarbeiten; schreibt zurück, wenn lokal etwas dazukam */
+  absorb: function (n, raw) {
+    if (!raw) { if (this.get(n).t) { this.dirty[n] = true; this.push(n); } return false; }
+    var local = this.get(n), remote = this.dec(n, JSON.parse(JSON.stringify(raw)));
+    var merged;
+    if (!local.t) merged = remote;
+    else if (Merge[n]) merged = Object.assign(Merge[n](local, remote), { t: Math.max(local.t || 0, remote.t || 0) });
+    else merged = (local.t || 0) >= (remote.t || 0) ? JSON.parse(JSON.stringify(local)) : remote;
+    var before = JSON.stringify(this.enc(n, local));
+    this.replaceIn(n, merged);
+    var noT = function (x) { var c = Object.assign({}, x); delete c.t; return JSON.stringify(c); };
+    var differs = noT(this.enc(n, merged)) !== noT(raw);
+    if (differs && merged !== remote) this.save(n); else this.local(n);
+    return before !== JSON.stringify(this.enc(n, merged));
+  },
+  /* Online-Speicher verbinden, Stände zusammenführen und auf Änderungen anderer Geräte hören */
   connect: function (db, uid) {
     var self = this;
     this.db = db; this.uid = uid; this.online = true;
     return Promise.all(DOCS.map(function (n) {
-      return self.ref(n).get().then(function (snap) {
-        var remote = snap.exists ? snap.data() : null;
-        var local = self.get(n);
-        if (remote && (remote.t || 0) > (local.t || 0)) {
-          self.data[n] = self.dec(n, JSON.parse(JSON.stringify(remote)));
-          try { localStorage.setItem(self.key(n), JSON.stringify(remote)); } catch (e) { }
-        } else if (local.t && (!remote || (remote.t || 0) < local.t)) {
-          self.dirty[n] = true; self.push(n);
-        }
-      }).catch(function () { });
-    })).then(function () { self.listeners.forEach(function (f) { f(); }); });
+      return self.ref(n).get().then(function (snap) { self.absorb(n, snap.exists ? snap.data() : null); }).catch(function () { });
+    })).then(function () {
+      self.ready = true;
+      DOCS.forEach(function (n) { self.watch(n); });
+      self.retryExtras();
+      self.listeners.forEach(function (f) { f(); });
+    });
+  },
+  watch: function (n) {
+    var self = this;
+    this.dead[n] = false;
+    try {
+      this.ref(n).onSnapshot(function (snap) {
+        if (!snap.exists || snap.metadata.hasPendingWrites) return;
+        var raw = snap.data();
+        if (raw.t === self.lastT[n] || raw.t === self.get(n).t) return;
+        if (self.absorb(n, raw)) self.listeners.forEach(function (f) { f(n); });
+      }, function () { self.dead[n] = true; });
+    } catch (e) { this.dead[n] = true; }
+  },
+  /* nach Rückkehr in den Tab: abgerissene Abos neu lesen */
+  resync: function () {
+    var self = this;
+    if (!this.db || !this.uid) return;
+    DOCS.forEach(function (n) {
+      if (!self.dead[n]) return;
+      self.ref(n).get().then(function (snap) { if (snap.exists && self.absorb(n, snap.data())) self.listeners.forEach(function (f) { f(n); }); self.watch(n); }).catch(function () { });
+    });
   },
   /* einzelne Zusatzdokumente (erzeugte Tagesinhalte) */
+  pending: function () { try { return JSON.parse(localStorage.getItem('gd1:pendingExtra') || '[]'); } catch (e) { return []; } },
+  setPending: function (list) { try { localStorage.setItem('gd1:pendingExtra', JSON.stringify(list)); } catch (e) { } },
   getExtra: function (n) {
     var self = this, local = null;
     try { local = JSON.parse(localStorage.getItem(this.key(n)) || 'null'); } catch (e) { }
     if (!this.db || !this.uid) return Promise.resolve(local);
-    return this.ref(n).get().then(function (s) { return s.exists ? s.data() : local; }).catch(function () { return local; });
+    return this.ref(n).get().then(function (s) {
+      if (s.exists) {
+        var r = s.data();
+        try { localStorage.setItem(self.key(n), JSON.stringify(r)); } catch (e) { }
+        return r;
+      }
+      if (local) self.putExtra(n, local);
+      return local;
+    }).catch(function () { return local; });
   },
   setExtra: function (n, body) {
     body.t = Date.now();
     try { localStorage.setItem(this.key(n), JSON.stringify(body)); } catch (e) { }
-    if (this.db && this.uid) return this.ref(n).set(body).catch(function () { });
-    return Promise.resolve();
+    return this.putExtra(n, body);
+  },
+  putExtra: function (n, body) {
+    var self = this;
+    var mark = function (on) { var l = self.pending().filter(function (x) { return x !== n; }); if (on) l.push(n); self.setPending(l); };
+    if (!this.db || !this.uid) { mark(true); return Promise.resolve(); }
+    var ref = this.ref(n);
+    return ref.set(body).catch(function () {
+      return new Promise(function (r) { setTimeout(r, 1000 + Math.random() * 2000); }).then(function () { return ref.set(body); });
+    }).then(function () { mark(false); }).catch(function () { mark(true); });
+  },
+  retryExtras: function () {
+    var self = this;
+    this.pending().forEach(function (n) {
+      var body = null;
+      try { body = JSON.parse(localStorage.getItem(self.key(n)) || 'null'); } catch (e) { }
+      if (!body) return;
+      self.ref(n).get().then(function (s) { if (!s.exists) self.putExtra(n, body); else self.setPending(self.pending().filter(function (x) { return x !== n; })); }).catch(function () { });
+    });
   }
 };
 
@@ -218,7 +339,9 @@ var AI = {
   ready: function () { return !!this.fn && !this.off; },
   msg: function (e) {
     var c = e && e.code;
-    if (c === 'not_granted' || c === 'sampling_disabled' || c === 'not_declared' || c === 'capability_disabled') { this.off = true; App.refresh(); return 'Claude ist in dieser Ansicht nicht freigegeben. Übungen ohne Claude funktionieren weiter.'; }
+    if (c === 'not_granted' || c === 'sampling_disabled' || c === 'not_declared' || c === 'capability_disabled' || c === 'capability_removed') { this.off = true; return 'Claude ist in dieser Ansicht nicht freigegeben. Übungen ohne Claude funktionieren weiter.'; }
+    if (c === 'image_rejected' || c === 'images_unavailable') return 'Dieses Foto geht nicht. Bitte ein anderes wählen (JPEG oder PNG, nicht zu groß).';
+    if (c === 'empty_completion' || c === 'prompt_too_large') return 'Claude konnte darauf nicht antworten. Bitte kürzer oder anders formulieren.';
     if (c === 'rate_limited') return 'Zu viele Anfragen oder Nutzungslimit erreicht. Bitte später noch einmal.';
     if (c === 'session_expired') return 'Bitte bei claude.ai neu anmelden.';
     if (c === 'invalid_json') return 'Antwort war unvollständig. Bitte noch einmal versuchen.';
@@ -247,33 +370,55 @@ function normA(s) {
 function foldA(s) { return normA(s).replace(/ß/g, 'ss').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue'); }
 function caseA(s) { return String(s || '').replace(/[„“"«»‚‘'’`.,!?;:…()]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/^./, function (c) { return c.toLowerCase(); }); }
 function lev(a, b) {
+  /* Editierdistanz mit Vertauschung benachbarter Buchstaben (OSA) */
   if (a === b) return 0;
-  var m = a.length, n = b.length; if (!m) return n; if (!n) return m;
-  var prev = new Array(n + 1), cur = new Array(n + 1), i, j;
-  for (j = 0; j <= n; j++) prev[j] = j;
-  for (i = 1; i <= m; i++) {
-    cur[0] = i;
-    for (j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-    var t = prev; prev = cur; cur = t;
+  var m = a.length, n = b.length, i, j;
+  if (!m) return n; if (!n) return m;
+  var d = [];
+  for (i = 0; i <= m; i++) { d[i] = [i]; }
+  for (j = 0; j <= n; j++) d[0][j] = j;
+  for (i = 1; i <= m; i++) for (j = 1; j <= n; j++) {
+    var c = a[i - 1] === b[j - 1] ? 0 : 1;
+    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + c);
+    if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
   }
-  return prev[n];
+  return d[m][n];
+}
+/* Anmerkungen in Klammern („sich (Dat.) …“) muss niemand mittippen */
+function stripAnn(s) { return String(s || '').replace(/\s*\([^)]*\)/g, ''); }
+/* Tippfehler-Toleranz pro Wort: kurze Wörter (Artikel, Endungen, Modalformen) und Umlautfehler zählen als Fehler,
+   in langen Wörtern ist ein vertauschter Buchstabe im Wortstamm erlaubt, aber nie in den letzten zwei Buchstaben. */
+function tokenNear(u, a) {
+  if (u === a) return 0;
+  var uf = foldA(u), af = foldA(a);
+  if (uf === af) return 0;
+  if (af.length <= 5) return -1;
+  var base = function (x) { return x.replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u'); };
+  if (base(u) === base(a)) return -1;
+  if (lev(uf, af) !== 1 || uf.slice(-2) !== af.slice(-2)) return -1;
+  return 1;
 }
 /* Ergebnis: {res: 'ok'|'near'|'wrong', best, note} */
 function checkAnswer(user, answers) {
-  var u = normA(user), uf = foldA(user), best = answers[0], bestD = 1e9, note = '';
-  if (!u) return { res: 'wrong', best: best, note: '' };
-  for (var i = 0; i < answers.length; i++) {
-    var a = answers[i], an = normA(a);
-    if (u === an) {
-      if (caseA(user) !== caseA(a)) note = 'Groß- und Kleinschreibung beachten.';
-      return { res: 'ok', best: a, note: note };
-    }
+  var cands = [];
+  answers.forEach(function (a) { cands.push(a); var b = stripAnn(a); if (b !== a && b.trim()) cands.push(b); });
+  var us = stripAnn(user), u = normA(us), uf = foldA(us), i, a;
+  if (!u) return { res: 'wrong', best: answers[0], note: '' };
+  for (i = 0; i < cands.length; i++) {
+    a = cands[i];
+    if (u === normA(a)) return { res: 'ok', best: a, note: caseA(us) !== caseA(a) ? 'Groß- und Kleinschreibung beachten.' : '' };
     if (uf === foldA(a)) return { res: 'ok', best: a, note: 'Achten Sie auf ä, ö, ü und ß.' };
-    var d = lev(uf, foldA(a));
-    if (d < bestD) { bestD = d; best = a; }
   }
-  var tol = Math.max(1, Math.floor(normA(best).length / 18));
-  if (bestD <= tol) return { res: 'near', best: best, note: 'Fast richtig – ein Tippfehler?' };
+  var ut = u.split(' ');
+  for (i = 0; i < cands.length; i++) {
+    var at = normA(cands[i]).split(' ');
+    if (at.length !== ut.length) continue;
+    var typos = 0, fine = true;
+    for (var k = 0; k < at.length && fine; k++) { var r = tokenNear(ut[k], at[k]); if (r < 0) fine = false; else typos += r; }
+    if (fine && typos <= (at.length >= 8 ? 2 : 1)) return { res: 'near', best: cands[i], note: 'Fast richtig – nur ein Tippfehler im Wortstamm.' };
+  }
+  var best = cands[0], bestD = 1e9;
+  cands.forEach(function (c) { var d = lev(uf, foldA(c)); if (d < bestD) { bestD = d; best = c; } });
   return { res: 'wrong', best: best, note: '' };
 }
 /* Wortweiser Vergleich: markiert Wörter der Lösung, die in der Antwort fehlen */

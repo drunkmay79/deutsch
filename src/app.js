@@ -10,7 +10,7 @@ var App = {
     return D.course.days;
   },
   go: function (v, opts) {
-    TTS.stop();
+    TTS.stop(); Chat.stop();
     Clock.study = false;
     this.view = v;
     if (opts && opts.day) this.day = opts.day;
@@ -19,7 +19,8 @@ var App = {
     window.scrollTo(0, 0);
     (Views[v] || Views.heute)(this.main, opts || {});
   },
-  refresh: function () { if (this.view !== 'sitzung' && this.view !== 'gespraech') this.go(this.view); }
+  /* nur Ansichten ohne Eingaben neu zeichnen */
+  refresh: function () { if (this.view === 'heute' || this.view === 'plan') this.go(this.view, { day: this.day }); }
 };
 
 /* ---------- aktive Lernzeit ---------- */
@@ -47,7 +48,7 @@ var Clock = {
 };
 setInterval(function () { Clock.tick(); }, 1000);
 ['pointerdown', 'keydown', 'input'].forEach(function (e) { document.addEventListener(e, function () { Clock.act = Date.now(); }, true); });
-document.addEventListener('visibilitychange', function () { if (document.hidden) { Clock.flush(); Store.flush(); } });
+document.addEventListener('visibilitychange', function () { if (document.hidden) { Clock.flush(); Store.flush(); } else Store.resync(); });
 
 /* Bildschirm während der Sitzung anlassen */
 var Wake = {
@@ -134,11 +135,12 @@ function genCard(d) {
     h('p', { class: 'muted small', text: 'Grammatik: ' + o[3] }),
     h('p', { class: 'muted small', text: 'Gespräch: ' + o[4] }));
   if (!AI.ready()) { box.appendChild(h('p', { class: 'note', text: 'Dafür braucht die App Claude. Bitte die Seite in claude.ai öffnen und Claude erlauben.' })); return box; }
+  if (Store.db && !Store.ready) { box.appendChild(h('p', { class: 'note', text: 'Abgleich mit Ihrem Konto läuft … Vielleicht wurde dieser Tag schon auf einem anderen Gerät vorbereitet.' })); return box; }
   var status = h('div', {});
   var b = h('button', { class: 'btn primary', type: 'button', text: 'Jetzt vorbereiten (1–3 Minuten)' });
   b.addEventListener('click', function () {
     b.remove();
-    Gen.make(d, status).then(function (g) { if (g) App.go('heute', { day: d }); });
+    Gen.make(d, status).then(function (g) { if (g && App.view === 'heute' && App.day === d) App.go('heute', { day: d }); });
   });
   box.appendChild(b); box.appendChild(status);
   return box;
@@ -148,25 +150,38 @@ function genCard(d) {
 Views.sitzung = function (el, opts) {
   var d = opts.day, s = opts.s, b = opts.bundle;
   var blocks = sessionsFor(b.type)[s];
-  var prog = Store.get('prog'); prog.days = prog.days || {};
-  var dp = prog.days[d] = prog.days[d] || {}; dp[s] = dp[s] || { b: {} }; dp[s].b = dp[s].b || {};
+  /* immer frisch aus dem Speicher holen: ein Abgleich mit dem anderen Gerät kann das Objekt ersetzen */
+  function dayProg() {
+    var prog = Store.get('prog'); prog.days = prog.days || {};
+    var x = prog.days[d] = prog.days[d] || {}; x[s] = x[s] || { b: {} }; x[s].b = x[s].b || {};
+    return x;
+  }
+  var dp = dayProg();
   var idx = 0;
   while (idx < blocks.length - 1 && dp[s].b[blocks[idx][0]]) idx++;
   if (dp[s].done) idx = opts.idx || 0;
   Wake.on();
   var top = h('div', { class: 'runhead' });
-  var timer = h('span', { class: 'clock' });
+  var timer = h('span', { class: 'clock', role: 'timer', 'aria-label': 'Lernzeit in diesem Block' });
   var holder = h('div', { class: 'block' });
   el.appendChild(top); el.appendChild(holder);
-  if (b.type === 'review') Content.preloadWeek(d);
 
   var run = {
     stat: function () { },
-    miss: function (m) { m.day = d; App.misses.push(m); App.misses = App.misses.slice(-60); }
+    miss: function (m) {
+      var p = Store.get('prog'); p.misses = p.misses || [];
+      m.day = d; m.at = Date.now(); p.misses.push(m); p.misses = p.misses.slice(-80);
+      Store.save('prog');
+    },
+    unmiss: function (q) {
+      var p = Store.get('prog'), l = p.misses || [];
+      for (var i = l.length - 1; i >= 0; i--) if (l[i].day === d && l[i].q === q) { l.splice(i, 1); Store.save('prog'); return; }
+    }
   };
   function draw() {
     top.textContent = '';
     var cur = blocks[idx];
+    dp = dayProg();
     top.appendChild(h('div', { class: 'runbar' },
       h('button', { class: 'btn-icon', type: 'button', 'aria-label': 'Zurück zu Heute', onclick: function () { Wake.off(); App.go('heute', { day: d }); } }, icon('back')),
       h('span', { class: 'runtitle', text: 'Tag ' + d + ' · Sitzung ' + (s === 's1' ? 1 : 2) }),
@@ -180,7 +195,7 @@ Views.sitzung = function (el, opts) {
       h('p', { class: 'ru small', text: BLOCKS[cur[0]].ru })));
   }
   function start() {
-    TTS.stop();
+    TTS.stop(); Chat.stop();
     draw();
     holder.textContent = '';
     var cur = blocks[idx];
@@ -191,7 +206,7 @@ Views.sitzung = function (el, opts) {
     var ctx = {
       b: b, el: inner, run: run, done: function () {
         if (finished) return; finished = true;
-        dp[s].b[cur[0]] = Date.now(); Store.save('prog');
+        dp = dayProg(); dp[s].b[cur[0]] = Date.now(); Store.save('prog');
         Clock.flush();
         if (idx < blocks.length - 1) { idx++; start(); window.scrollTo(0, 0); }
         else complete();
@@ -202,7 +217,7 @@ Views.sitzung = function (el, opts) {
     holder.appendChild(h('div', { class: 'blockfoot' }, h('button', { class: 'btn ghost', type: 'button', text: idx < blocks.length - 1 ? 'Block beenden →' : 'Sitzung beenden', onclick: ctx.done })));
   }
   function complete() {
-    dp[s].done = Date.now(); Store.save('prog'); Clock.flush(); Store.flush(); Wake.off(); Clock.study = false;
+    dp = dayProg(); dp[s].done = Date.now(); Store.save('prog'); Clock.flush(); Store.flush(); Wake.off(); Clock.study = false;
     holder.textContent = ''; top.textContent = '';
     var both = dp.s1 && dp.s1.done && dp.s2 && dp.s2.done;
     holder.appendChild(h('div', { class: 'empty finish' },
@@ -391,10 +406,11 @@ Views.mehr = function (el) {
   /* Selbstpräsentation */
   var pitchBox = h('section', { class: 'panel' }, h('h2', { class: 'sub', text: 'Meine Selbstpräsentation' }),
     h('p', { class: 'ru small', text: 'Самопрезентация для собеседования (~2 минуты). Слушайте, повторяйте за диктором, улучшайте вместе с Claude.' }));
-  var pta = h('textarea', { id: 'pitch', rows: 9, class: 'answer doc' }); pta.value = prof.pitch || '';
+  var pta = h('textarea', { id: 'pitch', rows: 9, class: 'answer doc' }); pta.value = prof.draft || prof.pitch || '';
+  pta.addEventListener('input', function () { Store.get('profile').draft = pta.value; });
   pitchBox.appendChild(pta);
   var prow = h('div', { class: 'row' },
-    h('button', { class: 'btn', type: 'button', text: 'Speichern', onclick: function () { prof.pitch = pta.value.trim(); Store.save('profile'); toast('Gespeichert'); } }),
+    h('button', { class: 'btn', type: 'button', text: 'Speichern', onclick: function () { var pr = Store.get('profile'); pr.pitch = pta.value.trim(); delete pr.draft; Store.save('profile'); toast('Gespeichert'); } }),
     speakBtn(function () { return pta.value; }, 'Selbstpräsentation anhören'));
   if (AI.ready()) prow.appendChild(h('button', {
     class: 'btn ghost', type: 'button', text: 'Mit Claude verbessern', onclick: function (ev) {
@@ -402,7 +418,7 @@ Views.mehr = function (el) {
       var b = ev.target; b.disabled = true; b.textContent = 'Claude überarbeitet …';
       AI.text(Prompts.improvePitch(pta.value), { modelTier: 'default', cache: false }).then(function (t) {
         b.disabled = false; b.textContent = 'Mit Claude verbessern';
-        pitchBox.appendChild(h('div', { class: 'model' }, h('p', { class: 'eyebrow', text: 'Vorschlag von Claude' }), h('p', { class: 'doc', text: t }), h('div', { class: 'row' }, speakBtn(t), h('button', { class: 'btn', type: 'button', text: 'Übernehmen', onclick: function () { pta.value = t; prof.pitch = t; Store.save('profile'); toast('Übernommen'); } }))));
+        pitchBox.appendChild(h('div', { class: 'model' }, h('p', { class: 'eyebrow', text: 'Vorschlag von Claude' }), h('p', { class: 'doc', text: t }), h('div', { class: 'row' }, speakBtn(t), h('button', { class: 'btn', type: 'button', text: 'Übernehmen', onclick: function () { pta.value = t; var pr = Store.get('profile'); pr.pitch = t; delete pr.draft; Store.save('profile'); toast('Übernommen'); } }))));
       }).catch(function (e) { b.disabled = false; b.textContent = 'Mit Claude verbessern'; var m = AI.msg(e); if (m) toast(m); });
     }
   }));
@@ -413,10 +429,11 @@ Views.mehr = function (el) {
   /* Ordner fotografieren */
   var binder = h('section', { class: 'panel' }, h('h2', { class: 'sub', text: 'Seite aus dem Ordner → Karten' }),
     h('p', { class: 'ru small', text: 'Сфотографируйте страницу из папки с материалами — Claude выберет термины, и они войдут в блок «Новые слова».' }));
-  var file = h('input', { type: 'file', id: 'binder-file', accept: 'image/*', capture: 'environment' });
+  var file = h('input', { type: 'file', id: 'binder-file', accept: 'image/jpeg,image/png,image/webp' });
   var out = h('div', {});
   file.addEventListener('change', function () {
     var f = file.files && file.files[0]; if (!f) return;
+    file.value = '';
     out.textContent = ''; out.appendChild(h('p', { class: 'muted', text: 'Claude liest die Seite …' }));
     AI.fn.json(Prompts.binder(), { images: [f], modelTier: 'default', cache: false }).then(function (arr) {
       arr = (Array.isArray(arr) ? arr : []).filter(function (x) { return x && x.de && x.ru; });
@@ -437,7 +454,12 @@ Views.mehr = function (el) {
       }));
     }).catch(function (e) { out.textContent = ''; out.appendChild(h('p', { text: e && e.code === 'images_unavailable' ? 'Bilder sind in dieser Ansicht nicht verfügbar.' : (AI.msg(e) || 'Abgebrochen.') })); });
   });
-  binder.appendChild(AI.ready() ? h('label', { class: 'btn', for: 'binder-file' }, 'Foto aufnehmen oder wählen', file) : h('p', { class: 'note', text: 'Dafür braucht die App Claude.' }));
+  var pick = h('label', { class: 'btn', for: 'binder-file', hidden: true }, 'Foto aufnehmen oder wählen', file);
+  var noImg = h('p', { class: 'note', text: AI.ready() ? 'Prüfe, ob Fotos an Claude gesendet werden können …' : 'Dafür braucht die App Claude.' });
+  binder.appendChild(pick); binder.appendChild(noImg);
+  if (AI.ready() && AI.fn.limits) AI.fn.limits().then(function (l) {
+    if (l && l.images) { pick.hidden = false; noImg.remove(); } else noImg.textContent = 'Fotos können in dieser Ansicht nicht an Claude gesendet werden.';
+  }).catch(function () { noImg.textContent = 'Fotos können in dieser Ansicht nicht an Claude gesendet werden.'; });
   binder.appendChild(out);
   el.appendChild(binder);
 
@@ -512,18 +534,19 @@ function boot() {
   App.day = App.lessonDay();
   App.go('heute');
   var C = window.claude;
-  if (!C || !C.use) { AI.checked = true; App.refresh(); return; }
+  /* n fehlt beim ersten Abgleich, sonst Name des geänderten Dokuments */
+  Store.listeners.push(function (n) { if (!n && App.view === 'heute') App.day = App.lessonDay(); App.refresh(); });
+  if (!C || !C.use) { AI.checked = true; Store.ready = true; App.refresh(); return; }
   C.use('sample').then(function (fn) { AI.fn = fn; AI.checked = true; App.refresh(); });
+  var offline = function () { Store.ready = true; App.refresh(); };
   Promise.all([C.use('db'), C.use('user')]).then(function (r) {
     var db = r[0], user = r[1];
-    if (!db || !user) return;
+    if (!db || !user) return offline();
     return user.id().then(function (uid) {
-      if (!uid) return;
+      if (!uid) return offline();
       return Store.connect(db, uid).then(function () {
         $('#sync').classList.add('on'); $('#sync').title = 'Mit claude.ai synchronisiert';
-        App.day = App.lessonDay();
-        App.refresh();
       });
     });
-  }).catch(function () { });
+  }).catch(offline);
 }

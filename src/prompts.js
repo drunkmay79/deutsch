@@ -120,7 +120,7 @@ var Prompts = {
       this.learner(),
       'THEMA: ' + o[1] + '. WORTSCHATZ-SCHWERPUNKT: ' + o[2] + '.',
       'Erstelle 18 Einträge: etwa 8 Nomen, 4 Verben, 2 Adjektive/Adverbien, 4 Wendungen (Nomen-Verb-Verbindungen oder Redemittel). Fachlich korrekt nach ImmoWertV 2021, BelWertV, BauGB, WoFlV, GEG.',
-      'Diese Wörter kennt der Lerner schon (nicht wiederholen): ' + known.slice(-250).join(', '),
+      'Diese Wörter und Wendungen kennt der Lerner schon. Nicht noch einmal aufnehmen; bei Wiederholungstagen stattdessen neue, verwandte Wendungen wählen: ' + known.join(', '),
       'Antworte nur mit einem JSON-Array. Jedes Element:',
       '{"kind":"noun|verb|adj|adv|chunk|phrase","de":"Wort ohne Artikel bzw. Wendung","art":"der|die|das (nur Nomen)","pl":"Pluralform oder \\"\\" (nur Nomen)","forms":"3. Sg. – Präteritum – Perfekt (nur Verben)","rek":"Rektion, optional","ru":"russische Übersetzung","ex":"Beispielsatz 8–18 Wörter, Fachkontext","exRu":"Übersetzung","cloze":"ex mit genau einer Lücke ___","ans":"genau der Text aus ex, der in der Lücke fehlt","note":"optionale kurze Anmerkung auf Russisch"}'
     ].join('\n');

@@ -53,6 +53,7 @@ function reviewRunner(el, done, run) {
   }
   function next() {
     if (!ids.length) {
+      cur = null;
       stage.textContent = '';
       stage.appendChild(h('div', { class: 'empty' }, h('p', { class: 'big', text: 'Geschafft: ' + n + ' Karten wiederholt.' }), h('button', { class: 'btn primary', type: 'button', text: 'Weiter', onclick: done })));
       counter.textContent = '';
@@ -127,8 +128,9 @@ Runners.new = function (ctx) {
       TTS.speak(Cards.label(c));
       res.appendChild(gradeRow(null, function (g) {
         Cards.learn(c.id, g);
-        var q = cust.queue.indexOf(c.id);
-        if (q >= 0) { cust.queue.splice(q, 1); Store.save('custom'); }
+        var cq = Store.get('custom'); cq.queue = cq.queue || [];
+        var q = cq.queue.indexOf(c.id);
+        if (q >= 0) { cq.queue.splice(q, 1); Store.save('custom'); }
         if (ctx.run) ctx.run.stat(g >= 3);
         quiz(list, k + 1);
       }, 3));
@@ -150,7 +152,7 @@ Runners.diag = function (ctx) {
   drillRunner(ctx, u, u.drills.slice(), { diag: true, intro: u.rule });
 };
 Runners.mix = function (ctx) {
-  var units = ctx.b.mix || [];
+  var units = ctx.b.mix && ctx.b.mix.length ? ctx.b.mix : (ctx.b.grammar ? [ctx.b.grammar] : []);
   if (!units.length) {
     ctx.el.appendChild(h('div', { class: 'empty' }, h('p', { text: 'Für diese Woche gibt es noch keine Grammatik zum Mischen.' }), h('button', { class: 'btn primary', type: 'button', text: 'Weiter', onclick: ctx.done })));
     return;
@@ -204,6 +206,13 @@ function drillRunner(ctx, u, list, opt) {
         if (ctx.run) ctx.run.miss({ t: x.t, i: drillTask(x).split(': ')[0], q: x.q, a: x.a, user: user, cat: catOf(uid) });
         var key = x.q;
         if (!retried[key] && !opt.diag) { retried[key] = 1; queue.splice(Math.min(3, queue.length), 0, x); }
+        /* Claude hat eine abweichende Lösung als richtig bestätigt: Wertung zurücknehmen */
+        return function undo() {
+          right++;
+          var pp = Store.get('prog'); if (pp.g && pp.g[uid]) { pp.g[uid][0]++; Store.save('prog'); }
+          if (ctx.run && ctx.run.unmiss) ctx.run.unmiss(x.q);
+          var qi = queue.indexOf(x); if (qi >= 0) queue.splice(qi, 1);
+        };
       }
     }, next));
   }
@@ -248,10 +257,10 @@ function renderDrill(x, report, next) {
   var lab = drillTask(x).split(': ')[0];
   wrap.appendChild(h('p', { class: 'eyebrow', text: lab + (x._ude ? ' · ' + x._ude : '') }));
   var res = h('div', { class: 'result' });
-  var reported = false;
+  var reported = false, undo = null;
   function done(ok, user, r) {
     if (reported) return; reported = true;
-    report(ok, user);
+    undo = report(ok, user);
     if (r) res.appendChild(verdict(r, user));
     if (x.t === 'translate' || x.t === 'transform' || x.t === 'fix') res.appendChild(h('p', { class: 'doc', text: x.a[0] }));
     var full = (x.t === 'gap' || x.t === 'choice' ? x.q.replace('___', x.a[0]) : x.a[0]).replace(/\s*\([^)]*\)/g, '');
@@ -270,7 +279,7 @@ function renderDrill(x, report, next) {
     var nb = h('button', { class: 'btn primary', type: 'button', text: 'Weiter', onclick: next });
     row.appendChild(nb);
     res.appendChild(row);
-    if (!ok && (x.t === 'translate' || x.t === 'transform') && AI.ready() && user) res.appendChild(aiCheckBtn(drillTask(x), x.a, user, function (good) { if (good) toast('Als richtig gewertet'); }));
+    if (!ok && (x.t === 'translate' || x.t === 'transform') && AI.ready() && user) res.appendChild(aiCheckBtn(drillTask(x), x.a, user, function (good) { if (good && undo) { undo(); undo = null; toast('Als richtig gewertet'); } }));
     setTimeout(function () { nb.focus(); }, 50);
   }
 
@@ -283,7 +292,7 @@ function renderDrill(x, report, next) {
         var ok = x.a.indexOf(o) >= 0;
         Array.prototype.forEach.call(ch.children, function (c) { c.disabled = true; if (x.a.indexOf(c.textContent) >= 0) c.classList.add('right'); });
         if (!ok) b.classList.add('wrong');
-        done(ok, o, null);
+        done(ok, o, ok ? { res: 'ok', best: o } : { res: 'wrong', best: x.a[0] });
       });
       ch.appendChild(b);
     });
@@ -371,6 +380,7 @@ Runners.text = function (ctx) {
           b.addEventListener('click', function () {
             Array.prototype.forEach.call(ch.children, function (c, j) { c.disabled = true; if (j === q.a) c.classList.add('right'); });
             n++; if (k === q.a) ok++; else b.classList.add('wrong');
+            box.appendChild(h('p', { class: 'verdict ' + (k === q.a ? 'ok' : 'wrong'), role: 'status', text: k === q.a ? 'Richtig' : 'Falsch. Richtig ist: ' + q.o[q.a] }));
             if (ctx.run) ctx.run.stat(k === q.a);
           });
           ch.appendChild(b);
@@ -504,7 +514,7 @@ Runners.fluency = function (ctx) {
   el.appendChild(h('ul', { class: 'points' }, (f.points || []).map(function (p) { return h('li', { text: p }); })));
   el.appendChild(h('p', { class: 'hint', text: 'Dreimal dasselbe erzählen: 4 Minuten, dann 3, dann 2. Gleicher Inhalt, jedes Mal flüssiger. Nicht stoppen, nicht korrigieren.' }));
 
-  var rounds = [240, 180, 120], r = 0, left = rounds[0], tmr = null;
+  var rounds = [240, 180, 120], r = 0, left = rounds[0], tmr = null, endAt = 0;
   var big = h('p', { class: 'timer', text: '4:00' });
   var lab = h('p', { class: 'counter', text: 'Runde 1 von 3' });
   var go = h('button', { class: 'btn primary', type: 'button', text: 'Start' });
@@ -513,8 +523,14 @@ Runners.fluency = function (ctx) {
   go.addEventListener('click', function () {
     if (tmr) { clearInterval(tmr); tmr = null; go.textContent = 'Weiter'; return; }
     go.textContent = 'Pause';
+    endAt = Date.now() + left * 1000;
     tmr = setInterval(function () {
-      left--; big.textContent = Math.floor(left / 60) + ':' + pad2(left % 60);
+      /* Block verlassen: Zeitgeber anhalten */
+      if (!big.isConnected) { clearInterval(tmr); tmr = null; return; }
+      /* freies Sprechen ohne Berühren zählt als aktive Lernzeit */
+      Clock.act = Date.now();
+      left = Math.max(0, Math.round((endAt - Date.now()) / 1000));
+      big.textContent = Math.floor(left / 60) + ':' + pad2(left % 60);
       if (left <= 0) {
         clearInterval(tmr); tmr = null; Beep.play(880, 350);
         r++;
@@ -525,7 +541,7 @@ Runners.fluency = function (ctx) {
       }
     }, 1000);
   });
-  var skip = h('button', { class: 'btn ghost', type: 'button', text: 'Runde überspringen', onclick: function () { left = 1; if (!tmr) go.click(); } });
+  var skip = h('button', { class: 'btn ghost', type: 'button', text: 'Runde überspringen', onclick: function () { left = 0; endAt = Date.now(); if (!tmr) go.click(); } });
   el.appendChild(h('div', { class: 'timerbox' }, lab, big, h('div', { class: 'row' }, go, skip)));
   el.appendChild(model);
   el.appendChild(after);
@@ -573,7 +589,7 @@ Runners.wrap = function (ctx) {
     stat(min + ' Min', 'heute gelernt'),
     stat(((p.rev || {})[k] || 0), 'Karten wiederholt'),
     stat(Cards.dueToday(), 'heute noch fällig')));
-  var misses = App.misses.filter(function (m) { return m.day === ctx.b.d; });
+  var misses = (p.misses || []).filter(function (m) { return m.day === ctx.b.d; });
   if (misses.length) {
     el.appendChild(h('h4', { text: 'Heutige Fehler aus den Übungen → als Karten' }));
     var pl = pickList(misses, function (m) { return [h('p', { class: (m.t === 'translate' ? 'ru' : 'doc'), text: m.q }), h('p', { class: 'doc', text: m.a[0] }), m.user ? h('p', { class: 'muted small', text: 'Ihre Antwort: ' + m.user }) : null]; });
@@ -583,7 +599,8 @@ Runners.wrap = function (ctx) {
         var chosen = pl.picked();
         chosen.forEach(function (m) { Cards.addX('task', { t: m.t, i: m.i, q: m.q, a: m.a }); });
         logErrors(chosen.map(function (m) { return { wrong: m.user || '–', right: m.a[0], why: m.i, cat: m.cat }; }), 'drill');
-        App.misses = App.misses.filter(function (m) { return m.day !== ctx.b.d; });
+        var pp = Store.get('prog'); pp.mdone = pp.mdone || {}; pp.mdone[ctx.b.d] = Date.now();
+        pp.misses = (pp.misses || []).filter(function (m) { return m.day !== ctx.b.d; }); Store.save('prog');
         ev.target.disabled = true; ev.target.textContent = chosen.length + ' Karten aufgenommen';
       }
     }));
@@ -603,45 +620,114 @@ Runners.wrap = function (ctx) {
 function stat(v, l) { return h('div', { class: 'stat' }, h('b', { text: String(v) }), h('span', { text: l })); }
 
 /* ---------- Tagesinhalte erzeugen (ab Tag 15) ---------- */
+/* Antworten von Claude prüfen und bereinigen; null = Teil unbrauchbar */
+var GenCheck = {
+  arr: function (x, key) { return Array.isArray(x) ? x : x && Array.isArray(x[key]) ? x[key] : Array.isArray(x && x.items) ? x.items : null; },
+  strs: function (a) { return Array.isArray(a) ? a.filter(function (x) { return typeof x === 'string' && x.trim(); }) : []; },
+  vocab: function (r) {
+    var list = (this.arr(r, 'vocab') || []).filter(function (v) { return v && typeof v.de === 'string' && v.de.trim() && typeof v.ru === 'string' && v.ru.trim(); }).map(function (v) {
+      if (typeof v.ex !== 'string') delete v.ex;
+      if (!v.ex || typeof v.cloze !== 'string' || typeof v.ans !== 'string' || v.cloze.split('___').length !== 2 || v.cloze.replace('___', v.ans) !== v.ex) { delete v.cloze; delete v.ans; }
+      if (v.art && !/^(der|die|das)$/.test(v.art)) delete v.art;
+      if (Array.isArray(v.col)) v.col = GenCheck.strs(v.col); else delete v.col;
+      return v;
+    });
+    return list.length >= 10 ? list : null;
+  },
+  drill: function (x) {
+    if (!x || typeof x.q !== 'string' || !x.q.trim() || ['gap', 'choice', 'transform', 'translate', 'fix', 'order'].indexOf(x.t) < 0) return false;
+    x.a = GenCheck.strs(x.a); if (!x.a.length) return false;
+    if ((x.t === 'gap' || x.t === 'choice') && x.q.split('___').length !== 2) return false;
+    if (x.t === 'choice') { x.o = GenCheck.strs(x.o); if (x.o.length < 2 || x.o.indexOf(x.a[0]) < 0) return false; }
+    return true;
+  },
+  grammar: function (r) {
+    if (!r || typeof r !== 'object') return null;
+    var g = r.grammar && r.grammar.drills ? r.grammar : r;
+    g.drills = (Array.isArray(g.drills) ? g.drills : []).filter(GenCheck.drill);
+    g.speak = (Array.isArray(g.speak) ? g.speak : []).filter(function (x) { return x && typeof x.ru === 'string' && typeof x.de === 'string'; });
+    g.examples = (Array.isArray(g.examples) ? g.examples : []).filter(function (x) { return x && typeof x.de === 'string'; });
+    if (typeof g.rule !== 'string') g.rule = '';
+    if (typeof g.de !== 'string') g.de = 'Grammatik';
+    return g.drills.length >= 12 ? g : null;
+  },
+  practice: function (r) {
+    if (!r || typeof r !== 'object') return null;
+    var t = r.text, sc = r.scenario, f = r.fluency;
+    if (!t || typeof t.de !== 'string' || t.de.length < 200) return null;
+    t.q = (Array.isArray(t.q) ? t.q : []).filter(function (q) { return q && typeof q.q === 'string' && Array.isArray(q.o) && q.o.length >= 2 && q.a === +q.a && q.a >= 0 && q.a < q.o.length; });
+    t.gl = (Array.isArray(t.gl) ? t.gl : []).filter(function (g) { return g && g.de && g.ru; });
+    if (!sc || typeof sc.role !== 'string' || !sc.role.trim()) return null;
+    sc.steps = GenCheck.strs(sc.steps); sc.use = GenCheck.strs(sc.use);
+    if (typeof sc.open !== 'string' || !sc.open.trim()) sc.open = 'Guten Tag! Schön, dass Sie da sind.';
+    if (typeof sc.facts !== 'string') delete sc.facts;
+    if (!f || typeof f.topic !== 'string') return null;
+    f.points = GenCheck.strs(f.points); f.shadow = GenCheck.strs(f.shadow);
+    if (typeof f.model !== 'string') f.model = '';
+    return { text: t, scenario: sc, fluency: f, ru: typeof r.ru === 'string' ? r.ru : '' };
+  }
+};
+
 var Gen = {
-  running: {},
+  running: {}, partial: {},
+  /* alle schon erzeugten Tage laden, damit Claude keine Wörter doppelt liefert */
+  known: function (d) {
+    var ps = [];
+    for (var x = 15; x < d; x++) ps.push(Content.loadGen(x));
+    return Promise.all(ps).then(function () {
+      var seen = {}, out = [];
+      (D.vocab || []).concat.apply([], Object.keys(Content.gen).map(function (k) { return Content.gen[k].vocab || []; }))
+        .forEach(function (v) { var k = String(v.de).toLowerCase(); if (!seen[k]) { seen[k] = 1; out.push(v.de); } });
+      return out;
+    });
+  },
   make: function (d, box) {
     if (this.running[d]) return this.running[d];
     var m = Content.meta(d), o = m && m.o;
     if (!o) return Promise.resolve(null);
-    var known = (D.vocab || []).map(function (v) { return v.de; });
-    Object.keys(Content.gen).forEach(function (k) { (Content.gen[k].vocab || []).forEach(function (v) { known.push(v.de); }); });
+    var have = this.partial[d] || (this.partial[d] = {});
     var parts = { vocab: 'Wörter', grammar: 'Grammatik', practice: 'Text, Gespräch, Monolog' };
     var status = {};
+    Object.keys(have).forEach(function (k) { status[k] = 'ok'; });
     var line = h('ul', { class: 'genstatus' });
     function draw() { line.textContent = ''; Object.keys(parts).forEach(function (k) { line.appendChild(h('li', { class: status[k] || '', text: parts[k] + (status[k] === 'ok' ? ' – fertig' : status[k] === 'err' ? ' – Fehler' : ' …') })); }); }
     if (box) { box.textContent = ''; box.appendChild(h('p', { text: 'Claude bereitet Tag ' + d + ' vor: ' + o[1] })); box.appendChild(line); draw(); }
     var review = m.type === 'review';
     function call(k, prompt) {
-      return AI.json(prompt, { modelTier: 'default', cache: false }).then(function (r) { status[k] = 'ok'; draw(); return r; })
-        .catch(function (e) { status[k] = 'err'; draw(); throw e; });
+      if (have[k]) return Promise.resolve(have[k]);
+      return AI.json(prompt, { modelTier: 'default', cache: false }).then(function (r) {
+        var v = GenCheck[k](r);
+        if (!v) throw { code: 'invalid_json' };
+        have[k] = v; status[k] = 'ok'; draw(); return v;
+      }).catch(function (e) { status[k] = 'err'; draw(); throw e; });
     }
-    var p = Promise.all([
-      call('vocab', Prompts.genVocab(o, known)),
-      call('grammar', Prompts.genGrammar(o)),
-      call('practice', Prompts.genPractice(o, review))
-    ]).then(function (r) {
-      var vocab = (Array.isArray(r[0]) ? r[0] : []).filter(function (v) { return v && v.de && v.ru; }).map(function (v) {
-        if (!v.cloze || v.cloze.indexOf('___') < 0 || !v.ans || (v.ex && v.cloze.replace('___', v.ans) !== v.ex)) { delete v.cloze; delete v.ans; }
-        return v;
+    /* vorher prüfen, ob ein anderes Gerät den Tag schon vorbereitet hat */
+    var p = Store.getExtra('gen-d' + pad2(d)).then(function (g) {
+      if (g && g.vocab) { Content.gen[d] = Content.normGen(d, g); return g; }
+      return this.known(d).then(function (known) {
+        return Promise.allSettled([
+          call('vocab', Prompts.genVocab(o, known)),
+          call('grammar', Prompts.genGrammar(o)),
+          call('practice', Prompts.genPractice(o, review))
+        ]).then(function (rs) {
+          var bad = rs.filter(function (x) { return x.status === 'rejected'; });
+          if (bad.length) throw bad[0].reason;
+          var pr = have.practice;
+          var body = Content.normGen(d, { vocab: have.vocab, grammar: have.grammar, text: pr.text, scenario: pr.scenario, fluency: pr.fluency, ru: pr.ru });
+          Content.gen[d] = body;
+          delete Gen.partial[d];
+          return Store.setExtra('gen-d' + pad2(d), body).then(function () { return body; });
+        });
       });
-      var g = r[1] || {};
-      g.drills = (g.drills || []).filter(function (x) { return x && x.t && x.q && Array.isArray(x.a) && x.a.length && (x.t !== 'choice' || (x.o && x.o.length)); });
-      var pr = r[2] || {};
-      var body = Content.normGen(d, { vocab: vocab, grammar: g.drills.length ? g : null, text: pr.text || null, scenario: pr.scenario || null, fluency: pr.fluency || null, ru: pr.ru || '' });
-      Content.gen[d] = body;
-      return Store.setExtra('gen-d' + pad2(d), body).then(function () {
-        if (box) { box.textContent = ''; box.appendChild(h('p', { text: 'Tag ' + d + ' ist vorbereitet.' })); }
-        return body;
-      });
+    }.bind(this)).then(function (body) {
+      if (box) { box.textContent = ''; box.appendChild(h('p', { text: 'Tag ' + d + ' ist vorbereitet.' })); }
+      return body;
     }).catch(function (e) {
       var msg = AI.msg(e);
-      if (box) { box.appendChild(h('p', { text: msg || 'Abgebrochen.' })); box.appendChild(h('button', { class: 'btn', type: 'button', text: 'Erneut versuchen', onclick: function () { Gen.make(d, box); } })); }
+      if (box) {
+        box.appendChild(h('p', { text: (msg || 'Abgebrochen.') + (Object.keys(have).length ? ' Fertige Teile bleiben erhalten.' : '') }));
+        if (!AI.off) box.appendChild(h('button', { class: 'btn', type: 'button', text: 'Erneut versuchen', onclick: function () { Gen.make(d, box); } }));
+      }
       return null;
     }).then(function (x) { delete Gen.running[d]; return x; });
     this.running[d] = p;

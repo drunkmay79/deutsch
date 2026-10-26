@@ -1,717 +1,4612 @@
-/* Grammatik Wochen 1–2: Einstufung (Tag 1) und elf Einheiten (Tage 2–13).
-   Alle Erklärungen und Übersetzungen auf Russisch. a = alle akzeptierten Antworten. */
 var D = window.D || (window.D = {});
-
 D.grammar = {
-
-  "g-diag": {
-    "id": "g-diag", "day": 1,
-    "de": "Einstufung: Wo stehe ich?",
-    "ru": "Входной тест: где я сейчас",
-    "rule": "<p>Это короткий входной тест: <b>24 задания по 12 темам</b>, по два на каждую — времена, окончания прилагательных, падежи, предлоги, придаточные предложения, пассив, Konjunktiv II, относительные предложения, управление глаголов, числа, порядок слов и N-склонение.</p><p>Работайте <b>без словаря и без подсказок</b> — нужна реальная картина, а не идеальный результат. Если не уверены, напишите первый вариант, который приходит в голову. Регистр букв и знаки препинания не важны, окончания и порядок слов — важны.</p><p>В конце вы увидите таблицу по темам. Темы с ошибками мы будем особенно внимательно тренировать в ближайшие две недели.</p>",
-    "examples": [
-      { "de": "Ich bin seit über zwanzig Jahren in der Immobilienbewertung tätig.", "ru": "Я более двадцати лет работаю в сфере оценки недвижимости." },
-      { "de": "Letztes Jahr habe ich bei der DEKRA die Prüfung zum Sachverständigen bestanden.", "ru": "В прошлом году я сдал в DEKRA экзамен на эксперта-оценщика." },
-      { "de": "Das Haus liegt in ruhiger Wohnlage in der Nähe des Stadtparks.", "ru": "Дом расположен в тихом жилом районе недалеко от городского парка." },
-      { "de": "Die Fenster wurden 2019 ausgetauscht.", "ru": "Окна были заменены в 2019 году." },
-      { "de": "Könnten Sie mir bitte den Grundbuchauszug schicken?", "ru": "Не могли бы вы прислать мне выписку из поземельной книги?" }
+ "g-diag": {
+  "id": "g-diag",
+  "day": 1,
+  "de": "Einstufung: Wo stehe ich?",
+  "ru": "Входной тест: где я сейчас",
+  "rule": "<p>Это короткий входной тест: <b>24 задания по 12 темам</b>, по два на каждую — времена, окончания прилагательных, падежи, предлоги, придаточные предложения, пассив, Konjunktiv II, относительные предложения, управление глаголов, числа, порядок слов и N-склонение.</p><p>Работайте <b>без словаря и без подсказок</b> — нужна реальная картина, а не идеальный результат. Если не уверены, напишите первый вариант, который приходит в голову. Регистр букв и знаки препинания не важны, окончания и порядок слов — важны.</p><p>В конце вы увидите таблицу по темам. Темы с ошибками мы будем особенно внимательно тренировать в ближайшие две недели.</p>",
+  "examples": [
+   {
+    "de": "Ich habe über zwanzig Jahre Berufserfahrung in der Immobilienbewertung.",
+    "ru": "У меня более двадцати лет опыта работы в сфере оценки недвижимости."
+   },
+   {
+    "de": "Letztes Jahr habe ich bei der DEKRA die Prüfung zum Sachverständigen bestanden.",
+    "ru": "В прошлом году я сдал в DEKRA экзамен на эксперта-оценщика."
+   },
+   {
+    "de": "Das Haus liegt in ruhiger Wohnlage in der Nähe des Stadtparks.",
+    "ru": "Дом расположен в тихом жилом районе недалеко от городского парка."
+   },
+   {
+    "de": "Die Fenster wurden 2019 ausgetauscht.",
+    "ru": "Окна были заменены в 2019 году."
+   },
+   {
+    "de": "Könnten Sie mir bitte den Grundbuchauszug schicken?",
+    "ru": "Не могли бы вы прислать мне выписку из поземельной книги?"
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "tag": "tempus",
+    "q": "Letztes Jahr ___ ich die DEKRA-Prüfung bestanden.",
+    "a": [
+     "habe"
     ],
-    "drills": [
-      { "t": "gap", "tag": "tempus", "q": "Letztes Jahr ___ ich die DEKRA-Prüfung bestanden.", "a": ["habe"], "h": "haben или sein?" },
-      { "t": "gap", "tag": "kasus", "q": "Ich habe ___ Bericht schon an den Kreditberater geschickt. (mein)", "a": ["meinen"], "h": "der Bericht — Akkusativ" },
-      { "t": "gap", "tag": "adj", "q": "Die Wohnung liegt in einer ___ Seitenstraße. (ruhig)", "a": ["ruhigen"] },
-      { "t": "gap", "tag": "praep", "q": "Das Haus liegt in der Nähe ___ Bahnhofs.", "a": ["des"] },
-      { "t": "gap", "tag": "ndekl", "q": "Ich habe gestern mit dem ___ telefoniert. (Kunde)", "a": ["Kunden"] },
-      { "t": "gap", "tag": "rektion", "q": "Ich erinnere mich gut ___ meine erste Ortsbesichtigung.", "a": ["an"] },
-      { "t": "choice", "tag": "nebensatz", "q": "___ ich bei der Bank anfing, war ich 25 Jahre alt.", "o": ["Als", "Wenn", "Wann"], "a": ["Als"] },
-      { "t": "gap", "tag": "passiv", "q": "Die Fenster müssen in den nächsten Jahren ausgetauscht ___.", "a": ["werden"] },
-      { "t": "choice", "tag": "konj2", "q": "Ich ___ gern eine Kopie des Energieausweises.", "o": ["hätte", "habe", "hatte"], "a": ["hätte"] },
-      { "t": "gap", "tag": "relativ", "q": "Das ist das Gebäude, ___ Dach 2019 saniert wurde.", "a": ["dessen"] },
-      { "t": "gap", "tag": "zahlen", "q": "Das Gespräch findet am ___ Dezember statt. (21.)", "a": ["einundzwanzigsten"], "h": "Напишите порядковое числительное словами." },
-      { "t": "order", "tag": "wortstellung", "q": "seit 2023 / im Ruhrgebiet / ich / wohne", "a": ["Ich wohne seit 2023 im Ruhrgebiet.", "Seit 2023 wohne ich im Ruhrgebiet.", "Im Ruhrgebiet wohne ich seit 2023."] },
-      { "t": "transform", "tag": "tempus", "i": "Ins Perfekt setzen.", "q": "Wir fuhren zur Ortsbesichtigung nach Bochum.", "a": ["Wir sind zur Ortsbesichtigung nach Bochum gefahren."] },
-      { "t": "choice", "tag": "kasus", "q": "Ich habe ___ Eigentümer das Ergebnis erklärt.", "o": ["dem", "den", "des"], "a": ["dem"] },
-      { "t": "choice", "tag": "adj", "q": "Ich habe ___ Erfahrung in der Immobilienbewertung.", "o": ["langjährige", "langjährigen", "langjähriger"], "a": ["langjährige"] },
-      { "t": "choice", "tag": "praep", "q": "Ich wohne seit drei Jahren ___ Ruhrgebiet.", "o": ["im", "in", "am"], "a": ["im"] },
-      { "t": "fix", "tag": "ndekl", "q": "Ich kenne den Name des Eigentümers nicht.", "a": ["Ich kenne den Namen des Eigentümers nicht."] },
-      { "t": "choice", "tag": "rektion", "q": "Ich interessiere mich sehr ___ diese Stelle.", "o": ["für", "an", "auf"], "a": ["für"] },
-      { "t": "order", "tag": "nebensatz", "q": "Ich möchte wissen, / ob / noch frei / die Stelle / ist", "a": ["Ich möchte wissen, ob die Stelle noch frei ist."] },
-      { "t": "transform", "tag": "passiv", "i": "Ins Passiv (Präteritum) setzen.", "q": "Man erneuerte die Heizung 2018.", "a": ["Die Heizung wurde 2018 erneuert.", "2018 wurde die Heizung erneuert."] },
-      { "t": "transform", "tag": "konj2", "i": "Höflicher formulieren (Konjunktiv II).", "q": "Können Sie mir den Lageplan schicken?", "a": ["Könnten Sie mir den Lageplan schicken?", "Könnten Sie mir bitte den Lageplan schicken?", "Könnten Sie mir den Lageplan bitte schicken?", "Würden Sie mir den Lageplan schicken?", "Würden Sie mir bitte den Lageplan schicken?", "Würden Sie mir den Lageplan bitte schicken?"] },
-      { "t": "choice", "tag": "relativ", "q": "Der Kollege, mit ___ ich das Gutachten erstellt habe, ist Bauingenieur.", "o": ["dem", "den", "der"], "a": ["dem"] },
-      { "t": "choice", "tag": "zahlen", "q": "Das Grundstück ist deutlich größer ___ das Nachbargrundstück.", "o": ["als", "wie", "dann"], "a": ["als"] },
-      { "t": "fix", "tag": "wortstellung", "q": "Morgen ich fahre zu einer Ortsbesichtigung nach Essen.", "a": ["Morgen fahre ich zu einer Ortsbesichtigung nach Essen.", "Ich fahre morgen zu einer Ortsbesichtigung nach Essen."] }
+    "h": "haben или sein?"
+   },
+   {
+    "t": "gap",
+    "tag": "kasus",
+    "q": "Ich habe ___ Bericht schon an den Kreditberater geschickt. (mein)",
+    "a": [
+     "meinen"
+    ],
+    "h": "der Bericht — Akkusativ"
+   },
+   {
+    "t": "gap",
+    "tag": "adj",
+    "q": "Die Wohnung liegt in einer ___ Seitenstraße. (ruhig)",
+    "a": [
+     "ruhigen"
     ]
-  },
-
-  "g-tempus": {
-    "id": "g-tempus", "day": 2,
-    "de": "Perfekt und Präteritum im Lebenslauf",
-    "ru": "Перфект и претерит в рассказе о карьере",
-    "rule": "<p>На собеседовании о прошлом рассказывают в <b>Perfekt</b>: <b>Ich habe 2004 bei einer Bank angefangen.</b> В письменном резюме, сопроводительном письме и отчётах чаще <b>Präteritum</b>: <b>Von 2004 bis 2012 war ich als Sachbearbeiter tätig.</b></p><p><b>sein, haben</b> и модальные глаголы и в устной речи обычно стоят в Präteritum: <b>war, hatte, musste, konnte, wollte, durfte</b> — <b>Damals musste ich jedes Objekt selbst besichtigen.</b></p><p><b>sein</b> + Partizip II — движение и смена места или состояния: <b>fahren, kommen, (um)ziehen, werden, bleiben, ausfallen</b>, а также <b>zu einer Firma wechseln</b>: <b>Ich bin 2010 zu einer Bewertungsfirma gewechselt.</b> Остальные глаголы, в том числе <b>anfangen, beginnen, bestehen, arbeiten</b>, — с <b>haben</b>.</p><p>Формы Partizip II: отделяемые приставки — <b>angefangen, abgeschlossen, teilgenommen</b>; неотделяемые (be-, er-, ver-, über-) — без ge-: <b>besichtigt, erstellt, überarbeitet</b>; глаголы на -ieren — <b>studiert, qualifiziert</b>.</p><p>Типичные ошибки: <i>Ich habe nach Deutschland umgezogen</i> → <b>Ich bin … umgezogen</b>; <i>Ich bin die Prüfung bestanden</i> → <b>Ich habe … bestanden</b>; <i>angefangt</i> → <b>angefangen</b>.</p>",
-    "examples": [
-      { "de": "Nach dem Studium habe ich bei einer Bank als Sachbearbeiter angefangen.", "ru": "После учёбы я начал работать в банке специалистом." },
-      { "de": "Im Jahr 2010 bin ich zu einer Bewertungsgesellschaft gewechselt.", "ru": "В 2010 году я перешёл в оценочную компанию." },
-      { "de": "Von 2012 bis 2022 war ich als Gutachter für Kreditsicherheiten tätig.", "ru": "С 2012 по 2022 год я работал оценщиком кредитного обеспечения." },
-      { "de": "In dieser Zeit habe ich über tausend Gutachten für Wohn- und Gewerbeimmobilien erstellt.", "ru": "За это время я составил более тысячи заключений по жилой и коммерческой недвижимости." },
-      { "de": "2023 bin ich nach Deutschland gekommen und habe sofort einen Deutschkurs besucht.", "ru": "В 2023 году я приехал в Германию и сразу пошёл на курсы немецкого." },
-      { "de": "Damals musste ich jedes Objekt persönlich besichtigen.", "ru": "Тогда мне нужно было лично осматривать каждый объект." }
-    ],
-    "drills": [
-      { "t": "gap", "q": "Ich ___ 2002 als Gutachter angefangen.", "a": ["habe"], "h": "haben или sein?" },
-      { "t": "gap", "q": "Im Jahr 2023 ___ ich mit meiner Familie ins Ruhrgebiet gezogen.", "a": ["bin"], "h": "haben или sein? Это перемещение." },
-      { "t": "choice", "q": "Ich habe mit der Bewertung von Gewerbeimmobilien ___.", "o": ["angefangen", "angefangt", "geanfangen"], "a": ["angefangen"] },
-      { "t": "gap", "q": "Ich habe 2021 die Prüfung zum Sachverständigen ___. (bestehen)", "a": ["bestanden"] },
-      { "t": "choice", "q": "Von 2015 bis 2020 ___ ich für ein Team von fünf Gutachtern verantwortlich.", "o": ["war", "bin", "hatte"], "a": ["war"] },
-      { "t": "choice", "q": "Leider ___ ich damals keine Zeit für einen Sprachkurs.", "o": ["hatte", "war", "habe"], "a": ["hatte"] },
-      { "t": "gap", "q": "Wir ___ jedes Objekt persönlich besichtigen. (müssen, Präteritum)", "a": ["mussten"] },
-      { "t": "gap", "q": "Gestern habe ich meinen Lebenslauf noch einmal ___. (überarbeiten)", "a": ["überarbeitet"], "h": "Неотделяемая приставка über- — без ge-." },
-      { "t": "choice", "q": "Ich ___ 2015 Leiter der Bewertungsabteilung geworden.", "o": ["bin", "habe", "wurde"], "a": ["bin"] },
-      { "t": "gap", "q": "Die Ortsbesichtigung ___ leider ausgefallen, weil der Eigentümer krank war.", "a": ["ist"], "h": "ausfallen — haben или sein?" },
-      { "t": "transform", "i": "Ins Perfekt setzen.", "q": "Ich prüfte die Unterlagen des Kunden.", "a": ["Ich habe die Unterlagen des Kunden geprüft."] },
-      { "t": "transform", "i": "Ins Perfekt setzen.", "q": "Ich besichtigte jede Woche zehn Objekte.", "a": ["Ich habe jede Woche zehn Objekte besichtigt."] },
-      { "t": "transform", "i": "Ins Perfekt setzen.", "q": "Wir schlossen das Projekt im März ab.", "a": ["Wir haben das Projekt im März abgeschlossen."] },
-      { "t": "transform", "i": "Ins Perfekt setzen.", "q": "2015 zog ich nach Charkiw um.", "a": ["2015 bin ich nach Charkiw umgezogen.", "Ich bin 2015 nach Charkiw umgezogen."] },
-      { "t": "order", "q": "2008 / zu einer Bewertungsfirma / bin / gewechselt / ich", "a": ["2008 bin ich zu einer Bewertungsfirma gewechselt.", "Ich bin 2008 zu einer Bewertungsfirma gewechselt.", "Zu einer Bewertungsfirma bin ich 2008 gewechselt."] },
-      { "t": "order", "q": "an einer Weiterbildung / habe / ich / im letzten Jahr / teilgenommen", "a": ["Ich habe im letzten Jahr an einer Weiterbildung teilgenommen.", "Im letzten Jahr habe ich an einer Weiterbildung teilgenommen.", "An einer Weiterbildung habe ich im letzten Jahr teilgenommen.", "Ich habe an einer Weiterbildung im letzten Jahr teilgenommen."] },
-      { "t": "transform", "i": "Ins Präteritum setzen (Lebenslauf).", "q": "Ich bin für die Bewertung von Kreditsicherheiten verantwortlich gewesen.", "a": ["Ich war für die Bewertung von Kreditsicherheiten verantwortlich."] },
-      { "t": "transform", "i": "Ins Präteritum setzen.", "q": "Ich habe die Gutachten selbstständig erstellen müssen.", "a": ["Ich musste die Gutachten selbstständig erstellen."] },
-      { "t": "transform", "i": "Ins Perfekt setzen.", "q": "Nach dem Studium wurde ich Sachbearbeiter in einer Bank.", "a": ["Nach dem Studium bin ich Sachbearbeiter in einer Bank geworden."] },
-      { "t": "order", "q": "damals / musste / ich / die Objekte / persönlich besichtigen", "a": ["Damals musste ich die Objekte persönlich besichtigen.", "Ich musste damals die Objekte persönlich besichtigen.", "Ich musste die Objekte damals persönlich besichtigen.", "Die Objekte musste ich damals persönlich besichtigen."] },
-      { "t": "translate", "q": "(устно) В 2023 году я переехал в Германию.", "a": ["Ich bin 2023 nach Deutschland gezogen.", "Ich bin 2023 nach Deutschland umgezogen.", "2023 bin ich nach Deutschland gezogen.", "2023 bin ich nach Deutschland umgezogen.", "Ich bin im Jahr 2023 nach Deutschland gezogen.", "Ich bin im Jahr 2023 nach Deutschland umgezogen.", "Im Jahr 2023 bin ich nach Deutschland gezogen.", "Im Jahr 2023 bin ich nach Deutschland umgezogen.", "Ich bin 2023 nach Deutschland gekommen.", "2023 bin ich nach Deutschland gekommen."] },
-      { "t": "translate", "q": "(устно) В прошлом году я сдал экзамен DEKRA.", "a": ["Ich habe letztes Jahr die DEKRA-Prüfung bestanden.", "Letztes Jahr habe ich die DEKRA-Prüfung bestanden.", "Ich habe die DEKRA-Prüfung letztes Jahr bestanden.", "Ich habe im letzten Jahr die DEKRA-Prüfung bestanden.", "Im letzten Jahr habe ich die DEKRA-Prüfung bestanden.", "Ich habe die DEKRA-Prüfung im letzten Jahr bestanden.", "Ich habe im vergangenen Jahr die DEKRA-Prüfung bestanden.", "Im vergangenen Jahr habe ich die DEKRA-Prüfung bestanden.", "Ich habe die DEKRA-Prüfung im vergangenen Jahr bestanden."], "h": "die DEKRA-Prüfung bestehen" },
-      { "t": "translate", "q": "(устно) В 2010 году я перешёл в другой банк.", "a": ["2010 bin ich zu einer anderen Bank gewechselt.", "Ich bin 2010 zu einer anderen Bank gewechselt.", "Im Jahr 2010 bin ich zu einer anderen Bank gewechselt.", "Ich bin im Jahr 2010 zu einer anderen Bank gewechselt.", "2010 habe ich die Bank gewechselt.", "Ich habe 2010 die Bank gewechselt.", "Im Jahr 2010 habe ich die Bank gewechselt.", "Ich habe im Jahr 2010 die Bank gewechselt."] },
-      { "t": "translate", "q": "(в резюме, Präteritum) С 2012 по 2022 год я отвечал за оценку кредитного обеспечения.", "a": ["Von 2012 bis 2022 war ich für die Bewertung von Kreditsicherheiten verantwortlich.", "Ich war von 2012 bis 2022 für die Bewertung von Kreditsicherheiten verantwortlich.", "Von 2012 bis 2022 war ich für die Bewertung von Kreditsicherheiten zuständig.", "Ich war von 2012 bis 2022 für die Bewertung von Kreditsicherheiten zuständig.", "Von 2012 bis 2022 war ich für die Bewertung der Kreditsicherheiten verantwortlich.", "Ich war von 2012 bis 2022 für die Bewertung der Kreditsicherheiten verantwortlich.", "Von 2012 bis 2022 war ich für die Bewertung der Kreditsicherheiten zuständig.", "Ich war von 2012 bis 2022 für die Bewertung der Kreditsicherheiten zuständig."], "h": "verantwortlich für + Akk.; die Kreditsicherheiten" },
-      { "t": "translate", "q": "(устно) Тогда у меня ещё не было опыта с коммерческой недвижимостью.", "a": ["Damals hatte ich noch keine Erfahrung mit Gewerbeimmobilien.", "Ich hatte damals noch keine Erfahrung mit Gewerbeimmobilien.", "Damals hatte ich noch keine Erfahrungen mit Gewerbeimmobilien.", "Ich hatte damals noch keine Erfahrungen mit Gewerbeimmobilien.", "Damals hatte ich noch keine Erfahrung mit gewerblichen Immobilien.", "Ich hatte damals noch keine Erfahrung mit gewerblichen Immobilien."] },
-      { "t": "translate", "q": "(устно) Я составил более тысячи заключений.", "a": ["Ich habe mehr als tausend Gutachten erstellt.", "Ich habe über tausend Gutachten erstellt.", "Ich habe mehr als eintausend Gutachten erstellt.", "Ich habe über eintausend Gutachten erstellt.", "Ich habe mehr als 1000 Gutachten erstellt.", "Ich habe über 1000 Gutachten erstellt.", "Ich habe mehr als 1.000 Gutachten erstellt.", "Ich habe über 1.000 Gutachten erstellt.", "Ich habe mehr als tausend Gutachten geschrieben.", "Ich habe über tausend Gutachten geschrieben."], "h": "ein Gutachten erstellen" },
-      { "t": "fix", "q": "Ich habe 2023 nach Deutschland umgezogen.", "a": ["Ich bin 2023 nach Deutschland umgezogen."], "h": "Проверьте вспомогательный глагол." },
-      { "t": "fix", "q": "Ich bin die Prüfung beim ersten Versuch bestanden.", "a": ["Ich habe die Prüfung beim ersten Versuch bestanden."], "h": "bestehen — переходный глагол." },
-      { "t": "fix", "q": "Wir haben die Ergebnisse mit dem Kreditberater besprecht.", "a": ["Wir haben die Ergebnisse mit dem Kreditberater besprochen."], "h": "Partizip II сильного глагола." },
-      { "t": "fix", "q": "Der Eigentümer hat den Termin zweimal verschiebt.", "a": ["Der Eigentümer hat den Termin zweimal verschoben."], "h": "verschieben — сильный глагол." }
-    ],
-    "speak": [
-      { "ru": "Я начал свою карьеру в 2004 году в кредитном отделе банка.", "de": "Ich habe meine Karriere 2004 in der Kreditabteilung einer Bank begonnen." },
-      { "ru": "В 2010 году я перешёл в независимую оценочную компанию.", "de": "2010 bin ich zu einem unabhängigen Bewertungsunternehmen gewechselt." },
-      { "ru": "Там я в основном оценивал жилую и коммерческую недвижимость.", "de": "Dort habe ich hauptsächlich Wohn- und Gewerbeimmobilien bewertet." },
-      { "ru": "Я лично осматривал каждый объект и сам составлял заключение.", "de": "Ich habe jedes Objekt persönlich besichtigt und das Gutachten selbst erstellt." },
-      { "ru": "Тогда мне часто приходилось работать в очень сжатые сроки.", "de": "Damals musste ich oft mit sehr knappen Fristen arbeiten." },
-      { "ru": "С 2015 года я отвечал за проверку кредитного обеспечения.", "de": "Ab 2015 war ich für die Prüfung der Kreditsicherheiten verantwortlich." },
-      { "ru": "В 2023 году я с семьёй переехал в Рурскую область.", "de": "2023 bin ich mit meiner Familie ins Ruhrgebiet gezogen." },
-      { "ru": "Сразу после переезда я начал интенсивно учить немецкий.", "de": "Gleich nach dem Umzug habe ich angefangen, intensiv Deutsch zu lernen." },
-      { "ru": "В прошлом году я сдал в DEKRA экзамен на эксперта по оценке.", "de": "Letztes Jahr habe ich bei der DEKRA die Prüfung zum Sachverständigen bestanden." },
-      { "ru": "За двадцать лет я составил более двух тысяч заключений.", "de": "In zwanzig Jahren habe ich mehr als zweitausend Gutachten erstellt." },
-      { "ru": "Больше всего мне нравилась работа непосредственно на объектах.", "de": "Am meisten hat mir die Arbeit direkt vor Ort gefallen." },
-      { "ru": "После университета мне не пришлось долго искать первую работу.", "de": "Nach dem Studium musste ich nicht lange nach meiner ersten Stelle suchen." }
+   },
+   {
+    "t": "gap",
+    "tag": "praep",
+    "q": "Das Haus liegt in der Nähe ___ Bahnhofs.",
+    "a": [
+     "des",
+     "eines"
     ]
-  },
-
-  "g-kausal": {
-    "id": "g-kausal", "day": 3,
-    "de": "Gründe und Folgen",
-    "ru": "Причины и следствия",
-    "rule": "<p><b>weil</b> и <b>da</b> вводят придаточное — глагол в конце: <b>…, weil ich regional arbeiten möchte.</b> <b>da</b> чаще ставят в начало, когда причина собеседнику уже известна: <b>Da ich lange im Kreditbereich gearbeitet habe, kenne ich die Anforderungen.</b></p><p><b>denn</b> соединяет два главных предложения и не влияет на порядок слов: <b>…, denn meine Familie lebt hier.</b></p><p><b>deshalb, daher, deswegen, darum</b> — «поэтому». Это наречия: они занимают первое место, и глагол идёт сразу за ними: <b>Die Lage ist gut, deshalb ist die Nachfrage hoch.</b> Можно и после глагола: <b>Die Nachfrage ist deshalb hoch.</b></p><p><b>sodass / so dass</b> — следствие в придаточном, глагол в конце: <b>Das Dach war undicht, sodass ein Abschlag nötig war.</b></p><p><b>wegen, aufgrund</b> + Genitiv — причина одним существительным, типично для заключения: <b>aufgrund der guten Lage, wegen des hohen Sanierungsbedarfs</b>. В разговоре слышно <i>wegen dem</i>, но письменно — только Genitiv.</p><p>Типичные ошибки: <i>weil ich habe Erfahrung</i> → <b>weil ich Erfahrung habe</b>; <i>deshalb ich bewerbe mich</i> → <b>deshalb bewerbe ich mich</b>.</p>",
-    "examples": [
-      { "de": "Ich bewerbe mich bei der Sparkasse, weil mir die regionale Verankerung wichtig ist.", "ru": "Я подаю заявку в Sparkasse, потому что для меня важна связь с регионом." },
-      { "de": "Da ich lange im Kreditbereich gearbeitet habe, kenne ich die Anforderungen an Sicherheiten.", "ru": "Так как я долго работал в кредитной сфере, я знаю требования к обеспечению." },
-      { "de": "Ich möchte als Gutachter arbeiten, denn die Arbeit vor Ort macht mir Spaß.", "ru": "Я хочу работать оценщиком, потому что мне нравится работа на объектах." },
-      { "de": "Die Lage ist sehr gut, deshalb ist die Nachfrage hoch.", "ru": "Местоположение очень хорошее, поэтому спрос высокий." },
-      { "de": "Das Dach war undicht, sodass ein Abschlag notwendig war.", "ru": "Крыша протекала, так что понадобилась скидка." },
-      { "de": "Aufgrund der Nähe zur Autobahn ist das Grundstück stark lärmbelastet.", "ru": "Из-за близости к автобану участок сильно страдает от шума." }
-    ],
-    "drills": [
-      { "t": "gap", "q": "Ich bewerbe mich bei Ihnen, ___ ich mich für die Bewertung von Kreditsicherheiten interessiere.", "a": ["weil", "da"] },
-      { "t": "gap", "q": "Ich möchte im Ruhrgebiet bleiben, ___ meine Familie lebt hier.", "a": ["denn"], "h": "После союза — прямой порядок слов." },
-      { "t": "gap", "q": "Die Wohnung liegt direkt an einer Hauptstraße, ___ ist sie schwer zu vermieten.", "a": ["deshalb", "daher", "deswegen", "darum"] },
-      { "t": "choice", "q": "Ich kenne den regionalen Markt gut, ___ ich seit drei Jahren im Ruhrgebiet lebe.", "o": ["weil", "denn", "deshalb"], "a": ["weil"] },
-      { "t": "choice", "q": "Die Heizung ist veraltet, ___ müssen wir einen Abschlag ansetzen.", "o": ["deshalb", "weil", "denn"], "a": ["deshalb"] },
-      { "t": "choice", "q": "Das Gutachten verzögert sich, ___ der Eigentümer hat die Unterlagen noch nicht geschickt.", "o": ["denn", "weil", "sodass"], "a": ["denn"] },
-      { "t": "gap", "q": "Aufgrund ___ guten Lage ist das Objekt leicht verkäuflich.", "a": ["der"] },
-      { "t": "choice", "q": "Wegen ___ Lärms ist die Wohnlage nur mittelmäßig.", "o": ["des", "dem", "der"], "a": ["des"] },
-      { "t": "gap", "q": "___ des hohen Sanierungsbedarfs ist der Verkehrswert gesunken.", "a": ["Wegen", "Aufgrund", "Infolge", "Angesichts"], "h": "Предлог с Genitiv." },
-      { "t": "gap", "q": "Der Keller war feucht, ___ wir einen Bausachverständigen hinzuziehen mussten.", "a": ["sodass", "so dass", "weshalb", "weswegen"] },
-      { "t": "transform", "i": "Mit „weil“ verbinden.", "q": "Ich bewerbe mich bei der Sparkasse. Ich möchte regional arbeiten.", "a": ["Ich bewerbe mich bei der Sparkasse, weil ich regional arbeiten möchte."] },
-      { "t": "transform", "i": "Mit „deshalb“ verbinden.", "q": "Ich habe lange im Kreditbereich gearbeitet. Ich kenne die Anforderungen der Banken.", "a": ["Ich habe lange im Kreditbereich gearbeitet, deshalb kenne ich die Anforderungen der Banken.", "Ich habe lange im Kreditbereich gearbeitet, und deshalb kenne ich die Anforderungen der Banken.", "Ich habe lange im Kreditbereich gearbeitet und kenne deshalb die Anforderungen der Banken.", "Ich habe lange im Kreditbereich gearbeitet, ich kenne deshalb die Anforderungen der Banken."] },
-      { "t": "transform", "i": "Mit „da“ beginnen.", "q": "Das Objekt liegt verkehrsgünstig. Die Nachfrage ist hoch.", "a": ["Da das Objekt verkehrsgünstig liegt, ist die Nachfrage hoch."] },
-      { "t": "transform", "i": "Mit „denn“ verbinden.", "q": "Ich spreche Russisch und Ukrainisch. Ich bin in der Ukraine aufgewachsen.", "a": ["Ich spreche Russisch und Ukrainisch, denn ich bin in der Ukraine aufgewachsen."] },
-      { "t": "order", "q": "deshalb / habe / ich / mich / bei der Sparkasse / beworben", "a": ["Deshalb habe ich mich bei der Sparkasse beworben.", "Ich habe mich deshalb bei der Sparkasse beworben.", "Bei der Sparkasse habe ich mich deshalb beworben.", "Ich habe mich bei der Sparkasse deshalb beworben."] },
-      { "t": "transform", "i": "„weil“-Satz durch „wegen“ + Genitiv ersetzen.", "q": "Weil die Lage schlecht ist, ist der Preis niedrig.", "a": ["Wegen der schlechten Lage ist der Preis niedrig.", "Der Preis ist wegen der schlechten Lage niedrig."] },
-      { "t": "transform", "i": "Mit „sodass“ verbinden.", "q": "Die Fenster sind undicht. Es entstehen hohe Heizkosten.", "a": ["Die Fenster sind undicht, sodass hohe Heizkosten entstehen.", "Die Fenster sind undicht, so dass hohe Heizkosten entstehen."] },
-      { "t": "order", "q": "Ich habe die Besichtigung verschoben, / weil / der Eigentümer / krank / war", "a": ["Ich habe die Besichtigung verschoben, weil der Eigentümer krank war."] },
-      { "t": "transform", "i": "Mit „aufgrund“ + Genitiv umformen.", "q": "Weil die Bausubstanz gut ist, ist kein Abschlag nötig.", "a": ["Aufgrund der guten Bausubstanz ist kein Abschlag nötig.", "Aufgrund der guten Bausubstanz ist kein Abschlag notwendig.", "Es ist aufgrund der guten Bausubstanz kein Abschlag nötig."] },
-      { "t": "order", "q": "aufgrund / der zentralen Lage / ist / gut vermietbar / das Objekt", "a": ["Aufgrund der zentralen Lage ist das Objekt gut vermietbar.", "Das Objekt ist aufgrund der zentralen Lage gut vermietbar."] },
-      { "t": "translate", "q": "Объект трудно продать из-за плохого местоположения.", "a": ["Wegen der schlechten Lage ist das Objekt schwer verkäuflich.", "Das Objekt ist wegen der schlechten Lage schwer verkäuflich.", "Aufgrund der schlechten Lage ist das Objekt schwer verkäuflich.", "Das Objekt ist aufgrund der schlechten Lage schwer verkäuflich.", "Wegen der schlechten Lage ist das Objekt schwer zu verkaufen.", "Das Objekt ist wegen der schlechten Lage schwer zu verkaufen.", "Aufgrund der schlechten Lage ist das Objekt schwer zu verkaufen.", "Das Objekt ist aufgrund der schlechten Lage schwer zu verkaufen.", "Wegen der schlechten Lage lässt sich das Objekt schwer verkaufen.", "Aufgrund der schlechten Lage lässt sich das Objekt schwer verkaufen."] },
-      { "t": "translate", "q": "Я хорошо знаю рынок, так как давно живу в Рурской области.", "a": ["Ich kenne den Markt gut, da ich schon lange im Ruhrgebiet lebe.", "Ich kenne den Markt gut, weil ich schon lange im Ruhrgebiet lebe.", "Ich kenne den Markt gut, da ich schon lange im Ruhrgebiet wohne.", "Ich kenne den Markt gut, weil ich schon lange im Ruhrgebiet wohne.", "Da ich schon lange im Ruhrgebiet lebe, kenne ich den Markt gut.", "Da ich schon lange im Ruhrgebiet wohne, kenne ich den Markt gut.", "Weil ich schon lange im Ruhrgebiet lebe, kenne ich den Markt gut.", "Weil ich schon lange im Ruhrgebiet wohne, kenne ich den Markt gut."], "h": "da / weil; schon lange" },
-      { "t": "translate", "q": "Крыша протекала, поэтому мы заложили скидку.", "a": ["Das Dach war undicht, deshalb haben wir einen Abschlag angesetzt.", "Das Dach war undicht, daher haben wir einen Abschlag angesetzt.", "Das Dach war undicht, deswegen haben wir einen Abschlag angesetzt.", "Das Dach war undicht, darum haben wir einen Abschlag angesetzt.", "Das Dach war undicht, deshalb setzten wir einen Abschlag an.", "Das Dach war undicht, daher setzten wir einen Abschlag an.", "Das Dach war undicht, deswegen setzten wir einen Abschlag an.", "Das Dach war undicht, wir haben deshalb einen Abschlag angesetzt."], "h": "undicht sein; einen Abschlag ansetzen" },
-      { "t": "translate", "q": "Я хочу работать в Sparkasse, потому что для меня важна стабильность.", "a": ["Ich möchte bei der Sparkasse arbeiten, weil mir Stabilität wichtig ist.", "Ich möchte bei der Sparkasse arbeiten, weil Stabilität für mich wichtig ist.", "Ich möchte bei der Sparkasse arbeiten, weil für mich Stabilität wichtig ist.", "Ich möchte bei der Sparkasse arbeiten, da mir Stabilität wichtig ist.", "Ich möchte bei der Sparkasse arbeiten, da Stabilität für mich wichtig ist.", "Ich möchte bei der Sparkasse arbeiten, denn Stabilität ist mir wichtig.", "Ich möchte bei der Sparkasse arbeiten, denn Stabilität ist für mich wichtig.", "Ich möchte bei der Sparkasse arbeiten, denn mir ist Stabilität wichtig.", "Ich möchte bei der Sparkasse arbeiten, denn für mich ist Stabilität wichtig."] },
-      { "t": "translate", "q": "Из-за высокого спроса цены в этом районе выросли.", "a": ["Wegen der hohen Nachfrage sind die Preise in diesem Stadtteil gestiegen.", "Aufgrund der hohen Nachfrage sind die Preise in diesem Stadtteil gestiegen.", "Die Preise in diesem Stadtteil sind wegen der hohen Nachfrage gestiegen.", "Die Preise in diesem Stadtteil sind aufgrund der hohen Nachfrage gestiegen.", "In diesem Stadtteil sind die Preise wegen der hohen Nachfrage gestiegen.", "In diesem Stadtteil sind die Preise aufgrund der hohen Nachfrage gestiegen.", "Wegen der hohen Nachfrage stiegen die Preise in diesem Stadtteil.", "Aufgrund der hohen Nachfrage stiegen die Preise in diesem Stadtteil."], "h": "der Stadtteil; steigen" },
-      { "t": "translate", "q": "Подвал был сырым, так что нам пришлось привлечь специалиста.", "a": ["Der Keller war feucht, sodass wir einen Fachmann hinzuziehen mussten.", "Der Keller war feucht, so dass wir einen Fachmann hinzuziehen mussten.", "Der Keller war feucht, sodass wir einen Experten hinzuziehen mussten.", "Der Keller war feucht, so dass wir einen Experten hinzuziehen mussten.", "Der Keller war feucht, sodass wir einen Sachverständigen hinzuziehen mussten.", "Der Keller war feucht, so dass wir einen Sachverständigen hinzuziehen mussten."], "h": "sodass; einen Fachmann hinzuziehen" },
-      { "t": "fix", "q": "Ich bewerbe mich bei Ihnen, weil ich habe viel Erfahrung mit Kreditsicherheiten.", "a": ["Ich bewerbe mich bei Ihnen, weil ich viel Erfahrung mit Kreditsicherheiten habe."], "h": "Порядок слов в придаточном." },
-      { "t": "fix", "q": "Die Lage ist sehr gut, deshalb die Preise sind hoch.", "a": ["Die Lage ist sehr gut, deshalb sind die Preise hoch."], "h": "После deshalb — сначала глагол." },
-      { "t": "fix", "q": "Ich kann morgen nicht kommen, denn ich eine Ortsbesichtigung habe.", "a": ["Ich kann morgen nicht kommen, denn ich habe eine Ortsbesichtigung."], "h": "После denn — обычный порядок слов." },
-      { "t": "fix", "q": "Aufgrund der schlechte Zustand des Daches ist ein Abschlag nötig.", "a": ["Aufgrund des schlechten Zustands des Daches ist ein Abschlag nötig.", "Aufgrund des schlechten Zustandes des Daches ist ein Abschlag nötig."], "h": "aufgrund + Genitiv." }
-    ],
-    "speak": [
-      { "ru": "Я подаю заявку в Sparkasse, потому что мне важна работа в регионе.", "de": "Ich bewerbe mich bei der Sparkasse, weil mir die Arbeit in der Region wichtig ist." },
-      { "ru": "Так как я двадцать лет работаю с залогами, я хорошо знаю требования банков.", "de": "Da ich seit zwanzig Jahren mit Kreditsicherheiten arbeite, kenne ich die Anforderungen der Banken gut." },
-      { "ru": "Мне нравится эта профессия, потому что каждый объект уникален.", "de": "Mir gefällt dieser Beruf, denn jedes Objekt ist einzigartig." },
-      { "ru": "Я сдал экзамен DEKRA, поэтому знаю немецкие стандарты оценки.", "de": "Ich habe die DEKRA-Prüfung bestanden, deshalb kenne ich die deutschen Bewertungsstandards." },
-      { "ru": "Из-за близости к автобану участок сильно страдает от шума.", "de": "Aufgrund der Nähe zur Autobahn ist das Grundstück stark lärmbelastet." },
-      { "ru": "Крыша в плохом состоянии, поэтому нужна скидка.", "de": "Das Dach ist in schlechtem Zustand, deshalb ist ein Abschlag nötig." },
-      { "ru": "Спрос высокий, так что объект можно быстро продать.", "de": "Die Nachfrage ist hoch, sodass sich das Objekt schnell verkaufen lässt." },
-      { "ru": "Я хочу развиваться дальше, поэтому меня интересует работа в оценочном бюро.", "de": "Ich möchte mich weiterentwickeln, deshalb interessiere ich mich für eine Stelle in einem Gutachterbüro." },
-      { "ru": "Из-за переезда в моём резюме есть пауза в один год.", "de": "Wegen des Umzugs gibt es in meinem Lebenslauf eine Lücke von einem Jahr." },
-      { "ru": "Я ушёл из банка, так как хотел работать самостоятельнее.", "de": "Ich habe die Bank verlassen, weil ich selbstständiger arbeiten wollte." },
-      { "ru": "Благодаря хорошей инфраструктуре этот район очень популярен.", "de": "Aufgrund der guten Infrastruktur ist dieser Stadtteil sehr beliebt." },
-      { "ru": "Документы пришли поздно, поэтому заключение задерживается.", "de": "Die Unterlagen sind spät angekommen, deshalb verzögert sich das Gutachten." }
+   },
+   {
+    "t": "gap",
+    "tag": "ndekl",
+    "q": "Ich habe gestern mit dem ___ telefoniert. (Kunde)",
+    "a": [
+     "Kunden"
     ]
-  },
-
-  "g-nebensatz": {
-    "id": "g-nebensatz", "day": 4,
-    "de": "dass, ob, indirekte Fragen; als, wenn, wann",
-    "ru": "dass, ob, косвенные вопросы; als, wenn, wann",
-    "rule": "<p><b>dass</b> передаёт содержание мнения или высказывания, глагол в конце: <b>Ich denke, dass meine Erfahrung gut zu der Stelle passt.</b> После <b>ich denke / ich glaube</b> можно и без dass, тогда порядок прямой: <b>Ich denke, meine Erfahrung passt gut.</b></p><p><b>ob</b> = «ли» — косвенный вопрос без вопросительного слова: <b>Ich würde gern wissen, ob die Stelle unbefristet ist.</b> Ошибка: <i>…, dass die Stelle unbefristet ist</i>, если это вопрос.</p><p>Косвенный W-вопрос: <b>wann, wie, wie viele, wer, warum</b> + глагол в конце: <b>Können Sie mir sagen, wann die Einarbeitung beginnt?</b> (не <i>wann beginnt</i>).</p><p>Вежливые начала для собеседования: <b>Ich würde gern wissen, … / Darf ich fragen, … / Könnten Sie mir sagen, …</b></p><p><b>als</b> — одно событие или период в прошлом: <b>Als ich nach Deutschland kam, …</b><br><b>wenn</b> — повторяющееся действие (immer wenn), а также настоящее и будущее: <b>Wenn ich ein Objekt besichtige, mache ich Fotos.</b><br><b>wann</b> — только вопрос «когда?», в том числе косвенный: <b>Ich weiß nicht, wann der Eigentümer kommt.</b></p>",
-    "examples": [
-      { "de": "Ich denke, dass meine Erfahrung gut zu dieser Stelle passt.", "ru": "Я думаю, что мой опыт хорошо подходит для этой должности." },
-      { "de": "Könnten Sie mir sagen, wie die Einarbeitung bei Ihnen abläuft?", "ru": "Не могли бы вы сказать, как у вас проходит введение в должность?" },
-      { "de": "Ich würde gern wissen, ob die Stelle unbefristet ist.", "ru": "Я хотел бы знать, бессрочная ли это должность." },
-      { "de": "Als ich 2023 nach Deutschland kam, habe ich sofort einen Deutschkurs besucht.", "ru": "Когда я приехал в Германию в 2023 году, я сразу пошёл на курсы немецкого." },
-      { "de": "Wenn ich ein Objekt besichtige, mache ich immer Fotos von allen Räumen.", "ru": "Когда я осматриваю объект, я всегда фотографирую все помещения." },
-      { "de": "Ich weiß noch nicht, wann ich das Gutachten fertigstellen kann.", "ru": "Я ещё не знаю, когда смогу закончить заключение." }
-    ],
-    "drills": [
-      { "t": "gap", "q": "Ich glaube, ___ ich gut in Ihr Team passe.", "a": ["dass"] },
-      { "t": "gap", "q": "Ich würde gern wissen, ___ die Stelle unbefristet ist.", "a": ["ob"] },
-      { "t": "choice", "q": "Ich weiß noch nicht, ___ ich die Unterlagen bekomme.", "o": ["wann", "wenn", "als"], "a": ["wann"] },
-      { "t": "gap", "q": "___ ich 2004 bei der Bank anfing, gab es noch keine digitalen Akten.", "a": ["Als"] },
-      { "t": "gap", "q": "Immer ___ ich ein Objekt besichtige, prüfe ich zuerst die Unterlagen.", "a": ["wenn"] },
-      { "t": "choice", "q": "___ ich nach Deutschland gekommen bin, konnte ich nur wenig Deutsch.", "o": ["Als", "Wenn", "Wann"], "a": ["Als"] },
-      { "t": "gap", "q": "Können Sie mir sagen, ___ das Vorstellungsgespräch beginnt? – Um zehn Uhr.", "a": ["wann"] },
-      { "t": "choice", "q": "Ich frage mich, ___ der Kaufpreis realistisch ist.", "o": ["ob", "dass", "wenn"], "a": ["ob"] },
-      { "t": "gap", "q": "Der Kreditberater möchte wissen, ___ hoch der Beleihungswert ist.", "a": ["wie"] },
-      { "t": "choice", "q": "Darf ich fragen, ___?", "o": ["wie groß das Team ist", "wie groß ist das Team", "ob wie groß das Team ist"], "a": ["wie groß das Team ist"] },
-      { "t": "transform", "i": "Indirekte Frage mit „Können Sie mir sagen, …?“", "q": "Wann beginnt die Einarbeitung?", "a": ["Können Sie mir sagen, wann die Einarbeitung beginnt?"] },
-      { "t": "transform", "i": "Indirekte Frage mit „Ich würde gern wissen, …“", "q": "Ist die Stelle befristet?", "a": ["Ich würde gern wissen, ob die Stelle befristet ist.", "Ich würde gerne wissen, ob die Stelle befristet ist."] },
-      { "t": "transform", "i": "Mit „Ich bin sicher, dass …“ umformen.", "q": "Meine Erfahrung ist für Sie nützlich.", "a": ["Ich bin sicher, dass meine Erfahrung für Sie nützlich ist."] },
-      { "t": "order", "q": "Ich würde gern wissen, / wie / bei Ihnen / die Einarbeitung / abläuft", "a": ["Ich würde gern wissen, wie die Einarbeitung bei Ihnen abläuft.", "Ich würde gern wissen, wie bei Ihnen die Einarbeitung abläuft."] },
-      { "t": "transform", "i": "Indirekte Frage mit „Darf ich fragen, …?“", "q": "Wie viele Gutachten erstellt ein Gutachter pro Monat?", "a": ["Darf ich fragen, wie viele Gutachten ein Gutachter pro Monat erstellt?"] },
-      { "t": "transform", "i": "Mit „als“ verbinden.", "q": "Ich kam nach Deutschland. Ich sprach nur wenig Deutsch.", "a": ["Als ich nach Deutschland kam, sprach ich nur wenig Deutsch.", "Ich sprach nur wenig Deutsch, als ich nach Deutschland kam."] },
-      { "t": "transform", "i": "Mit „wenn“ verbinden.", "q": "Ich besichtige ein Objekt. Ich mache immer ein Protokoll.", "a": ["Wenn ich ein Objekt besichtige, mache ich immer ein Protokoll.", "Ich mache immer ein Protokoll, wenn ich ein Objekt besichtige.", "Immer wenn ich ein Objekt besichtige, mache ich ein Protokoll."] },
-      { "t": "order", "q": "als / der Gutachter / ankam, / wartete / der Eigentümer / schon", "a": ["Als der Gutachter ankam, wartete der Eigentümer schon.", "Als der Gutachter ankam, wartete schon der Eigentümer."] },
-      { "t": "transform", "i": "Indirekte Frage: „Der Kreditberater fragt mich, …“", "q": "Haben Sie das Grundbuch schon geprüft?", "a": ["Der Kreditberater fragt mich, ob ich das Grundbuch schon geprüft habe."] },
-      { "t": "order", "q": "Ich bin nicht sicher, / ob / der Eigentümer / alle Unterlagen / vorbereitet / hat", "a": ["Ich bin nicht sicher, ob der Eigentümer alle Unterlagen vorbereitet hat."] },
-      { "t": "translate", "q": "Я думаю, что мой опыт подходит для этой должности.", "a": ["Ich denke, dass meine Erfahrung zu dieser Stelle passt.", "Ich glaube, dass meine Erfahrung zu dieser Stelle passt.", "Ich denke, meine Erfahrung passt zu dieser Stelle.", "Ich glaube, meine Erfahrung passt zu dieser Stelle.", "Ich denke, dass meine Erfahrungen zu dieser Stelle passen.", "Ich glaube, dass meine Erfahrungen zu dieser Stelle passen.", "Ich denke, meine Erfahrungen passen zu dieser Stelle."] },
-      { "t": "translate", "q": "Не могли бы вы сказать, когда я получу ответ?", "a": ["Könnten Sie mir sagen, wann ich eine Antwort bekomme?", "Könnten Sie mir sagen, wann ich eine Antwort erhalte?", "Könnten Sie mir sagen, wann ich eine Antwort bekommen werde?", "Könnten Sie mir sagen, wann ich eine Rückmeldung bekomme?", "Könnten Sie mir sagen, wann ich eine Rückmeldung erhalte?", "Könnten Sie mir bitte sagen, wann ich eine Antwort bekomme?", "Können Sie mir sagen, wann ich eine Antwort bekomme?", "Können Sie mir sagen, wann ich eine Antwort erhalte?"] },
-      { "t": "translate", "q": "Я хотел бы знать, есть ли у вас программа введения в должность.", "a": ["Ich würde gern wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.", "Ich würde gerne wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.", "Ich würde gern wissen, ob Sie ein Einarbeitungsprogramm haben.", "Ich würde gerne wissen, ob Sie ein Einarbeitungsprogramm haben.", "Ich möchte gern wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.", "Ich möchte wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt."], "h": "das Einarbeitungsprogramm" },
-      { "t": "translate", "q": "Когда я начинал работать оценщиком, у меня ещё не было опыта.", "a": ["Als ich als Gutachter anfing, hatte ich noch keine Erfahrung.", "Als ich als Gutachter angefangen habe, hatte ich noch keine Erfahrung.", "Ich hatte noch keine Erfahrung, als ich als Gutachter anfing.", "Ich hatte noch keine Erfahrung, als ich als Gutachter angefangen habe.", "Als ich anfing, als Gutachter zu arbeiten, hatte ich noch keine Erfahrung.", "Als ich angefangen habe, als Gutachter zu arbeiten, hatte ich noch keine Erfahrung."], "h": "als; als Gutachter anfangen" },
-      { "t": "translate", "q": "Каждый раз, когда я осматриваю дом, я проверяю подвал.", "a": ["Immer wenn ich ein Haus besichtige, prüfe ich den Keller.", "Jedes Mal, wenn ich ein Haus besichtige, prüfe ich den Keller.", "Wenn ich ein Haus besichtige, prüfe ich immer den Keller.", "Immer wenn ich ein Haus besichtige, kontrolliere ich den Keller.", "Jedes Mal, wenn ich ein Haus besichtige, kontrolliere ich den Keller.", "Wenn ich ein Haus besichtige, kontrolliere ich immer den Keller.", "Ich prüfe immer den Keller, wenn ich ein Haus besichtige."] },
-      { "t": "translate", "q": "Я не знаю, когда собственник пришлёт документы.", "a": ["Ich weiß nicht, wann der Eigentümer die Unterlagen schickt.", "Ich weiß nicht, wann der Eigentümer die Unterlagen schicken wird.", "Ich weiß nicht, wann der Eigentümer die Unterlagen zuschickt.", "Ich weiß nicht, wann der Eigentümer die Dokumente schickt.", "Ich weiß nicht, wann der Eigentümer die Dokumente schicken wird.", "Ich weiß nicht, wann der Eigentümer die Unterlagen sendet."] },
-      { "t": "fix", "q": "Wenn ich 2023 nach Deutschland kam, konnte ich kaum Deutsch.", "a": ["Als ich 2023 nach Deutschland kam, konnte ich kaum Deutsch."], "h": "Одно событие в прошлом." },
-      { "t": "fix", "q": "Können Sie mir sagen, wann beginnt die Besichtigung?", "a": ["Können Sie mir sagen, wann die Besichtigung beginnt?"], "h": "Порядок слов в косвенном вопросе." },
-      { "t": "fix", "q": "Ich würde gern wissen, dass die Stelle auch in Teilzeit möglich ist.", "a": ["Ich würde gern wissen, ob die Stelle auch in Teilzeit möglich ist.", "Ich würde gerne wissen, ob die Stelle auch in Teilzeit möglich ist."], "h": "Это вопрос «да/нет»." },
-      { "t": "fix", "q": "Ich weiß nicht, wenn das Gutachten fertig ist.", "a": ["Ich weiß nicht, wann das Gutachten fertig ist."], "h": "Здесь нужен вопрос «когда?»." }
-    ],
-    "speak": [
-      { "ru": "Я думаю, что мой опыт с кредитным обеспечением будет вам полезен.", "de": "Ich denke, dass meine Erfahrung mit Kreditsicherheiten für Sie nützlich ist." },
-      { "ru": "Я хотел бы узнать, как у вас проходит введение в должность.", "de": "Ich würde gern wissen, wie die Einarbeitung bei Ihnen abläuft." },
-      { "ru": "Не могли бы вы сказать, сколько оценщиков работает в отделе?", "de": "Könnten Sie mir sagen, wie viele Gutachter in der Abteilung arbeiten?" },
-      { "ru": "Можно спросить, является ли эта должность бессрочной?", "de": "Darf ich fragen, ob die Stelle unbefristet ist?" },
-      { "ru": "Когда я приехал в Германию, я сразу начал учить немецкий.", "de": "Als ich nach Deutschland kam, habe ich sofort angefangen, Deutsch zu lernen." },
-      { "ru": "Когда я осматриваю объект, я всегда фотографирую все помещения.", "de": "Wenn ich ein Objekt besichtige, fotografiere ich immer alle Räume." },
-      { "ru": "Я ещё не знаю, когда смогу начать работу.", "de": "Ich weiß noch nicht, wann ich die Stelle antreten kann." },
-      { "ru": "Для меня важно, чтобы мои заключения были понятными и обоснованными.", "de": "Für mich ist wichtig, dass meine Gutachten nachvollziehbar sind." },
-      { "ru": "Банк хочет знать, есть ли в поземельной книге обременения.", "de": "Die Bank möchte wissen, ob es Belastungen im Grundbuch gibt." },
-      { "ru": "Когда я работал в банке, я каждую неделю проверял около двадцати заключений.", "de": "Als ich bei der Bank war, habe ich jede Woche etwa zwanzig Gutachten geprüft." },
-      { "ru": "Не могли бы вы объяснить, кто принимает окончательное решение по кредиту?", "de": "Könnten Sie mir erklären, wer die endgültige Kreditentscheidung trifft?" },
-      { "ru": "Я уверен, что быстро освою немецкие нормативы.", "de": "Ich bin sicher, dass ich mich schnell in die deutschen Vorschriften einarbeite." }
+   },
+   {
+    "t": "gap",
+    "tag": "rektion",
+    "q": "Ich erinnere mich gut ___ meine erste Ortsbesichtigung.",
+    "a": [
+     "an"
     ]
-  },
-
-  "g-praep": {
-    "id": "g-praep", "day": 5,
-    "de": "Lage beschreiben: lokale Präpositionen und Genitivpräpositionen",
-    "ru": "Описание местоположения: предлоги места и предлоги с Genitiv",
-    "rule": "<p><b>Wechselpräpositionen</b> (in, an, auf, über, unter, vor, hinter, neben, zwischen): <b>Wo?</b> → Dativ, <b>Wohin?</b> → Akkusativ. <b>Das Haus liegt in einem ruhigen Wohngebiet.</b> — <b>Viele Familien ziehen in die Vororte.</b></p><p>Устойчивые сочетания: <b>am Stadtrand, im Ruhrgebiet, im Süden von Bochum, in der Innenstadt, an der Hauptstraße, im zweiten Obergeschoss, auf dem Grundstück</b>.</p><p><b>С Genitiv</b>: <b>innerhalb / außerhalb des Ortskerns, unweit des Bahnhofs, entlang der Straße</b> (после существительного — с Akk.: <b>die Straße entlang</b>). <b>in der Nähe des Bahnhofs</b> — письменно, <b>in der Nähe vom Bahnhof</b> — устно.</p><p>Расстояние: <b>Das Objekt ist zwei Kilometer vom Zentrum entfernt.</b> Транспорт: <b>gut an die A40 / an den Nahverkehr angebunden</b> (an + Akk.), <b>die Anbindung an</b> + Akk., <b>die Nähe zu</b> + Dat.: <b>die Nähe zur Autobahn</b>. Граница: <b>Das Grundstück grenzt an einen Park.</b> (an + Akk.)</p><p>Ошибки: <i>im Stadtrand</i> → <b>am Stadtrand</b>; <i>in der Nähe von des Bahnhofs</i> → <b>des Bahnhofs</b> или <b>vom Bahnhof</b>; <i>innerhalb dem</i> → <b>innerhalb des</b>; <i>an der A40 angebunden</i> → <b>an die A40</b>.</p>",
-    "examples": [
-      { "de": "Das Einfamilienhaus liegt in einem ruhigen Wohngebiet am Stadtrand von Bochum.", "ru": "Дом на одну семью находится в тихом жилом районе на окраине Бохума." },
-      { "de": "Der Hauptbahnhof ist nur zehn Gehminuten vom Objekt entfernt.", "ru": "До главного вокзала от объекта всего десять минут пешком." },
-      { "de": "Das Grundstück ist über die A40 gut an das überregionale Straßennetz angebunden.", "ru": "Через A40 участок хорошо связан с междугородной дорожной сетью." },
-      { "de": "Innerhalb des Stadtteils gibt es Schulen, Ärzte und Einkaufsmöglichkeiten.", "ru": "В пределах района есть школы, врачи и магазины." },
-      { "de": "Unweit des Objekts verläuft eine stark befahrene Bahnlinie.", "ru": "Недалеко от объекта проходит загруженная железнодорожная линия." },
-      { "de": "Entlang der Hauptstraße befinden sich zahlreiche Geschäfte.", "ru": "Вдоль главной улицы расположено множество магазинов." }
+   },
+   {
+    "t": "choice",
+    "tag": "nebensatz",
+    "q": "___ ich bei der Bank anfing, hatte ich gerade mein Studium abgeschlossen.",
+    "o": [
+     "Als",
+     "Wenn",
+     "Wann"
     ],
-    "drills": [
-      { "t": "gap", "q": "Das Haus liegt ___ Stadtrand von Dortmund.", "a": ["am"] },
-      { "t": "gap", "q": "Die Wohnung befindet sich ___ dritten Obergeschoss.", "a": ["im"] },
-      { "t": "gap", "q": "Das Objekt liegt in der Nähe ___ Hauptbahnhofs.", "a": ["des"] },
-      { "t": "choice", "q": "Der Käufer möchte ___ ruhige Wohngegend ziehen.", "o": ["in eine", "in einer", "an einer"], "a": ["in eine"] },
-      { "t": "gap", "q": "Die nächste Bushaltestelle ist etwa 300 Meter ___ Grundstück entfernt.", "a": ["vom", "von dem"] },
-      { "t": "choice", "q": "Die Schule liegt innerhalb ___ Wohngebiets.", "o": ["des", "dem", "das"], "a": ["des"] },
-      { "t": "gap", "q": "Der Stadtteil ist gut ___ den öffentlichen Nahverkehr angebunden.", "a": ["an"] },
-      { "t": "choice", "q": "Das Grundstück grenzt ___ ein Naturschutzgebiet.", "o": ["an", "neben", "bei"], "a": ["an"] },
-      { "t": "gap", "q": "Außerhalb ___ Ortskerns gibt es kaum Geschäfte.", "a": ["des"] },
-      { "t": "choice", "q": "___ des Flusses verläuft ein Radweg.", "o": ["Entlang", "Innerhalb", "Zwischen"], "a": ["Entlang"] },
-      { "t": "transform", "i": "„von“ durch Genitiv ersetzen.", "q": "Das Haus liegt in der Nähe vom Bahnhof.", "a": ["Das Haus liegt in der Nähe des Bahnhofs.", "Das Haus liegt in der Nähe des Bahnhofes."] },
-      { "t": "transform", "i": "Mit „unweit“ + Genitiv umformen.", "q": "Das Objekt liegt nicht weit von der Autobahn.", "a": ["Das Objekt liegt unweit der Autobahn."] },
-      { "t": "transform", "i": "Wo? → Wohin? Beginnen Sie mit „Wir fahren …“", "q": "Wir sind im Gewerbegebiet.", "a": ["Wir fahren ins Gewerbegebiet.", "Wir fahren in das Gewerbegebiet."] },
-      { "t": "order", "q": "liegt / das Grundstück / in einem ruhigen Wohngebiet / am Stadtrand", "a": ["Das Grundstück liegt in einem ruhigen Wohngebiet am Stadtrand.", "Das Grundstück liegt am Stadtrand in einem ruhigen Wohngebiet.", "In einem ruhigen Wohngebiet am Stadtrand liegt das Grundstück.", "Am Stadtrand liegt das Grundstück in einem ruhigen Wohngebiet."] },
-      { "t": "transform", "i": "Mit „entfernt“ umformen: „Das Objekt ist …“", "q": "Vom Objekt bis zur Innenstadt sind es zwei Kilometer.", "a": ["Das Objekt ist zwei Kilometer von der Innenstadt entfernt.", "Das Objekt ist von der Innenstadt zwei Kilometer entfernt."] },
-      { "t": "transform", "i": "Mit „angebunden an“ umformen.", "q": "Das Gewerbegebiet hat eine gute Anbindung an die A2.", "a": ["Das Gewerbegebiet ist gut an die A2 angebunden."] },
-      { "t": "transform", "i": "Mit „innerhalb“ + Genitiv umformen.", "q": "Die Wohnung liegt im Stadtzentrum.", "a": ["Die Wohnung liegt innerhalb des Stadtzentrums."] },
-      { "t": "order", "q": "ist / nur fünf Gehminuten / der Bahnhof / vom Objekt / entfernt", "a": ["Der Bahnhof ist nur fünf Gehminuten vom Objekt entfernt.", "Der Bahnhof ist vom Objekt nur fünf Gehminuten entfernt.", "Vom Objekt ist der Bahnhof nur fünf Gehminuten entfernt.", "Nur fünf Gehminuten vom Objekt entfernt ist der Bahnhof."] },
-      { "t": "transform", "i": "„Gebäude“ in den Plural setzen.", "q": "Hinter dem Gebäude befindet sich ein Parkplatz.", "a": ["Hinter den Gebäuden befindet sich ein Parkplatz."] },
-      { "t": "order", "q": "befinden sich / entlang der Hauptstraße / zahlreiche / kleine Geschäfte", "a": ["Entlang der Hauptstraße befinden sich zahlreiche kleine Geschäfte.", "Zahlreiche kleine Geschäfte befinden sich entlang der Hauptstraße."] },
-      { "t": "translate", "q": "Дом находится в тихом районе на окраине города.", "a": ["Das Haus liegt in einer ruhigen Gegend am Stadtrand.", "Das Haus befindet sich in einer ruhigen Gegend am Stadtrand.", "Das Haus liegt in einer ruhigen Wohngegend am Stadtrand.", "Das Haus befindet sich in einer ruhigen Wohngegend am Stadtrand.", "Das Haus liegt in einem ruhigen Wohngebiet am Stadtrand.", "Das Haus befindet sich in einem ruhigen Wohngebiet am Stadtrand.", "Das Haus liegt in einem ruhigen Viertel am Stadtrand.", "Das Haus liegt am Stadtrand in einer ruhigen Gegend.", "Das Haus liegt am Stadtrand in einem ruhigen Wohngebiet."], "h": "die Gegend / das Wohngebiet; der Stadtrand" },
-      { "t": "translate", "q": "Объект расположен недалеко от вокзала.", "a": ["Das Objekt liegt unweit des Bahnhofs.", "Das Objekt liegt in der Nähe des Bahnhofs.", "Das Objekt liegt in der Nähe vom Bahnhof.", "Das Objekt liegt nicht weit vom Bahnhof.", "Das Objekt liegt nicht weit vom Bahnhof entfernt.", "Das Objekt befindet sich unweit des Bahnhofs.", "Das Objekt befindet sich in der Nähe des Bahnhofs.", "Das Objekt befindet sich nicht weit vom Bahnhof.", "Das Objekt liegt unweit des Bahnhofes.", "Das Objekt liegt in der Nähe des Bahnhofes."] },
-      { "t": "translate", "q": "Участок хорошо связан с автобаном A40.", "a": ["Das Grundstück ist gut an die A40 angebunden.", "Das Grundstück ist gut an die Autobahn A40 angebunden.", "Das Grundstück hat eine gute Anbindung an die A40.", "Das Grundstück hat eine gute Anbindung an die Autobahn A40."], "h": "angebunden an + Akk." },
-      { "t": "translate", "q": "За пределами центра почти нет магазинов.", "a": ["Außerhalb des Ortskerns gibt es kaum Geschäfte.", "Außerhalb des Ortskerns gibt es fast keine Geschäfte.", "Außerhalb des Ortskerns gibt es kaum Läden.", "Außerhalb des Ortskerns gibt es fast keine Läden.", "Außerhalb des Zentrums gibt es kaum Geschäfte.", "Außerhalb des Zentrums gibt es fast keine Geschäfte.", "Außerhalb des Zentrums gibt es kaum Läden.", "Außerhalb des Zentrums gibt es fast keine Läden.", "Außerhalb des Ortskerns gibt es kaum Einkaufsmöglichkeiten.", "Außerhalb des Zentrums gibt es kaum Einkaufsmöglichkeiten."], "h": "außerhalb + Genitiv; der Ortskern" },
-      { "t": "translate", "q": "В пределах района есть школы и врачи.", "a": ["Innerhalb des Stadtteils gibt es Schulen und Ärzte.", "Innerhalb des Stadtteiles gibt es Schulen und Ärzte.", "Innerhalb des Stadtteils gibt es Schulen und Arztpraxen.", "Innerhalb des Stadtteils befinden sich Schulen und Ärzte.", "Innerhalb des Stadtteils befinden sich Schulen und Arztpraxen."], "h": "innerhalb + Genitiv; der Stadtteil" },
-      { "t": "translate", "q": "Вдоль участка проходит железная дорога.", "a": ["Entlang des Grundstücks verläuft eine Bahnlinie.", "Entlang des Grundstückes verläuft eine Bahnlinie.", "Eine Bahnlinie verläuft entlang des Grundstücks.", "Am Grundstück entlang verläuft eine Bahnlinie.", "Entlang des Grundstücks verläuft eine Bahnstrecke.", "Eine Bahnstrecke verläuft entlang des Grundstücks."], "h": "verlaufen; die Bahnlinie" },
-      { "t": "fix", "q": "Das Objekt liegt im Stadtrand von Essen.", "a": ["Das Objekt liegt am Stadtrand von Essen."] },
-      { "t": "fix", "q": "Das Haus liegt in der Nähe von des Bahnhofs.", "a": ["Das Haus liegt in der Nähe des Bahnhofs.", "Das Haus liegt in der Nähe vom Bahnhof.", "Das Haus liegt in der Nähe von dem Bahnhof.", "Das Haus liegt in der Nähe des Bahnhofes."], "h": "Либо Genitiv, либо von + Dativ." },
-      { "t": "fix", "q": "Innerhalb dem Wohngebiet gibt es einen Kindergarten.", "a": ["Innerhalb des Wohngebiets gibt es einen Kindergarten.", "Innerhalb des Wohngebietes gibt es einen Kindergarten."], "h": "innerhalb + Genitiv." },
-      { "t": "fix", "q": "Das Gewerbegebiet ist gut an der Autobahn angebunden.", "a": ["Das Gewerbegebiet ist gut an die Autobahn angebunden."], "h": "angebunden an + Akk." }
-    ],
-    "speak": [
-      { "ru": "Объект находится в тихом жилом районе на юге Бохума.", "de": "Das Objekt liegt in einem ruhigen Wohngebiet im Süden von Bochum." },
-      { "ru": "До центра города примерно три километра.", "de": "Bis zum Stadtzentrum sind es etwa drei Kilometer." },
-      { "ru": "Вокзал находится в десяти минутах ходьбы от дома.", "de": "Der Bahnhof ist zehn Gehminuten vom Haus entfernt." },
-      { "ru": "Район хорошо связан с общественным транспортом.", "de": "Der Stadtteil ist gut an den öffentlichen Nahverkehr angebunden." },
-      { "ru": "Недалеко от участка проходит оживлённая дорога.", "de": "Unweit des Grundstücks verläuft eine stark befahrene Straße." },
-      { "ru": "В пределах района есть школы, врачи и магазины.", "de": "Innerhalb des Stadtteils gibt es Schulen, Ärzte und Einkaufsmöglichkeiten." },
-      { "ru": "За пределами центра цены значительно ниже.", "de": "Außerhalb des Zentrums sind die Preise deutlich niedriger." },
-      { "ru": "Участок граничит с небольшим парком.", "de": "Das Grundstück grenzt an einen kleinen Park." },
-      { "ru": "Гараж стоит за домом, а сад находится перед ним.", "de": "Die Garage steht hinter dem Haus, der Garten liegt davor." },
-      { "ru": "Многие покупатели переезжают из центра в пригороды.", "de": "Viele Käufer ziehen aus der Innenstadt in die Vororte." },
-      { "ru": "Близость к автобану — это плюс для коммерческих объектов.", "de": "Die Nähe zur Autobahn ist ein Vorteil für Gewerbeobjekte." },
-      { "ru": "Вдоль главной улицы находятся кафе, аптеки и банки.", "de": "Entlang der Hauptstraße befinden sich Cafés, Apotheken und Banken." }
+    "a": [
+     "Als"
     ]
-  },
-
-  "g-adj": {
-    "id": "g-adj", "day": 6,
-    "de": "Adjektivdeklination in der Objektbeschreibung",
-    "ru": "Окончания прилагательных в описании объекта",
-    "rule": "<p>Окончание прилагательного зависит от слова перед ним.</p><p><b>1. После der/die/das, dieser, jeder, alle:</b> -e только в Nom. ед. ч. и в Akk. f/n, во всех остальных случаях -en: <b>der große Garten, den großen Garten, mit dem großen Garten, die großen Fenster, mit allen nötigen Unterlagen</b>.</p><p><b>2. После ein, kein, mein, Ihr:</b> где у артикля нет окончания, его показывает прилагательное: <b>ein großer Keller</b> (m, Nom.), <b>ein freistehendes Haus</b> (n, Nom./Akk.). В остальных случаях как в п. 1: <b>einen großen Einfluss, mit einem großen Garten, meinen ersten Bericht</b>.</p><p><b>3. Без артикля</b> прилагательное берёт окончание артикля: <b>in ruhiger Lage</b> (der Lage), <b>in gutem Zustand</b> (dem Zustand), <b>mit hochwertiger Ausstattung, große Fenster</b>. Исключение — Genitiv m/n: <b>trotz hohen Alters</b>.</p><p>Порядковые числительные склоняются так же: <b>mein erster Bericht, im zweiten Obergeschoss</b>. Существительное в Dativ Plural получает -n: <b>mit allen nötigen Geräten</b>.</p><p>Ошибки: <i>einen große Garten</i> → <b>einen großen Garten</b>; <i>in ruhige Wohnlage</i> → <b>in ruhiger Wohnlage</b>; <i>ein freistehende Haus</i> → <b>ein freistehendes Haus</b>.</p>",
-    "examples": [
-      { "de": "Das Objekt liegt in ruhiger Wohnlage mit guter Infrastruktur.", "ru": "Объект расположен в тихом жилом районе с хорошей инфраструктурой." },
-      { "de": "Es handelt sich um ein freistehendes Einfamilienhaus mit ausgebautem Dachgeschoss.", "ru": "Речь идёт об отдельно стоящем доме на одну семью с отделанной мансардой." },
-      { "de": "Das Haus verfügt über einen großen Garten und eine moderne Einbauküche.", "ru": "У дома большой сад и современная встроенная кухня." },
-      { "de": "Zur Besichtigung bringe ich alle nötigen Unterlagen mit.", "ru": "На осмотр я беру с собой все необходимые документы." },
-      { "de": "Meinen ersten Bericht habe ich im Jahr 2003 geschrieben.", "ru": "Свой первый отчёт я написал в 2003 году." },
-      { "de": "Die großen Fenster an der Südseite sorgen für viel Licht.", "ru": "Большие окна на южной стороне дают много света." }
-    ],
-    "drills": [
-      { "t": "gap", "q": "Das ist ein ___ Einfamilienhaus. (freistehend)", "a": ["freistehendes"] },
-      { "t": "gap", "q": "Das Haus hat einen ___ Keller. (trocken)", "a": ["trockenen"] },
-      { "t": "choice", "q": "Der Garten ist ein ___ Vorteil des Objekts.", "o": ["großer", "großen", "großes"], "a": ["großer"] },
-      { "t": "gap", "q": "Die Wohnung liegt in ___ Wohnlage. (ruhig)", "a": ["ruhiger"], "h": "Без артикля: in + Dativ, die Wohnlage." },
-      { "t": "gap", "q": "Bitte bringen Sie alle ___ Unterlagen mit. (nötig)", "a": ["nötigen"] },
-      { "t": "choice", "q": "Wir haben den Termin mit dem ___ Eigentümer vereinbart.", "o": ["neuen", "neue", "neuer"], "a": ["neuen"] },
-      { "t": "gap", "q": "Die Lage hat einen ___ Einfluss auf den Wert. (groß)", "a": ["großen"] },
-      { "t": "gap", "q": "Das Gebäude befindet sich in ___ Zustand. (gut)", "a": ["gutem"], "h": "Без артикля: der Zustand, Dativ." },
-      { "t": "choice", "q": "Das Objekt verfügt über ___ Fenster.", "o": ["dreifach verglaste", "dreifach verglasten", "dreifach verglaster"], "a": ["dreifach verglaste"] },
-      { "t": "choice", "q": "Trotz ___ Lage ist der Preis hoch.", "o": ["ungünstiger", "ungünstigen", "ungünstige"], "a": ["ungünstiger"] },
-      { "t": "transform", "i": "Adjektiv einfügen: modern.", "q": "Das Haus hat eine Heizung.", "a": ["Das Haus hat eine moderne Heizung."] },
-      { "t": "transform", "i": "Adjektiv einfügen: groß.", "q": "Das Grundstück hat einen Garten.", "a": ["Das Grundstück hat einen großen Garten."] },
-      { "t": "transform", "i": "„ein Fenster“ → Plural ohne Artikel.", "q": "Das Haus hat ein großes Fenster.", "a": ["Das Haus hat große Fenster."] },
-      { "t": "order", "q": "das / freistehende / Einfamilienhaus / liegt / in ruhiger Wohnlage", "a": ["Das freistehende Einfamilienhaus liegt in ruhiger Wohnlage.", "In ruhiger Wohnlage liegt das freistehende Einfamilienhaus."] },
-      { "t": "transform", "i": "Adjektiv einfügen: hochwertig.", "q": "Die Wohnung ist mit Parkett ausgestattet.", "a": ["Die Wohnung ist mit hochwertigem Parkett ausgestattet."] },
-      { "t": "transform", "i": "Umformen: „Das Objekt liegt in … Lage.“", "q": "Die Lage des Objekts ist zentral.", "a": ["Das Objekt liegt in zentraler Lage."] },
-      { "t": "transform", "i": "Adjektiv einfügen: erst-.", "q": "Ich habe meinen Bericht 2003 geschrieben.", "a": ["Ich habe meinen ersten Bericht 2003 geschrieben."] },
-      { "t": "order", "q": "verfügt über / einen ausgebauten Dachboden / das Haus / und / einen trockenen Keller", "a": ["Das Haus verfügt über einen ausgebauten Dachboden und einen trockenen Keller.", "Das Haus verfügt über einen trockenen Keller und einen ausgebauten Dachboden."] },
-      { "t": "transform", "i": "Zu einem Satz mit „mit“ verbinden.", "q": "Der Gutachter kommt. Er hat alle nötigen Geräte dabei.", "a": ["Der Gutachter kommt mit allen nötigen Geräten."] },
-      { "t": "order", "q": "mit allen nötigen Unterlagen / zur Besichtigung / ich / komme", "a": ["Ich komme mit allen nötigen Unterlagen zur Besichtigung.", "Ich komme zur Besichtigung mit allen nötigen Unterlagen.", "Zur Besichtigung komme ich mit allen nötigen Unterlagen.", "Mit allen nötigen Unterlagen komme ich zur Besichtigung."] },
-      { "t": "translate", "q": "Это отдельно стоящий дом с большим садом.", "a": ["Das ist ein freistehendes Haus mit einem großen Garten.", "Das ist ein freistehendes Haus mit großem Garten.", "Es ist ein freistehendes Haus mit einem großen Garten.", "Es ist ein freistehendes Haus mit großem Garten.", "Es handelt sich um ein freistehendes Haus mit einem großen Garten.", "Es handelt sich um ein freistehendes Haus mit großem Garten.", "Das ist ein freistehendes Einfamilienhaus mit einem großen Garten.", "Das ist ein freistehendes Einfamilienhaus mit großem Garten."], "h": "freistehend" },
-      { "t": "translate", "q": "Квартира находится в хорошем состоянии.", "a": ["Die Wohnung ist in gutem Zustand.", "Die Wohnung befindet sich in gutem Zustand.", "Die Wohnung ist in einem guten Zustand.", "Die Wohnung befindet sich in einem guten Zustand."] },
-      { "t": "translate", "q": "Свой первый отчёт я написал в 2003 году.", "a": ["Meinen ersten Bericht habe ich 2003 geschrieben.", "Meinen ersten Bericht habe ich im Jahr 2003 geschrieben.", "Ich habe meinen ersten Bericht 2003 geschrieben.", "Ich habe meinen ersten Bericht im Jahr 2003 geschrieben.", "Ich habe 2003 meinen ersten Bericht geschrieben.", "2003 habe ich meinen ersten Bericht geschrieben.", "Im Jahr 2003 habe ich meinen ersten Bericht geschrieben.", "Meinen ersten Bericht schrieb ich 2003.", "Ich schrieb meinen ersten Bericht 2003."] },
-      { "t": "translate", "q": "У объекта современная кухня и новые окна.", "a": ["Das Objekt hat eine moderne Küche und neue Fenster.", "Das Objekt verfügt über eine moderne Küche und neue Fenster."] },
-      { "t": "translate", "q": "Местоположение оказывает большое влияние на стоимость.", "a": ["Die Lage hat einen großen Einfluss auf den Wert.", "Die Lage hat großen Einfluss auf den Wert.", "Die Lage übt einen großen Einfluss auf den Wert aus.", "Die Lage hat einen starken Einfluss auf den Wert."], "h": "der Einfluss auf + Akk.; der Wert" },
-      { "t": "translate", "q": "Я приду со всеми необходимыми документами.", "a": ["Ich komme mit allen nötigen Unterlagen.", "Ich komme mit allen notwendigen Unterlagen.", "Ich komme mit allen erforderlichen Unterlagen.", "Ich komme mit allen nötigen Dokumenten.", "Ich komme mit allen notwendigen Dokumenten.", "Ich komme mit allen erforderlichen Dokumenten.", "Ich werde mit allen nötigen Unterlagen kommen.", "Ich werde mit allen notwendigen Unterlagen kommen."] },
-      { "t": "fix", "q": "Das Haus hat einen große Garten.", "a": ["Das Haus hat einen großen Garten."] },
-      { "t": "fix", "q": "Das Objekt liegt in einer ruhigen Wohnlage mit gute Infrastruktur.", "a": ["Das Objekt liegt in einer ruhigen Wohnlage mit guter Infrastruktur."], "h": "mit + Dativ, без артикля." },
-      { "t": "fix", "q": "Der Gutachter kam mit allen nötigen Geräte.", "a": ["Der Gutachter kam mit allen nötigen Geräten."], "h": "Dativ Plural." },
-      { "t": "fix", "q": "Das Gebäude hat ein ausgebautes Dachgeschoss und einen trockenes Keller.", "a": ["Das Gebäude hat ein ausgebautes Dachgeschoss und einen trockenen Keller."] }
-    ],
-    "speak": [
-      { "ru": "Речь идёт об отдельно стоящем доме на одну семью 1985 года постройки.", "de": "Es handelt sich um ein freistehendes Einfamilienhaus aus dem Jahr 1985." },
-      { "ru": "Дом находится в тихом жилом районе с хорошей инфраструктурой.", "de": "Das Haus liegt in ruhiger Wohnlage mit guter Infrastruktur." },
-      { "ru": "На участке есть большой сад и двойной гараж.", "de": "Auf dem Grundstück gibt es einen großen Garten und eine Doppelgarage." },
-      { "ru": "Квартира оснащена современной кухней и новой ванной.", "de": "Die Wohnung ist mit einer modernen Küche und einem neuen Bad ausgestattet." },
-      { "ru": "Большие окна на южной стороне дают много света.", "de": "Die großen Fenster auf der Südseite sorgen für viel Licht." },
-      { "ru": "У дома сухой подвал и полностью отделанная мансарда.", "de": "Das Haus hat einen trockenen Keller und ein vollständig ausgebautes Dachgeschoss." },
-      { "ru": "На осмотр я беру с собой все необходимые документы.", "de": "Zur Besichtigung nehme ich alle nötigen Unterlagen mit." },
-      { "ru": "Свой первый отчёт я написал ещё в банке.", "de": "Meinen ersten Bericht habe ich noch bei der Bank geschrieben." },
-      { "ru": "Местоположение оказывает большое влияние на рыночную стоимость.", "de": "Die Lage hat einen großen Einfluss auf den Verkehrswert." },
-      { "ru": "Здание в хорошем состоянии, но отопление устарело.", "de": "Das Gebäude ist in gutem Zustand, aber die Heizung ist veraltet." },
-      { "ru": "У меня многолетний опыт оценки жилой и коммерческой недвижимости.", "de": "Ich habe langjährige Erfahrung in der Bewertung von Wohn- und Gewerbeimmobilien." },
-      { "ru": "Несмотря на старую крышу, объект в целом в хорошем состоянии.", "de": "Trotz des alten Dachs ist das Objekt insgesamt in gutem Zustand." }
+   },
+   {
+    "t": "gap",
+    "tag": "passiv",
+    "q": "Die Fenster müssen in den nächsten Jahren ausgetauscht ___.",
+    "a": [
+     "werden"
     ]
-  },
-
-  "g-relativ": {
-    "id": "g-relativ", "day": 8,
-    "de": "Relativsätze",
-    "ru": "Относительные придаточные",
-    "rule": "<p>Относительное придаточное описывает существительное и стоит сразу после него, глагол — в конце: <b>Das ist das Objekt, das ich gestern besichtigt habe.</b></p><p><b>Род и число</b> местоимения берутся от существительного, <b>падеж</b> — от его роли в придаточном. Формы совпадают с определённым артиклем, кроме: Dativ Plural <b>denen</b>, Genitiv <b>dessen</b> (m, n) и <b>deren</b> (f, Plural).</p><p><b>Предлог стоит перед местоимением</b> и определяет падеж: <b>die Bank, bei der ich gearbeitet habe; der Kollege, mit dem ich zusammenarbeite; die Unterlagen, um die ich gebeten habe; die Kunden, mit denen ich spreche</b>.</p><p><b>dessen / deren</b> = «чей, которого»: <b>der Eigentümer, dessen Haus wir bewerten; die Wohnung, deren Bad renoviert wurde</b>. Прилагательное после них склоняется как без артикля: <b>dessen neues Dach</b>.</p><p><b>wo</b> — для мест, особенно городов и стран: <b>in Kiew, wo ich lange gearbeitet habe</b>. Для организаций лучше предлог: <b>die Bank, bei der …</b> <b>was</b> — после alles, etwas, nichts: <b>alles, was ich brauche</b>.</p><p>Ошибки: <i>mit den ich</i> → <b>mit denen</b>; <i>der Nachbar, sein Garten …</i> → <b>dessen Garten</b>; <i>der Kunde, dem ich getroffen habe</i> → <b>den</b> (treffen + Akk.).</p>",
-    "examples": [
-      { "de": "Das ist das Objekt, das ich gestern besichtigt habe.", "ru": "Это объект, который я вчера осматривал." },
-      { "de": "Der Eigentümer, dessen Haus wir bewerten, lebt im Ausland.", "ru": "Собственник, чей дом мы оцениваем, живёт за границей." },
-      { "de": "Die Bank, bei der ich zehn Jahre gearbeitet habe, hatte über hundert Filialen.", "ru": "Банк, в котором я проработал десять лет, имел более ста отделений." },
-      { "de": "Die Wohnungen, deren Fenster nach Süden zeigen, sind besonders hell.", "ru": "Квартиры, окна которых выходят на юг, особенно светлые." },
-      { "de": "Ich komme aus Kiew, wo ich lange als Gutachter tätig war.", "ru": "Я из Киева, где я долго работал оценщиком." },
-      { "de": "Das ist alles, was ich für das Gutachten brauche.", "ru": "Это всё, что мне нужно для заключения." }
+   },
+   {
+    "t": "choice",
+    "tag": "konj2",
+    "q": "Ich ___ gern eine Kopie des Energieausweises.",
+    "o": [
+     "hätte",
+     "habe",
+     "hatte"
     ],
-    "drills": [
-      { "t": "gap", "q": "Das ist das Haus, ___ ich gestern besichtigt habe.", "a": ["das", "welches"] },
-      { "t": "gap", "q": "Der Kunde, ___ ich gestern angerufen habe, hat die Unterlagen geschickt.", "a": ["den", "welchen"], "h": "anrufen + Akkusativ." },
-      { "t": "choice", "q": "Die Bank, bei ___ ich gearbeitet habe, hat 150 Filialen.", "o": ["der", "die", "dem"], "a": ["der"] },
-      { "t": "gap", "q": "Die Kollegin, mit ___ ich das Gutachten erstellt habe, ist Architektin.", "a": ["der", "welcher"] },
-      { "t": "choice", "q": "Das Grundstück, auf ___ das Haus steht, ist 800 Quadratmeter groß.", "o": ["dem", "das", "den"], "a": ["dem"] },
-      { "t": "gap", "q": "Die Eigentümer, ___ ich das Ergebnis erklärt habe, waren zufrieden.", "a": ["denen", "welchen"], "h": "Dativ Plural." },
-      { "t": "gap", "q": "Das ist der Eigentümer, ___ Haus wir bewerten.", "a": ["dessen"] },
-      { "t": "choice", "q": "Die Kunden, ___ Kredite wir prüfen, kommen aus der Region.", "o": ["deren", "dessen", "denen"], "a": ["deren"] },
-      { "t": "gap", "q": "Die Wohnung, ___ Bad renoviert wurde, ist sofort bezugsfertig.", "a": ["deren"] },
-      { "t": "choice", "q": "Das ist alles, ___ ich für die Bewertung brauche.", "o": ["was", "das", "wo"], "a": ["was"] },
-      { "t": "transform", "i": "Mit Relativsatz verbinden.", "q": "Das ist das Gutachten. Ich habe es letzte Woche erstellt.", "a": ["Das ist das Gutachten, das ich letzte Woche erstellt habe."] },
-      { "t": "transform", "i": "Mit Relativsatz verbinden.", "q": "Der Kollege ist sehr erfahren. Ich arbeite mit ihm zusammen.", "a": ["Der Kollege, mit dem ich zusammenarbeite, ist sehr erfahren."] },
-      { "t": "transform", "i": "Mit Relativsatz verbinden.", "q": "Die Firma war ein großes Bewertungsunternehmen. Ich habe bei ihr gearbeitet.", "a": ["Die Firma, bei der ich gearbeitet habe, war ein großes Bewertungsunternehmen."] },
-      { "t": "order", "q": "das Objekt, / das / ich / morgen / besichtige, / liegt in Essen", "a": ["Das Objekt, das ich morgen besichtige, liegt in Essen."] },
-      { "t": "transform", "i": "Mit „dessen“ oder „deren“ verbinden.", "q": "Der Eigentümer lebt im Ausland. Sein Haus soll bewertet werden.", "a": ["Der Eigentümer, dessen Haus bewertet werden soll, lebt im Ausland."] },
-      { "t": "transform", "i": "Mit „dessen“ oder „deren“ verbinden.", "q": "Das Mehrfamilienhaus hat zwölf Wohnungen. Seine Fassade ist gedämmt.", "a": ["Das Mehrfamilienhaus, dessen Fassade gedämmt ist, hat zwölf Wohnungen."] },
-      { "t": "order", "q": "die Unterlagen, / um / die / ich / gebeten habe, / sind angekommen", "a": ["Die Unterlagen, um die ich gebeten habe, sind angekommen."] },
-      { "t": "transform", "i": "Mit „wo“ verbinden.", "q": "Ich habe lange in Kiew gearbeitet. Dort ist der Immobilienmarkt sehr groß.", "a": ["Ich habe lange in Kiew gearbeitet, wo der Immobilienmarkt sehr groß ist."] },
-      { "t": "transform", "i": "Mit Relativsatz verbinden.", "q": "Die Mieter sind zufrieden. Der Vermieter hat ihnen neue Fenster eingebaut.", "a": ["Die Mieter, denen der Vermieter neue Fenster eingebaut hat, sind zufrieden."] },
-      { "t": "order", "q": "das ist / der Kreditberater, / dem / ich / das Gutachten / geschickt habe", "a": ["Das ist der Kreditberater, dem ich das Gutachten geschickt habe."] },
-      { "t": "translate", "q": "Это дом, который я оцениваю.", "a": ["Das ist das Haus, das ich bewerte.", "Das ist das Haus, das ich begutachte.", "Das ist das Haus, das ich gerade bewerte."] },
-      { "t": "translate", "q": "Банк, в котором я работал, был очень большим.", "a": ["Die Bank, bei der ich gearbeitet habe, war sehr groß.", "Die Bank, in der ich gearbeitet habe, war sehr groß.", "Die Bank, für die ich gearbeitet habe, war sehr groß.", "Die Bank, wo ich gearbeitet habe, war sehr groß.", "Die Bank, bei der ich arbeitete, war sehr groß.", "Die Bank, in der ich arbeitete, war sehr groß."] },
-      { "t": "translate", "q": "Собственник, чей дом мы оцениваем, живёт в Дюссельдорфе.", "a": ["Der Eigentümer, dessen Haus wir bewerten, lebt in Düsseldorf.", "Der Eigentümer, dessen Haus wir bewerten, wohnt in Düsseldorf."] },
-      { "t": "translate", "q": "Квартиры, окна которых выходят на юг, очень светлые.", "a": ["Die Wohnungen, deren Fenster nach Süden gehen, sind sehr hell.", "Die Wohnungen, deren Fenster nach Süden zeigen, sind sehr hell.", "Die Wohnungen, deren Fenster nach Süden ausgerichtet sind, sind sehr hell.", "Die Wohnungen, deren Fenster nach Süden liegen, sind sehr hell."] },
-      { "t": "translate", "q": "Коллега, с которым я работаю, — архитектор.", "a": ["Der Kollege, mit dem ich arbeite, ist Architekt.", "Der Kollege, mit dem ich zusammenarbeite, ist Architekt."] },
-      { "t": "translate", "q": "Это всё, что мне нужно для заключения.", "a": ["Das ist alles, was ich für das Gutachten brauche.", "Das ist alles, was ich für das Gutachten benötige.", "Das ist alles, was ich für mein Gutachten brauche."] },
-      { "t": "fix", "q": "Das ist der Kunde, dem ich gestern getroffen habe.", "a": ["Das ist der Kunde, den ich gestern getroffen habe."], "h": "treffen + Akkusativ." },
-      { "t": "fix", "q": "Die Eigentümer, mit den ich gesprochen habe, waren sehr freundlich.", "a": ["Die Eigentümer, mit denen ich gesprochen habe, waren sehr freundlich."], "h": "Dativ Plural относительного местоимения." },
-      { "t": "fix", "q": "Der Nachbar, sein Garten an das Grundstück grenzt, hat Einspruch erhoben.", "a": ["Der Nachbar, dessen Garten an das Grundstück grenzt, hat Einspruch erhoben."] },
-      { "t": "fix", "q": "Das ist das Gutachten, das ich habe gestern geschrieben.", "a": ["Das ist das Gutachten, das ich gestern geschrieben habe."], "h": "Порядок слов в придаточном." }
-    ],
-    "speak": [
-      { "ru": "Это банк, в котором я проработал десять лет.", "de": "Das ist die Bank, bei der ich zehn Jahre gearbeitet habe." },
-      { "ru": "Я оценивал объекты, которые служили кредитным обеспечением.", "de": "Ich habe Objekte bewertet, die als Kreditsicherheiten dienten." },
-      { "ru": "Собственник, чей дом мы осматриваем, живёт за границей.", "de": "Der Eigentümer, dessen Haus wir besichtigen, lebt im Ausland." },
-      { "ru": "Это коллега, с которым я составил своё первое заключение.", "de": "Das ist der Kollege, mit dem ich mein erstes Gutachten erstellt habe." },
-      { "ru": "Квартира, окна которой выходят во двор, очень тихая.", "de": "Die Wohnung, deren Fenster zum Hof gehen, ist sehr ruhig." },
-      { "ru": "Я из Харькова, где я пятнадцать лет работал оценщиком.", "de": "Ich komme aus Charkiw, wo ich fünfzehn Jahre als Gutachter gearbeitet habe." },
-      { "ru": "Документы, о которых вы спрашивали, я пришлю вам завтра.", "de": "Die Unterlagen, nach denen Sie gefragt haben, schicke ich Ihnen morgen." },
-      { "ru": "Это всё, что я могу сказать о состоянии здания.", "de": "Das ist alles, was ich zum Zustand des Gebäudes sagen kann." },
-      { "ru": "Участок, на котором стоит дом, имеет площадь 650 квадратных метров.", "de": "Das Grundstück, auf dem das Haus steht, ist 650 Quadratmeter groß." },
-      { "ru": "Клиенты, которым я объяснял результат, были довольны.", "de": "Die Kunden, denen ich das Ergebnis erklärt habe, waren zufrieden." },
-      { "ru": "Я ищу должность, на которой смогу использовать свой опыт.", "de": "Ich suche eine Stelle, in der ich meine Erfahrung einsetzen kann." },
-      { "ru": "Недостатки, которые я обнаружил, указаны в протоколе.", "de": "Die Mängel, die ich festgestellt habe, stehen im Protokoll." }
+    "a": [
+     "hätte"
     ]
-  },
-
-  "g-passiv": {
-    "id": "g-passiv", "day": 9,
-    "de": "Vorgangspassiv: Baujahr und Modernisierung",
-    "ru": "Пассив действия: год постройки и модернизация",
-    "rule": "<p>Пассив показывает действие, а не исполнителя. В заключении это основная форма: важно, <i>что</i> сделано, а не <i>кто</i> это сделал. Образование: <b>werden + Partizip II</b>.</p><table><tr><th>Форма</th><th>Пример</th></tr><tr><td>Präsens</td><td><b>Das Gutachten wird geprüft.</b></td></tr><tr><td>Präteritum</td><td><b>Das Dach wurde 2015 erneuert.</b></td></tr><tr><td>Perfekt</td><td><b>Das Dach ist 2015 erneuert worden.</b></td></tr><tr><td>с модальным глаголом</td><td><b>Die Fenster müssen ausgetauscht werden.</b></td></tr></table><p>В тексте о модернизации чаще <b>Präteritum</b> (wurde), в разговоре — и Präteritum, и Perfekt. В Perfekt вспомогательный глагол <b>sein</b>, а форма — <b>worden</b>, без ge-. Модальный глагол в прошедшем: <b>Die Heizung musste erneuert werden.</b></p><p>Исполнитель — <b>von + Dativ</b>: <b>von einem Fachbetrieb</b>; причина — <b>durch + Akk.</b>: <b>durch einen Wasserschaden beschädigt</b>. Глагол согласуется с подлежащим: <b>Die Fenster wurden …</b></p><p>Из man-предложения: <b>Man erneuerte das Dach.</b> → <b>Das Dach wurde erneuert.</b></p><p>Ошибки: <i>ist erneuert geworden</i> → <b>ist erneuert worden</b>; <i>wurde erneuert worden</i> → <b>wurde erneuert</b>; <i>muss erneuert worden</i> → <b>muss erneuert werden</b>.</p>",
-    "examples": [
-      { "de": "Das Dach wurde 2015 vollständig erneuert.", "ru": "Крыша была полностью обновлена в 2015 году." },
-      { "de": "Die Heizungsanlage ist 2019 ausgetauscht worden.", "ru": "Отопительная система была заменена в 2019 году." },
-      { "de": "Die Fenster müssen in den nächsten Jahren ersetzt werden.", "ru": "Окна придётся заменить в ближайшие годы." },
-      { "de": "Das Gutachten wird vom Kreditberater geprüft.", "ru": "Заключение проверяется кредитным консультантом." },
-      { "de": "Die Fassade wurde von einem Fachbetrieb gedämmt.", "ru": "Фасад был утеплён специализированной фирмой." },
-      { "de": "Das Bad soll im nächsten Jahr modernisiert werden.", "ru": "Ванную планируют модернизировать в следующем году." }
-    ],
-    "drills": [
-      { "t": "gap", "q": "Das Dach ___ 2015 erneuert. (Präteritum)", "a": ["wurde"] },
-      { "t": "gap", "q": "Das Gutachten ___ vom Kreditberater geprüft. (Präsens)", "a": ["wird"] },
-      { "t": "gap", "q": "Die Fenster ___ 2018 ausgetauscht. (Präteritum)", "a": ["wurden"] },
-      { "t": "choice", "q": "Das Bad ist 2021 renoviert ___.", "o": ["worden", "geworden", "werden"], "a": ["worden"] },
-      { "t": "gap", "q": "Die Fassade muss in den nächsten Jahren gedämmt ___.", "a": ["werden"] },
-      { "t": "choice", "q": "Die Elektrik ___ 2010 komplett erneuert.", "o": ["wurde", "wurden", "wird worden"], "a": ["wurde"] },
-      { "t": "gap", "q": "Die Heizung ist 2020 modernisiert ___.", "a": ["worden"] },
-      { "t": "choice", "q": "Die Fenster müssen dringend ___.", "o": ["ausgetauscht werden", "ausgetauscht worden", "austauschen werden"], "a": ["ausgetauscht werden"] },
-      { "t": "gap", "q": "Die Leitungen sind vor zehn Jahren ___ worden. (erneuern)", "a": ["erneuert"] },
-      { "t": "choice", "q": "Die Dämmung wurde ___ einem Fachbetrieb ausgeführt.", "o": ["von", "vom", "mit"], "a": ["von"] },
-      { "t": "transform", "i": "Ins Passiv (Präsens) setzen.", "q": "Man prüft das Grundbuch.", "a": ["Das Grundbuch wird geprüft."] },
-      { "t": "transform", "i": "Ins Passiv (Präteritum) setzen.", "q": "Man erneuerte das Dach 2015.", "a": ["Das Dach wurde 2015 erneuert.", "2015 wurde das Dach erneuert."] },
-      { "t": "order", "q": "wurde / das Bad / 2017 / modernisiert", "a": ["Das Bad wurde 2017 modernisiert.", "2017 wurde das Bad modernisiert."] },
-      { "t": "transform", "i": "Ins Passiv (Perfekt) setzen.", "q": "Man hat die Heizung 2019 ausgetauscht.", "a": ["Die Heizung ist 2019 ausgetauscht worden.", "2019 ist die Heizung ausgetauscht worden."] },
-      { "t": "transform", "i": "Passiv Präteritum → Passiv Perfekt.", "q": "Die Fenster wurden 2018 ersetzt.", "a": ["Die Fenster sind 2018 ersetzt worden.", "2018 sind die Fenster ersetzt worden."] },
-      { "t": "transform", "i": "Passiv mit Modalverb bilden.", "q": "Man muss die Fassade sanieren.", "a": ["Die Fassade muss saniert werden."] },
-      { "t": "order", "q": "ist / die Heizung / worden / im Jahr 2020 / erneuert", "a": ["Die Heizung ist im Jahr 2020 erneuert worden.", "Im Jahr 2020 ist die Heizung erneuert worden."] },
-      { "t": "transform", "i": "Ins Passiv (Präteritum) mit „von“ setzen.", "q": "Ein Fachbetrieb dämmte das Dach.", "a": ["Das Dach wurde von einem Fachbetrieb gedämmt."] },
-      { "t": "transform", "i": "Passiv mit Modalverb im Präteritum bilden.", "q": "Man sollte die Leitungen schon 2010 erneuern.", "a": ["Die Leitungen sollten schon 2010 erneuert werden.", "Schon 2010 sollten die Leitungen erneuert werden."] },
-      { "t": "order", "q": "müssen / in den nächsten Jahren / die Fenster / werden / ausgetauscht", "a": ["Die Fenster müssen in den nächsten Jahren ausgetauscht werden.", "In den nächsten Jahren müssen die Fenster ausgetauscht werden."] },
-      { "t": "translate", "q": "Крыша была обновлена в 2015 году.", "a": ["Das Dach wurde 2015 erneuert.", "2015 wurde das Dach erneuert.", "Das Dach wurde im Jahr 2015 erneuert.", "Im Jahr 2015 wurde das Dach erneuert.", "Das Dach ist 2015 erneuert worden.", "2015 ist das Dach erneuert worden.", "Das Dach ist im Jahr 2015 erneuert worden.", "Im Jahr 2015 ist das Dach erneuert worden."], "h": "erneuern" },
-      { "t": "translate", "q": "Окна нужно заменить.", "a": ["Die Fenster müssen ausgetauscht werden.", "Die Fenster müssen ersetzt werden.", "Die Fenster müssen erneuert werden."] },
-      { "t": "translate", "q": "Заключение проверяется кредитным консультантом.", "a": ["Das Gutachten wird vom Kreditberater geprüft.", "Das Gutachten wird von dem Kreditberater geprüft.", "Das Gutachten wird von einem Kreditberater geprüft.", "Das Gutachten wird vom Kreditberater überprüft."], "h": "der Kreditberater" },
-      { "t": "translate", "q": "Отопление было модернизировано в 2019 году.", "a": ["Die Heizung wurde 2019 modernisiert.", "2019 wurde die Heizung modernisiert.", "Die Heizung wurde im Jahr 2019 modernisiert.", "Im Jahr 2019 wurde die Heizung modernisiert.", "Die Heizung ist 2019 modernisiert worden.", "2019 ist die Heizung modernisiert worden.", "Die Heizung ist im Jahr 2019 modernisiert worden.", "Im Jahr 2019 ist die Heizung modernisiert worden."] },
-      { "t": "translate", "q": "Фасад должен быть утеплён до 2030 года.", "a": ["Die Fassade muss bis 2030 gedämmt werden.", "Bis 2030 muss die Fassade gedämmt werden.", "Die Fassade muss bis zum Jahr 2030 gedämmt werden.", "Bis zum Jahr 2030 muss die Fassade gedämmt werden."], "h": "dämmen" },
-      { "t": "translate", "q": "Ванная была отремонтирована специализированной фирмой.", "a": ["Das Bad wurde von einer Fachfirma renoviert.", "Das Bad ist von einer Fachfirma renoviert worden.", "Das Badezimmer wurde von einer Fachfirma renoviert.", "Das Badezimmer ist von einer Fachfirma renoviert worden.", "Das Bad wurde von einer Fachfirma saniert.", "Das Bad ist von einer Fachfirma saniert worden."], "h": "die Fachfirma; renovieren" },
-      { "t": "fix", "q": "Das Dach ist 2015 erneuert geworden.", "a": ["Das Dach ist 2015 erneuert worden."] },
-      { "t": "fix", "q": "Die Fenster wurde 2018 ausgetauscht.", "a": ["Die Fenster wurden 2018 ausgetauscht."], "h": "Согласование с подлежащим." },
-      { "t": "fix", "q": "Die Heizung muss bald erneuert worden.", "a": ["Die Heizung muss bald erneuert werden."] },
-      { "t": "fix", "q": "Das Bad wurde 2020 renoviert worden.", "a": ["Das Bad wurde 2020 renoviert.", "Das Bad ist 2020 renoviert worden."], "h": "Смешаны Präteritum и Perfekt." }
-    ],
-    "speak": [
-      { "ru": "Дом был построен в 1972 году и расширен в 1995 году.", "de": "Das Haus wurde 1972 gebaut und 1995 erweitert." },
-      { "ru": "Крыша была полностью обновлена в 2015 году.", "de": "Das Dach wurde 2015 vollständig erneuert." },
-      { "ru": "Отопление было заменено специализированной фирмой в 2019 году.", "de": "Die Heizung ist 2019 von einer Fachfirma ausgetauscht worden." },
-      { "ru": "Окна нужно будет заменить в ближайшие годы.", "de": "Die Fenster müssen in den nächsten Jahren ausgetauscht werden." },
-      { "ru": "Электропроводка ещё ни разу не обновлялась.", "de": "Die Elektroinstallation ist noch nie erneuert worden." },
-      { "ru": "Заключение сначала проверяется руководителем отдела.", "de": "Das Gutachten wird zuerst vom Abteilungsleiter geprüft." },
-      { "ru": "Подвал был гидроизолирован после затопления.", "de": "Der Keller wurde nach einem Wasserschaden abgedichtet." },
-      { "ru": "Все документы были предоставлены собственником.", "de": "Alle Unterlagen wurden vom Eigentümer zur Verfügung gestellt." },
-      { "ru": "Фасад следует утеплить в ближайшее время.", "de": "Die Fassade sollte bald gedämmt werden." },
-      { "ru": "В 2020 году ванная была полностью отремонтирована.", "de": "Im Jahr 2020 wurde das Bad komplett renoviert." },
-      { "ru": "Объект осматривается перед каждой выдачей кредита.", "de": "Das Objekt wird vor jeder Kreditvergabe besichtigt." },
-      { "ru": "Мансарда была переоборудована под жильё в 2005 году.", "de": "Das Dachgeschoss wurde 2005 zu Wohnraum ausgebaut." }
+   },
+   {
+    "t": "gap",
+    "tag": "relativ",
+    "q": "Das ist das Gebäude, ___ Dach 2019 saniert wurde.",
+    "a": [
+     "dessen"
     ]
-  },
-
-  "g-zustand": {
-    "id": "g-zustand", "day": 10,
-    "de": "Zustandspassiv und Partizip II als Adjektiv",
-    "ru": "Пассив состояния и Partizip II как прилагательное",
-    "rule": "<p><b>Vorgangspassiv</b> (werden + Partizip II) — процесс, то, что <i>происходит</i>: <b>Die Fassade wird gerade gedämmt.</b><br><b>Zustandspassiv</b> (sein + Partizip II) — результат, <i>в каком состоянии</i> объект: <b>Die Fassade ist gedämmt.</b></p><p>Проверка: вопрос «Was passiert?» → werden; «In welchem Zustand?» → sein. Прошедшее время состояния — <b>war</b>: <b>Bei der Besichtigung war die Wohnung bereits geräumt.</b></p><p>В описании объекта Zustandspassiv встречается постоянно: <b>Das Haus ist voll unterkellert. Das Grundstück ist erschlossen. Die Fenster sind zweifach verglast. Die Wohnung ist vermietet.</b></p><p><b>Partizip II как прилагательное</b> стоит перед существительным и получает обычные окончания: <b>die modernisierte Heizung, ein unterkellertes Haus, mit ausgebautem Dachgeschoss, die vermieteten Wohnungen</b>.</p><p>Указание исполнителя (<b>von …</b>) почти всегда означает Vorgangspassiv: <b>Die Fassade wurde von einem Fachbetrieb gedämmt.</b></p><p>Ошибки: <i>Das Haus wird unterkellert</i> (= подвал сейчас строят!) → <b>Das Haus ist unterkellert</b>; <i>die modernisiert Heizung</i> → <b>die modernisierte Heizung</b>.</p>",
-    "examples": [
-      { "de": "Das Gebäude ist voll unterkellert.", "ru": "Под всем зданием есть подвал." },
-      { "de": "Die Fassade wird zurzeit gedämmt, im Frühjahr ist sie fertig gedämmt.", "ru": "Фасад сейчас утепляют, весной он будет полностью утеплён." },
-      { "de": "Das Grundstück ist voll erschlossen.", "ru": "Участок полностью подключён к коммуникациям." },
-      { "de": "Die modernisierte Heizung entspricht dem aktuellen Standard.", "ru": "Модернизированное отопление соответствует современному стандарту." },
-      { "de": "Die Wohnung ist seit 2018 an eine Familie vermietet.", "ru": "Квартира с 2018 года сдана в аренду семье." },
-      { "de": "Wir haben ein gepflegtes Einfamilienhaus mit ausgebautem Dachgeschoss besichtigt.", "ru": "Мы осмотрели ухоженный дом на одну семью с отделанной мансардой." }
+   },
+   {
+    "t": "gap",
+    "tag": "zahlen",
+    "q": "Das Gespräch findet am ___ Dezember statt. (21.)",
+    "a": [
+     "einundzwanzigsten"
     ],
-    "drills": [
-      { "t": "gap", "q": "Das Haus ___ voll unterkellert. (Zustand)", "a": ["ist"] },
-      { "t": "gap", "q": "Die Fenster ___ gerade ausgetauscht. (Vorgang, Präsens)", "a": ["werden"] },
-      { "t": "gap", "q": "Das Grundstück ist bereits ___. (erschließen)", "a": ["erschlossen"] },
-      { "t": "choice", "q": "Das Haus hat einen ___ Keller.", "o": ["ausgebauten", "ausgebaut", "ausgebauter"], "a": ["ausgebauten"] },
-      { "t": "gap", "q": "Die ___ Heizung arbeitet sehr effizient. (modernisieren)", "a": ["modernisierte"] },
-      { "t": "choice", "q": "Zurzeit ___ das Bad renoviert, deshalb ist es nicht nutzbar.", "o": ["wird", "ist", "hat"], "a": ["wird"] },
-      { "t": "gap", "q": "Das Objekt verfügt über ein ___ Dachgeschoss. (ausbauen)", "a": ["ausgebautes"] },
-      { "t": "choice", "q": "Wir haben ein ___ Mehrfamilienhaus besichtigt.", "o": ["gepflegtes", "gepflegte", "gepflegten"], "a": ["gepflegtes"] },
-      { "t": "gap", "q": "Bei der Besichtigung ___ die Wohnung schon geräumt. (Zustand, Präteritum)", "a": ["war"] },
-      { "t": "choice", "q": "Die Fassade ___ 2017 von einem Fachbetrieb gedämmt.", "o": ["wurde", "war", "ist"], "a": ["wurde"] },
-      { "t": "transform", "i": "Zustandspassiv bilden (Ergebnis).", "q": "Das Dach wurde gedämmt.", "a": ["Das Dach ist gedämmt."] },
-      { "t": "transform", "i": "Zustandspassiv bilden.", "q": "Man hat das Grundstück erschlossen.", "a": ["Das Grundstück ist erschlossen."] },
-      { "t": "order", "q": "ist / das Gebäude / seit dem Umbau / voll / unterkellert", "a": ["Das Gebäude ist seit dem Umbau voll unterkellert.", "Seit dem Umbau ist das Gebäude voll unterkellert."] },
-      { "t": "transform", "i": "Partizip als Adjektiv verwenden.", "q": "Die Heizung wurde modernisiert. Sie ist sehr sparsam.", "a": ["Die modernisierte Heizung ist sehr sparsam."] },
-      { "t": "transform", "i": "Partizip als Adjektiv verwenden.", "q": "Das Haus hat einen Keller. Der Keller ist ausgebaut.", "a": ["Das Haus hat einen ausgebauten Keller."] },
-      { "t": "transform", "i": "Vorgangspassiv (Präsens) bilden.", "q": "Die Handwerker renovieren gerade die Küche.", "a": ["Die Küche wird gerade renoviert.", "Die Küche wird gerade von den Handwerkern renoviert."] },
-      { "t": "order", "q": "verfügt über / die Wohnung / einen / Balkon / überdachten", "a": ["Die Wohnung verfügt über einen überdachten Balkon."] },
-      { "t": "transform", "i": "Zustandspassiv im Präteritum bilden.", "q": "Man hatte alle Räume geräumt.", "a": ["Alle Räume waren geräumt."] },
-      { "t": "transform", "i": "Partizip als Adjektiv verwenden.", "q": "Die Wohnungen sind vermietet. Sie bringen gute Erträge.", "a": ["Die vermieteten Wohnungen bringen gute Erträge."] },
-      { "t": "order", "q": "war / bei der Besichtigung / das Dachgeschoss / bereits ausgebaut", "a": ["Bei der Besichtigung war das Dachgeschoss bereits ausgebaut.", "Das Dachgeschoss war bei der Besichtigung bereits ausgebaut."] },
-      { "t": "translate", "q": "Под всем домом есть подвал.", "a": ["Das Haus ist voll unterkellert.", "Das Haus ist vollständig unterkellert.", "Das Haus ist komplett unterkellert.", "Das Haus ist vollunterkellert."], "h": "unterkellert" },
-      { "t": "translate", "q": "Участок полностью подключён к коммуникациям.", "a": ["Das Grundstück ist voll erschlossen.", "Das Grundstück ist vollständig erschlossen.", "Das Grundstück ist komplett erschlossen."], "h": "erschließen" },
-      { "t": "translate", "q": "Модернизированное отопление работает экономично.", "a": ["Die modernisierte Heizung arbeitet sparsam.", "Die modernisierte Heizung arbeitet wirtschaftlich.", "Die modernisierte Heizung arbeitet effizient.", "Die modernisierte Heizung läuft sparsam.", "Die modernisierte Heizungsanlage arbeitet sparsam.", "Die modernisierte Heizungsanlage arbeitet wirtschaftlich."] },
-      { "t": "translate", "q": "Сейчас ремонтируют кухню.", "a": ["Die Küche wird gerade renoviert.", "Die Küche wird zurzeit renoviert.", "Zurzeit wird die Küche renoviert.", "Die Küche wird im Moment renoviert.", "Im Moment wird die Küche renoviert.", "Gerade wird die Küche renoviert.", "Die Küche wird derzeit renoviert.", "Derzeit wird die Küche renoviert."], "h": "Vorgangspassiv" },
-      { "t": "translate", "q": "Квартира сдана в аренду и находится в ухоженном состоянии.", "a": ["Die Wohnung ist vermietet und befindet sich in gepflegtem Zustand.", "Die Wohnung ist vermietet und in gepflegtem Zustand.", "Die Wohnung ist vermietet und befindet sich in einem gepflegten Zustand.", "Die Wohnung ist vermietet und in einem gepflegten Zustand."] },
-      { "t": "translate", "q": "Мы осмотрели дом с отделанной мансардой.", "a": ["Wir haben ein Haus mit ausgebautem Dachgeschoss besichtigt.", "Wir haben ein Haus mit einem ausgebauten Dachgeschoss besichtigt.", "Wir besichtigten ein Haus mit ausgebautem Dachgeschoss.", "Wir besichtigten ein Haus mit einem ausgebauten Dachgeschoss.", "Wir haben das Haus mit dem ausgebauten Dachgeschoss besichtigt."], "h": "das Dachgeschoss; ausbauen" },
-      { "t": "fix", "q": "Das Haus wird voll unterkellert, das sieht man auf den Fotos.", "a": ["Das Haus ist voll unterkellert, das sieht man auf den Fotos."], "h": "Это состояние, а не процесс." },
-      { "t": "fix", "q": "Die modernisiert Heizung ist sehr sparsam.", "a": ["Die modernisierte Heizung ist sehr sparsam."] },
-      { "t": "fix", "q": "Das Objekt verfügt über einen ausgebautes Dachgeschoss.", "a": ["Das Objekt verfügt über ein ausgebautes Dachgeschoss."], "h": "das Dachgeschoss." },
-      { "t": "fix", "q": "Zurzeit ist die Fassade gedämmt, deshalb steht ein Gerüst am Haus.", "a": ["Zurzeit wird die Fassade gedämmt, deshalb steht ein Gerüst am Haus."], "h": "Работы идут прямо сейчас." }
-    ],
-    "speak": [
-      { "ru": "Под всем домом есть подвал, мансарда отделана под жильё.", "de": "Das Haus ist voll unterkellert, das Dachgeschoss ist ausgebaut." },
-      { "ru": "Участок полностью подключён к коммуникациям и огорожен.", "de": "Das Grundstück ist voll erschlossen und eingezäunt." },
-      { "ru": "Окна с двойным остеклением, фасад утеплён.", "de": "Die Fenster sind zweifach verglast, die Fassade ist gedämmt." },
-      { "ru": "Сейчас полностью ремонтируют лестничную клетку.", "de": "Zurzeit wird das Treppenhaus komplett renoviert." },
-      { "ru": "Модернизированная система отопления соответствует современным требованиям.", "de": "Die modernisierte Heizungsanlage entspricht den aktuellen Anforderungen." },
-      { "ru": "Все двенадцать квартир сданы в аренду на длительный срок.", "de": "Alle zwölf Wohnungen sind langfristig vermietet." },
-      { "ru": "Во время осмотра подвал был уже осушен.", "de": "Bei der Besichtigung war der Keller bereits trockengelegt." },
-      { "ru": "Речь идёт об ухоженном доме с отремонтированной ванной.", "de": "Es handelt sich um ein gepflegtes Haus mit einem renovierten Bad." },
-      { "ru": "Крыша не утеплена, это нужно учесть в оценке.", "de": "Das Dach ist nicht gedämmt, das muss in der Bewertung berücksichtigt werden." },
-      { "ru": "Гараж был пристроен в 1998 году и с тех пор не менялся.", "de": "Die Garage wurde 1998 angebaut und ist seitdem unverändert." },
-      { "ru": "Объект сдаётся в аренду с 2015 года.", "de": "Das Objekt ist seit 2015 vermietet." },
-      { "ru": "Повреждённые водосточные трубы нужно заменить.", "de": "Die beschädigten Fallrohre müssen ersetzt werden." }
+    "h": "Напишите порядковое числительное словами."
+   },
+   {
+    "t": "order",
+    "tag": "wortstellung",
+    "q": "seit 2023 / im Ruhrgebiet / ich / wohne",
+    "a": [
+     "Ich wohne seit 2023 im Ruhrgebiet.",
+     "Seit 2023 wohne ich im Ruhrgebiet.",
+     "Im Ruhrgebiet wohne ich seit 2023.",
+     "Ich wohne im Ruhrgebiet seit 2023."
     ]
-  },
-
-  "g-gegensatz": {
-    "id": "g-gegensatz", "day": 11,
-    "de": "Gegensätze und Einschränkungen",
-    "ru": "Противопоставление и уступка",
-    "rule": "<p><b>obwohl</b> — «хотя», придаточное, глагол в конце: <b>Obwohl das Haus alt ist, ist es gut gepflegt.</b></p><p><b>trotzdem / dennoch</b> — «тем не менее». Это наречия главного предложения: на первом месте (глагол сразу после) или после глагола: <b>Die Fenster sind alt, trotzdem ist die Wohnung warm.</b> / <b>… die Wohnung ist trotzdem warm.</b></p><p><b>jedoch, allerdings</b> — «однако», деловой стиль. Чаще всего после глагола: <b>Die Lage ist gut, die Ausstattung ist jedoch einfach.</b> На первом месте — с инверсией: <b>Allerdings ist die Ausstattung einfach.</b> <b>allerdings</b> мягко ограничивает сказанное — удобно на собеседовании: <b>Ich kenne noch nicht alle Vorschriften, allerdings lerne ich schnell.</b></p><p><b>zwar … aber</b> — «правда, … но»: <b>Das Haus ist zwar klein, aber gut geschnitten.</b></p><p><b>während</b> — противопоставление двух фактов: <b>Während die Mikrolage gut ist, ist die Makrolage eher schwach.</b></p><p><b>trotz</b> + Genitiv: <b>trotz der Mängel, trotz des hohen Alters</b>.</p><p>Ошибки: <i>Trotzdem das Haus alt ist</i> → <b>Obwohl das Haus alt ist</b>; <i>trotzdem sie ist hell</i> → <b>trotzdem ist sie hell</b>; <i>obwohl die Lage ist gut</i> → <b>obwohl die Lage gut ist</b>.</p>",
-    "examples": [
-      { "de": "Obwohl das Gebäude über fünfzig Jahre alt ist, befindet es sich in gutem Zustand.", "ru": "Хотя зданию больше пятидесяти лет, оно в хорошем состоянии." },
-      { "de": "Die Heizung ist veraltet, trotzdem ist die Wohnung gut vermietbar.", "ru": "Отопление устарело, тем не менее квартиру легко сдать." },
-      { "de": "Die Lage ist sehr gut, die Ausstattung ist jedoch einfach.", "ru": "Местоположение очень хорошее, однако оснащение простое." },
-      { "de": "Das Haus ist zwar klein, aber sehr gut geschnitten.", "ru": "Дом, правда, небольшой, но с очень удачной планировкой." },
-      { "de": "Während die Mikrolage sehr gut ist, ist die Makrolage eher schwach.", "ru": "В то время как микролокация очень хорошая, макролокация скорее слабая." },
-      { "de": "Trotz der Mängel am Dach halten wir den Kaufpreis für angemessen.", "ru": "Несмотря на недостатки крыши, мы считаем цену покупки адекватной." }
-    ],
-    "drills": [
-      { "t": "gap", "q": "___ das Haus alt ist, ist es in gutem Zustand.", "a": ["Obwohl", "Obgleich", "Auch wenn"] },
-      { "t": "gap", "q": "Die Fenster sind alt, ___ ist die Wohnung warm.", "a": ["trotzdem", "dennoch", "jedoch", "doch"] },
-      { "t": "choice", "q": "___ der hohen Nachfrage sind die Preise nicht gestiegen.", "o": ["Trotz", "Obwohl", "Trotzdem"], "a": ["Trotz"] },
-      { "t": "gap", "q": "Das Haus ist ___ klein, aber sehr gut geschnitten.", "a": ["zwar"] },
-      { "t": "choice", "q": "___ ich noch nicht lange in Deutschland lebe, kenne ich den regionalen Markt gut.", "o": ["Obwohl", "Trotzdem", "Trotz"], "a": ["Obwohl"] },
-      { "t": "gap", "q": "Trotz ___ Mängel ist das Objekt gut verkäuflich.", "a": ["der"], "h": "trotz + Genitiv Plural." },
-      { "t": "choice", "q": "Das Objekt liegt zentral, ___ es ist sehr laut.", "o": ["aber", "trotzdem", "obwohl"], "a": ["aber"] },
-      { "t": "gap", "q": "Die Lage ist hervorragend, die Ausstattung ist ___ einfach.", "a": ["jedoch", "allerdings", "aber", "dagegen", "hingegen"] },
-      { "t": "choice", "q": "Ich habe wenig Erfahrung mit deutschem Recht, ___ lerne ich sehr schnell.", "o": ["allerdings", "obwohl", "trotz"], "a": ["allerdings"] },
-      { "t": "gap", "q": "___ die Mikrolage sehr gut ist, ist die Makrolage eher schwach.", "a": ["Während", "Obwohl"], "h": "während — противопоставление двух фактов (obwohl здесь тоже возможно)." },
-      { "t": "transform", "i": "Mit „obwohl“ verbinden.", "q": "Das Haus ist alt. Es ist gut gepflegt.", "a": ["Obwohl das Haus alt ist, ist es gut gepflegt.", "Das Haus ist gut gepflegt, obwohl es alt ist."] },
-      { "t": "transform", "i": "Mit „trotzdem“ verbinden.", "q": "Die Heizung ist veraltet. Die Wohnung ist gut vermietbar.", "a": ["Die Heizung ist veraltet, trotzdem ist die Wohnung gut vermietbar.", "Die Heizung ist veraltet, die Wohnung ist trotzdem gut vermietbar.", "Die Heizung ist veraltet, aber die Wohnung ist trotzdem gut vermietbar."] },
-      { "t": "transform", "i": "Mit „zwar … aber“ umformen.", "q": "Das Grundstück ist klein, aber gut geschnitten.", "a": ["Das Grundstück ist zwar klein, aber gut geschnitten."] },
-      { "t": "order", "q": "obwohl / das Objekt / gut vermietet / ist, / ist / die Rendite / niedrig", "a": ["Obwohl das Objekt gut vermietet ist, ist die Rendite niedrig."] },
-      { "t": "transform", "i": "Mit „jedoch“ nach dem Verb umformen.", "q": "Die Lage ist gut, aber die Ausstattung ist einfach.", "a": ["Die Lage ist gut, die Ausstattung ist jedoch einfach."] },
-      { "t": "transform", "i": "„obwohl“-Satz durch „trotz“ + Genitiv ersetzen (das Alter).", "q": "Obwohl das Gebäude alt ist, erzielt es einen guten Preis.", "a": ["Trotz seines Alters erzielt das Gebäude einen guten Preis.", "Trotz des Alters erzielt das Gebäude einen guten Preis.", "Das Gebäude erzielt trotz seines Alters einen guten Preis.", "Das Gebäude erzielt trotz des Alters einen guten Preis."] },
-      { "t": "order", "q": "ist / die Wohnung / zwar / klein, / gut geschnitten / aber", "a": ["Die Wohnung ist zwar klein, aber gut geschnitten."] },
-      { "t": "transform", "i": "Mit „während“ verbinden (Gegensatz).", "q": "Die Wohnungen im Erdgeschoss sind dunkel. Die Wohnungen oben sind sehr hell.", "a": ["Während die Wohnungen im Erdgeschoss dunkel sind, sind die Wohnungen oben sehr hell.", "Die Wohnungen im Erdgeschoss sind dunkel, während die Wohnungen oben sehr hell sind.", "Die Wohnungen oben sind sehr hell, während die Wohnungen im Erdgeschoss dunkel sind."] },
-      { "t": "transform", "i": "„trotzdem“ durch „obwohl“ ersetzen.", "q": "Ich habe keine deutsche Ausbildung, trotzdem habe ich die DEKRA-Prüfung bestanden.", "a": ["Obwohl ich keine deutsche Ausbildung habe, habe ich die DEKRA-Prüfung bestanden.", "Ich habe die DEKRA-Prüfung bestanden, obwohl ich keine deutsche Ausbildung habe."] },
-      { "t": "order", "q": "trotz / der ruhigen Lage / ist / gering / die Nachfrage", "a": ["Trotz der ruhigen Lage ist die Nachfrage gering.", "Die Nachfrage ist trotz der ruhigen Lage gering."] },
-      { "t": "translate", "q": "Хотя дом старый, он в хорошем состоянии.", "a": ["Obwohl das Haus alt ist, ist es in gutem Zustand.", "Obwohl das Haus alt ist, befindet es sich in gutem Zustand.", "Das Haus ist in gutem Zustand, obwohl es alt ist.", "Das Haus befindet sich in gutem Zustand, obwohl es alt ist.", "Obwohl das Haus alt ist, ist es in einem guten Zustand."] },
-      { "t": "translate", "q": "Окна старые, тем не менее в квартире тепло.", "a": ["Die Fenster sind alt, trotzdem ist die Wohnung warm.", "Die Fenster sind alt, dennoch ist die Wohnung warm.", "Die Fenster sind alt, die Wohnung ist trotzdem warm.", "Die Fenster sind alt, die Wohnung ist dennoch warm.", "Die Fenster sind alt, trotzdem ist es in der Wohnung warm.", "Die Fenster sind alt, dennoch ist es in der Wohnung warm."] },
-      { "t": "translate", "q": "Несмотря на недостатки, объект хорошо сдаётся в аренду.", "a": ["Trotz der Mängel ist das Objekt gut vermietbar.", "Trotz der Mängel lässt sich das Objekt gut vermieten.", "Das Objekt ist trotz der Mängel gut vermietbar.", "Das Objekt lässt sich trotz der Mängel gut vermieten."], "h": "trotz + Genitiv; vermietbar" },
-      { "t": "translate", "q": "Участок, правда, маленький, но удобной формы.", "a": ["Das Grundstück ist zwar klein, aber gut geschnitten.", "Das Grundstück ist zwar klein, aber gut zugeschnitten."], "h": "zwar … aber; gut geschnitten" },
-      { "t": "translate", "q": "Местоположение хорошее, однако оснащение простое.", "a": ["Die Lage ist gut, die Ausstattung ist jedoch einfach.", "Die Lage ist gut, jedoch ist die Ausstattung einfach.", "Die Lage ist gut, die Ausstattung ist allerdings einfach.", "Die Lage ist gut, allerdings ist die Ausstattung einfach.", "Die Lage ist gut, die Ausstattung jedoch einfach."] },
-      { "t": "translate", "q": "Хотя я живу в Германии всего три года, я хорошо знаю местный рынок.", "a": ["Obwohl ich erst seit drei Jahren in Deutschland lebe, kenne ich den lokalen Markt gut.", "Obwohl ich erst seit drei Jahren in Deutschland wohne, kenne ich den lokalen Markt gut.", "Ich kenne den lokalen Markt gut, obwohl ich erst seit drei Jahren in Deutschland lebe.", "Ich kenne den lokalen Markt gut, obwohl ich erst seit drei Jahren in Deutschland wohne.", "Obwohl ich erst seit drei Jahren in Deutschland lebe, kenne ich den regionalen Markt gut.", "Obwohl ich erst seit drei Jahren in Deutschland lebe, kenne ich den örtlichen Markt gut."], "h": "erst seit; der lokale Markt" },
-      { "t": "fix", "q": "Trotzdem das Haus alt ist, ist es gut gepflegt.", "a": ["Obwohl das Haus alt ist, ist es gut gepflegt."], "h": "Нужен союз придаточного." },
-      { "t": "fix", "q": "Obwohl die Lage ist gut, ist die Nachfrage gering.", "a": ["Obwohl die Lage gut ist, ist die Nachfrage gering."] },
-      { "t": "fix", "q": "Die Wohnung ist klein, trotzdem sie ist sehr hell.", "a": ["Die Wohnung ist klein, trotzdem ist sie sehr hell."] },
-      { "t": "fix", "q": "Trotz des schlechten Zustand ist der Preis hoch.", "a": ["Trotz des schlechten Zustands ist der Preis hoch.", "Trotz des schlechten Zustandes ist der Preis hoch."], "h": "Окончание существительного в Genitiv." }
-    ],
-    "speak": [
-      { "ru": "Хотя дому сорок лет, он в очень хорошем состоянии.", "de": "Obwohl das Haus vierzig Jahre alt ist, ist es in sehr gutem Zustand." },
-      { "ru": "Отопление устарело, тем не менее квартира хорошо сдаётся.", "de": "Die Heizung ist veraltet, trotzdem lässt sich die Wohnung gut vermieten." },
-      { "ru": "Местоположение отличное, однако оснащение довольно простое.", "de": "Die Lage ist hervorragend, die Ausstattung ist jedoch eher einfach." },
-      { "ru": "Квартира, правда, небольшая, но с очень удачной планировкой.", "de": "Die Wohnung ist zwar klein, aber sehr gut geschnitten." },
-      { "ru": "Несмотря на высокий спрос, цены в прошлом году не выросли.", "de": "Trotz der hohen Nachfrage sind die Preise im letzten Jahr nicht gestiegen." },
-      { "ru": "В то время как микролокация хорошая, макролокация скорее слабая.", "de": "Während die Mikrolage gut ist, ist die Makrolage eher schwach." },
-      { "ru": "Хотя у меня нет немецкого образования, я сдал экзамен DEKRA.", "de": "Obwohl ich keine deutsche Ausbildung habe, habe ich die DEKRA-Prüfung bestanden." },
-      { "ru": "Я ещё не знаю всех немецких нормативов, однако быстро учусь.", "de": "Ich kenne noch nicht alle deutschen Vorschriften, allerdings lerne ich schnell." },
-      { "ru": "Несмотря на недостатки крыши, я считаю цену адекватной.", "de": "Trotz der Mängel am Dach halte ich den Preis für angemessen." },
-      { "ru": "Подвал, правда, сухой, но на стенах есть трещины.", "de": "Der Keller ist zwar trocken, aber die Wände haben Risse." },
-      { "ru": "Хотя объект находится у автобана, шума почти не слышно.", "de": "Obwohl das Objekt an der Autobahn liegt, ist kaum Lärm zu hören." },
-      { "ru": "Цена высокая, однако она соответствует рынку.", "de": "Der Preis ist hoch, er ist jedoch marktüblich." }
+   },
+   {
+    "t": "transform",
+    "tag": "tempus",
+    "i": "Ins Perfekt setzen.",
+    "q": "Wir fuhren zur Ortsbesichtigung nach Bochum.",
+    "a": [
+     "Wir sind zur Ortsbesichtigung nach Bochum gefahren."
     ]
-  },
-
-  "g-zahlen": {
-    "id": "g-zahlen", "day": 12,
-    "de": "Zahlen sprechen: Datum, Flächen, Prozent, Vergleiche",
-    "ru": "Числа вслух: даты, площади, проценты, сравнения",
-    "rule": "<p><b>Годы:</b> до 2000 — сотнями: <b>1998 = neunzehnhundertachtundneunzig</b>; с 2000 — <b>zweitausendfünf, zweitausendzwanzig</b>. Говорят <b>1998</b> или <b>im Jahr 1998</b>, но никогда <i>in 1998</i>.</p><p><b>Порядковые:</b> до 19 + <b>-t-</b>, с 20 + <b>-st-</b>, дальше обычные окончания прилагательных: <b>am neunzehnten Oktober, im zweiten Obergeschoss, bis zu seinem vierzigsten Lebensjahr</b>. Исключения: <b>erste, dritte, siebte, achte</b>. Дата: <b>Heute ist der 28. (achtundzwanzigste) Oktober</b>, но <b>am 28. (achtundzwanzigsten)</b>.</p><p><b>Десятичные и проценты:</b> <b>124,5 m² = hundertvierundzwanzig Komma fünf Quadratmeter</b>; <b>3,75 % = drei Komma sieben fünf</b> (или <b>fünfundsiebzig</b>) <b>Prozent</b>; <b>450.000 € = vierhundertfünfzigtausend Euro</b>.</p><p><b>Сравнение:</b> <b>größer als</b>, <b>so groß wie</b>, <b>doppelt so groß wie</b>; разница — с <b>um</b>: <b>Der Preis liegt um 5 % über dem Durchschnitt.</b> Превосходная степень: <b>am größten</b> (после глагола) / <b>das größte Objekt</b> (перед существительным).</p><p>Dativ Plural после предлога: <b>vor fünf Jahren, seit zwanzig Jahren</b>.</p><p>Ошибки: <i>in 2010</i>, <i>am neunzehn Oktober</i>, <i>größer wie</i>, <i>am beste</i>, <i>vor fünf Jahr</i>.</p>",
-    "examples": [
-      { "de": "Das Vorstellungsgespräch findet am 19. (neunzehnten) November statt.", "ru": "Собеседование состоится 19 ноября." },
-      { "de": "Das Haus wurde 1978 (neunzehnhundertachtundsiebzig) gebaut.", "ru": "Дом был построен в 1978 году." },
-      { "de": "Die Wohnfläche beträgt 124,5 m² (hundertvierundzwanzig Komma fünf Quadratmeter).", "ru": "Жилая площадь составляет 124,5 м²." },
-      { "de": "Der Kaufpreis liegt um 5 % über dem Durchschnitt im Stadtteil.", "ru": "Цена покупки на 5 % выше средней по району." },
-      { "de": "Das Grundstück ist doppelt so groß wie das Nachbargrundstück.", "ru": "Участок в два раза больше соседнего." },
-      { "de": "Das ist das größte Objekt, das ich bisher bewertet habe.", "ru": "Это самый большой объект, который я оценивал до сих пор." }
+   },
+   {
+    "t": "choice",
+    "tag": "kasus",
+    "q": "Ich habe ___ Eigentümer das Ergebnis erklärt.",
+    "o": [
+     "dem",
+     "den",
+     "des"
     ],
-    "drills": [
-      { "t": "gap", "q": "Heute ist der ___ Oktober. (28.)", "a": ["achtundzwanzigste"], "h": "Напишите словами." },
-      { "t": "gap", "q": "Das Vorstellungsgespräch ist am ___ November. (19.)", "a": ["neunzehnten"], "h": "Напишите словами." },
-      { "t": "choice", "q": "Das Haus wurde ___ gebaut.", "o": ["1985", "in 1985", "im 1985"], "a": ["1985"] },
-      { "t": "gap", "q": "Die Wohnung liegt im ___ Obergeschoss. (3.)", "a": ["dritten"], "h": "Напишите словами." },
-      { "t": "choice", "q": "Die Nebenkosten sind hier höher ___ im Durchschnitt.", "o": ["als", "wie", "so"], "a": ["als"] },
-      { "t": "gap", "q": "Vor fünf ___ habe ich mich auf Gewerbeimmobilien spezialisiert. (Jahr)", "a": ["Jahren"] },
-      { "t": "choice", "q": "Das ist das ___ Objekt im ganzen Stadtteil.", "o": ["teuerste", "teuersten", "am teuersten"], "a": ["teuerste"] },
-      { "t": "gap", "q": "Der Kaufpreis liegt ___ 5 % über dem Durchschnitt. (Präposition)", "a": ["um"], "h": "Разница в сравнении — um + число." },
-      { "t": "choice", "q": "Diese Lage ist für Familien ___.", "o": ["am besten", "am beste", "die besten"], "a": ["am besten"] },
-      { "t": "gap", "q": "Der Eigentümer hat bis zu seinem ___ Lebensjahr in dem Haus gewohnt. (40.)", "a": ["vierzigsten"], "h": "Напишите словами." },
-      { "t": "transform", "i": "Datum in Worten schreiben.", "q": "Die Ortsbesichtigung ist am 3. Oktober.", "a": ["Die Ortsbesichtigung ist am dritten Oktober."] },
-      { "t": "transform", "i": "Jahreszahl in Worten schreiben.", "q": "Das Haus wurde 1998 gebaut.", "a": ["Das Haus wurde neunzehnhundertachtundneunzig gebaut."] },
-      { "t": "transform", "i": "Vergleich mit „als“ bilden (groß).", "q": "Haus A: 140 m², Haus B: 120 m².", "a": ["Haus A ist größer als Haus B."] },
-      { "t": "order", "q": "liegt / der Kaufpreis / um 10 % / über / dem Durchschnitt", "a": ["Der Kaufpreis liegt um 10 % über dem Durchschnitt."] },
-      { "t": "transform", "i": "Mit „doppelt so … wie“ vergleichen (groß).", "q": "Grundstück A: 1.200 m², Grundstück B: 600 m².", "a": ["Grundstück A ist doppelt so groß wie Grundstück B."] },
-      { "t": "transform", "i": "Superlativ mit „am“ bilden.", "q": "Die Wohnung im Dachgeschoss ist hell.", "a": ["Die Wohnung im Dachgeschoss ist am hellsten."] },
-      { "t": "order", "q": "habe / vor zwanzig Jahren / ich / als Gutachter / angefangen", "a": ["Ich habe vor zwanzig Jahren als Gutachter angefangen.", "Vor zwanzig Jahren habe ich als Gutachter angefangen.", "Als Gutachter habe ich vor zwanzig Jahren angefangen."] },
-      { "t": "transform", "i": "Zahl in Worten schreiben.", "q": "Die Wohnfläche beträgt 124,5 m².", "a": ["Die Wohnfläche beträgt hundertvierundzwanzig Komma fünf Quadratmeter.", "Die Wohnfläche beträgt einhundertvierundzwanzig Komma fünf Quadratmeter."] },
-      { "t": "transform", "i": "Prozentzahl in Worten schreiben.", "q": "Der Zinssatz liegt bei 3,75 %.", "a": ["Der Zinssatz liegt bei drei Komma sieben fünf Prozent.", "Der Zinssatz liegt bei drei Komma fünfundsiebzig Prozent."] },
-      { "t": "order", "q": "das ist / das größte Objekt, / das / ich / bisher / bewertet habe", "a": ["Das ist das größte Objekt, das ich bisher bewertet habe."] },
-      { "t": "translate", "q": "Собеседование состоится 19 октября.", "a": ["Das Vorstellungsgespräch findet am 19. Oktober statt.", "Das Vorstellungsgespräch findet am neunzehnten Oktober statt.", "Das Vorstellungsgespräch ist am 19. Oktober.", "Das Vorstellungsgespräch ist am neunzehnten Oktober."] },
-      { "t": "translate", "q": "Дом был построен в 1985 году.", "a": ["Das Haus wurde 1985 gebaut.", "Das Haus wurde im Jahr 1985 gebaut.", "1985 wurde das Haus gebaut.", "Im Jahr 1985 wurde das Haus gebaut.", "Das Haus ist 1985 gebaut worden.", "Das Haus wurde neunzehnhundertfünfundachtzig gebaut.", "Das Haus wurde 1985 errichtet.", "Das Haus wurde im Jahr 1985 errichtet."] },
-      { "t": "translate", "q": "Участок в два раза больше соседнего.", "a": ["Das Grundstück ist doppelt so groß wie das Nachbargrundstück.", "Das Grundstück ist doppelt so groß wie das benachbarte Grundstück.", "Das Grundstück ist zweimal so groß wie das Nachbargrundstück."], "h": "doppelt so … wie; das Nachbargrundstück" },
-      { "t": "translate", "q": "Цена на 5 % выше среднего.", "a": ["Der Preis liegt um 5 % über dem Durchschnitt.", "Der Preis liegt um 5% über dem Durchschnitt.", "Der Preis liegt um fünf Prozent über dem Durchschnitt.", "Der Preis liegt um 5 Prozent über dem Durchschnitt.", "Der Preis liegt 5 % über dem Durchschnitt.", "Der Preis liegt 5% über dem Durchschnitt.", "Der Preis liegt fünf Prozent über dem Durchschnitt.", "Der Preis liegt 5 Prozent über dem Durchschnitt.", "Der Preis ist um 5 % höher als der Durchschnitt.", "Der Preis ist um 5% höher als der Durchschnitt.", "Der Preis ist um fünf Prozent höher als der Durchschnitt.", "Der Preis ist um 5 Prozent höher als der Durchschnitt."] },
-      { "t": "translate", "q": "Это самый дорогой объект в районе.", "a": ["Das ist das teuerste Objekt im Stadtteil.", "Das ist das teuerste Objekt in diesem Stadtteil.", "Das ist das teuerste Objekt im ganzen Stadtteil."], "h": "der Stadtteil" },
-      { "t": "translate", "q": "Пять лет назад крышу обновили.", "a": ["Vor fünf Jahren wurde das Dach erneuert.", "Das Dach wurde vor fünf Jahren erneuert.", "Das Dach ist vor fünf Jahren erneuert worden.", "Vor fünf Jahren ist das Dach erneuert worden.", "Vor fünf Jahren hat man das Dach erneuert.", "Man hat das Dach vor fünf Jahren erneuert."], "h": "vor + Dativ Plural; erneuern" },
-      { "t": "fix", "q": "Das Haus wurde in 1975 gebaut.", "a": ["Das Haus wurde 1975 gebaut.", "Das Haus wurde im Jahr 1975 gebaut."] },
-      { "t": "fix", "q": "Das Gespräch findet am neunzehn Oktober statt.", "a": ["Das Gespräch findet am neunzehnten Oktober statt."] },
-      { "t": "fix", "q": "Das Grundstück ist größer wie das Nachbargrundstück.", "a": ["Das Grundstück ist größer als das Nachbargrundstück."] },
-      { "t": "fix", "q": "Für Familien ist diese Lage am beste.", "a": ["Für Familien ist diese Lage am besten."] }
-    ],
-    "speak": [
-      { "ru": "Собеседование назначено на 19 октября в 10 часов.", "de": "Das Vorstellungsgespräch ist am neunzehnten Oktober um zehn Uhr." },
-      { "ru": "Дом построен в 1978 году и модернизирован в 2015 году.", "de": "Das Haus wurde neunzehnhundertachtundsiebzig gebaut und zweitausendfünfzehn modernisiert." },
-      { "ru": "Жилая площадь составляет 124,5 квадратного метра.", "de": "Die Wohnfläche beträgt hundertvierundzwanzig Komma fünf Quadratmeter." },
-      { "ru": "Площадь участка составляет около 850 квадратных метров.", "de": "Die Grundstücksfläche beträgt rund achthundertfünfzig Quadratmeter." },
-      { "ru": "Цена покупки на 8 процентов выше среднего по району.", "de": "Der Kaufpreis liegt um acht Prozent über dem Durchschnitt im Stadtteil." },
-      { "ru": "Этот участок в два раза больше соседнего.", "de": "Dieses Grundstück ist doppelt so groß wie das Nachbargrundstück." },
-      { "ru": "Офис находится на втором надземном этаже (2. OG) здания.", "de": "Das Büro befindet sich im zweiten Obergeschoss des Gebäudes." },
-      { "ru": "Процентная ставка сейчас составляет 3,75 процента.", "de": "Der Zinssatz liegt derzeit bei drei Komma fünfundsiebzig Prozent." },
-      { "ru": "Это самый большой объект, который я когда-либо оценивал.", "de": "Das ist das größte Objekt, das ich je bewertet habe." },
-      { "ru": "Пять лет назад цены были значительно ниже.", "de": "Vor fünf Jahren waren die Preise deutlich niedriger." },
-      { "ru": "Средняя цена квадратного метра в этом районе — 3200 евро.", "de": "Der durchschnittliche Quadratmeterpreis in diesem Stadtteil liegt bei dreitausendzweihundert Euro." },
-      { "ru": "Собственник жил в этом доме до сорока лет.", "de": "Der Eigentümer hat bis zu seinem vierzigsten Lebensjahr in diesem Haus gewohnt." }
+    "a": [
+     "dem"
     ]
-  },
-
-  "g-konj2": {
-    "id": "g-konj2", "day": 13,
-    "de": "Höfliche Bitten und Fragen: Konjunktiv II",
-    "ru": "Вежливые просьбы и вопросы: Konjunktiv II",
-    "rule": "<p>Konjunktiv II делает просьбу или вопрос вежливыми. На осмотре объекта и на собеседовании это стандарт, прямое <i>Zeigen Sie mir …</i> звучит резко.</p><p>Формы с умлаутом: <b>wäre, hätte, könnte, dürfte, müsste, würde</b>; без умлаута — <b>sollte, wollte</b>. Для остальных глаголов — <b>würde + Infinitiv</b>: <b>Würden Sie mir die Pläne schicken?</b></p><ul><li>Просьба: <b>Könnten Sie mir bitte den Heizungsraum zeigen?</b></li><li>Желание: <b>Ich hätte gern eine Kopie des Energieausweises.</b></li><li>Предложение: <b>Wäre es möglich, den Termin zu verschieben?</b> (+ zu + Infinitiv)</li><li>Разрешение: <b>Dürfte ich ein paar Fotos machen?</b></li><li>Очень мягко: <b>Es wäre hilfreich, wenn Sie die Unterlagen mitbringen könnten.</b></li><li>Вопрос: <b>Ich würde gern wissen, ob …</b></li></ul><p>На собеседовании: <b>Ich könnte zum ersten Januar anfangen. Ich würde mich freuen, in Ihrem Team zu arbeiten.</b></p><p>Ошибки: <i>konnten, hatte, wurde</i> без умлаута — это прошедшее время, а не вежливость; <i>Könnten Sie mir zeigen den Keller?</i> → инфинитив в конец: <b>… den Keller zeigen?</b>; <i>Wäre es möglich, den Termin verschieben?</i> → <b>zu verschieben</b>.</p>",
-    "examples": [
-      { "de": "Könnten Sie mir bitte den Heizungsraum zeigen?", "ru": "Не могли бы вы показать мне котельную?" },
-      { "de": "Ich hätte gern eine Kopie des Energieausweises.", "ru": "Мне бы хотелось получить копию энергетического паспорта." },
-      { "de": "Wäre es möglich, den Termin auf Donnerstag zu verschieben?", "ru": "Можно ли перенести встречу на четверг?" },
-      { "de": "Dürfte ich kurz ein paar Fotos vom Dachboden machen?", "ru": "Можно мне быстро сделать несколько фото чердака?" },
-      { "de": "Würden Sie mir die Baupläne bis Freitag per E-Mail schicken?", "ru": "Не могли бы вы прислать мне строительные планы по e-mail до пятницы?" },
-      { "de": "Ich würde mich freuen, in Ihrem Team zu arbeiten.", "ru": "Я был бы рад работать в вашей команде." }
+   },
+   {
+    "t": "choice",
+    "tag": "adj",
+    "q": "Ich habe ___ Erfahrung in der Immobilienbewertung.",
+    "o": [
+     "langjährige",
+     "langjährigen",
+     "langjähriger"
     ],
-    "drills": [
-      { "t": "gap", "q": "___ Sie mir bitte den Keller zeigen? (Konjunktiv II)", "a": ["Könnten", "Würden"] },
-      { "t": "gap", "q": "Ich ___ gern eine Kopie des Grundbuchauszugs. (haben, Konjunktiv II)", "a": ["hätte"] },
-      { "t": "choice", "q": "___ Sie mir die Unterlagen bis Freitag schicken?", "o": ["Könnten", "Konnten", "Könnte"], "a": ["Könnten"] },
-      { "t": "gap", "q": "___ es möglich, den Termin zu verschieben? (sein, Konjunktiv II)", "a": ["Wäre"] },
-      { "t": "choice", "q": "Ich ___ gern einen Termin für die Besichtigung.", "o": ["hätte", "hatte", "habe"], "a": ["hätte"] },
-      { "t": "gap", "q": "___ ich kurz Fotos vom Dachboden machen? (dürfen, Konjunktiv II)", "a": ["Dürfte"], "h": "dürfen → dürfte: вежливая просьба о разрешении." },
-      { "t": "choice", "q": "Würden Sie mir bitte ___?", "o": ["den Energieausweis zeigen", "zeigen den Energieausweis", "den Energieausweis zeigten"], "a": ["den Energieausweis zeigen"] },
-      { "t": "gap", "q": "Es ___ sehr hilfreich, wenn Sie mir die Baupläne schicken könnten. (sein, Konjunktiv II)", "a": ["wäre"] },
-      { "t": "choice", "q": "Es wäre schön, wenn Sie mir die Schlüssel ___ könnten.", "o": ["geben", "gegeben", "zu geben"], "a": ["geben"] },
-      { "t": "gap", "q": "Ich ___ gern wissen, wie die Einarbeitung abläuft.", "a": ["würde", "möchte"] },
-      { "t": "transform", "i": "Höflicher formulieren (Konjunktiv II).", "q": "Können Sie mir den Grundriss zeigen?", "a": ["Könnten Sie mir den Grundriss zeigen?", "Könnten Sie mir bitte den Grundriss zeigen?", "Könnten Sie mir den Grundriss bitte zeigen?", "Würden Sie mir den Grundriss zeigen?", "Würden Sie mir bitte den Grundriss zeigen?", "Würden Sie mir den Grundriss bitte zeigen?"] },
-      { "t": "transform", "i": "Mit „Ich hätte gern …“ formulieren.", "q": "Geben Sie mir eine Kopie des Mietvertrags.", "a": ["Ich hätte gern eine Kopie des Mietvertrags.", "Ich hätte gerne eine Kopie des Mietvertrags.", "Ich hätte gern eine Kopie des Mietvertrages.", "Ich hätte gerne eine Kopie des Mietvertrages."] },
-      { "t": "order", "q": "Sie / könnten / mir / bitte / zeigen / den Keller", "a": ["Könnten Sie mir bitte den Keller zeigen?", "Könnten Sie mir den Keller bitte zeigen?"] },
-      { "t": "transform", "i": "Mit „Wäre es möglich, … zu …?“ formulieren.", "q": "Wir verschieben den Termin auf Montag.", "a": ["Wäre es möglich, den Termin auf Montag zu verschieben?"] },
-      { "t": "transform", "i": "Mit „Würden Sie …?“ formulieren.", "q": "Schicken Sie mir bitte die Baupläne.", "a": ["Würden Sie mir bitte die Baupläne schicken?", "Würden Sie mir die Baupläne schicken?", "Würden Sie mir die Baupläne bitte schicken?"] },
-      { "t": "transform", "i": "Mit „Dürfte ich …?“ formulieren.", "q": "Ich will den Heizungsraum sehen.", "a": ["Dürfte ich den Heizungsraum sehen?", "Dürfte ich bitte den Heizungsraum sehen?", "Dürfte ich mir den Heizungsraum ansehen?", "Dürfte ich mir den Heizungsraum anschauen?", "Dürfte ich den Heizungsraum besichtigen?"] },
-      { "t": "order", "q": "wäre / es / möglich, / den Termin / auf Donnerstag / zu verschieben", "a": ["Wäre es möglich, den Termin auf Donnerstag zu verschieben?"] },
-      { "t": "transform", "i": "Mit „Es wäre schön, wenn …“ formulieren.", "q": "Bitte bringen Sie den Energieausweis mit.", "a": ["Es wäre schön, wenn Sie den Energieausweis mitbringen könnten.", "Es wäre schön, wenn Sie den Energieausweis mitbringen würden.", "Es wäre schön, wenn Sie den Energieausweis mitbrächten."] },
-      { "t": "transform", "i": "Höflich indirekt fragen: „Könnten Sie mir sagen, …?“", "q": "Wann wurde das Dach erneuert?", "a": ["Könnten Sie mir sagen, wann das Dach erneuert wurde?", "Könnten Sie mir sagen, wann das Dach erneuert worden ist?"] },
-      { "t": "order", "q": "ich / hätte / gern / eine Kopie / des Energieausweises", "a": ["Ich hätte gern eine Kopie des Energieausweises.", "Eine Kopie des Energieausweises hätte ich gern."] },
-      { "t": "translate", "q": "Не могли бы вы показать мне подвал?", "a": ["Könnten Sie mir den Keller zeigen?", "Könnten Sie mir bitte den Keller zeigen?", "Könnten Sie mir den Keller bitte zeigen?", "Würden Sie mir den Keller zeigen?", "Würden Sie mir bitte den Keller zeigen?"] },
-      { "t": "translate", "q": "Мне бы хотелось копию поэтажного плана.", "a": ["Ich hätte gern eine Kopie des Grundrisses.", "Ich hätte gerne eine Kopie des Grundrisses.", "Ich hätte gern eine Kopie vom Grundriss.", "Ich hätte gerne eine Kopie vom Grundriss.", "Ich möchte gern eine Kopie des Grundrisses.", "Ich möchte gerne eine Kopie des Grundrisses."], "h": "der Grundriss" },
-      { "t": "translate", "q": "Можно было бы перенести осмотр на пятницу?", "a": ["Wäre es möglich, die Besichtigung auf Freitag zu verschieben?", "Wäre es möglich, die Ortsbesichtigung auf Freitag zu verschieben?", "Wäre es möglich, den Besichtigungstermin auf Freitag zu verschieben?", "Könnten wir die Besichtigung auf Freitag verschieben?", "Könnten wir die Ortsbesichtigung auf Freitag verschieben?", "Könnte man die Besichtigung auf Freitag verschieben?"] },
-      { "t": "translate", "q": "Можно мне сфотографировать крышу?", "a": ["Dürfte ich das Dach fotografieren?", "Dürfte ich Fotos vom Dach machen?", "Könnte ich das Dach fotografieren?", "Könnte ich Fotos vom Dach machen?", "Darf ich das Dach fotografieren?", "Darf ich Fotos vom Dach machen?"] },
-      { "t": "translate", "q": "Было бы очень полезно, если бы вы прислали мне документы.", "a": ["Es wäre sehr hilfreich, wenn Sie mir die Unterlagen schicken könnten.", "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen schicken würden.", "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen zuschicken könnten.", "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen zuschicken würden.", "Es wäre sehr hilfreich, wenn Sie mir die Dokumente schicken könnten.", "Es wäre sehr hilfreich, wenn Sie mir die Dokumente schicken würden.", "Es wäre sehr nützlich, wenn Sie mir die Unterlagen schicken könnten.", "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen senden könnten."] },
-      { "t": "translate", "q": "Я был бы рад работать в вашей команде.", "a": ["Ich würde mich freuen, in Ihrem Team zu arbeiten.", "Ich würde mich sehr freuen, in Ihrem Team zu arbeiten.", "Ich würde mich freuen, in Ihrem Team arbeiten zu dürfen.", "Ich würde mich freuen, wenn ich in Ihrem Team arbeiten könnte.", "Ich wäre froh, in Ihrem Team zu arbeiten."] },
-      { "t": "fix", "q": "Konnten Sie mir bitte den Dachboden zeigen?", "a": ["Könnten Sie mir bitte den Dachboden zeigen?"], "h": "Вежливая форма — с умлаутом." },
-      { "t": "fix", "q": "Ich hatte gern eine Kopie des Mietvertrags.", "a": ["Ich hätte gern eine Kopie des Mietvertrags."] },
-      { "t": "fix", "q": "Würden Sie mir bitte zeigen den Heizungsraum?", "a": ["Würden Sie mir bitte den Heizungsraum zeigen?", "Würden Sie mir den Heizungsraum bitte zeigen?"], "h": "Место инфинитива." },
-      { "t": "fix", "q": "Wäre es möglich, den Termin auf Montag verschieben?", "a": ["Wäre es möglich, den Termin auf Montag zu verschieben?"] }
-    ],
-    "speak": [
-      { "ru": "Не могли бы вы показать мне котельную и подвал?", "de": "Könnten Sie mir bitte den Heizungsraum und den Keller zeigen?" },
-      { "ru": "Мне бы хотелось получить копию энергетического паспорта.", "de": "Ich hätte gern eine Kopie des Energieausweises." },
-      { "ru": "Можно ли перенести осмотр на следующую неделю?", "de": "Wäre es möglich, die Besichtigung auf nächste Woche zu verschieben?" },
-      { "ru": "Можно мне сделать несколько фотографий мансарды?", "de": "Dürfte ich ein paar Fotos vom Dachgeschoss machen?" },
-      { "ru": "Не могли бы вы прислать мне строительные планы до пятницы?", "de": "Würden Sie mir die Baupläne bis Freitag schicken?" },
-      { "ru": "Было бы очень полезно, если бы вы подготовили все документы.", "de": "Es wäre sehr hilfreich, wenn Sie alle Unterlagen vorbereiten könnten." },
-      { "ru": "Не могли бы вы сказать, когда была обновлена крыша?", "de": "Könnten Sie mir sagen, wann das Dach erneuert wurde?" },
-      { "ru": "Я был бы рад работать в вашей команде.", "de": "Ich würde mich freuen, in Ihrem Team zu arbeiten." },
-      { "ru": "Можно задать вопрос о введении в должность?", "de": "Dürfte ich eine Frage zur Einarbeitung stellen?" },
-      { "ru": "Я мог бы приступить к работе с первого января.", "de": "Ich könnte zum ersten Januar anfangen." },
-      { "ru": "Не могли бы вы повторить вопрос, пожалуйста?", "de": "Könnten Sie die Frage bitte wiederholen?" },
-      { "ru": "Можно было бы осмотреть ещё и чердак?", "de": "Wäre es möglich, auch den Dachboden zu besichtigen?" }
+    "a": [
+     "langjährige"
     ]
-  }
+   },
+   {
+    "t": "choice",
+    "tag": "praep",
+    "q": "Ich wohne seit drei Jahren ___ Ruhrgebiet.",
+    "o": [
+     "im",
+     "in",
+     "am"
+    ],
+    "a": [
+     "im"
+    ]
+   },
+   {
+    "t": "fix",
+    "tag": "ndekl",
+    "q": "Ich kenne den Name des Eigentümers nicht.",
+    "a": [
+     "Ich kenne den Namen des Eigentümers nicht."
+    ]
+   },
+   {
+    "t": "choice",
+    "tag": "rektion",
+    "q": "Ich interessiere mich sehr ___ diese Stelle.",
+    "o": [
+     "für",
+     "an",
+     "auf"
+    ],
+    "a": [
+     "für"
+    ]
+   },
+   {
+    "t": "order",
+    "tag": "nebensatz",
+    "q": "Ich möchte wissen, / ob / noch frei / die Stelle / ist",
+    "a": [
+     "Ich möchte wissen, ob die Stelle noch frei ist."
+    ]
+   },
+   {
+    "t": "transform",
+    "tag": "passiv",
+    "i": "Ins Passiv (Präteritum) setzen.",
+    "q": "Man erneuerte die Heizung 2018.",
+    "a": [
+     "Die Heizung wurde 2018 erneuert.",
+     "2018 wurde die Heizung erneuert."
+    ]
+   },
+   {
+    "t": "transform",
+    "tag": "konj2",
+    "i": "Höflicher formulieren (Konjunktiv II).",
+    "q": "Können Sie mir den Lageplan schicken?",
+    "a": [
+     "Könnten Sie mir den Lageplan schicken?",
+     "Könnten Sie mir bitte den Lageplan schicken?",
+     "Könnten Sie mir den Lageplan bitte schicken?",
+     "Würden Sie mir den Lageplan schicken?",
+     "Würden Sie mir bitte den Lageplan schicken?",
+     "Würden Sie mir den Lageplan bitte schicken?"
+    ]
+   },
+   {
+    "t": "choice",
+    "tag": "relativ",
+    "q": "Der Kollege, mit ___ ich das Gutachten erstellt habe, ist Bauingenieur.",
+    "o": [
+     "dem",
+     "den",
+     "der"
+    ],
+    "a": [
+     "dem"
+    ]
+   },
+   {
+    "t": "choice",
+    "tag": "zahlen",
+    "q": "Das Grundstück ist deutlich größer ___ das Nachbargrundstück.",
+    "o": [
+     "als",
+     "wie",
+     "dann"
+    ],
+    "a": [
+     "als"
+    ]
+   },
+   {
+    "t": "fix",
+    "tag": "wortstellung",
+    "q": "Morgen ich fahre zu einer Ortsbesichtigung nach Essen.",
+    "a": [
+     "Morgen fahre ich zu einer Ortsbesichtigung nach Essen.",
+     "Ich fahre morgen zu einer Ortsbesichtigung nach Essen."
+    ]
+   }
+  ]
+ },
+ "g-tempus": {
+  "id": "g-tempus",
+  "day": 2,
+  "de": "Perfekt und Präteritum im Lebenslauf",
+  "ru": "Перфект и претерит в рассказе о карьере",
+  "rule": "<p>На собеседовании о прошлом рассказывают в <b>Perfekt</b>: <b>Ich habe 2004 bei einer Bank angefangen.</b> В письменном резюме, сопроводительном письме и отчётах чаще <b>Präteritum</b>: <b>Von 2004 bis 2012 war ich als Sachbearbeiter tätig.</b></p><p><b>sein, haben</b> и модальные глаголы и в устной речи обычно стоят в Präteritum: <b>war, hatte, musste, konnte, wollte, durfte</b> — <b>Damals musste ich jedes Objekt selbst besichtigen.</b></p><p><b>sein</b> + Partizip II — движение и смена места или состояния: <b>fahren, kommen, (um)ziehen, werden, ausfallen</b>, а также <b>zu einer Firma wechseln</b>: <b>Ich bin 2010 zu einer Bewertungsfirma gewechselt.</b> Но с прямым дополнением — <b>haben</b>: <b>Ich habe 2010 die Stelle gewechselt.</b> Кроме того, Perfekt с <b>sein</b> образуют <b>sein</b> и <b>bleiben</b>, хотя это не движение: <b>Ich bin fünf Jahre bei der Bank geblieben.</b> Остальные глаголы, в том числе <b>anfangen, beginnen, bestehen, arbeiten</b>, — с <b>haben</b>.</p><p>Формы Partizip II: отделяемые приставки — <b>angefangen, abgeschlossen, teilgenommen</b>; неотделяемые (be-, er-, ver-, ent-, zer-, а также über- в <b>überarbeiten, überprüfen</b>) — без ge-: <b>besichtigt, erstellt, überarbeitet</b>; глаголы на -ieren — <b>studiert, qualifiziert</b>.</p><p>Типичные ошибки: <i>Ich habe nach Deutschland umgezogen</i> → <b>Ich bin … umgezogen</b>; <i>Ich bin die Prüfung bestanden</i> → <b>Ich habe … bestanden</b>; <i>angefangt</i> → <b>angefangen</b>.</p>",
+  "examples": [
+   {
+    "de": "Nach dem Studium habe ich bei einer Bank als Sachbearbeiter angefangen.",
+    "ru": "После учёбы я начал работать в банке специалистом."
+   },
+   {
+    "de": "Im Jahr 2010 bin ich zu einer Bewertungsgesellschaft gewechselt.",
+    "ru": "В 2010 году я перешёл в оценочную компанию."
+   },
+   {
+    "de": "Von 2012 bis 2022 war ich als Gutachter für Kreditsicherheiten tätig.",
+    "ru": "С 2012 по 2022 год я работал оценщиком кредитного обеспечения."
+   },
+   {
+    "de": "In dieser Zeit habe ich über tausend Gutachten für Wohn- und Gewerbeimmobilien erstellt.",
+    "ru": "За это время я составил более тысячи заключений по жилой и коммерческой недвижимости."
+   },
+   {
+    "de": "2023 bin ich nach Deutschland gekommen und habe sofort einen Deutschkurs besucht.",
+    "ru": "В 2023 году я приехал в Германию и сразу пошёл на курсы немецкого."
+   },
+   {
+    "de": "Damals musste ich jedes Objekt persönlich besichtigen.",
+    "ru": "Тогда мне нужно было лично осматривать каждый объект."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Ich ___ 2002 als Gutachter angefangen.",
+    "a": [
+     "habe"
+    ],
+    "h": "haben или sein?"
+   },
+   {
+    "t": "gap",
+    "q": "Im Jahr 2023 ___ ich mit meiner Familie ins Ruhrgebiet gezogen.",
+    "a": [
+     "bin"
+    ],
+    "h": "haben или sein? Это перемещение."
+   },
+   {
+    "t": "choice",
+    "q": "Ich habe mit der Bewertung von Gewerbeimmobilien ___.",
+    "o": [
+     "angefangen",
+     "angefangt",
+     "geanfangen"
+    ],
+    "a": [
+     "angefangen"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Ich habe letztes Jahr die Prüfung zum Sachverständigen ___. (bestehen)",
+    "a": [
+     "bestanden"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Von 2015 bis 2020 ___ ich für ein Team von fünf Gutachtern verantwortlich.",
+    "o": [
+     "war",
+     "bin",
+     "hatte"
+    ],
+    "a": [
+     "war"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Leider ___ ich damals keine Zeit für einen Sprachkurs.",
+    "o": [
+     "hatte",
+     "war",
+     "habe"
+    ],
+    "a": [
+     "hatte"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Wir ___ jedes Objekt persönlich besichtigen. (müssen, Präteritum)",
+    "a": [
+     "mussten"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Gestern habe ich meinen Lebenslauf noch einmal ___. (überarbeiten)",
+    "a": [
+     "überarbeitet"
+    ],
+    "h": "Неотделяемая приставка über- — без ge-."
+   },
+   {
+    "t": "choice",
+    "q": "Ich ___ 2015 Leiter der Bewertungsabteilung geworden.",
+    "o": [
+     "bin",
+     "habe",
+     "wurde"
+    ],
+    "a": [
+     "bin"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Ortsbesichtigung ___ leider ausgefallen, weil der Eigentümer krank war.",
+    "a": [
+     "ist"
+    ],
+    "h": "ausfallen — haben или sein?"
+   },
+   {
+    "t": "transform",
+    "i": "Ins Perfekt setzen.",
+    "q": "Ich prüfte die Unterlagen des Kunden.",
+    "a": [
+     "Ich habe die Unterlagen des Kunden geprüft."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Perfekt setzen.",
+    "q": "Ich besichtigte jede Woche zehn Objekte.",
+    "a": [
+     "Ich habe jede Woche zehn Objekte besichtigt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Perfekt setzen.",
+    "q": "Wir schlossen das Projekt im März ab.",
+    "a": [
+     "Wir haben das Projekt im März abgeschlossen."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Perfekt setzen.",
+    "q": "2015 zog ich in eine andere Stadt um.",
+    "a": [
+     "2015 bin ich in eine andere Stadt umgezogen.",
+     "Ich bin 2015 in eine andere Stadt umgezogen."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "2008 / zu einer Bewertungsfirma / bin / gewechselt / ich",
+    "a": [
+     "2008 bin ich zu einer Bewertungsfirma gewechselt.",
+     "Ich bin 2008 zu einer Bewertungsfirma gewechselt.",
+     "Zu einer Bewertungsfirma bin ich 2008 gewechselt."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "an einer Weiterbildung / habe / ich / im letzten Jahr / teilgenommen",
+    "a": [
+     "Ich habe im letzten Jahr an einer Weiterbildung teilgenommen.",
+     "Im letzten Jahr habe ich an einer Weiterbildung teilgenommen.",
+     "An einer Weiterbildung habe ich im letzten Jahr teilgenommen.",
+     "Ich habe an einer Weiterbildung im letzten Jahr teilgenommen."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Präteritum setzen (Lebenslauf).",
+    "q": "Ich bin für die Bewertung von Kreditsicherheiten verantwortlich gewesen.",
+    "a": [
+     "Ich war für die Bewertung von Kreditsicherheiten verantwortlich."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Präteritum setzen.",
+    "q": "Ich habe die Gutachten selbstständig erstellen müssen.",
+    "a": [
+     "Ich musste die Gutachten selbstständig erstellen.",
+     "Ich musste die Gutachten selbständig erstellen."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Perfekt setzen.",
+    "q": "Nach dem Studium wurde ich Sachbearbeiter in einer Bank.",
+    "a": [
+     "Nach dem Studium bin ich Sachbearbeiter in einer Bank geworden."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "damals / musste / ich / die Objekte / persönlich besichtigen",
+    "a": [
+     "Damals musste ich die Objekte persönlich besichtigen.",
+     "Ich musste damals die Objekte persönlich besichtigen.",
+     "Ich musste die Objekte damals persönlich besichtigen.",
+     "Die Objekte musste ich damals persönlich besichtigen."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "(устно) В 2023 году я переехал в Германию.",
+    "a": [
+     "Ich bin 2023 nach Deutschland gezogen.",
+     "Ich bin 2023 nach Deutschland umgezogen.",
+     "2023 bin ich nach Deutschland gezogen.",
+     "2023 bin ich nach Deutschland umgezogen.",
+     "Ich bin im Jahr 2023 nach Deutschland gezogen.",
+     "Ich bin im Jahr 2023 nach Deutschland umgezogen.",
+     "Im Jahr 2023 bin ich nach Deutschland gezogen.",
+     "Im Jahr 2023 bin ich nach Deutschland umgezogen.",
+     "Ich bin 2023 nach Deutschland gekommen.",
+     "2023 bin ich nach Deutschland gekommen.",
+     "Ich bin im Jahr 2023 nach Deutschland gekommen.",
+     "Im Jahr 2023 bin ich nach Deutschland gekommen."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "(устно) В прошлом году я сдал экзамен DEKRA.",
+    "a": [
+     "Ich habe letztes Jahr die DEKRA-Prüfung bestanden.",
+     "Letztes Jahr habe ich die DEKRA-Prüfung bestanden.",
+     "Ich habe die DEKRA-Prüfung letztes Jahr bestanden.",
+     "Ich habe im letzten Jahr die DEKRA-Prüfung bestanden.",
+     "Im letzten Jahr habe ich die DEKRA-Prüfung bestanden.",
+     "Ich habe die DEKRA-Prüfung im letzten Jahr bestanden.",
+     "Ich habe im vergangenen Jahr die DEKRA-Prüfung bestanden.",
+     "Im vergangenen Jahr habe ich die DEKRA-Prüfung bestanden.",
+     "Ich habe die DEKRA-Prüfung im vergangenen Jahr bestanden.",
+     "Ich habe vergangenes Jahr die DEKRA-Prüfung bestanden.",
+     "Vergangenes Jahr habe ich die DEKRA-Prüfung bestanden.",
+     "Ich habe die DEKRA-Prüfung vergangenes Jahr bestanden."
+    ],
+    "h": "die DEKRA-Prüfung bestehen"
+   },
+   {
+    "t": "translate",
+    "q": "(устно) В 2010 году я перешёл в другой банк.",
+    "a": [
+     "2010 bin ich zu einer anderen Bank gewechselt.",
+     "Ich bin 2010 zu einer anderen Bank gewechselt.",
+     "Im Jahr 2010 bin ich zu einer anderen Bank gewechselt.",
+     "Ich bin im Jahr 2010 zu einer anderen Bank gewechselt.",
+     "2010 habe ich die Bank gewechselt.",
+     "Ich habe 2010 die Bank gewechselt.",
+     "Im Jahr 2010 habe ich die Bank gewechselt.",
+     "Ich habe im Jahr 2010 die Bank gewechselt.",
+     "2010 bin ich in eine andere Bank gewechselt.",
+     "Ich bin 2010 in eine andere Bank gewechselt.",
+     "Im Jahr 2010 bin ich in eine andere Bank gewechselt.",
+     "Ich bin im Jahr 2010 in eine andere Bank gewechselt."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "(в резюме, Präteritum) С 2012 по 2022 год я отвечал за оценку кредитного обеспечения.",
+    "a": [
+     "Von 2012 bis 2022 war ich für die Bewertung von Kreditsicherheiten verantwortlich.",
+     "Ich war von 2012 bis 2022 für die Bewertung von Kreditsicherheiten verantwortlich.",
+     "Von 2012 bis 2022 war ich für die Bewertung von Kreditsicherheiten zuständig.",
+     "Ich war von 2012 bis 2022 für die Bewertung von Kreditsicherheiten zuständig.",
+     "Von 2012 bis 2022 war ich für die Bewertung der Kreditsicherheiten verantwortlich.",
+     "Ich war von 2012 bis 2022 für die Bewertung der Kreditsicherheiten verantwortlich.",
+     "Von 2012 bis 2022 war ich für die Bewertung der Kreditsicherheiten zuständig.",
+     "Ich war von 2012 bis 2022 für die Bewertung der Kreditsicherheiten zuständig.",
+     "Von 2012 bis 2022 verantwortete ich die Bewertung von Kreditsicherheiten.",
+     "Ich verantwortete von 2012 bis 2022 die Bewertung von Kreditsicherheiten.",
+     "Von 2012 bis 2022 verantwortete ich die Bewertung der Kreditsicherheiten.",
+     "Ich verantwortete von 2012 bis 2022 die Bewertung der Kreditsicherheiten."
+    ],
+    "h": "verantwortlich für + Akk.; die Kreditsicherheiten"
+   },
+   {
+    "t": "translate",
+    "q": "(устно) Тогда у меня ещё не было опыта с коммерческой недвижимостью.",
+    "a": [
+     "Damals hatte ich noch keine Erfahrung mit Gewerbeimmobilien.",
+     "Ich hatte damals noch keine Erfahrung mit Gewerbeimmobilien.",
+     "Damals hatte ich noch keine Erfahrungen mit Gewerbeimmobilien.",
+     "Ich hatte damals noch keine Erfahrungen mit Gewerbeimmobilien.",
+     "Damals hatte ich noch keine Erfahrung mit gewerblichen Immobilien.",
+     "Ich hatte damals noch keine Erfahrung mit gewerblichen Immobilien.",
+     "Damals hatte ich noch keine Erfahrungen mit gewerblichen Immobilien.",
+     "Ich hatte damals noch keine Erfahrungen mit gewerblichen Immobilien.",
+     "Damals habe ich noch keine Erfahrung mit Gewerbeimmobilien gehabt.",
+     "Ich habe damals noch keine Erfahrung mit Gewerbeimmobilien gehabt.",
+     "Damals habe ich noch keine Erfahrungen mit Gewerbeimmobilien gehabt.",
+     "Ich habe damals noch keine Erfahrungen mit Gewerbeimmobilien gehabt.",
+     "Damals habe ich noch keine Erfahrung mit gewerblichen Immobilien gehabt.",
+     "Ich habe damals noch keine Erfahrung mit gewerblichen Immobilien gehabt.",
+     "Damals habe ich noch keine Erfahrungen mit gewerblichen Immobilien gehabt.",
+     "Ich habe damals noch keine Erfahrungen mit gewerblichen Immobilien gehabt."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "(устно) Я составил более тысячи заключений.",
+    "a": [
+     "Ich habe mehr als tausend Gutachten erstellt.",
+     "Ich habe über tausend Gutachten erstellt.",
+     "Ich habe mehr als eintausend Gutachten erstellt.",
+     "Ich habe über eintausend Gutachten erstellt.",
+     "Ich habe mehr als 1000 Gutachten erstellt.",
+     "Ich habe über 1000 Gutachten erstellt.",
+     "Ich habe mehr als 1.000 Gutachten erstellt.",
+     "Ich habe über 1.000 Gutachten erstellt.",
+     "Ich habe mehr als tausend Gutachten geschrieben.",
+     "Ich habe über tausend Gutachten geschrieben."
+    ],
+    "h": "ein Gutachten erstellen"
+   },
+   {
+    "t": "fix",
+    "q": "Ich habe 2023 nach Deutschland umgezogen.",
+    "a": [
+     "Ich bin 2023 nach Deutschland umgezogen."
+    ],
+    "h": "Проверьте вспомогательный глагол."
+   },
+   {
+    "t": "fix",
+    "q": "Ich bin die Prüfung beim ersten Versuch bestanden.",
+    "a": [
+     "Ich habe die Prüfung beim ersten Versuch bestanden."
+    ],
+    "h": "bestehen — переходный глагол."
+   },
+   {
+    "t": "fix",
+    "q": "Wir haben die Ergebnisse mit dem Kreditberater besprecht.",
+    "a": [
+     "Wir haben die Ergebnisse mit dem Kreditberater besprochen."
+    ],
+    "h": "Partizip II сильного глагола."
+   },
+   {
+    "t": "fix",
+    "q": "Der Eigentümer hat den Termin zweimal verschiebt.",
+    "a": [
+     "Der Eigentümer hat den Termin zweimal verschoben."
+    ],
+    "h": "verschieben — сильный глагол."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Я начал свою карьеру в 2004 году в кредитном отделе банка.",
+    "de": "Ich habe meine Karriere 2004 in der Kreditabteilung einer Bank begonnen."
+   },
+   {
+    "ru": "В 2010 году я перешёл в независимую оценочную компанию.",
+    "de": "2010 bin ich zu einem unabhängigen Bewertungsunternehmen gewechselt."
+   },
+   {
+    "ru": "Там я в основном оценивал жилую и коммерческую недвижимость.",
+    "de": "Dort habe ich hauptsächlich Wohn- und Gewerbeimmobilien bewertet."
+   },
+   {
+    "ru": "Я лично осматривал каждый объект и сам составлял заключение.",
+    "de": "Ich habe jedes Objekt persönlich besichtigt und das Gutachten selbst erstellt."
+   },
+   {
+    "ru": "Тогда мне часто приходилось работать в очень сжатые сроки.",
+    "de": "Damals musste ich oft mit sehr knappen Fristen arbeiten."
+   },
+   {
+    "ru": "С 2015 года я отвечал за проверку кредитного обеспечения.",
+    "de": "Ab 2015 war ich für die Prüfung der Kreditsicherheiten verantwortlich."
+   },
+   {
+    "ru": "В 2023 году я с семьёй переехал в Рурскую область.",
+    "de": "2023 bin ich mit meiner Familie ins Ruhrgebiet gezogen."
+   },
+   {
+    "ru": "Сразу после переезда я начал интенсивно учить немецкий.",
+    "de": "Gleich nach dem Umzug habe ich angefangen, intensiv Deutsch zu lernen."
+   },
+   {
+    "ru": "В прошлом году я сдал в DEKRA экзамен на эксперта по оценке.",
+    "de": "Letztes Jahr habe ich bei der DEKRA die Prüfung zum Sachverständigen bestanden."
+   },
+   {
+    "ru": "За двадцать лет я составил более двух тысяч заключений.",
+    "de": "In zwanzig Jahren habe ich mehr als zweitausend Gutachten erstellt."
+   },
+   {
+    "ru": "Больше всего мне нравилась работа непосредственно на объектах.",
+    "de": "Am meisten hat mir die Arbeit direkt vor Ort gefallen."
+   },
+   {
+    "ru": "После университета мне не пришлось долго искать первую работу.",
+    "de": "Nach dem Studium musste ich nicht lange nach meiner ersten Stelle suchen."
+   }
+  ]
+ },
+ "g-kausal": {
+  "id": "g-kausal",
+  "day": 3,
+  "de": "Gründe und Folgen",
+  "ru": "Причины и следствия",
+  "rule": "<p><b>weil</b> и <b>da</b> вводят придаточное — глагол в конце: <b>…, weil ich regional arbeiten möchte.</b> <b>da</b> чаще ставят в начало, когда причина собеседнику уже известна: <b>Da ich lange im Kreditbereich gearbeitet habe, kenne ich die Anforderungen.</b></p><p><b>denn</b> соединяет два главных предложения и не влияет на порядок слов: <b>…, denn meine Familie lebt hier.</b></p><p><b>deshalb, daher, deswegen, darum</b> — «поэтому». Это наречия: они занимают первое место, и глагол идёт сразу за ними: <b>Die Lage ist gut, deshalb ist die Nachfrage hoch.</b> Можно и после глагола: <b>Die Nachfrage ist deshalb hoch.</b></p><p><b>sodass / so dass</b> — следствие в придаточном, глагол в конце: <b>Das Dach war undicht, sodass ein Abschlag nötig war.</b></p><p><b>wegen, aufgrund</b> + Genitiv — причина одним существительным, типично для заключения: <b>aufgrund der guten Lage, wegen des hohen Sanierungsbedarfs</b>. В разговоре слышно <i>wegen dem</i>, но письменно — только Genitiv.</p><p>Типичные ошибки: <i>weil ich habe Erfahrung</i> → <b>weil ich Erfahrung habe</b>; <i>deshalb ich bewerbe mich</i> → <b>deshalb bewerbe ich mich</b>.</p>",
+  "examples": [
+   {
+    "de": "Ich bewerbe mich bei der Sparkasse, weil mir die regionale Verankerung wichtig ist.",
+    "ru": "Я подаю заявку в Sparkasse, потому что для меня важна связь с регионом."
+   },
+   {
+    "de": "Da ich lange im Kreditbereich gearbeitet habe, kenne ich die Anforderungen an Sicherheiten.",
+    "ru": "Так как я долго работал в кредитной сфере, я знаю требования к обеспечению."
+   },
+   {
+    "de": "Ich möchte als Gutachter arbeiten, denn die Arbeit vor Ort macht mir Spaß.",
+    "ru": "Я хочу работать оценщиком, потому что мне нравится работа на объектах."
+   },
+   {
+    "de": "Die Lage ist sehr gut, deshalb ist die Nachfrage hoch.",
+    "ru": "Местоположение очень хорошее, поэтому спрос высокий."
+   },
+   {
+    "de": "Das Dach war undicht, sodass ein Abschlag notwendig war.",
+    "ru": "Крыша протекала, так что понадобилась скидка."
+   },
+   {
+    "de": "Aufgrund der Nähe zur Autobahn ist das Grundstück stark lärmbelastet.",
+    "ru": "Из-за близости к автобану участок сильно страдает от шума."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Ich bewerbe mich bei Ihnen, ___ ich mich für die Bewertung von Kreditsicherheiten interessiere.",
+    "a": [
+     "weil",
+     "da"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Ich möchte im Ruhrgebiet bleiben, ___ meine Familie lebt hier.",
+    "a": [
+     "denn"
+    ],
+    "h": "После союза — прямой порядок слов."
+   },
+   {
+    "t": "gap",
+    "q": "Die Wohnung liegt direkt an einer Hauptstraße, ___ ist sie schwer zu vermieten.",
+    "a": [
+     "deshalb",
+     "daher",
+     "deswegen",
+     "darum",
+     "also",
+     "folglich",
+     "somit",
+     "infolgedessen"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Ich kenne den regionalen Markt gut, ___ ich seit drei Jahren im Ruhrgebiet lebe.",
+    "o": [
+     "weil",
+     "denn",
+     "deshalb"
+    ],
+    "a": [
+     "weil"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Heizung ist veraltet, ___ müssen wir einen Abschlag ansetzen.",
+    "o": [
+     "deshalb",
+     "weil",
+     "denn"
+    ],
+    "a": [
+     "deshalb"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das Gutachten verzögert sich, ___ der Eigentümer hat die Unterlagen noch nicht geschickt.",
+    "o": [
+     "denn",
+     "weil",
+     "sodass"
+    ],
+    "a": [
+     "denn"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Aufgrund ___ guten Lage ist das Objekt leicht verkäuflich.",
+    "a": [
+     "der"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Wegen ___ Lärms ist die Wohnlage nur mittelmäßig.",
+    "o": [
+     "des",
+     "dem",
+     "der"
+    ],
+    "a": [
+     "des"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "___ des hohen Sanierungsbedarfs ist der Verkehrswert gesunken.",
+    "a": [
+     "Wegen",
+     "Aufgrund",
+     "Infolge",
+     "Angesichts",
+     "Auf Grund"
+    ],
+    "h": "Предлог с Genitiv."
+   },
+   {
+    "t": "gap",
+    "q": "Der Keller war feucht, ___ wir einen Bausachverständigen hinzuziehen mussten.",
+    "a": [
+     "sodass",
+     "so dass",
+     "weshalb",
+     "weswegen"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „weil“ verbinden.",
+    "q": "Ich bewerbe mich bei der Sparkasse. Ich möchte regional arbeiten.",
+    "a": [
+     "Ich bewerbe mich bei der Sparkasse, weil ich regional arbeiten möchte.",
+     "Weil ich regional arbeiten möchte, bewerbe ich mich bei der Sparkasse."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „deshalb“ verbinden.",
+    "q": "Ich habe lange im Kreditbereich gearbeitet. Ich kenne die Anforderungen der Banken.",
+    "a": [
+     "Ich habe lange im Kreditbereich gearbeitet, deshalb kenne ich die Anforderungen der Banken.",
+     "Ich habe lange im Kreditbereich gearbeitet, und deshalb kenne ich die Anforderungen der Banken.",
+     "Ich habe lange im Kreditbereich gearbeitet und kenne deshalb die Anforderungen der Banken.",
+     "Ich habe lange im Kreditbereich gearbeitet, ich kenne deshalb die Anforderungen der Banken."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „da“ beginnen.",
+    "q": "Das Objekt liegt verkehrsgünstig. Die Nachfrage ist hoch.",
+    "a": [
+     "Da das Objekt verkehrsgünstig liegt, ist die Nachfrage hoch."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „denn“ verbinden.",
+    "q": "Ich spreche Russisch und Ukrainisch. Ich bin in der Ukraine aufgewachsen.",
+    "a": [
+     "Ich spreche Russisch und Ukrainisch, denn ich bin in der Ukraine aufgewachsen."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "deshalb / habe / ich / mich / bei der Sparkasse / beworben",
+    "a": [
+     "Deshalb habe ich mich bei der Sparkasse beworben.",
+     "Ich habe mich deshalb bei der Sparkasse beworben.",
+     "Bei der Sparkasse habe ich mich deshalb beworben.",
+     "Ich habe mich bei der Sparkasse deshalb beworben."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "„weil“-Satz durch „wegen“ + Genitiv ersetzen.",
+    "q": "Weil die Lage schlecht ist, ist der Preis niedrig.",
+    "a": [
+     "Wegen der schlechten Lage ist der Preis niedrig.",
+     "Der Preis ist wegen der schlechten Lage niedrig."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „sodass“ verbinden.",
+    "q": "Die Fenster sind undicht. Es entstehen hohe Heizkosten.",
+    "a": [
+     "Die Fenster sind undicht, sodass hohe Heizkosten entstehen.",
+     "Die Fenster sind undicht, so dass hohe Heizkosten entstehen."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "Ich habe die Besichtigung verschoben, / weil / der Eigentümer / krank / war",
+    "a": [
+     "Ich habe die Besichtigung verschoben, weil der Eigentümer krank war."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „aufgrund“ + Genitiv umformen.",
+    "q": "Weil die Bausubstanz gut ist, ist kein Abschlag nötig.",
+    "a": [
+     "Aufgrund der guten Bausubstanz ist kein Abschlag nötig.",
+     "Aufgrund der guten Bausubstanz ist kein Abschlag notwendig.",
+     "Es ist aufgrund der guten Bausubstanz kein Abschlag nötig."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "aufgrund / der zentralen Lage / ist / gut vermietbar / das Objekt",
+    "a": [
+     "Aufgrund der zentralen Lage ist das Objekt gut vermietbar.",
+     "Das Objekt ist aufgrund der zentralen Lage gut vermietbar."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Объект трудно продать из-за плохого местоположения.",
+    "a": [
+     "Wegen der schlechten Lage ist das Objekt schwer verkäuflich.",
+     "Das Objekt ist wegen der schlechten Lage schwer verkäuflich.",
+     "Aufgrund der schlechten Lage ist das Objekt schwer verkäuflich.",
+     "Das Objekt ist aufgrund der schlechten Lage schwer verkäuflich.",
+     "Wegen der schlechten Lage ist das Objekt schwer zu verkaufen.",
+     "Das Objekt ist wegen der schlechten Lage schwer zu verkaufen.",
+     "Aufgrund der schlechten Lage ist das Objekt schwer zu verkaufen.",
+     "Das Objekt ist aufgrund der schlechten Lage schwer zu verkaufen.",
+     "Wegen der schlechten Lage lässt sich das Objekt schwer verkaufen.",
+     "Aufgrund der schlechten Lage lässt sich das Objekt schwer verkaufen.",
+     "Das Objekt lässt sich wegen der schlechten Lage schwer verkaufen.",
+     "Das Objekt lässt sich aufgrund der schlechten Lage schwer verkaufen.",
+     "Wegen der schlechten Lage ist das Objekt schwierig zu verkaufen.",
+     "Das Objekt ist wegen der schlechten Lage schwierig zu verkaufen.",
+     "Aufgrund der schlechten Lage ist das Objekt schwierig zu verkaufen.",
+     "Das Objekt ist aufgrund der schlechten Lage schwierig zu verkaufen."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Я хорошо знаю рынок, так как давно живу в Рурской области.",
+    "a": [
+     "Ich kenne den Markt gut, da ich schon lange im Ruhrgebiet lebe.",
+     "Ich kenne den Markt gut, weil ich schon lange im Ruhrgebiet lebe.",
+     "Ich kenne den Markt gut, da ich schon lange im Ruhrgebiet wohne.",
+     "Ich kenne den Markt gut, weil ich schon lange im Ruhrgebiet wohne.",
+     "Da ich schon lange im Ruhrgebiet lebe, kenne ich den Markt gut.",
+     "Da ich schon lange im Ruhrgebiet wohne, kenne ich den Markt gut.",
+     "Weil ich schon lange im Ruhrgebiet lebe, kenne ich den Markt gut.",
+     "Weil ich schon lange im Ruhrgebiet wohne, kenne ich den Markt gut."
+    ],
+    "h": "da / weil; schon lange"
+   },
+   {
+    "t": "translate",
+    "q": "Крыша протекала, поэтому мы заложили скидку.",
+    "a": [
+     "Das Dach war undicht, deshalb haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, daher haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, deswegen haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, darum haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, deshalb setzten wir einen Abschlag an.",
+     "Das Dach war undicht, daher setzten wir einen Abschlag an.",
+     "Das Dach war undicht, deswegen setzten wir einen Abschlag an.",
+     "Das Dach war undicht, wir haben deshalb einen Abschlag angesetzt.",
+     "Das Dach war undicht, darum setzten wir einen Abschlag an.",
+     "Das Dach war undicht, wir haben daher einen Abschlag angesetzt.",
+     "Das Dach war undicht, wir haben deswegen einen Abschlag angesetzt.",
+     "Das Dach war undicht, wir haben darum einen Abschlag angesetzt.",
+     "Das Dach war undicht, und deshalb haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, und daher haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, und deswegen haben wir einen Abschlag angesetzt.",
+     "Das Dach war undicht, und darum haben wir einen Abschlag angesetzt."
+    ],
+    "h": "undicht sein; einen Abschlag ansetzen"
+   },
+   {
+    "t": "translate",
+    "q": "Я хочу работать в Sparkasse, потому что для меня важна стабильность.",
+    "a": [
+     "Ich möchte bei der Sparkasse arbeiten, weil mir Stabilität wichtig ist.",
+     "Ich möchte bei der Sparkasse arbeiten, weil Stabilität für mich wichtig ist.",
+     "Ich möchte bei der Sparkasse arbeiten, weil für mich Stabilität wichtig ist.",
+     "Ich möchte bei der Sparkasse arbeiten, da mir Stabilität wichtig ist.",
+     "Ich möchte bei der Sparkasse arbeiten, da Stabilität für mich wichtig ist.",
+     "Ich möchte bei der Sparkasse arbeiten, denn Stabilität ist mir wichtig.",
+     "Ich möchte bei der Sparkasse arbeiten, denn Stabilität ist für mich wichtig.",
+     "Ich möchte bei der Sparkasse arbeiten, denn mir ist Stabilität wichtig.",
+     "Ich möchte bei der Sparkasse arbeiten, denn für mich ist Stabilität wichtig.",
+     "Ich möchte bei der Sparkasse arbeiten, da für mich Stabilität wichtig ist.",
+     "Weil mir Stabilität wichtig ist, möchte ich bei der Sparkasse arbeiten.",
+     "Da mir Stabilität wichtig ist, möchte ich bei der Sparkasse arbeiten.",
+     "Ich will bei der Sparkasse arbeiten, weil mir Stabilität wichtig ist.",
+     "Ich will bei der Sparkasse arbeiten, weil Stabilität für mich wichtig ist."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Из-за высокого спроса цены в этом районе выросли.",
+    "a": [
+     "Wegen der hohen Nachfrage sind die Preise in diesem Stadtteil gestiegen.",
+     "Aufgrund der hohen Nachfrage sind die Preise in diesem Stadtteil gestiegen.",
+     "Die Preise in diesem Stadtteil sind wegen der hohen Nachfrage gestiegen.",
+     "Die Preise in diesem Stadtteil sind aufgrund der hohen Nachfrage gestiegen.",
+     "In diesem Stadtteil sind die Preise wegen der hohen Nachfrage gestiegen.",
+     "In diesem Stadtteil sind die Preise aufgrund der hohen Nachfrage gestiegen.",
+     "Wegen der hohen Nachfrage stiegen die Preise in diesem Stadtteil.",
+     "Aufgrund der hohen Nachfrage stiegen die Preise in diesem Stadtteil.",
+     "Wegen der hohen Nachfrage sind in diesem Stadtteil die Preise gestiegen.",
+     "Aufgrund der hohen Nachfrage sind in diesem Stadtteil die Preise gestiegen.",
+     "Die Preise sind in diesem Stadtteil wegen der hohen Nachfrage gestiegen.",
+     "Die Preise sind in diesem Stadtteil aufgrund der hohen Nachfrage gestiegen.",
+     "Die Preise in diesem Stadtteil stiegen wegen der hohen Nachfrage.",
+     "Die Preise in diesem Stadtteil stiegen aufgrund der hohen Nachfrage."
+    ],
+    "h": "der Stadtteil; steigen"
+   },
+   {
+    "t": "translate",
+    "q": "Подвал был сырым, так что нам пришлось привлечь специалиста.",
+    "a": [
+     "Der Keller war feucht, sodass wir einen Fachmann hinzuziehen mussten.",
+     "Der Keller war feucht, so dass wir einen Fachmann hinzuziehen mussten.",
+     "Der Keller war feucht, sodass wir einen Experten hinzuziehen mussten.",
+     "Der Keller war feucht, so dass wir einen Experten hinzuziehen mussten.",
+     "Der Keller war feucht, sodass wir einen Sachverständigen hinzuziehen mussten.",
+     "Der Keller war feucht, so dass wir einen Sachverständigen hinzuziehen mussten.",
+     "Der Keller war feucht, sodass wir einen Spezialisten hinzuziehen mussten.",
+     "Der Keller war feucht, so dass wir einen Spezialisten hinzuziehen mussten.",
+     "Der Keller war feucht, sodass wir einen Bausachverständigen hinzuziehen mussten.",
+     "Der Keller war feucht, so dass wir einen Bausachverständigen hinzuziehen mussten."
+    ],
+    "h": "sodass; einen Fachmann hinzuziehen"
+   },
+   {
+    "t": "fix",
+    "q": "Ich bewerbe mich bei Ihnen, weil ich habe viel Erfahrung mit Kreditsicherheiten.",
+    "a": [
+     "Ich bewerbe mich bei Ihnen, weil ich viel Erfahrung mit Kreditsicherheiten habe.",
+     "Ich bewerbe mich bei Ihnen, denn ich habe viel Erfahrung mit Kreditsicherheiten."
+    ],
+    "h": "Порядок слов в придаточном."
+   },
+   {
+    "t": "fix",
+    "q": "Die Lage ist sehr gut, deshalb die Preise sind hoch.",
+    "a": [
+     "Die Lage ist sehr gut, deshalb sind die Preise hoch.",
+     "Die Lage ist sehr gut, die Preise sind deshalb hoch."
+    ],
+    "h": "После deshalb — сначала глагол."
+   },
+   {
+    "t": "fix",
+    "q": "Ich kann morgen nicht kommen, denn ich eine Ortsbesichtigung habe.",
+    "a": [
+     "Ich kann morgen nicht kommen, denn ich habe eine Ortsbesichtigung.",
+     "Ich kann morgen nicht kommen, weil ich eine Ortsbesichtigung habe.",
+     "Ich kann morgen nicht kommen, da ich eine Ortsbesichtigung habe."
+    ],
+    "h": "После denn — обычный порядок слов."
+   },
+   {
+    "t": "fix",
+    "q": "Aufgrund der schlechte Zustand des Daches ist ein Abschlag nötig.",
+    "a": [
+     "Aufgrund des schlechten Zustands des Daches ist ein Abschlag nötig.",
+     "Aufgrund des schlechten Zustandes des Daches ist ein Abschlag nötig."
+    ],
+    "h": "aufgrund + Genitiv."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Я подаю заявку в Sparkasse, потому что мне важна работа в регионе.",
+    "de": "Ich bewerbe mich bei der Sparkasse, weil mir die Arbeit in der Region wichtig ist."
+   },
+   {
+    "ru": "Так как я двадцать лет работаю с залогами, я хорошо знаю требования банков.",
+    "de": "Da ich seit zwanzig Jahren mit Kreditsicherheiten arbeite, kenne ich die Anforderungen der Banken gut."
+   },
+   {
+    "ru": "Мне нравится эта профессия, потому что каждый объект уникален.",
+    "de": "Mir gefällt dieser Beruf, denn jedes Objekt ist einzigartig."
+   },
+   {
+    "ru": "Я сдал экзамен DEKRA, поэтому знаю немецкие стандарты оценки.",
+    "de": "Ich habe die DEKRA-Prüfung bestanden, deshalb kenne ich die deutschen Bewertungsstandards."
+   },
+   {
+    "ru": "Из-за близости к автобану участок сильно страдает от шума.",
+    "de": "Aufgrund der Nähe zur Autobahn ist das Grundstück stark lärmbelastet."
+   },
+   {
+    "ru": "Крыша в плохом состоянии, поэтому нужна скидка.",
+    "de": "Das Dach ist in schlechtem Zustand, deshalb ist ein Abschlag nötig."
+   },
+   {
+    "ru": "Спрос высокий, так что объект можно быстро продать.",
+    "de": "Die Nachfrage ist hoch, sodass sich das Objekt schnell verkaufen lässt."
+   },
+   {
+    "ru": "Я хочу развиваться дальше, поэтому меня интересует работа в оценочном бюро.",
+    "de": "Ich möchte mich weiterentwickeln, deshalb interessiere ich mich für eine Stelle in einem Gutachterbüro."
+   },
+   {
+    "ru": "Из-за переезда в моём резюме есть пауза в один год.",
+    "de": "Wegen des Umzugs gibt es in meinem Lebenslauf eine Lücke von einem Jahr."
+   },
+   {
+    "ru": "Я ушёл из банка, так как хотел работать самостоятельнее.",
+    "de": "Ich habe die Bank verlassen, weil ich selbstständiger arbeiten wollte."
+   },
+   {
+    "ru": "Благодаря хорошей инфраструктуре этот район очень популярен.",
+    "de": "Aufgrund der guten Infrastruktur ist dieser Stadtteil sehr beliebt."
+   },
+   {
+    "ru": "Документы пришли поздно, поэтому заключение задерживается.",
+    "de": "Die Unterlagen sind spät angekommen, deshalb verzögert sich das Gutachten."
+   }
+  ]
+ },
+ "g-nebensatz": {
+  "id": "g-nebensatz",
+  "day": 4,
+  "de": "dass, ob, indirekte Fragen; als, wenn, wann",
+  "ru": "dass, ob, косвенные вопросы; als, wenn, wann",
+  "rule": "<p><b>dass</b> передаёт содержание мнения или высказывания, глагол в конце: <b>Ich denke, dass meine Erfahrung gut zu der Stelle passt.</b> После <b>ich denke / ich glaube</b> можно и без dass, тогда порядок прямой: <b>Ich denke, meine Erfahrung passt gut.</b></p><p><b>ob</b> = «ли» — косвенный вопрос без вопросительного слова: <b>Ich würde gern wissen, ob die Stelle unbefristet ist.</b> Ошибка: <i>…, dass die Stelle unbefristet ist</i>, если это вопрос.</p><p>Косвенный W-вопрос: <b>wann, wie, wie viele, wer, warum</b> + глагол в конце: <b>Können Sie mir sagen, wann die Einarbeitung beginnt?</b> (не <i>wann beginnt</i>).</p><p>Вежливые начала для собеседования: <b>Ich würde gern wissen, … / Darf ich fragen, … / Könnten Sie mir sagen, …</b></p><p><b>als</b> — одно событие или период в прошлом: <b>Als ich nach Deutschland kam, …</b><br><b>wenn</b> — повторяющееся действие (immer wenn), а также настоящее и будущее: <b>Wenn ich ein Objekt besichtige, mache ich Fotos.</b><br><b>wann</b> — только вопрос «когда?», в том числе косвенный: <b>Ich weiß nicht, wann der Eigentümer kommt.</b></p>",
+  "examples": [
+   {
+    "de": "Ich denke, dass meine Erfahrung gut zu dieser Stelle passt.",
+    "ru": "Я думаю, что мой опыт хорошо подходит для этой должности."
+   },
+   {
+    "de": "Könnten Sie mir sagen, wie die Einarbeitung bei Ihnen abläuft?",
+    "ru": "Не могли бы вы сказать, как у вас проходит введение в должность?"
+   },
+   {
+    "de": "Ich würde gern wissen, ob die Stelle unbefristet ist.",
+    "ru": "Я хотел бы знать, бессрочная ли это должность."
+   },
+   {
+    "de": "Als ich nach Deutschland kam, habe ich sofort einen Deutschkurs besucht.",
+    "ru": "Когда я приехал в Германию, я сразу пошёл на курсы немецкого."
+   },
+   {
+    "de": "Wenn ich ein Objekt besichtige, mache ich immer Fotos von allen Räumen.",
+    "ru": "Когда я осматриваю объект, я всегда фотографирую все помещения."
+   },
+   {
+    "de": "Ich weiß noch nicht, wann ich das Gutachten fertigstellen kann.",
+    "ru": "Я ещё не знаю, когда смогу закончить заключение."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Ich glaube, ___ ich gut in Ihr Team passe.",
+    "a": [
+     "dass"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Ich würde gern wissen, ___ die Stelle unbefristet ist.",
+    "a": [
+     "ob"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Ich weiß noch nicht, ___ ich die Unterlagen bekomme.",
+    "o": [
+     "wann",
+     "wenn",
+     "als"
+    ],
+    "a": [
+     "wann"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "___ ich vor vielen Jahren bei der Bank anfing, gab es noch keine digitalen Akten.",
+    "a": [
+     "Als"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Immer ___ ich ein Objekt besichtige, prüfe ich zuerst die Unterlagen.",
+    "a": [
+     "wenn"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "___ ich nach Deutschland gekommen bin, konnte ich nur wenig Deutsch.",
+    "o": [
+     "Als",
+     "Wenn",
+     "Wann"
+    ],
+    "a": [
+     "Als"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Können Sie mir sagen, ___ das Vorstellungsgespräch beginnt? – Um zehn Uhr.",
+    "a": [
+     "wann",
+     "um wie viel Uhr"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Ich frage mich, ___ der Kaufpreis realistisch ist.",
+    "o": [
+     "ob",
+     "dass",
+     "wenn"
+    ],
+    "a": [
+     "ob"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Der Kreditberater möchte wissen, ___ hoch der Beleihungswert ist.",
+    "a": [
+     "wie"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Darf ich fragen, ___?",
+    "o": [
+     "wie groß das Team ist",
+     "wie groß ist das Team",
+     "ob wie groß das Team ist"
+    ],
+    "a": [
+     "wie groß das Team ist"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Indirekte Frage mit „Können Sie mir sagen, …?“",
+    "q": "Wann beginnt die Einarbeitung?",
+    "a": [
+     "Können Sie mir sagen, wann die Einarbeitung beginnt?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Indirekte Frage mit „Ich würde gern wissen, …“",
+    "q": "Ist die Stelle befristet?",
+    "a": [
+     "Ich würde gern wissen, ob die Stelle befristet ist.",
+     "Ich würde gerne wissen, ob die Stelle befristet ist."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „Ich bin sicher, dass …“ umformen.",
+    "q": "Meine Erfahrung ist für Sie nützlich.",
+    "a": [
+     "Ich bin sicher, dass meine Erfahrung für Sie nützlich ist."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "Ich würde gern wissen, / wie / bei Ihnen / die Einarbeitung / abläuft",
+    "a": [
+     "Ich würde gern wissen, wie die Einarbeitung bei Ihnen abläuft.",
+     "Ich würde gern wissen, wie bei Ihnen die Einarbeitung abläuft."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Indirekte Frage mit „Darf ich fragen, …?“",
+    "q": "Wie viele Gutachten erstellt ein Gutachter pro Monat?",
+    "a": [
+     "Darf ich fragen, wie viele Gutachten ein Gutachter pro Monat erstellt?",
+     "Darf ich fragen, wie viele Gutachten pro Monat ein Gutachter erstellt?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „als“ verbinden.",
+    "q": "Ich kam nach Deutschland. Ich sprach nur wenig Deutsch.",
+    "a": [
+     "Als ich nach Deutschland kam, sprach ich nur wenig Deutsch.",
+     "Ich sprach nur wenig Deutsch, als ich nach Deutschland kam."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „wenn“ verbinden.",
+    "q": "Ich besichtige ein Objekt. Ich mache immer ein Protokoll.",
+    "a": [
+     "Wenn ich ein Objekt besichtige, mache ich immer ein Protokoll.",
+     "Ich mache immer ein Protokoll, wenn ich ein Objekt besichtige.",
+     "Immer wenn ich ein Objekt besichtige, mache ich ein Protokoll."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "als / der Gutachter / ankam, / wartete / der Eigentümer / schon",
+    "a": [
+     "Als der Gutachter ankam, wartete der Eigentümer schon.",
+     "Als der Gutachter ankam, wartete schon der Eigentümer.",
+     "Der Eigentümer wartete schon, als der Gutachter ankam."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Indirekte Frage: „Der Kreditberater fragt mich, …“",
+    "q": "Haben Sie das Grundbuch schon geprüft?",
+    "a": [
+     "Der Kreditberater fragt mich, ob ich das Grundbuch schon geprüft habe.",
+     "Der Kreditberater fragt mich, ob ich schon das Grundbuch geprüft habe."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "Ich bin nicht sicher, / ob / der Eigentümer / alle Unterlagen / vorbereitet / hat",
+    "a": [
+     "Ich bin nicht sicher, ob der Eigentümer alle Unterlagen vorbereitet hat."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Я думаю, что мой опыт подходит для этой должности.",
+    "a": [
+     "Ich denke, dass meine Erfahrung zu dieser Stelle passt.",
+     "Ich glaube, dass meine Erfahrung zu dieser Stelle passt.",
+     "Ich denke, meine Erfahrung passt zu dieser Stelle.",
+     "Ich glaube, meine Erfahrung passt zu dieser Stelle.",
+     "Ich denke, dass meine Erfahrungen zu dieser Stelle passen.",
+     "Ich glaube, dass meine Erfahrungen zu dieser Stelle passen.",
+     "Ich denke, meine Erfahrungen passen zu dieser Stelle.",
+     "Ich glaube, meine Erfahrungen passen zu dieser Stelle."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Не могли бы вы сказать, когда я получу ответ?",
+    "a": [
+     "Könnten Sie mir sagen, wann ich eine Antwort bekomme?",
+     "Könnten Sie mir sagen, wann ich eine Antwort erhalte?",
+     "Könnten Sie mir sagen, wann ich eine Antwort bekommen werde?",
+     "Könnten Sie mir sagen, wann ich eine Rückmeldung bekomme?",
+     "Könnten Sie mir sagen, wann ich eine Rückmeldung erhalte?",
+     "Könnten Sie mir bitte sagen, wann ich eine Antwort bekomme?",
+     "Können Sie mir sagen, wann ich eine Antwort bekomme?",
+     "Können Sie mir sagen, wann ich eine Antwort erhalte?",
+     "Könnten Sie mir bitte sagen, wann ich eine Antwort erhalte?",
+     "Könnten Sie mir bitte sagen, wann ich eine Rückmeldung bekomme?",
+     "Können Sie mir sagen, wann ich eine Rückmeldung bekomme?",
+     "Können Sie mir sagen, wann ich eine Rückmeldung erhalte?",
+     "Könnten Sie mir sagen, wann ich eine Antwort erhalten werde?"
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Я хотел бы знать, есть ли у вас программа введения в должность.",
+    "a": [
+     "Ich würde gern wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.",
+     "Ich würde gerne wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.",
+     "Ich würde gern wissen, ob Sie ein Einarbeitungsprogramm haben.",
+     "Ich würde gerne wissen, ob Sie ein Einarbeitungsprogramm haben.",
+     "Ich möchte gern wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.",
+     "Ich möchte wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt.",
+     "Ich möchte gern wissen, ob Sie ein Einarbeitungsprogramm haben.",
+     "Ich möchte gerne wissen, ob Sie ein Einarbeitungsprogramm haben.",
+     "Ich möchte wissen, ob Sie ein Einarbeitungsprogramm haben.",
+     "Ich möchte gerne wissen, ob es bei Ihnen ein Einarbeitungsprogramm gibt."
+    ],
+    "h": "das Einarbeitungsprogramm"
+   },
+   {
+    "t": "translate",
+    "q": "Когда я начинал работать оценщиком, у меня ещё не было опыта.",
+    "a": [
+     "Als ich als Gutachter anfing, hatte ich noch keine Erfahrung.",
+     "Als ich als Gutachter angefangen habe, hatte ich noch keine Erfahrung.",
+     "Ich hatte noch keine Erfahrung, als ich als Gutachter anfing.",
+     "Ich hatte noch keine Erfahrung, als ich als Gutachter angefangen habe.",
+     "Als ich anfing, als Gutachter zu arbeiten, hatte ich noch keine Erfahrung.",
+     "Als ich angefangen habe, als Gutachter zu arbeiten, hatte ich noch keine Erfahrung.",
+     "Ich hatte noch keine Erfahrung, als ich anfing, als Gutachter zu arbeiten.",
+     "Ich hatte noch keine Erfahrung, als ich angefangen habe, als Gutachter zu arbeiten."
+    ],
+    "h": "als; als Gutachter anfangen"
+   },
+   {
+    "t": "translate",
+    "q": "Каждый раз, когда я осматриваю дом, я проверяю подвал.",
+    "a": [
+     "Immer wenn ich ein Haus besichtige, prüfe ich den Keller.",
+     "Jedes Mal, wenn ich ein Haus besichtige, prüfe ich den Keller.",
+     "Wenn ich ein Haus besichtige, prüfe ich immer den Keller.",
+     "Immer wenn ich ein Haus besichtige, kontrolliere ich den Keller.",
+     "Jedes Mal, wenn ich ein Haus besichtige, kontrolliere ich den Keller.",
+     "Wenn ich ein Haus besichtige, kontrolliere ich immer den Keller.",
+     "Ich prüfe immer den Keller, wenn ich ein Haus besichtige.",
+     "Ich kontrolliere immer den Keller, wenn ich ein Haus besichtige.",
+     "Ich prüfe jedes Mal den Keller, wenn ich ein Haus besichtige.",
+     "Ich kontrolliere jedes Mal den Keller, wenn ich ein Haus besichtige."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Я не знаю, когда собственник пришлёт документы.",
+    "a": [
+     "Ich weiß nicht, wann der Eigentümer die Unterlagen schickt.",
+     "Ich weiß nicht, wann der Eigentümer die Unterlagen schicken wird.",
+     "Ich weiß nicht, wann der Eigentümer die Unterlagen zuschickt.",
+     "Ich weiß nicht, wann der Eigentümer die Dokumente schickt.",
+     "Ich weiß nicht, wann der Eigentümer die Dokumente schicken wird.",
+     "Ich weiß nicht, wann der Eigentümer die Unterlagen sendet.",
+     "Ich weiß nicht, wann der Eigentümer die Unterlagen zuschicken wird.",
+     "Ich weiß nicht, wann der Eigentümer die Dokumente zuschickt.",
+     "Ich weiß nicht, wann der Eigentümer die Dokumente zuschicken wird."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Wenn ich vor einigen Jahren nach Deutschland kam, konnte ich kaum Deutsch.",
+    "a": [
+     "Als ich vor einigen Jahren nach Deutschland kam, konnte ich kaum Deutsch."
+    ],
+    "h": "Одно событие в прошлом."
+   },
+   {
+    "t": "fix",
+    "q": "Können Sie mir sagen, wann beginnt die Besichtigung?",
+    "a": [
+     "Können Sie mir sagen, wann die Besichtigung beginnt?"
+    ],
+    "h": "Порядок слов в косвенном вопросе."
+   },
+   {
+    "t": "fix",
+    "q": "Ich würde gern wissen, dass die Stelle auch in Teilzeit möglich ist.",
+    "a": [
+     "Ich würde gern wissen, ob die Stelle auch in Teilzeit möglich ist.",
+     "Ich würde gerne wissen, ob die Stelle auch in Teilzeit möglich ist."
+    ],
+    "h": "Это вопрос «да/нет»."
+   },
+   {
+    "t": "fix",
+    "q": "Ich weiß nicht, wenn das Gutachten fertig ist.",
+    "a": [
+     "Ich weiß nicht, wann das Gutachten fertig ist."
+    ],
+    "h": "Здесь нужен вопрос «когда?»."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Я думаю, что мой опыт с кредитным обеспечением будет вам полезен.",
+    "de": "Ich denke, dass meine Erfahrung mit Kreditsicherheiten für Sie nützlich ist."
+   },
+   {
+    "ru": "Я хотел бы узнать, как у вас проходит введение в должность.",
+    "de": "Ich würde gern wissen, wie die Einarbeitung bei Ihnen abläuft."
+   },
+   {
+    "ru": "Не могли бы вы сказать, сколько оценщиков работает в отделе?",
+    "de": "Könnten Sie mir sagen, wie viele Gutachter in der Abteilung arbeiten?"
+   },
+   {
+    "ru": "Можно спросить, является ли эта должность бессрочной?",
+    "de": "Darf ich fragen, ob die Stelle unbefristet ist?"
+   },
+   {
+    "ru": "Когда я приехал в Германию, я сразу начал учить немецкий.",
+    "de": "Als ich nach Deutschland kam, habe ich sofort angefangen, Deutsch zu lernen."
+   },
+   {
+    "ru": "Когда я осматриваю объект, я всегда фотографирую все помещения.",
+    "de": "Wenn ich ein Objekt besichtige, fotografiere ich immer alle Räume."
+   },
+   {
+    "ru": "Я ещё не знаю, когда смогу начать работу.",
+    "de": "Ich weiß noch nicht, wann ich die Stelle antreten kann."
+   },
+   {
+    "ru": "Для меня важно, чтобы мои заключения были понятными и обоснованными.",
+    "de": "Für mich ist wichtig, dass meine Gutachten nachvollziehbar sind."
+   },
+   {
+    "ru": "Банк хочет знать, есть ли в поземельной книге обременения.",
+    "de": "Die Bank möchte wissen, ob es Belastungen im Grundbuch gibt."
+   },
+   {
+    "ru": "Когда я работал в банке, я каждую неделю проверял около двадцати заключений.",
+    "de": "Als ich bei der Bank war, habe ich jede Woche etwa zwanzig Gutachten geprüft."
+   },
+   {
+    "ru": "Не могли бы вы объяснить, кто принимает окончательное решение по кредиту?",
+    "de": "Könnten Sie mir erklären, wer die endgültige Kreditentscheidung trifft?"
+   },
+   {
+    "ru": "Я уверен, что быстро освою немецкие нормативы.",
+    "de": "Ich bin sicher, dass ich mich schnell in die deutschen Vorschriften einarbeite."
+   }
+  ]
+ },
+ "g-praep": {
+  "id": "g-praep",
+  "day": 5,
+  "de": "Lage beschreiben: lokale Präpositionen und Genitivpräpositionen",
+  "ru": "Описание местоположения: предлоги места и предлоги с Genitiv",
+  "rule": "<p><b>Wechselpräpositionen</b> (in, an, auf, über, unter, vor, hinter, neben, zwischen): <b>Wo?</b> → Dativ, <b>Wohin?</b> → Akkusativ. <b>Das Haus liegt in einem ruhigen Wohngebiet.</b> — <b>Viele Familien ziehen in die Vororte.</b></p><p>Устойчивые сочетания: <b>am Stadtrand, im Ruhrgebiet, im Süden von Bochum, in der Innenstadt, an der Hauptstraße, im zweiten Obergeschoss, auf dem Grundstück</b>.</p><p><b>С Genitiv</b>: <b>innerhalb / außerhalb des Ortskerns, unweit des Bahnhofs, entlang der Straße</b> (после существительного — с Akk.: <b>die Straße entlang</b>). <b>in der Nähe des Bahnhofs</b> — письменно, <b>in der Nähe vom Bahnhof</b> — устно.</p><p>Расстояние: <b>Das Objekt ist zwei Kilometer vom Zentrum entfernt.</b> Транспорт: <b>gut an die A40 / an den Nahverkehr angebunden</b> (an + Akk.), <b>die Anbindung an</b> + Akk., <b>die Nähe zu</b> + Dat.: <b>die Nähe zur Autobahn</b>. Граница: <b>Das Grundstück grenzt an einen Park.</b> (an + Akk.)</p><p>Ошибки: <i>im Stadtrand</i> → <b>am Stadtrand</b>; <i>in der Nähe von des Bahnhofs</i> → <b>des Bahnhofs</b> или <b>vom Bahnhof</b>; <i>innerhalb dem</i> → <b>innerhalb des</b>; <i>an der A40 angebunden</i> → <b>an die A40</b>.</p>",
+  "examples": [
+   {
+    "de": "Das Einfamilienhaus liegt in einem ruhigen Wohngebiet am Stadtrand von Bochum.",
+    "ru": "Дом на одну семью находится в тихом жилом районе на окраине Бохума."
+   },
+   {
+    "de": "Der Hauptbahnhof ist nur zehn Gehminuten vom Objekt entfernt.",
+    "ru": "До главного вокзала от объекта всего десять минут пешком."
+   },
+   {
+    "de": "Das Grundstück ist über die A40 gut an das überregionale Straßennetz angebunden.",
+    "ru": "Через A40 участок хорошо связан с междугородной дорожной сетью."
+   },
+   {
+    "de": "Innerhalb des Stadtteils gibt es Schulen, Ärzte und Einkaufsmöglichkeiten.",
+    "ru": "В пределах района есть школы, врачи и магазины."
+   },
+   {
+    "de": "Unweit des Objekts verläuft eine stark befahrene Bahnlinie.",
+    "ru": "Недалеко от объекта проходит загруженная железнодорожная линия."
+   },
+   {
+    "de": "Entlang der Hauptstraße befinden sich zahlreiche Geschäfte.",
+    "ru": "Вдоль главной улицы расположено множество магазинов."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Das Haus liegt ___ Stadtrand von Dortmund.",
+    "a": [
+     "am"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Wohnung befindet sich ___ dritten Obergeschoss.",
+    "a": [
+     "im"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Objekt liegt in der Nähe ___ Hauptbahnhofs.",
+    "a": [
+     "des"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Der Käufer möchte ___ ruhige Wohngegend ziehen.",
+    "o": [
+     "in eine",
+     "in einer",
+     "an einer"
+    ],
+    "a": [
+     "in eine"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die nächste Bushaltestelle ist etwa 300 Meter ___ Grundstück entfernt.",
+    "a": [
+     "vom",
+     "von dem"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Schule liegt innerhalb ___ Wohngebiets.",
+    "o": [
+     "des",
+     "dem",
+     "das"
+    ],
+    "a": [
+     "des"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Der Stadtteil ist gut ___ den öffentlichen Nahverkehr angebunden.",
+    "a": [
+     "an"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das Grundstück grenzt ___ ein Naturschutzgebiet.",
+    "o": [
+     "an",
+     "neben",
+     "bei"
+    ],
+    "a": [
+     "an"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Außerhalb ___ Ortskerns gibt es kaum Geschäfte.",
+    "a": [
+     "des"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "___ des Flusses verläuft ein Radweg.",
+    "o": [
+     "Entlang",
+     "Innerhalb",
+     "Zwischen"
+    ],
+    "a": [
+     "Entlang"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "„vom“ durch Genitiv ersetzen.",
+    "q": "Das Haus liegt in der Nähe vom Bahnhof.",
+    "a": [
+     "Das Haus liegt in der Nähe des Bahnhofs.",
+     "Das Haus liegt in der Nähe des Bahnhofes."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „unweit“ + Genitiv umformen.",
+    "q": "Das Objekt liegt nicht weit von der Autobahn.",
+    "a": [
+     "Das Objekt liegt unweit der Autobahn."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Wo? → Wohin? Beginnen Sie mit „Wir fahren …“",
+    "q": "Wir sind im Gewerbegebiet.",
+    "a": [
+     "Wir fahren ins Gewerbegebiet.",
+     "Wir fahren in das Gewerbegebiet."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "liegt / das Grundstück / in einem ruhigen Wohngebiet / am Stadtrand",
+    "a": [
+     "Das Grundstück liegt in einem ruhigen Wohngebiet am Stadtrand.",
+     "Das Grundstück liegt am Stadtrand in einem ruhigen Wohngebiet.",
+     "In einem ruhigen Wohngebiet am Stadtrand liegt das Grundstück.",
+     "Am Stadtrand liegt das Grundstück in einem ruhigen Wohngebiet."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „entfernt“ umformen: „Das Objekt ist …“",
+    "q": "Vom Objekt bis zur Innenstadt sind es zwei Kilometer.",
+    "a": [
+     "Das Objekt ist zwei Kilometer von der Innenstadt entfernt.",
+     "Das Objekt ist von der Innenstadt zwei Kilometer entfernt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „angebunden an“ umformen.",
+    "q": "Das Gewerbegebiet hat eine gute Anbindung an die A2.",
+    "a": [
+     "Das Gewerbegebiet ist gut an die A2 angebunden.",
+     "Das Gewerbegebiet ist an die A2 gut angebunden.",
+     "Das Gewerbegebiet ist gut an die Autobahn A2 angebunden."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „innerhalb“ + Genitiv umformen.",
+    "q": "Die Wohnung liegt im Stadtzentrum.",
+    "a": [
+     "Die Wohnung liegt innerhalb des Stadtzentrums."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "ist / nur fünf Gehminuten / der Bahnhof / vom Objekt / entfernt",
+    "a": [
+     "Der Bahnhof ist nur fünf Gehminuten vom Objekt entfernt.",
+     "Der Bahnhof ist vom Objekt nur fünf Gehminuten entfernt.",
+     "Vom Objekt ist der Bahnhof nur fünf Gehminuten entfernt.",
+     "Nur fünf Gehminuten vom Objekt entfernt ist der Bahnhof.",
+     "Nur fünf Gehminuten ist der Bahnhof vom Objekt entfernt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "„Gebäude“ in den Plural setzen.",
+    "q": "Hinter dem Gebäude befindet sich ein Parkplatz.",
+    "a": [
+     "Hinter den Gebäuden befindet sich ein Parkplatz."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "befinden sich / entlang der Hauptstraße / zahlreiche / kleine Geschäfte",
+    "a": [
+     "Entlang der Hauptstraße befinden sich zahlreiche kleine Geschäfte.",
+     "Zahlreiche kleine Geschäfte befinden sich entlang der Hauptstraße."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Дом находится в тихом районе на окраине города.",
+    "a": [
+     "Das Haus liegt in einer ruhigen Gegend am Stadtrand.",
+     "Das Haus befindet sich in einer ruhigen Gegend am Stadtrand.",
+     "Das Haus liegt in einer ruhigen Wohngegend am Stadtrand.",
+     "Das Haus befindet sich in einer ruhigen Wohngegend am Stadtrand.",
+     "Das Haus liegt in einem ruhigen Wohngebiet am Stadtrand.",
+     "Das Haus befindet sich in einem ruhigen Wohngebiet am Stadtrand.",
+     "Das Haus liegt in einem ruhigen Viertel am Stadtrand.",
+     "Das Haus liegt am Stadtrand in einer ruhigen Gegend.",
+     "Das Haus liegt am Stadtrand in einem ruhigen Wohngebiet.",
+     "Das Haus liegt in einem ruhigen Stadtteil am Stadtrand.",
+     "Das Haus befindet sich in einem ruhigen Stadtteil am Stadtrand.",
+     "Das Haus befindet sich in einem ruhigen Viertel am Stadtrand.",
+     "Das Haus liegt am Stadtrand in einer ruhigen Wohngegend.",
+     "Das Haus befindet sich am Stadtrand in einer ruhigen Gegend.",
+     "Das Haus befindet sich am Stadtrand in einem ruhigen Wohngebiet."
+    ],
+    "h": "die Gegend / das Wohngebiet; der Stadtrand"
+   },
+   {
+    "t": "translate",
+    "q": "Объект расположен недалеко от вокзала.",
+    "a": [
+     "Das Objekt liegt unweit des Bahnhofs.",
+     "Das Objekt liegt in der Nähe des Bahnhofs.",
+     "Das Objekt liegt in der Nähe vom Bahnhof.",
+     "Das Objekt liegt nicht weit vom Bahnhof.",
+     "Das Objekt liegt nicht weit vom Bahnhof entfernt.",
+     "Das Objekt befindet sich unweit des Bahnhofs.",
+     "Das Objekt befindet sich in der Nähe des Bahnhofs.",
+     "Das Objekt befindet sich nicht weit vom Bahnhof.",
+     "Das Objekt liegt unweit des Bahnhofes.",
+     "Das Objekt liegt in der Nähe des Bahnhofes.",
+     "Das Objekt befindet sich in der Nähe vom Bahnhof.",
+     "Das Objekt befindet sich nicht weit vom Bahnhof entfernt.",
+     "Das Objekt ist nicht weit vom Bahnhof entfernt.",
+     "Das Objekt befindet sich unweit des Bahnhofes.",
+     "Das Objekt befindet sich in der Nähe des Bahnhofes."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Участок хорошо связан с автобаном A40.",
+    "a": [
+     "Das Grundstück ist gut an die A40 angebunden.",
+     "Das Grundstück ist gut an die Autobahn A40 angebunden.",
+     "Das Grundstück hat eine gute Anbindung an die A40.",
+     "Das Grundstück hat eine gute Anbindung an die Autobahn A40.",
+     "Das Grundstück ist an die A40 gut angebunden.",
+     "Das Grundstück verfügt über eine gute Anbindung an die A40.",
+     "Das Grundstück verfügt über eine gute Anbindung an die Autobahn A40."
+    ],
+    "h": "angebunden an + Akk."
+   },
+   {
+    "t": "translate",
+    "q": "За пределами центра почти нет магазинов.",
+    "a": [
+     "Außerhalb des Ortskerns gibt es kaum Geschäfte.",
+     "Außerhalb des Ortskerns gibt es fast keine Geschäfte.",
+     "Außerhalb des Ortskerns gibt es kaum Läden.",
+     "Außerhalb des Ortskerns gibt es fast keine Läden.",
+     "Außerhalb des Zentrums gibt es kaum Geschäfte.",
+     "Außerhalb des Zentrums gibt es fast keine Geschäfte.",
+     "Außerhalb des Zentrums gibt es kaum Läden.",
+     "Außerhalb des Zentrums gibt es fast keine Läden.",
+     "Außerhalb des Ortskerns gibt es kaum Einkaufsmöglichkeiten.",
+     "Außerhalb des Zentrums gibt es kaum Einkaufsmöglichkeiten.",
+     "Außerhalb des Stadtzentrums gibt es kaum Geschäfte.",
+     "Außerhalb des Stadtzentrums gibt es fast keine Geschäfte.",
+     "Außerhalb der Innenstadt gibt es kaum Geschäfte.",
+     "Außerhalb der Innenstadt gibt es fast keine Geschäfte."
+    ],
+    "h": "außerhalb + Genitiv; der Ortskern"
+   },
+   {
+    "t": "translate",
+    "q": "В пределах района есть школы и врачи.",
+    "a": [
+     "Innerhalb des Stadtteils gibt es Schulen und Ärzte.",
+     "Innerhalb des Stadtteiles gibt es Schulen und Ärzte.",
+     "Innerhalb des Stadtteils gibt es Schulen und Arztpraxen.",
+     "Innerhalb des Stadtteils befinden sich Schulen und Ärzte.",
+     "Innerhalb des Stadtteils befinden sich Schulen und Arztpraxen."
+    ],
+    "h": "innerhalb + Genitiv; der Stadtteil"
+   },
+   {
+    "t": "translate",
+    "q": "Вдоль участка проходит железная дорога.",
+    "a": [
+     "Entlang des Grundstücks verläuft eine Bahnlinie.",
+     "Entlang des Grundstückes verläuft eine Bahnlinie.",
+     "Eine Bahnlinie verläuft entlang des Grundstücks.",
+     "Am Grundstück entlang verläuft eine Bahnlinie.",
+     "Entlang des Grundstücks verläuft eine Bahnstrecke.",
+     "Eine Bahnstrecke verläuft entlang des Grundstücks.",
+     "Eine Bahnlinie verläuft am Grundstück entlang.",
+     "Das Grundstück entlang verläuft eine Bahnlinie.",
+     "Entlang des Grundstücks verläuft eine Eisenbahnlinie."
+    ],
+    "h": "verlaufen; die Bahnlinie"
+   },
+   {
+    "t": "fix",
+    "q": "Das Objekt liegt im Stadtrand von Essen.",
+    "a": [
+     "Das Objekt liegt am Stadtrand von Essen."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Haus liegt in der Nähe von des Bahnhofs.",
+    "a": [
+     "Das Haus liegt in der Nähe des Bahnhofs.",
+     "Das Haus liegt in der Nähe vom Bahnhof.",
+     "Das Haus liegt in der Nähe von dem Bahnhof.",
+     "Das Haus liegt in der Nähe des Bahnhofes."
+    ],
+    "h": "Либо Genitiv, либо von + Dativ."
+   },
+   {
+    "t": "fix",
+    "q": "Innerhalb dem Wohngebiet gibt es einen Kindergarten.",
+    "a": [
+     "Innerhalb des Wohngebiets gibt es einen Kindergarten.",
+     "Innerhalb des Wohngebietes gibt es einen Kindergarten."
+    ],
+    "h": "innerhalb + Genitiv."
+   },
+   {
+    "t": "fix",
+    "q": "Das Gewerbegebiet ist gut an der Autobahn angebunden.",
+    "a": [
+     "Das Gewerbegebiet ist gut an die Autobahn angebunden."
+    ],
+    "h": "angebunden an + Akk."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Объект находится в тихом жилом районе на юге Бохума.",
+    "de": "Das Objekt liegt in einem ruhigen Wohngebiet im Süden von Bochum."
+   },
+   {
+    "ru": "До центра города примерно три километра.",
+    "de": "Bis zum Stadtzentrum sind es etwa drei Kilometer."
+   },
+   {
+    "ru": "Вокзал находится в десяти минутах ходьбы от дома.",
+    "de": "Der Bahnhof ist zehn Gehminuten vom Haus entfernt."
+   },
+   {
+    "ru": "Район хорошо связан с общественным транспортом.",
+    "de": "Der Stadtteil ist gut an den öffentlichen Nahverkehr angebunden."
+   },
+   {
+    "ru": "Недалеко от участка проходит оживлённая дорога.",
+    "de": "Unweit des Grundstücks verläuft eine stark befahrene Straße."
+   },
+   {
+    "ru": "В пределах района есть школы, врачи и магазины.",
+    "de": "Innerhalb des Stadtteils gibt es Schulen, Ärzte und Einkaufsmöglichkeiten."
+   },
+   {
+    "ru": "За пределами центра цены значительно ниже.",
+    "de": "Außerhalb des Zentrums sind die Preise deutlich niedriger."
+   },
+   {
+    "ru": "Участок граничит с небольшим парком.",
+    "de": "Das Grundstück grenzt an einen kleinen Park."
+   },
+   {
+    "ru": "Гараж стоит за домом, а сад находится перед ним.",
+    "de": "Die Garage steht hinter dem Haus, der Garten liegt davor."
+   },
+   {
+    "ru": "Многие покупатели переезжают из центра в пригороды.",
+    "de": "Viele Käufer ziehen aus der Innenstadt in die Vororte."
+   },
+   {
+    "ru": "Близость к автобану — это плюс для коммерческих объектов.",
+    "de": "Die Nähe zur Autobahn ist ein Vorteil für Gewerbeobjekte."
+   },
+   {
+    "ru": "Вдоль главной улицы находятся кафе, аптеки и банки.",
+    "de": "Entlang der Hauptstraße befinden sich Cafés, Apotheken und Banken."
+   }
+  ]
+ },
+ "g-adj": {
+  "id": "g-adj",
+  "day": 6,
+  "de": "Adjektivdeklination in der Objektbeschreibung",
+  "ru": "Окончания прилагательных в описании объекта",
+  "rule": "<p>Окончание прилагательного зависит от слова перед ним.</p><p><b>1. После der/die/das, dieser, jeder, alle:</b> -e только в Nom. ед. ч. и в Akk. f/n, во всех остальных случаях -en: <b>der große Garten, den großen Garten, mit dem großen Garten, die großen Fenster, mit allen nötigen Unterlagen</b>.</p><p><b>2. После ein, kein, mein, Ihr:</b> где у артикля нет окончания, его показывает прилагательное: <b>ein großer Keller</b> (m, Nom.), <b>ein freistehendes Haus</b> (n, Nom./Akk.). В остальных случаях как в п. 1: <b>einen großen Einfluss, mit einem großen Garten, meinen ersten Bericht</b>.</p><p><b>3. Без артикля</b> прилагательное берёт окончание артикля: <b>in ruhiger Lage</b> (der Lage), <b>in gutem Zustand</b> (dem Zustand), <b>mit hochwertiger Ausstattung, große Fenster</b>. Исключение — Genitiv m/n: <b>trotz hohen Alters</b>.</p><p>Порядковые числительные склоняются так же: <b>mein erster Bericht, im zweiten Obergeschoss</b>. Существительное в Dativ Plural получает -n: <b>mit allen nötigen Geräten</b>.</p><p>Ошибки: <i>einen große Garten</i> → <b>einen großen Garten</b>; <i>in ruhige Wohnlage</i> → <b>in ruhiger Wohnlage</b>; <i>ein freistehende Haus</i> → <b>ein freistehendes Haus</b>.</p>",
+  "examples": [
+   {
+    "de": "Das Objekt liegt in ruhiger Wohnlage mit guter Infrastruktur.",
+    "ru": "Объект расположен в тихом жилом районе с хорошей инфраструктурой."
+   },
+   {
+    "de": "Es handelt sich um ein freistehendes Einfamilienhaus mit ausgebautem Dachgeschoss.",
+    "ru": "Речь идёт об отдельно стоящем доме на одну семью с отделанной мансардой."
+   },
+   {
+    "de": "Das Haus verfügt über einen großen Garten und eine moderne Einbauküche.",
+    "ru": "У дома большой сад и современная встроенная кухня."
+   },
+   {
+    "de": "Zur Besichtigung bringe ich alle nötigen Unterlagen mit.",
+    "ru": "На осмотр я беру с собой все необходимые документы."
+   },
+   {
+    "de": "Meinen ersten Bericht habe ich vor vielen Jahren geschrieben.",
+    "ru": "Свой первый отчёт я написал много лет назад."
+   },
+   {
+    "de": "Die großen Fenster an der Südseite sorgen für viel Licht.",
+    "ru": "Большие окна на южной стороне дают много света."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Das ist ein ___ Einfamilienhaus. (freistehend)",
+    "a": [
+     "freistehendes"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Haus hat einen ___ Keller. (trocken)",
+    "a": [
+     "trockenen"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Der Garten ist ein ___ Vorteil des Objekts.",
+    "o": [
+     "großer",
+     "großen",
+     "großes"
+    ],
+    "a": [
+     "großer"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Wohnung liegt in ___ Wohnlage. (ruhig)",
+    "a": [
+     "ruhiger"
+    ],
+    "h": "Без артикля: in + Dativ, die Wohnlage."
+   },
+   {
+    "t": "gap",
+    "q": "Bitte bringen Sie alle ___ Unterlagen mit. (nötig)",
+    "a": [
+     "nötigen"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Wir haben den Termin mit dem ___ Eigentümer vereinbart.",
+    "o": [
+     "neuen",
+     "neue",
+     "neuer"
+    ],
+    "a": [
+     "neuen"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Lage hat einen ___ Einfluss auf den Wert. (groß)",
+    "a": [
+     "großen"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Gebäude befindet sich in ___ Zustand. (gut)",
+    "a": [
+     "gutem"
+    ],
+    "h": "Без артикля: der Zustand, Dativ."
+   },
+   {
+    "t": "choice",
+    "q": "Das Objekt verfügt über ___ Fenster.",
+    "o": [
+     "dreifach verglaste",
+     "dreifach verglasten",
+     "dreifach verglaster"
+    ],
+    "a": [
+     "dreifach verglaste"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Trotz ___ Lage ist der Preis hoch.",
+    "o": [
+     "ungünstiger",
+     "ungünstigen",
+     "ungünstige"
+    ],
+    "a": [
+     "ungünstiger"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Adjektiv einfügen: modern.",
+    "q": "Das Haus hat eine Heizung.",
+    "a": [
+     "Das Haus hat eine moderne Heizung."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Adjektiv einfügen: groß.",
+    "q": "Das Grundstück hat einen Garten.",
+    "a": [
+     "Das Grundstück hat einen großen Garten."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "„ein Fenster“ → Plural ohne Artikel.",
+    "q": "Das Haus hat ein großes Fenster.",
+    "a": [
+     "Das Haus hat große Fenster."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "das / freistehende / Einfamilienhaus / liegt / in ruhiger Wohnlage",
+    "a": [
+     "Das freistehende Einfamilienhaus liegt in ruhiger Wohnlage.",
+     "In ruhiger Wohnlage liegt das freistehende Einfamilienhaus."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Adjektiv einfügen: hochwertig.",
+    "q": "Die Wohnung ist mit Parkett ausgestattet.",
+    "a": [
+     "Die Wohnung ist mit hochwertigem Parkett ausgestattet."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Umformen: „Das Objekt liegt in … Lage.“",
+    "q": "Die Lage des Objekts ist zentral.",
+    "a": [
+     "Das Objekt liegt in zentraler Lage."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Adjektiv einfügen: erst-.",
+    "q": "Ich habe meinen Bericht vor vielen Jahren geschrieben.",
+    "a": [
+     "Ich habe meinen ersten Bericht vor vielen Jahren geschrieben."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "verfügt über / einen ausgebauten Dachboden / das Haus / und / einen trockenen Keller",
+    "a": [
+     "Das Haus verfügt über einen ausgebauten Dachboden und einen trockenen Keller.",
+     "Das Haus verfügt über einen trockenen Keller und einen ausgebauten Dachboden."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Zu einem Satz mit „mit“ verbinden.",
+    "q": "Der Gutachter kommt. Er hat alle nötigen Geräte dabei.",
+    "a": [
+     "Der Gutachter kommt mit allen nötigen Geräten."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "mit allen nötigen Unterlagen / zur Besichtigung / ich / komme",
+    "a": [
+     "Ich komme mit allen nötigen Unterlagen zur Besichtigung.",
+     "Ich komme zur Besichtigung mit allen nötigen Unterlagen.",
+     "Zur Besichtigung komme ich mit allen nötigen Unterlagen.",
+     "Mit allen nötigen Unterlagen komme ich zur Besichtigung."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Это отдельно стоящий дом с большим садом.",
+    "a": [
+     "Das ist ein freistehendes Haus mit einem großen Garten.",
+     "Das ist ein freistehendes Haus mit großem Garten.",
+     "Es ist ein freistehendes Haus mit einem großen Garten.",
+     "Es ist ein freistehendes Haus mit großem Garten.",
+     "Es handelt sich um ein freistehendes Haus mit einem großen Garten.",
+     "Es handelt sich um ein freistehendes Haus mit großem Garten.",
+     "Das ist ein freistehendes Einfamilienhaus mit einem großen Garten.",
+     "Das ist ein freistehendes Einfamilienhaus mit großem Garten.",
+     "Es ist ein freistehendes Einfamilienhaus mit einem großen Garten.",
+     "Es ist ein freistehendes Einfamilienhaus mit großem Garten.",
+     "Es handelt sich um ein freistehendes Einfamilienhaus mit einem großen Garten.",
+     "Es handelt sich um ein freistehendes Einfamilienhaus mit großem Garten."
+    ],
+    "h": "freistehend"
+   },
+   {
+    "t": "translate",
+    "q": "Квартира находится в хорошем состоянии.",
+    "a": [
+     "Die Wohnung ist in gutem Zustand.",
+     "Die Wohnung befindet sich in gutem Zustand.",
+     "Die Wohnung ist in einem guten Zustand.",
+     "Die Wohnung befindet sich in einem guten Zustand."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Свой первый отчёт я написал много лет назад.",
+    "a": [
+     "Meinen ersten Bericht habe ich vor vielen Jahren geschrieben.",
+     "Ich habe meinen ersten Bericht vor vielen Jahren geschrieben.",
+     "Ich habe vor vielen Jahren meinen ersten Bericht geschrieben.",
+     "Vor vielen Jahren habe ich meinen ersten Bericht geschrieben.",
+     "Meinen ersten Bericht schrieb ich vor vielen Jahren.",
+     "Ich schrieb meinen ersten Bericht vor vielen Jahren.",
+     "Ich schrieb vor vielen Jahren meinen ersten Bericht.",
+     "Vor vielen Jahren schrieb ich meinen ersten Bericht.",
+     "Mein erstes Gutachten habe ich vor vielen Jahren geschrieben.",
+     "Ich habe mein erstes Gutachten vor vielen Jahren geschrieben.",
+     "Ich habe vor vielen Jahren mein erstes Gutachten geschrieben.",
+     "Vor vielen Jahren habe ich mein erstes Gutachten geschrieben."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "У объекта современная кухня и новые окна.",
+    "a": [
+     "Das Objekt hat eine moderne Küche und neue Fenster.",
+     "Das Objekt verfügt über eine moderne Küche und neue Fenster."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Местоположение оказывает большое влияние на стоимость.",
+    "a": [
+     "Die Lage hat einen großen Einfluss auf den Wert.",
+     "Die Lage hat großen Einfluss auf den Wert.",
+     "Die Lage übt einen großen Einfluss auf den Wert aus.",
+     "Die Lage hat einen starken Einfluss auf den Wert.",
+     "Die Lage übt großen Einfluss auf den Wert aus.",
+     "Die Lage hat starken Einfluss auf den Wert.",
+     "Die Lage übt einen starken Einfluss auf den Wert aus."
+    ],
+    "h": "der Einfluss auf + Akk.; der Wert"
+   },
+   {
+    "t": "translate",
+    "q": "Я приду со всеми необходимыми документами.",
+    "a": [
+     "Ich komme mit allen nötigen Unterlagen.",
+     "Ich komme mit allen notwendigen Unterlagen.",
+     "Ich komme mit allen erforderlichen Unterlagen.",
+     "Ich komme mit allen nötigen Dokumenten.",
+     "Ich komme mit allen notwendigen Dokumenten.",
+     "Ich komme mit allen erforderlichen Dokumenten.",
+     "Ich werde mit allen nötigen Unterlagen kommen.",
+     "Ich werde mit allen notwendigen Unterlagen kommen.",
+     "Ich werde mit allen erforderlichen Unterlagen kommen.",
+     "Ich werde mit allen nötigen Dokumenten kommen.",
+     "Ich werde mit allen notwendigen Dokumenten kommen.",
+     "Ich werde mit allen erforderlichen Dokumenten kommen."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Haus hat einen große Garten.",
+    "a": [
+     "Das Haus hat einen großen Garten."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Objekt liegt in einer ruhigen Wohnlage mit gute Infrastruktur.",
+    "a": [
+     "Das Objekt liegt in einer ruhigen Wohnlage mit guter Infrastruktur."
+    ],
+    "h": "mit + Dativ, без артикля."
+   },
+   {
+    "t": "fix",
+    "q": "Der Gutachter kam mit allen nötigen Geräte.",
+    "a": [
+     "Der Gutachter kam mit allen nötigen Geräten."
+    ],
+    "h": "Dativ Plural."
+   },
+   {
+    "t": "fix",
+    "q": "Das Gebäude hat ein ausgebautes Dachgeschoss und einen trockenes Keller.",
+    "a": [
+     "Das Gebäude hat ein ausgebautes Dachgeschoss und einen trockenen Keller."
+    ]
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Речь идёт об отдельно стоящем доме на одну семью 1985 года постройки.",
+    "de": "Es handelt sich um ein freistehendes Einfamilienhaus aus dem Jahr 1985."
+   },
+   {
+    "ru": "Дом находится в тихом жилом районе с хорошей инфраструктурой.",
+    "de": "Das Haus liegt in ruhiger Wohnlage mit guter Infrastruktur."
+   },
+   {
+    "ru": "На участке есть большой сад и двойной гараж.",
+    "de": "Auf dem Grundstück gibt es einen großen Garten und eine Doppelgarage."
+   },
+   {
+    "ru": "Квартира оснащена современной кухней и новой ванной.",
+    "de": "Die Wohnung ist mit einer modernen Küche und einem neuen Bad ausgestattet."
+   },
+   {
+    "ru": "Большие окна на южной стороне дают много света.",
+    "de": "Die großen Fenster auf der Südseite sorgen für viel Licht."
+   },
+   {
+    "ru": "У дома сухой подвал и полностью отделанная мансарда.",
+    "de": "Das Haus hat einen trockenen Keller und ein vollständig ausgebautes Dachgeschoss."
+   },
+   {
+    "ru": "На осмотр я беру с собой все необходимые документы.",
+    "de": "Zur Besichtigung nehme ich alle nötigen Unterlagen mit."
+   },
+   {
+    "ru": "Свой первый отчёт я написал ещё в банке.",
+    "de": "Meinen ersten Bericht habe ich noch bei der Bank geschrieben."
+   },
+   {
+    "ru": "Местоположение оказывает большое влияние на рыночную стоимость.",
+    "de": "Die Lage hat einen großen Einfluss auf den Verkehrswert."
+   },
+   {
+    "ru": "Здание в хорошем состоянии, но отопление устарело.",
+    "de": "Das Gebäude ist in gutem Zustand, aber die Heizung ist veraltet."
+   },
+   {
+    "ru": "У меня многолетний опыт оценки жилой и коммерческой недвижимости.",
+    "de": "Ich habe langjährige Erfahrung in der Bewertung von Wohn- und Gewerbeimmobilien."
+   },
+   {
+    "ru": "Несмотря на старую крышу, объект в целом в хорошем состоянии.",
+    "de": "Trotz des alten Dachs ist das Objekt insgesamt in gutem Zustand."
+   }
+  ]
+ },
+ "g-relativ": {
+  "id": "g-relativ",
+  "day": 8,
+  "de": "Relativsätze",
+  "ru": "Относительные придаточные",
+  "rule": "<p>Относительное придаточное описывает существительное и стоит сразу после него, глагол — в конце: <b>Das ist das Objekt, das ich gestern besichtigt habe.</b></p><p><b>Род и число</b> местоимения берутся от существительного, <b>падеж</b> — от его роли в придаточном. Формы совпадают с определённым артиклем, кроме: Dativ Plural <b>denen</b>, Genitiv <b>dessen</b> (m, n) и <b>deren</b> (f, Plural).</p><p><b>Предлог стоит перед местоимением</b> и определяет падеж: <b>die Bank, bei der ich gearbeitet habe; der Kollege, mit dem ich zusammenarbeite; die Unterlagen, um die ich gebeten habe; die Kunden, mit denen ich spreche</b>.</p><p><b>dessen / deren</b> = «чей, которого»: <b>der Eigentümer, dessen Haus wir bewerten; die Wohnung, deren Bad renoviert wurde</b>. Прилагательное после них склоняется как без артикля: <b>dessen neues Dach</b>.</p><p><b>wo</b> — для мест, особенно городов и стран: <b>in Kiew, wo ich lange gearbeitet habe</b>. Для организаций лучше предлог: <b>die Bank, bei der …</b> <b>was</b> — после alles, etwas, nichts: <b>alles, was ich brauche</b>.</p><p>Ошибки: <i>mit den ich</i> → <b>mit denen</b>; <i>der Nachbar, sein Garten …</i> → <b>dessen Garten</b>; <i>der Kunde, dem ich getroffen habe</i> → <b>den</b> (treffen + Akk.).</p>",
+  "examples": [
+   {
+    "de": "Das ist das Objekt, das ich gestern besichtigt habe.",
+    "ru": "Это объект, который я вчера осматривал."
+   },
+   {
+    "de": "Der Eigentümer, dessen Haus wir bewerten, lebt im Ausland.",
+    "ru": "Собственник, чей дом мы оцениваем, живёт за границей."
+   },
+   {
+    "de": "Die Bank, bei der ich zehn Jahre gearbeitet habe, hatte über hundert Filialen.",
+    "ru": "Банк, в котором я проработал десять лет, имел более ста отделений."
+   },
+   {
+    "de": "Die Wohnungen, deren Fenster nach Süden zeigen, sind besonders hell.",
+    "ru": "Квартиры, окна которых выходят на юг, особенно светлые."
+   },
+   {
+    "de": "Ich komme aus Kiew, wo ich lange als Gutachter tätig war.",
+    "ru": "Я из Киева, где я долго работал оценщиком."
+   },
+   {
+    "de": "Das ist alles, was ich für das Gutachten brauche.",
+    "ru": "Это всё, что мне нужно для заключения."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Das ist das Haus, ___ ich gestern besichtigt habe.",
+    "a": [
+     "das",
+     "welches"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Der Kunde, ___ ich gestern angerufen habe, hat die Unterlagen geschickt.",
+    "a": [
+     "den",
+     "welchen"
+    ],
+    "h": "anrufen + Akkusativ."
+   },
+   {
+    "t": "choice",
+    "q": "Die Bank, bei ___ ich gearbeitet habe, hat 150 Filialen.",
+    "o": [
+     "der",
+     "die",
+     "dem"
+    ],
+    "a": [
+     "der"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Kollegin, mit ___ ich das Gutachten erstellt habe, ist Architektin.",
+    "a": [
+     "der",
+     "welcher"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das Grundstück, auf ___ das Haus steht, ist 800 Quadratmeter groß.",
+    "o": [
+     "dem",
+     "das",
+     "den"
+    ],
+    "a": [
+     "dem"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Eigentümer, ___ ich das Ergebnis erklärt habe, waren zufrieden.",
+    "a": [
+     "denen",
+     "welchen"
+    ],
+    "h": "Dativ Plural."
+   },
+   {
+    "t": "gap",
+    "q": "Das ist der Eigentümer, ___ Haus wir bewerten.",
+    "a": [
+     "dessen"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Kunden, ___ Kredite wir prüfen, kommen aus der Region.",
+    "o": [
+     "deren",
+     "dessen",
+     "denen"
+    ],
+    "a": [
+     "deren"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Wohnung, ___ Bad renoviert wurde, ist sofort bezugsfertig.",
+    "a": [
+     "deren"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das ist alles, ___ ich für die Bewertung brauche.",
+    "o": [
+     "was",
+     "das",
+     "wo"
+    ],
+    "a": [
+     "was"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit Relativsatz verbinden.",
+    "q": "Das ist das Gutachten. Ich habe es letzte Woche erstellt.",
+    "a": [
+     "Das ist das Gutachten, das ich letzte Woche erstellt habe.",
+     "Das ist das Gutachten, welches ich letzte Woche erstellt habe."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit Relativsatz verbinden.",
+    "q": "Der Kollege ist sehr erfahren. Ich arbeite mit ihm zusammen.",
+    "a": [
+     "Der Kollege, mit dem ich zusammenarbeite, ist sehr erfahren.",
+     "Der Kollege, mit welchem ich zusammenarbeite, ist sehr erfahren."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit Relativsatz verbinden.",
+    "q": "Die Firma war ein großes Bewertungsunternehmen. Ich habe bei ihr gearbeitet.",
+    "a": [
+     "Die Firma, bei der ich gearbeitet habe, war ein großes Bewertungsunternehmen.",
+     "Die Firma, bei welcher ich gearbeitet habe, war ein großes Bewertungsunternehmen."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "das Objekt, / das / ich / morgen / besichtige, / liegt in Essen",
+    "a": [
+     "Das Objekt, das ich morgen besichtige, liegt in Essen."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „dessen“ oder „deren“ verbinden.",
+    "q": "Der Eigentümer lebt im Ausland. Sein Haus soll bewertet werden.",
+    "a": [
+     "Der Eigentümer, dessen Haus bewertet werden soll, lebt im Ausland."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „dessen“ oder „deren“ verbinden.",
+    "q": "Das Mehrfamilienhaus hat zwölf Wohnungen. Seine Fassade ist gedämmt.",
+    "a": [
+     "Das Mehrfamilienhaus, dessen Fassade gedämmt ist, hat zwölf Wohnungen."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "die Unterlagen, / um / die / ich / gebeten habe, / sind angekommen",
+    "a": [
+     "Die Unterlagen, um die ich gebeten habe, sind angekommen."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „wo“ verbinden.",
+    "q": "Ich habe lange in Kiew gearbeitet. Dort ist der Immobilienmarkt sehr groß.",
+    "a": [
+     "Ich habe lange in Kiew gearbeitet, wo der Immobilienmarkt sehr groß ist.",
+     "In Kiew, wo der Immobilienmarkt sehr groß ist, habe ich lange gearbeitet."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit Relativsatz verbinden.",
+    "q": "Die Mieter sind zufrieden. Der Vermieter hat ihnen neue Fenster eingebaut.",
+    "a": [
+     "Die Mieter, denen der Vermieter neue Fenster eingebaut hat, sind zufrieden.",
+     "Die Mieter, welchen der Vermieter neue Fenster eingebaut hat, sind zufrieden."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "das ist / der Kreditberater, / dem / ich / das Gutachten / geschickt habe",
+    "a": [
+     "Das ist der Kreditberater, dem ich das Gutachten geschickt habe."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Это дом, который я оцениваю.",
+    "a": [
+     "Das ist das Haus, das ich bewerte.",
+     "Das ist das Haus, das ich begutachte.",
+     "Das ist das Haus, das ich gerade bewerte.",
+     "Das ist das Haus, welches ich bewerte.",
+     "Das ist das Haus, das ich gerade begutachte."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Банк, в котором я работал, был очень большим.",
+    "a": [
+     "Die Bank, bei der ich gearbeitet habe, war sehr groß.",
+     "Die Bank, in der ich gearbeitet habe, war sehr groß.",
+     "Die Bank, für die ich gearbeitet habe, war sehr groß.",
+     "Die Bank, wo ich gearbeitet habe, war sehr groß.",
+     "Die Bank, bei der ich arbeitete, war sehr groß.",
+     "Die Bank, in der ich arbeitete, war sehr groß.",
+     "Die Bank, für die ich arbeitete, war sehr groß.",
+     "Die Bank, bei der ich tätig war, war sehr groß.",
+     "Die Bank, für die ich tätig war, war sehr groß."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Собственник, чей дом мы оцениваем, живёт в Дюссельдорфе.",
+    "a": [
+     "Der Eigentümer, dessen Haus wir bewerten, lebt in Düsseldorf.",
+     "Der Eigentümer, dessen Haus wir bewerten, wohnt in Düsseldorf.",
+     "Der Eigentümer, dessen Haus wir begutachten, lebt in Düsseldorf.",
+     "Der Eigentümer, dessen Haus wir begutachten, wohnt in Düsseldorf."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Квартиры, окна которых выходят на юг, очень светлые.",
+    "a": [
+     "Die Wohnungen, deren Fenster nach Süden gehen, sind sehr hell.",
+     "Die Wohnungen, deren Fenster nach Süden zeigen, sind sehr hell.",
+     "Die Wohnungen, deren Fenster nach Süden ausgerichtet sind, sind sehr hell.",
+     "Die Wohnungen, deren Fenster nach Süden liegen, sind sehr hell.",
+     "Die Wohnungen, deren Fenster nach Süden hinausgehen, sind sehr hell."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Коллега, с которым я работаю, — архитектор.",
+    "a": [
+     "Der Kollege, mit dem ich arbeite, ist Architekt.",
+     "Der Kollege, mit dem ich zusammenarbeite, ist Architekt."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Это всё, что мне нужно для заключения.",
+    "a": [
+     "Das ist alles, was ich für das Gutachten brauche.",
+     "Das ist alles, was ich für das Gutachten benötige.",
+     "Das ist alles, was ich für mein Gutachten brauche."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das ist der Kunde, dem ich gestern getroffen habe.",
+    "a": [
+     "Das ist der Kunde, den ich gestern getroffen habe."
+    ],
+    "h": "treffen + Akkusativ."
+   },
+   {
+    "t": "fix",
+    "q": "Die Eigentümer, mit den ich gesprochen habe, waren sehr freundlich.",
+    "a": [
+     "Die Eigentümer, mit denen ich gesprochen habe, waren sehr freundlich."
+    ],
+    "h": "Dativ Plural относительного местоимения."
+   },
+   {
+    "t": "fix",
+    "q": "Der Nachbar, sein Garten an das Grundstück grenzt, hat Einspruch erhoben.",
+    "a": [
+     "Der Nachbar, dessen Garten an das Grundstück grenzt, hat Einspruch erhoben."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das ist das Gutachten, das ich habe gestern geschrieben.",
+    "a": [
+     "Das ist das Gutachten, das ich gestern geschrieben habe."
+    ],
+    "h": "Порядок слов в придаточном."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Это банк, в котором я проработал десять лет.",
+    "de": "Das ist die Bank, bei der ich zehn Jahre gearbeitet habe."
+   },
+   {
+    "ru": "Я оценивал объекты, которые служили кредитным обеспечением.",
+    "de": "Ich habe Objekte bewertet, die als Kreditsicherheiten dienten."
+   },
+   {
+    "ru": "Собственник, чей дом мы осматриваем, живёт за границей.",
+    "de": "Der Eigentümer, dessen Haus wir besichtigen, lebt im Ausland."
+   },
+   {
+    "ru": "Это коллега, с которым я составил своё первое заключение.",
+    "de": "Das ist der Kollege, mit dem ich mein erstes Gutachten erstellt habe."
+   },
+   {
+    "ru": "Квартира, окна которой выходят во двор, очень тихая.",
+    "de": "Die Wohnung, deren Fenster zum Hof gehen, ist sehr ruhig."
+   },
+   {
+    "ru": "Я из Украины, где я много лет работал оценщиком.",
+    "de": "Ich komme aus der Ukraine, wo ich viele Jahre als Gutachter gearbeitet habe."
+   },
+   {
+    "ru": "Документы, о которых вы спрашивали, я пришлю вам завтра.",
+    "de": "Die Unterlagen, nach denen Sie gefragt haben, schicke ich Ihnen morgen."
+   },
+   {
+    "ru": "Это всё, что я могу сказать о состоянии здания.",
+    "de": "Das ist alles, was ich zum Zustand des Gebäudes sagen kann."
+   },
+   {
+    "ru": "Участок, на котором стоит дом, имеет площадь 650 квадратных метров.",
+    "de": "Das Grundstück, auf dem das Haus steht, ist 650 Quadratmeter groß."
+   },
+   {
+    "ru": "Клиенты, которым я объяснял результат, были довольны.",
+    "de": "Die Kunden, denen ich das Ergebnis erklärt habe, waren zufrieden."
+   },
+   {
+    "ru": "Я ищу должность, на которой смогу использовать свой опыт.",
+    "de": "Ich suche eine Stelle, in der ich meine Erfahrung einsetzen kann."
+   },
+   {
+    "ru": "Недостатки, которые я обнаружил, указаны в протоколе.",
+    "de": "Die Mängel, die ich festgestellt habe, stehen im Protokoll."
+   }
+  ]
+ },
+ "g-passiv": {
+  "id": "g-passiv",
+  "day": 9,
+  "de": "Vorgangspassiv: Baujahr und Modernisierung",
+  "ru": "Пассив действия: год постройки и модернизация",
+  "rule": "<p>Пассив показывает действие, а не исполнителя. В заключении это основная форма: важно, <i>что</i> сделано, а не <i>кто</i> это сделал. Образование: <b>werden + Partizip II</b>.</p><table><tr><th>Форма</th><th>Пример</th></tr><tr><td>Präsens</td><td><b>Das Gutachten wird geprüft.</b></td></tr><tr><td>Präteritum</td><td><b>Das Dach wurde 2015 erneuert.</b></td></tr><tr><td>Perfekt</td><td><b>Das Dach ist 2015 erneuert worden.</b></td></tr><tr><td>с модальным глаголом</td><td><b>Die Fenster müssen ausgetauscht werden.</b></td></tr></table><p>В тексте о модернизации чаще <b>Präteritum</b> (wurde), в разговоре — и Präteritum, и Perfekt. В Perfekt вспомогательный глагол <b>sein</b>, а форма — <b>worden</b>, без ge-. Модальный глагол в прошедшем: <b>Die Heizung musste erneuert werden.</b></p><p>Исполнитель — <b>von + Dativ</b>: <b>von einem Fachbetrieb</b>; причина — <b>durch + Akk.</b>: <b>durch einen Wasserschaden beschädigt</b>. Глагол согласуется с подлежащим: <b>Die Fenster wurden …</b></p><p>Из man-предложения: <b>Man erneuerte das Dach.</b> → <b>Das Dach wurde erneuert.</b></p><p>Ошибки: <i>ist erneuert geworden</i> → <b>ist erneuert worden</b>; <i>wurde erneuert worden</i> → <b>wurde erneuert</b>; <i>muss erneuert worden</i> → <b>muss erneuert werden</b>.</p>",
+  "examples": [
+   {
+    "de": "Das Dach wurde 2015 vollständig erneuert.",
+    "ru": "Крыша была полностью обновлена в 2015 году."
+   },
+   {
+    "de": "Die Heizungsanlage ist 2019 ausgetauscht worden.",
+    "ru": "Отопительная система была заменена в 2019 году."
+   },
+   {
+    "de": "Die Fenster müssen in den nächsten Jahren ersetzt werden.",
+    "ru": "Окна придётся заменить в ближайшие годы."
+   },
+   {
+    "de": "Das Gutachten wird vom Kreditsachbearbeiter geprüft.",
+    "ru": "Заключение проверяется сотрудником кредитного отдела."
+   },
+   {
+    "de": "Die Fassade wurde von einem Fachbetrieb gedämmt.",
+    "ru": "Фасад был утеплён специализированной фирмой."
+   },
+   {
+    "de": "Das Bad soll im nächsten Jahr modernisiert werden.",
+    "ru": "Ванную планируют модернизировать в следующем году."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Das Dach ___ 2015 erneuert. (Präteritum)",
+    "a": [
+     "wurde"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Gutachten ___ vom Kreditsachbearbeiter geprüft. (Präsens)",
+    "a": [
+     "wird"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Fenster ___ 2018 ausgetauscht. (Präteritum)",
+    "a": [
+     "wurden"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das Bad ist 2021 renoviert ___.",
+    "o": [
+     "worden",
+     "geworden",
+     "werden"
+    ],
+    "a": [
+     "worden"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Fassade muss in den nächsten Jahren gedämmt ___.",
+    "a": [
+     "werden"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Elektrik ___ 2010 komplett erneuert.",
+    "o": [
+     "wurde",
+     "wurden",
+     "wird worden"
+    ],
+    "a": [
+     "wurde"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Heizung ist 2020 modernisiert ___.",
+    "a": [
+     "worden"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Fenster müssen dringend ___.",
+    "o": [
+     "ausgetauscht werden",
+     "ausgetauscht worden",
+     "austauschen werden"
+    ],
+    "a": [
+     "ausgetauscht werden"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Leitungen sind vor zehn Jahren ___ worden. (erneuern)",
+    "a": [
+     "erneuert"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Dämmung wurde ___ einem Fachbetrieb ausgeführt.",
+    "o": [
+     "von",
+     "vom",
+     "mit"
+    ],
+    "a": [
+     "von"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Passiv (Präsens) setzen.",
+    "q": "Man prüft das Grundbuch.",
+    "a": [
+     "Das Grundbuch wird geprüft."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Passiv (Präteritum) setzen.",
+    "q": "Man erneuerte das Dach 2015.",
+    "a": [
+     "Das Dach wurde 2015 erneuert.",
+     "2015 wurde das Dach erneuert."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "wurde / das Bad / 2017 / modernisiert",
+    "a": [
+     "Das Bad wurde 2017 modernisiert.",
+     "2017 wurde das Bad modernisiert."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Passiv (Perfekt) setzen.",
+    "q": "Man hat die Heizung 2019 ausgetauscht.",
+    "a": [
+     "Die Heizung ist 2019 ausgetauscht worden.",
+     "2019 ist die Heizung ausgetauscht worden."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Passiv Präteritum → Passiv Perfekt.",
+    "q": "Die Fenster wurden 2018 ersetzt.",
+    "a": [
+     "Die Fenster sind 2018 ersetzt worden.",
+     "2018 sind die Fenster ersetzt worden."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Passiv mit Modalverb bilden.",
+    "q": "Man muss die Fassade sanieren.",
+    "a": [
+     "Die Fassade muss saniert werden."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "ist / die Heizung / worden / im Jahr 2020 / erneuert",
+    "a": [
+     "Die Heizung ist im Jahr 2020 erneuert worden.",
+     "Im Jahr 2020 ist die Heizung erneuert worden."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Ins Passiv (Präteritum) mit „von“ setzen.",
+    "q": "Ein Fachbetrieb dämmte das Dach.",
+    "a": [
+     "Das Dach wurde von einem Fachbetrieb gedämmt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Passiv mit Modalverb im Präteritum bilden.",
+    "q": "Man sollte die Leitungen schon 2010 erneuern.",
+    "a": [
+     "Die Leitungen sollten schon 2010 erneuert werden.",
+     "Schon 2010 sollten die Leitungen erneuert werden."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "müssen / in den nächsten Jahren / die Fenster / werden / ausgetauscht",
+    "a": [
+     "Die Fenster müssen in den nächsten Jahren ausgetauscht werden.",
+     "In den nächsten Jahren müssen die Fenster ausgetauscht werden."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Крыша была обновлена в 2015 году.",
+    "a": [
+     "Das Dach wurde 2015 erneuert.",
+     "2015 wurde das Dach erneuert.",
+     "Das Dach wurde im Jahr 2015 erneuert.",
+     "Im Jahr 2015 wurde das Dach erneuert.",
+     "Das Dach ist 2015 erneuert worden.",
+     "2015 ist das Dach erneuert worden.",
+     "Das Dach ist im Jahr 2015 erneuert worden.",
+     "Im Jahr 2015 ist das Dach erneuert worden."
+    ],
+    "h": "erneuern"
+   },
+   {
+    "t": "translate",
+    "q": "Окна нужно заменить.",
+    "a": [
+     "Die Fenster müssen ausgetauscht werden.",
+     "Die Fenster müssen ersetzt werden.",
+     "Die Fenster müssen erneuert werden."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Заключение проверяется сотрудником кредитного отдела.",
+    "a": [
+     "Das Gutachten wird vom Kreditsachbearbeiter geprüft.",
+     "Das Gutachten wird von dem Kreditsachbearbeiter geprüft.",
+     "Das Gutachten wird von einem Kreditsachbearbeiter geprüft.",
+     "Das Gutachten wird vom Kreditsachbearbeiter überprüft.",
+     "Das Gutachten wird von dem Kreditsachbearbeiter überprüft.",
+     "Das Gutachten wird von einem Kreditsachbearbeiter überprüft.",
+     "Das Gutachten wird von einem Mitarbeiter der Kreditabteilung geprüft.",
+     "Das Gutachten wird von einem Mitarbeiter der Kreditabteilung überprüft.",
+     "Das Gutachten wird vom Mitarbeiter der Kreditabteilung geprüft.",
+     "Das Gutachten wird vom Mitarbeiter der Kreditabteilung überprüft.",
+     "Das Gutachten wird von der Kreditabteilung geprüft."
+    ],
+    "h": "der Kreditsachbearbeiter"
+   },
+   {
+    "t": "translate",
+    "q": "Отопление было модернизировано в 2019 году.",
+    "a": [
+     "Die Heizung wurde 2019 modernisiert.",
+     "2019 wurde die Heizung modernisiert.",
+     "Die Heizung wurde im Jahr 2019 modernisiert.",
+     "Im Jahr 2019 wurde die Heizung modernisiert.",
+     "Die Heizung ist 2019 modernisiert worden.",
+     "2019 ist die Heizung modernisiert worden.",
+     "Die Heizung ist im Jahr 2019 modernisiert worden.",
+     "Im Jahr 2019 ist die Heizung modernisiert worden."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Фасад должен быть утеплён до 2030 года.",
+    "a": [
+     "Die Fassade muss bis 2030 gedämmt werden.",
+     "Bis 2030 muss die Fassade gedämmt werden.",
+     "Die Fassade muss bis zum Jahr 2030 gedämmt werden.",
+     "Bis zum Jahr 2030 muss die Fassade gedämmt werden."
+    ],
+    "h": "dämmen"
+   },
+   {
+    "t": "translate",
+    "q": "Ванная была отремонтирована специализированной фирмой.",
+    "a": [
+     "Das Bad wurde von einer Fachfirma renoviert.",
+     "Das Bad ist von einer Fachfirma renoviert worden.",
+     "Das Badezimmer wurde von einer Fachfirma renoviert.",
+     "Das Badezimmer ist von einer Fachfirma renoviert worden.",
+     "Das Bad wurde von einer Fachfirma saniert.",
+     "Das Bad ist von einer Fachfirma saniert worden.",
+     "Das Bad wurde von einem Fachbetrieb renoviert.",
+     "Das Bad ist von einem Fachbetrieb renoviert worden.",
+     "Das Badezimmer wurde von einem Fachbetrieb renoviert.",
+     "Das Badezimmer ist von einem Fachbetrieb renoviert worden."
+    ],
+    "h": "die Fachfirma; renovieren"
+   },
+   {
+    "t": "fix",
+    "q": "Das Dach ist 2015 erneuert geworden.",
+    "a": [
+     "Das Dach ist 2015 erneuert worden.",
+     "Das Dach wurde 2015 erneuert."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Die Fenster wurde 2018 ausgetauscht.",
+    "a": [
+     "Die Fenster wurden 2018 ausgetauscht."
+    ],
+    "h": "Согласование с подлежащим."
+   },
+   {
+    "t": "fix",
+    "q": "Die Heizung muss bald erneuert worden.",
+    "a": [
+     "Die Heizung muss bald erneuert werden."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Bad wurde 2020 renoviert worden.",
+    "a": [
+     "Das Bad wurde 2020 renoviert.",
+     "Das Bad ist 2020 renoviert worden."
+    ],
+    "h": "Смешаны Präteritum и Perfekt."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Дом был построен в 1972 году и расширен в 1995 году.",
+    "de": "Das Haus wurde 1972 gebaut und 1995 erweitert."
+   },
+   {
+    "ru": "Крыша была полностью обновлена в 2015 году.",
+    "de": "Das Dach wurde 2015 vollständig erneuert."
+   },
+   {
+    "ru": "Отопление было заменено специализированной фирмой в 2019 году.",
+    "de": "Die Heizung ist 2019 von einer Fachfirma ausgetauscht worden."
+   },
+   {
+    "ru": "Окна нужно будет заменить в ближайшие годы.",
+    "de": "Die Fenster müssen in den nächsten Jahren ausgetauscht werden."
+   },
+   {
+    "ru": "Электропроводка ещё ни разу не обновлялась.",
+    "de": "Die Elektroinstallation ist noch nie erneuert worden."
+   },
+   {
+    "ru": "Заключение сначала проверяется руководителем отдела.",
+    "de": "Das Gutachten wird zuerst vom Abteilungsleiter geprüft."
+   },
+   {
+    "ru": "Подвал был гидроизолирован после затопления.",
+    "de": "Der Keller wurde nach einem Wasserschaden abgedichtet."
+   },
+   {
+    "ru": "Все документы были предоставлены собственником.",
+    "de": "Alle Unterlagen wurden vom Eigentümer zur Verfügung gestellt."
+   },
+   {
+    "ru": "Фасад следует утеплить в ближайшее время.",
+    "de": "Die Fassade sollte bald gedämmt werden."
+   },
+   {
+    "ru": "В 2020 году ванная была полностью отремонтирована.",
+    "de": "Im Jahr 2020 wurde das Bad komplett renoviert."
+   },
+   {
+    "ru": "Объект осматривается перед каждой выдачей кредита.",
+    "de": "Das Objekt wird vor jeder Kreditvergabe besichtigt."
+   },
+   {
+    "ru": "Мансарда была переоборудована под жильё в 2005 году.",
+    "de": "Das Dachgeschoss wurde 2005 zu Wohnraum ausgebaut."
+   }
+  ]
+ },
+ "g-zustand": {
+  "id": "g-zustand",
+  "day": 10,
+  "de": "Zustandspassiv und Partizip II als Adjektiv",
+  "ru": "Пассив состояния и Partizip II как прилагательное",
+  "rule": "<p><b>Vorgangspassiv</b> (werden + Partizip II) — процесс, то, что <i>происходит</i>: <b>Die Fassade wird gerade gedämmt.</b><br><b>Zustandspassiv</b> (sein + Partizip II) — результат, <i>в каком состоянии</i> объект: <b>Die Fassade ist gedämmt.</b></p><p>Проверка: вопрос «Was passiert?» → werden; «In welchem Zustand?» → sein. Прошедшее время состояния — <b>war</b>: <b>Bei der Besichtigung war die Wohnung bereits geräumt.</b></p><p>В описании объекта Zustandspassiv встречается постоянно: <b>Das Haus ist voll unterkellert. Das Grundstück ist erschlossen. Die Fenster sind zweifach verglast. Die Wohnung ist vermietet.</b></p><p><b>Partizip II как прилагательное</b> стоит перед существительным и получает обычные окончания: <b>die modernisierte Heizung, ein unterkellertes Haus, mit ausgebautem Dachgeschoss, die vermieteten Wohnungen</b>.</p><p>Указание исполнителя (<b>von …</b>) почти всегда означает Vorgangspassiv: <b>Die Fassade wurde von einem Fachbetrieb gedämmt.</b></p><p>Ошибки: <i>Das Haus wird unterkellert</i> (= подвал сейчас строят!) → <b>Das Haus ist unterkellert</b>; <i>die modernisiert Heizung</i> → <b>die modernisierte Heizung</b>.</p>",
+  "examples": [
+   {
+    "de": "Das Gebäude ist voll unterkellert.",
+    "ru": "Под всем зданием есть подвал."
+   },
+   {
+    "de": "Die Fassade wird zurzeit gedämmt, im Frühjahr ist sie fertig gedämmt.",
+    "ru": "Фасад сейчас утепляют, весной он будет полностью утеплён."
+   },
+   {
+    "de": "Das Grundstück ist voll erschlossen.",
+    "ru": "Участок полностью подключён к коммуникациям."
+   },
+   {
+    "de": "Die modernisierte Heizung entspricht dem aktuellen Standard.",
+    "ru": "Модернизированное отопление соответствует современному стандарту."
+   },
+   {
+    "de": "Die Wohnung ist seit 2018 an eine Familie vermietet.",
+    "ru": "Квартира с 2018 года сдана в аренду семье."
+   },
+   {
+    "de": "Wir haben ein gepflegtes Einfamilienhaus mit ausgebautem Dachgeschoss besichtigt.",
+    "ru": "Мы осмотрели ухоженный дом на одну семью с отделанной мансардой."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Das Haus ___ voll unterkellert. (Zustand)",
+    "a": [
+     "ist"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Fenster ___ gerade ausgetauscht. (Vorgang, Präsens)",
+    "a": [
+     "werden"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Grundstück ist bereits ___. (erschließen)",
+    "a": [
+     "erschlossen"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das Haus hat einen ___ Keller.",
+    "o": [
+     "ausgebauten",
+     "ausgebaut",
+     "ausgebauter"
+    ],
+    "a": [
+     "ausgebauten"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die ___ Heizung arbeitet sehr effizient. (modernisieren)",
+    "a": [
+     "modernisierte"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Zurzeit ___ das Bad renoviert, deshalb ist es nicht nutzbar.",
+    "o": [
+     "wird",
+     "ist",
+     "hat"
+    ],
+    "a": [
+     "wird"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Objekt verfügt über ein ___ Dachgeschoss. (ausbauen)",
+    "a": [
+     "ausgebautes"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Wir haben ein ___ Mehrfamilienhaus besichtigt.",
+    "o": [
+     "gepflegtes",
+     "gepflegte",
+     "gepflegten"
+    ],
+    "a": [
+     "gepflegtes"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Bei der Besichtigung ___ die Wohnung schon geräumt. (Zustand, Präteritum)",
+    "a": [
+     "war"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Die Fassade ___ 2017 von einem Fachbetrieb gedämmt.",
+    "o": [
+     "wurde",
+     "war",
+     "ist"
+    ],
+    "a": [
+     "wurde"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Zustandspassiv bilden (Ergebnis).",
+    "q": "Das Dach wurde gedämmt.",
+    "a": [
+     "Das Dach ist gedämmt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Zustandspassiv bilden.",
+    "q": "Man hat das Grundstück erschlossen.",
+    "a": [
+     "Das Grundstück ist erschlossen."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "ist / das Gebäude / seit dem Umbau / voll / unterkellert",
+    "a": [
+     "Das Gebäude ist seit dem Umbau voll unterkellert.",
+     "Seit dem Umbau ist das Gebäude voll unterkellert."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Partizip als Adjektiv verwenden.",
+    "q": "Die Heizung wurde modernisiert. Sie ist sehr sparsam.",
+    "a": [
+     "Die modernisierte Heizung ist sehr sparsam."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Partizip als Adjektiv verwenden.",
+    "q": "Das Haus hat einen Keller. Der Keller ist ausgebaut.",
+    "a": [
+     "Das Haus hat einen ausgebauten Keller."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Vorgangspassiv (Präsens) bilden.",
+    "q": "Die Handwerker renovieren gerade die Küche.",
+    "a": [
+     "Die Küche wird gerade renoviert.",
+     "Die Küche wird gerade von den Handwerkern renoviert.",
+     "Gerade wird die Küche renoviert.",
+     "Die Küche wird von den Handwerkern gerade renoviert.",
+     "Gerade wird die Küche von den Handwerkern renoviert."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "verfügt über / die Wohnung / einen / Balkon / überdachten",
+    "a": [
+     "Die Wohnung verfügt über einen überdachten Balkon."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Zustandspassiv im Präteritum bilden.",
+    "q": "Man hatte alle Räume geräumt.",
+    "a": [
+     "Alle Räume waren geräumt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Partizip als Adjektiv verwenden.",
+    "q": "Die Wohnungen sind vermietet. Sie bringen gute Erträge.",
+    "a": [
+     "Die vermieteten Wohnungen bringen gute Erträge."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "war / bei der Besichtigung / das Dachgeschoss / bereits ausgebaut",
+    "a": [
+     "Bei der Besichtigung war das Dachgeschoss bereits ausgebaut.",
+     "Das Dachgeschoss war bei der Besichtigung bereits ausgebaut."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Под всем домом есть подвал.",
+    "a": [
+     "Das Haus ist voll unterkellert.",
+     "Das Haus ist vollständig unterkellert.",
+     "Das Haus ist komplett unterkellert.",
+     "Das Haus ist vollunterkellert.",
+     "Das ganze Haus ist unterkellert.",
+     "Das gesamte Haus ist unterkellert.",
+     "Das Haus ist ganz unterkellert."
+    ],
+    "h": "unterkellert"
+   },
+   {
+    "t": "translate",
+    "q": "Участок полностью подключён к коммуникациям.",
+    "a": [
+     "Das Grundstück ist voll erschlossen.",
+     "Das Grundstück ist vollständig erschlossen.",
+     "Das Grundstück ist komplett erschlossen."
+    ],
+    "h": "erschließen"
+   },
+   {
+    "t": "translate",
+    "q": "Модернизированное отопление работает экономично.",
+    "a": [
+     "Die modernisierte Heizung arbeitet sparsam.",
+     "Die modernisierte Heizung arbeitet wirtschaftlich.",
+     "Die modernisierte Heizung arbeitet effizient.",
+     "Die modernisierte Heizung läuft sparsam.",
+     "Die modernisierte Heizungsanlage arbeitet sparsam.",
+     "Die modernisierte Heizungsanlage arbeitet wirtschaftlich."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Сейчас ремонтируют кухню.",
+    "a": [
+     "Die Küche wird gerade renoviert.",
+     "Die Küche wird zurzeit renoviert.",
+     "Zurzeit wird die Küche renoviert.",
+     "Die Küche wird im Moment renoviert.",
+     "Im Moment wird die Küche renoviert.",
+     "Gerade wird die Küche renoviert.",
+     "Die Küche wird derzeit renoviert.",
+     "Derzeit wird die Küche renoviert.",
+     "Die Küche wird momentan renoviert.",
+     "Momentan wird die Küche renoviert.",
+     "Die Küche wird jetzt renoviert.",
+     "Jetzt wird die Küche renoviert."
+    ],
+    "h": "Vorgangspassiv"
+   },
+   {
+    "t": "translate",
+    "q": "Квартира сдана в аренду и находится в ухоженном состоянии.",
+    "a": [
+     "Die Wohnung ist vermietet und befindet sich in gepflegtem Zustand.",
+     "Die Wohnung ist vermietet und in gepflegtem Zustand.",
+     "Die Wohnung ist vermietet und befindet sich in einem gepflegten Zustand.",
+     "Die Wohnung ist vermietet und in einem gepflegten Zustand."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Мы осмотрели дом с отделанной мансардой.",
+    "a": [
+     "Wir haben ein Haus mit ausgebautem Dachgeschoss besichtigt.",
+     "Wir haben ein Haus mit einem ausgebauten Dachgeschoss besichtigt.",
+     "Wir besichtigten ein Haus mit ausgebautem Dachgeschoss.",
+     "Wir besichtigten ein Haus mit einem ausgebauten Dachgeschoss.",
+     "Wir haben das Haus mit dem ausgebauten Dachgeschoss besichtigt.",
+     "Wir haben das Haus mit ausgebautem Dachgeschoss besichtigt.",
+     "Wir haben uns ein Haus mit ausgebautem Dachgeschoss angesehen.",
+     "Wir haben uns ein Haus mit einem ausgebauten Dachgeschoss angesehen."
+    ],
+    "h": "das Dachgeschoss; ausbauen"
+   },
+   {
+    "t": "fix",
+    "q": "Das Haus wird voll unterkellert, das sieht man auf den Fotos.",
+    "a": [
+     "Das Haus ist voll unterkellert, das sieht man auf den Fotos."
+    ],
+    "h": "Это состояние, а не процесс."
+   },
+   {
+    "t": "fix",
+    "q": "Die modernisiert Heizung ist sehr sparsam.",
+    "a": [
+     "Die modernisierte Heizung ist sehr sparsam."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Objekt verfügt über einen ausgebautes Dachgeschoss.",
+    "a": [
+     "Das Objekt verfügt über ein ausgebautes Dachgeschoss."
+    ],
+    "h": "das Dachgeschoss."
+   },
+   {
+    "t": "fix",
+    "q": "Zurzeit ist die Fassade gedämmt, deshalb steht ein Gerüst am Haus.",
+    "a": [
+     "Zurzeit wird die Fassade gedämmt, deshalb steht ein Gerüst am Haus."
+    ],
+    "h": "Работы идут прямо сейчас."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Под всем домом есть подвал, мансарда отделана под жильё.",
+    "de": "Das Haus ist voll unterkellert, das Dachgeschoss ist ausgebaut."
+   },
+   {
+    "ru": "Участок полностью подключён к коммуникациям и огорожен.",
+    "de": "Das Grundstück ist voll erschlossen und eingezäunt."
+   },
+   {
+    "ru": "Окна с двойным остеклением, фасад утеплён.",
+    "de": "Die Fenster sind zweifach verglast, die Fassade ist gedämmt."
+   },
+   {
+    "ru": "Сейчас полностью ремонтируют лестничную клетку.",
+    "de": "Zurzeit wird das Treppenhaus komplett renoviert."
+   },
+   {
+    "ru": "Модернизированная система отопления соответствует современным требованиям.",
+    "de": "Die modernisierte Heizungsanlage entspricht den aktuellen Anforderungen."
+   },
+   {
+    "ru": "Все двенадцать квартир сданы в аренду на длительный срок.",
+    "de": "Alle zwölf Wohnungen sind langfristig vermietet."
+   },
+   {
+    "ru": "Во время осмотра подвал был уже осушен.",
+    "de": "Bei der Besichtigung war der Keller bereits trockengelegt."
+   },
+   {
+    "ru": "Речь идёт об ухоженном доме с отремонтированной ванной.",
+    "de": "Es handelt sich um ein gepflegtes Haus mit einem renovierten Bad."
+   },
+   {
+    "ru": "Крыша не утеплена, это нужно учесть в оценке.",
+    "de": "Das Dach ist nicht gedämmt, das muss in der Bewertung berücksichtigt werden."
+   },
+   {
+    "ru": "Гараж был пристроен в 1998 году и с тех пор не менялся.",
+    "de": "Die Garage wurde 1998 angebaut und ist seitdem unverändert."
+   },
+   {
+    "ru": "Объект сдаётся в аренду с 2015 года.",
+    "de": "Das Objekt ist seit 2015 vermietet."
+   },
+   {
+    "ru": "Повреждённые водосточные трубы нужно заменить.",
+    "de": "Die beschädigten Fallrohre müssen ersetzt werden."
+   }
+  ]
+ },
+ "g-gegensatz": {
+  "id": "g-gegensatz",
+  "day": 11,
+  "de": "Gegensätze und Einschränkungen",
+  "ru": "Противопоставление и уступка",
+  "rule": "<p><b>obwohl</b> — «хотя», придаточное, глагол в конце: <b>Obwohl das Haus alt ist, ist es gut gepflegt.</b></p><p><b>trotzdem / dennoch</b> — «тем не менее». Это наречия главного предложения: на первом месте (глагол сразу после) или после глагола: <b>Die Fenster sind alt, trotzdem ist die Wohnung warm.</b> / <b>… die Wohnung ist trotzdem warm.</b></p><p><b>jedoch, allerdings</b> — «однако», деловой стиль. Чаще всего после глагола: <b>Die Lage ist gut, die Ausstattung ist jedoch einfach.</b> На первом месте — с инверсией: <b>Allerdings ist die Ausstattung einfach.</b> <b>allerdings</b> мягко ограничивает сказанное — удобно на собеседовании: <b>Ich kenne noch nicht alle Vorschriften, allerdings lerne ich schnell.</b></p><p><b>zwar … aber</b> — «правда, … но»: <b>Das Haus ist zwar klein, aber gut geschnitten.</b></p><p><b>während</b> — противопоставление двух фактов: <b>Während die Mikrolage gut ist, ist die Makrolage eher schwach.</b></p><p><b>trotz</b> + Genitiv: <b>trotz der Mängel, trotz des hohen Alters</b>.</p><p>Ошибки: <i>Trotzdem das Haus alt ist</i> → <b>Obwohl das Haus alt ist</b>; <i>trotzdem sie ist hell</i> → <b>trotzdem ist sie hell</b>; <i>obwohl die Lage ist gut</i> → <b>obwohl die Lage gut ist</b>.</p>",
+  "examples": [
+   {
+    "de": "Obwohl das Gebäude über fünfzig Jahre alt ist, befindet es sich in gutem Zustand.",
+    "ru": "Хотя зданию больше пятидесяти лет, оно в хорошем состоянии."
+   },
+   {
+    "de": "Die Heizung ist veraltet, trotzdem ist die Wohnung gut vermietbar.",
+    "ru": "Отопление устарело, тем не менее квартиру легко сдать."
+   },
+   {
+    "de": "Die Lage ist sehr gut, die Ausstattung ist jedoch einfach.",
+    "ru": "Местоположение очень хорошее, однако оснащение простое."
+   },
+   {
+    "de": "Das Haus ist zwar klein, aber sehr gut geschnitten.",
+    "ru": "Дом, правда, небольшой, но с очень удачной планировкой."
+   },
+   {
+    "de": "Während die Mikrolage sehr gut ist, ist die Makrolage eher schwach.",
+    "ru": "В то время как микролокация очень хорошая, макролокация скорее слабая."
+   },
+   {
+    "de": "Trotz der Mängel am Dach halten wir den Kaufpreis für angemessen.",
+    "ru": "Несмотря на недостатки крыши, мы считаем цену покупки адекватной."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "___ das Haus alt ist, ist es in gutem Zustand.",
+    "a": [
+     "Obwohl",
+     "Obgleich",
+     "Auch wenn",
+     "Wenngleich",
+     "Obschon"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Fenster sind alt, ___ ist die Wohnung warm. (тем не менее)",
+    "a": [
+     "trotzdem",
+     "dennoch",
+     "jedoch",
+     "doch",
+     "nichtsdestotrotz",
+     "allerdings"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "___ der hohen Nachfrage sind die Preise nicht gestiegen.",
+    "o": [
+     "Trotz",
+     "Obwohl",
+     "Trotzdem"
+    ],
+    "a": [
+     "Trotz"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Das Haus ist ___ klein, aber sehr gut geschnitten. (правда …, но)",
+    "a": [
+     "zwar"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "___ ich noch nicht lange in Deutschland lebe, kenne ich den regionalen Markt gut.",
+    "o": [
+     "Obwohl",
+     "Trotzdem",
+     "Trotz"
+    ],
+    "a": [
+     "Obwohl"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Trotz ___ Mängel ist das Objekt gut verkäuflich.",
+    "a": [
+     "der",
+     "dieser",
+     "aller",
+     "seiner",
+     "einiger",
+     "kleiner",
+     "kleinerer",
+     "geringer"
+    ],
+    "h": "trotz + Genitiv Plural."
+   },
+   {
+    "t": "choice",
+    "q": "Das Objekt liegt zentral, ___ es ist sehr laut.",
+    "o": [
+     "aber",
+     "trotzdem",
+     "obwohl"
+    ],
+    "a": [
+     "aber"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Lage ist hervorragend, die Ausstattung ist ___ einfach. (однако)",
+    "a": [
+     "jedoch",
+     "allerdings",
+     "aber",
+     "dagegen",
+     "hingegen"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Ich habe wenig Erfahrung mit deutschem Recht, ___ lerne ich sehr schnell.",
+    "o": [
+     "allerdings",
+     "obwohl",
+     "trotz"
+    ],
+    "a": [
+     "allerdings"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "___ die Mikrolage sehr gut ist, ist die Makrolage eher schwach.",
+    "a": [
+     "Während",
+     "Obwohl"
+    ],
+    "h": "während — противопоставление двух фактов (obwohl здесь тоже возможно)."
+   },
+   {
+    "t": "transform",
+    "i": "Mit „obwohl“ verbinden.",
+    "q": "Das Haus ist alt. Es ist gut gepflegt.",
+    "a": [
+     "Obwohl das Haus alt ist, ist es gut gepflegt.",
+     "Das Haus ist gut gepflegt, obwohl es alt ist.",
+     "Obwohl es alt ist, ist das Haus gut gepflegt.",
+     "Das Haus ist, obwohl es alt ist, gut gepflegt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „trotzdem“ verbinden.",
+    "q": "Die Heizung ist veraltet. Die Wohnung ist gut vermietbar.",
+    "a": [
+     "Die Heizung ist veraltet, trotzdem ist die Wohnung gut vermietbar.",
+     "Die Heizung ist veraltet, die Wohnung ist trotzdem gut vermietbar.",
+     "Die Heizung ist veraltet, aber die Wohnung ist trotzdem gut vermietbar.",
+     "Die Heizung ist veraltet, und trotzdem ist die Wohnung gut vermietbar."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „zwar … aber“ umformen.",
+    "q": "Das Grundstück ist klein, aber gut geschnitten.",
+    "a": [
+     "Das Grundstück ist zwar klein, aber gut geschnitten.",
+     "Zwar ist das Grundstück klein, aber es ist gut geschnitten.",
+     "Zwar ist das Grundstück klein, aber gut geschnitten.",
+     "Das Grundstück ist zwar klein, aber es ist gut geschnitten.",
+     "Das Grundstück ist zwar klein, ist aber gut geschnitten."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "obwohl / das Objekt / gut vermietet / ist, / ist / die Rendite / niedrig",
+    "a": [
+     "Obwohl das Objekt gut vermietet ist, ist die Rendite niedrig.",
+     "Die Rendite ist niedrig, obwohl das Objekt gut vermietet ist."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „jedoch“ nach dem Verb umformen.",
+    "q": "Die Lage ist gut, aber die Ausstattung ist einfach.",
+    "a": [
+     "Die Lage ist gut, die Ausstattung ist jedoch einfach."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "„obwohl“-Satz durch „trotz“ + Genitiv ersetzen (das Alter).",
+    "q": "Obwohl das Gebäude alt ist, erzielt es einen guten Preis.",
+    "a": [
+     "Trotz seines Alters erzielt das Gebäude einen guten Preis.",
+     "Trotz des Alters erzielt das Gebäude einen guten Preis.",
+     "Das Gebäude erzielt trotz seines Alters einen guten Preis.",
+     "Das Gebäude erzielt trotz des Alters einen guten Preis."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "ist / die Wohnung / zwar / klein, / gut geschnitten / aber",
+    "a": [
+     "Die Wohnung ist zwar klein, aber gut geschnitten.",
+     "Zwar ist die Wohnung klein, aber gut geschnitten."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „während“ verbinden (Gegensatz).",
+    "q": "Die Wohnungen im Erdgeschoss sind dunkel. Die Wohnungen oben sind sehr hell.",
+    "a": [
+     "Während die Wohnungen im Erdgeschoss dunkel sind, sind die Wohnungen oben sehr hell.",
+     "Die Wohnungen im Erdgeschoss sind dunkel, während die Wohnungen oben sehr hell sind.",
+     "Die Wohnungen oben sind sehr hell, während die Wohnungen im Erdgeschoss dunkel sind.",
+     "Während die Wohnungen oben sehr hell sind, sind die Wohnungen im Erdgeschoss dunkel."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "„trotzdem“ durch „obwohl“ ersetzen.",
+    "q": "Ich habe keine deutsche Ausbildung, trotzdem habe ich die DEKRA-Prüfung bestanden.",
+    "a": [
+     "Obwohl ich keine deutsche Ausbildung habe, habe ich die DEKRA-Prüfung bestanden.",
+     "Ich habe die DEKRA-Prüfung bestanden, obwohl ich keine deutsche Ausbildung habe."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "trotz / der ruhigen Lage / ist / gering / die Nachfrage",
+    "a": [
+     "Trotz der ruhigen Lage ist die Nachfrage gering.",
+     "Die Nachfrage ist trotz der ruhigen Lage gering."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Хотя дом старый, он в хорошем состоянии.",
+    "a": [
+     "Obwohl das Haus alt ist, ist es in gutem Zustand.",
+     "Obwohl das Haus alt ist, befindet es sich in gutem Zustand.",
+     "Das Haus ist in gutem Zustand, obwohl es alt ist.",
+     "Das Haus befindet sich in gutem Zustand, obwohl es alt ist.",
+     "Obwohl das Haus alt ist, ist es in einem guten Zustand.",
+     "Obwohl das Haus alt ist, befindet es sich in einem guten Zustand.",
+     "Das Haus ist in einem guten Zustand, obwohl es alt ist.",
+     "Das Haus befindet sich in einem guten Zustand, obwohl es alt ist.",
+     "Obwohl es alt ist, ist das Haus in gutem Zustand."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Окна старые, тем не менее в квартире тепло.",
+    "a": [
+     "Die Fenster sind alt, trotzdem ist die Wohnung warm.",
+     "Die Fenster sind alt, dennoch ist die Wohnung warm.",
+     "Die Fenster sind alt, die Wohnung ist trotzdem warm.",
+     "Die Fenster sind alt, die Wohnung ist dennoch warm.",
+     "Die Fenster sind alt, trotzdem ist es in der Wohnung warm.",
+     "Die Fenster sind alt, dennoch ist es in der Wohnung warm.",
+     "Die Fenster sind alt, in der Wohnung ist es trotzdem warm.",
+     "Die Fenster sind alt, in der Wohnung ist es dennoch warm."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Несмотря на недостатки, объект хорошо сдаётся в аренду.",
+    "a": [
+     "Trotz der Mängel ist das Objekt gut vermietbar.",
+     "Trotz der Mängel lässt sich das Objekt gut vermieten.",
+     "Das Objekt ist trotz der Mängel gut vermietbar.",
+     "Das Objekt lässt sich trotz der Mängel gut vermieten.",
+     "Trotz seiner Mängel ist das Objekt gut vermietbar.",
+     "Trotz seiner Mängel lässt sich das Objekt gut vermieten.",
+     "Das Objekt ist trotz seiner Mängel gut vermietbar.",
+     "Das Objekt lässt sich trotz seiner Mängel gut vermieten."
+    ],
+    "h": "trotz + Genitiv; vermietbar"
+   },
+   {
+    "t": "translate",
+    "q": "Участок, правда, маленький, но удобной формы.",
+    "a": [
+     "Das Grundstück ist zwar klein, aber gut geschnitten.",
+     "Das Grundstück ist zwar klein, aber gut zugeschnitten.",
+     "Zwar ist das Grundstück klein, aber es ist gut geschnitten.",
+     "Zwar ist das Grundstück klein, aber gut geschnitten.",
+     "Das Grundstück ist zwar klein, aber es ist gut geschnitten.",
+     "Das Grundstück ist zwar klein, ist aber gut geschnitten.",
+     "Das Grundstück ist zwar klein, hat aber einen guten Zuschnitt."
+    ],
+    "h": "zwar … aber; gut geschnitten"
+   },
+   {
+    "t": "translate",
+    "q": "Местоположение хорошее, однако оснащение простое.",
+    "a": [
+     "Die Lage ist gut, die Ausstattung ist jedoch einfach.",
+     "Die Lage ist gut, jedoch ist die Ausstattung einfach.",
+     "Die Lage ist gut, die Ausstattung ist allerdings einfach.",
+     "Die Lage ist gut, allerdings ist die Ausstattung einfach.",
+     "Die Lage ist gut, die Ausstattung jedoch einfach.",
+     "Die Lage ist gut, die Ausstattung allerdings einfach.",
+     "Die Lage ist gut, aber die Ausstattung ist einfach.",
+     "Die Lage ist gut, die Ausstattung ist aber einfach.",
+     "Die Lage ist gut, doch die Ausstattung ist einfach."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Хотя я недавно живу в Германии, я хорошо знаю местный рынок.",
+    "a": [
+     "Obwohl ich noch nicht lange in Deutschland lebe, kenne ich den lokalen Markt gut.",
+     "Obwohl ich noch nicht lange in Deutschland wohne, kenne ich den lokalen Markt gut.",
+     "Ich kenne den lokalen Markt gut, obwohl ich noch nicht lange in Deutschland lebe.",
+     "Ich kenne den lokalen Markt gut, obwohl ich noch nicht lange in Deutschland wohne.",
+     "Obwohl ich noch nicht lange in Deutschland lebe, kenne ich den regionalen Markt gut.",
+     "Obwohl ich noch nicht lange in Deutschland wohne, kenne ich den regionalen Markt gut.",
+     "Ich kenne den regionalen Markt gut, obwohl ich noch nicht lange in Deutschland lebe.",
+     "Ich kenne den regionalen Markt gut, obwohl ich noch nicht lange in Deutschland wohne.",
+     "Obwohl ich noch nicht lange in Deutschland lebe, kenne ich den örtlichen Markt gut.",
+     "Obwohl ich noch nicht lange in Deutschland wohne, kenne ich den örtlichen Markt gut.",
+     "Ich kenne den örtlichen Markt gut, obwohl ich noch nicht lange in Deutschland lebe.",
+     "Ich kenne den örtlichen Markt gut, obwohl ich noch nicht lange in Deutschland wohne.",
+     "Obwohl ich erst seit Kurzem in Deutschland lebe, kenne ich den lokalen Markt gut.",
+     "Obwohl ich erst seit Kurzem in Deutschland wohne, kenne ich den lokalen Markt gut.",
+     "Ich kenne den lokalen Markt gut, obwohl ich erst seit Kurzem in Deutschland lebe.",
+     "Ich kenne den lokalen Markt gut, obwohl ich erst seit Kurzem in Deutschland wohne.",
+     "Obwohl ich erst seit kurzer Zeit in Deutschland lebe, kenne ich den lokalen Markt gut."
+    ],
+    "h": "noch nicht lange; der lokale Markt"
+   },
+   {
+    "t": "fix",
+    "q": "Trotzdem das Haus alt ist, ist es gut gepflegt.",
+    "a": [
+     "Obwohl das Haus alt ist, ist es gut gepflegt.",
+     "Obgleich das Haus alt ist, ist es gut gepflegt.",
+     "Auch wenn das Haus alt ist, ist es gut gepflegt."
+    ],
+    "h": "Нужен союз придаточного."
+   },
+   {
+    "t": "fix",
+    "q": "Obwohl die Lage ist gut, ist die Nachfrage gering.",
+    "a": [
+     "Obwohl die Lage gut ist, ist die Nachfrage gering."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Die Wohnung ist klein, trotzdem sie ist sehr hell.",
+    "a": [
+     "Die Wohnung ist klein, trotzdem ist sie sehr hell.",
+     "Die Wohnung ist klein, sie ist trotzdem sehr hell."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Trotz des schlechten Zustand ist der Preis hoch.",
+    "a": [
+     "Trotz des schlechten Zustands ist der Preis hoch.",
+     "Trotz des schlechten Zustandes ist der Preis hoch."
+    ],
+    "h": "Окончание существительного в Genitiv."
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Хотя дому сорок лет, он в очень хорошем состоянии.",
+    "de": "Obwohl das Haus vierzig Jahre alt ist, ist es in sehr gutem Zustand."
+   },
+   {
+    "ru": "Отопление устарело, тем не менее квартира хорошо сдаётся.",
+    "de": "Die Heizung ist veraltet, trotzdem lässt sich die Wohnung gut vermieten."
+   },
+   {
+    "ru": "Местоположение отличное, однако оснащение довольно простое.",
+    "de": "Die Lage ist hervorragend, die Ausstattung ist jedoch eher einfach."
+   },
+   {
+    "ru": "Квартира, правда, небольшая, но с очень удачной планировкой.",
+    "de": "Die Wohnung ist zwar klein, aber sehr gut geschnitten."
+   },
+   {
+    "ru": "Несмотря на высокий спрос, цены в прошлом году не выросли.",
+    "de": "Trotz der hohen Nachfrage sind die Preise im letzten Jahr nicht gestiegen."
+   },
+   {
+    "ru": "В то время как микролокация хорошая, макролокация скорее слабая.",
+    "de": "Während die Mikrolage gut ist, ist die Makrolage eher schwach."
+   },
+   {
+    "ru": "Хотя у меня нет немецкого образования, я сдал экзамен DEKRA.",
+    "de": "Obwohl ich keine deutsche Ausbildung habe, habe ich die DEKRA-Prüfung bestanden."
+   },
+   {
+    "ru": "Я ещё не знаю всех немецких нормативов, однако быстро учусь.",
+    "de": "Ich kenne noch nicht alle deutschen Vorschriften, allerdings lerne ich schnell."
+   },
+   {
+    "ru": "Несмотря на недостатки крыши, я считаю цену адекватной.",
+    "de": "Trotz der Mängel am Dach halte ich den Preis für angemessen."
+   },
+   {
+    "ru": "Подвал, правда, сухой, но на стенах есть трещины.",
+    "de": "Der Keller ist zwar trocken, aber die Wände haben Risse."
+   },
+   {
+    "ru": "Хотя объект находится у автобана, шума почти не слышно.",
+    "de": "Obwohl das Objekt an der Autobahn liegt, ist kaum Lärm zu hören."
+   },
+   {
+    "ru": "Цена высокая, однако она соответствует рынку.",
+    "de": "Der Preis ist hoch, er ist jedoch marktüblich."
+   }
+  ]
+ },
+ "g-zahlen": {
+  "id": "g-zahlen",
+  "day": 12,
+  "de": "Zahlen sprechen: Datum, Flächen, Prozent, Vergleiche",
+  "ru": "Числа вслух: даты, площади, проценты, сравнения",
+  "rule": "<p><b>Годы:</b> до 2000 — сотнями: <b>1998 = neunzehnhundertachtundneunzig</b>; с 2000 — <b>zweitausendfünf, zweitausendzwanzig</b>. Говорят <b>1998</b> или <b>im Jahr 1998</b>, но никогда <i>in 1998</i>.</p><p><b>Порядковые:</b> до 19 + <b>-t-</b>, с 20 + <b>-st-</b>, дальше обычные окончания прилагательных: <b>am neunzehnten Oktober, im zweiten Obergeschoss, bis zu seinem vierzigsten Lebensjahr</b>. Исключения: <b>erste, dritte, siebte, achte</b>. Дата: <b>Heute ist der 28. (achtundzwanzigste) Oktober</b>, но <b>am 28. (achtundzwanzigsten)</b>.</p><p><b>Десятичные и проценты:</b> <b>124,5 m² = hundertvierundzwanzig Komma fünf Quadratmeter</b>; <b>3,75 % = drei Komma sieben fünf</b> (или <b>fünfundsiebzig</b>) <b>Prozent</b>; <b>450.000 € = vierhundertfünfzigtausend Euro</b>.</p><p><b>Сравнение:</b> <b>größer als</b>, <b>so groß wie</b>, <b>doppelt so groß wie</b>; разница — с <b>um</b>: <b>Der Preis liegt um 5 % über dem Durchschnitt.</b> Превосходная степень: <b>am größten</b> (после глагола) / <b>das größte Objekt</b> (перед существительным).</p><p>Dativ Plural после предлога: <b>vor fünf Jahren, seit zwanzig Jahren</b>.</p><p>Ошибки: <i>in 2010</i>, <i>am neunzehn Oktober</i>, <i>größer wie</i>, <i>am beste</i>, <i>vor fünf Jahr</i>.</p>",
+  "examples": [
+   {
+    "de": "Das Vorstellungsgespräch findet am 19. (neunzehnten) November statt.",
+    "ru": "Собеседование состоится 19 ноября."
+   },
+   {
+    "de": "Das Haus wurde 1978 (neunzehnhundertachtundsiebzig) gebaut.",
+    "ru": "Дом был построен в 1978 году."
+   },
+   {
+    "de": "Die Wohnfläche beträgt 124,5 m² (hundertvierundzwanzig Komma fünf Quadratmeter).",
+    "ru": "Жилая площадь составляет 124,5 м²."
+   },
+   {
+    "de": "Der Kaufpreis liegt um 5 % über dem Durchschnitt im Stadtteil.",
+    "ru": "Цена покупки на 5 % выше средней по району."
+   },
+   {
+    "de": "Das Grundstück ist doppelt so groß wie das Nachbargrundstück.",
+    "ru": "Участок в два раза больше соседнего."
+   },
+   {
+    "de": "Das ist das größte Objekt, das ich bisher bewertet habe.",
+    "ru": "Это самый большой объект, который я оценивал до сих пор."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "Heute ist der ___ Oktober. (28.)",
+    "a": [
+     "achtundzwanzigste"
+    ],
+    "h": "Напишите словами."
+   },
+   {
+    "t": "gap",
+    "q": "Das Vorstellungsgespräch ist am ___ November. (19.)",
+    "a": [
+     "neunzehnten"
+    ],
+    "h": "Напишите словами."
+   },
+   {
+    "t": "choice",
+    "q": "Das Haus wurde ___ gebaut.",
+    "o": [
+     "1985",
+     "in 1985",
+     "im 1985"
+    ],
+    "a": [
+     "1985"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Die Wohnung liegt im ___ Obergeschoss. (3.)",
+    "a": [
+     "dritten"
+    ],
+    "h": "Напишите словами."
+   },
+   {
+    "t": "choice",
+    "q": "Die Nebenkosten sind hier höher ___ im Durchschnitt.",
+    "o": [
+     "als",
+     "wie",
+     "so"
+    ],
+    "a": [
+     "als"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Vor fünf ___ wurde die Heizung erneuert. (Jahr)",
+    "a": [
+     "Jahren"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Das ist das ___ Objekt im ganzen Stadtteil.",
+    "o": [
+     "teuerste",
+     "teuersten",
+     "am teuersten"
+    ],
+    "a": [
+     "teuerste"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Der Kaufpreis liegt ___ 5 % über dem Durchschnitt. (Präposition)",
+    "a": [
+     "um"
+    ],
+    "h": "Разница в сравнении — um + число."
+   },
+   {
+    "t": "choice",
+    "q": "Diese Lage ist für Familien ___.",
+    "o": [
+     "am besten",
+     "am beste",
+     "die besten"
+    ],
+    "a": [
+     "am besten"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Der Eigentümer hat bis zu seinem ___ Lebensjahr in dem Haus gewohnt. (40.)",
+    "a": [
+     "vierzigsten"
+    ],
+    "h": "Напишите словами."
+   },
+   {
+    "t": "transform",
+    "i": "Datum in Worten schreiben.",
+    "q": "Die Ortsbesichtigung ist am 3. Oktober.",
+    "a": [
+     "Die Ortsbesichtigung ist am dritten Oktober."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Jahreszahl in Worten schreiben.",
+    "q": "Das Haus wurde 1998 gebaut.",
+    "a": [
+     "Das Haus wurde neunzehnhundertachtundneunzig gebaut."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Vergleich mit „als“ bilden (groß).",
+    "q": "Haus A: 140 m², Haus B: 120 m².",
+    "a": [
+     "Haus A ist größer als Haus B.",
+     "Haus A ist um 20 m² größer als Haus B.",
+     "Haus A ist 20 m² größer als Haus B.",
+     "Haus A ist um 20 Quadratmeter größer als Haus B.",
+     "Haus A ist 20 Quadratmeter größer als Haus B."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "liegt / der Kaufpreis / um 10 % / über / dem Durchschnitt",
+    "a": [
+     "Der Kaufpreis liegt um 10 % über dem Durchschnitt."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „doppelt so … wie“ vergleichen (groß).",
+    "q": "Grundstück A: 1.200 m², Grundstück B: 600 m².",
+    "a": [
+     "Grundstück A ist doppelt so groß wie Grundstück B."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Superlativ mit „am“ bilden.",
+    "q": "Die Wohnung im Dachgeschoss ist hell.",
+    "a": [
+     "Die Wohnung im Dachgeschoss ist am hellsten."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "habe / vor zwanzig Jahren / ich / als Gutachter / angefangen",
+    "a": [
+     "Ich habe vor zwanzig Jahren als Gutachter angefangen.",
+     "Vor zwanzig Jahren habe ich als Gutachter angefangen.",
+     "Als Gutachter habe ich vor zwanzig Jahren angefangen."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Zahl in Worten schreiben.",
+    "q": "Die Wohnfläche beträgt 124,5 m².",
+    "a": [
+     "Die Wohnfläche beträgt hundertvierundzwanzig Komma fünf Quadratmeter.",
+     "Die Wohnfläche beträgt einhundertvierundzwanzig Komma fünf Quadratmeter."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Prozentzahl in Worten schreiben.",
+    "q": "Der Zinssatz liegt bei 3,75 %.",
+    "a": [
+     "Der Zinssatz liegt bei drei Komma sieben fünf Prozent.",
+     "Der Zinssatz liegt bei drei Komma fünfundsiebzig Prozent."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "das ist / das größte Objekt, / das / ich / bisher / bewertet habe",
+    "a": [
+     "Das ist das größte Objekt, das ich bisher bewertet habe."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Собеседование состоится 19 октября.",
+    "a": [
+     "Das Vorstellungsgespräch findet am 19. Oktober statt.",
+     "Das Vorstellungsgespräch findet am neunzehnten Oktober statt.",
+     "Das Vorstellungsgespräch ist am 19. Oktober.",
+     "Das Vorstellungsgespräch ist am neunzehnten Oktober.",
+     "Am 19. Oktober findet das Vorstellungsgespräch statt.",
+     "Am neunzehnten Oktober findet das Vorstellungsgespräch statt.",
+     "Am 19. Oktober ist das Vorstellungsgespräch.",
+     "Am neunzehnten Oktober ist das Vorstellungsgespräch.",
+     "Das Vorstellungsgespräch wird am 19. Oktober stattfinden.",
+     "Das Vorstellungsgespräch wird am neunzehnten Oktober stattfinden.",
+     "Das Bewerbungsgespräch findet am 19. Oktober statt.",
+     "Das Bewerbungsgespräch findet am neunzehnten Oktober statt.",
+     "Das Bewerbungsgespräch ist am 19. Oktober.",
+     "Das Bewerbungsgespräch ist am neunzehnten Oktober."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Дом был построен в 1985 году.",
+    "a": [
+     "Das Haus wurde 1985 gebaut.",
+     "Das Haus wurde im Jahr 1985 gebaut.",
+     "1985 wurde das Haus gebaut.",
+     "Im Jahr 1985 wurde das Haus gebaut.",
+     "Das Haus ist 1985 gebaut worden.",
+     "Das Haus wurde neunzehnhundertfünfundachtzig gebaut.",
+     "Das Haus wurde 1985 errichtet.",
+     "Das Haus wurde im Jahr 1985 errichtet.",
+     "Das Haus ist 1985 errichtet worden.",
+     "Das Haus ist im Jahr 1985 gebaut worden.",
+     "1985 ist das Haus gebaut worden."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Участок в два раза больше соседнего.",
+    "a": [
+     "Das Grundstück ist doppelt so groß wie das Nachbargrundstück.",
+     "Das Grundstück ist doppelt so groß wie das benachbarte Grundstück.",
+     "Das Grundstück ist zweimal so groß wie das Nachbargrundstück.",
+     "Das Grundstück ist zweimal so groß wie das benachbarte Grundstück."
+    ],
+    "h": "doppelt so … wie; das Nachbargrundstück"
+   },
+   {
+    "t": "translate",
+    "q": "Цена на 5 % выше среднего.",
+    "a": [
+     "Der Preis liegt um 5 % über dem Durchschnitt.",
+     "Der Preis liegt um 5% über dem Durchschnitt.",
+     "Der Preis liegt um fünf Prozent über dem Durchschnitt.",
+     "Der Preis liegt um 5 Prozent über dem Durchschnitt.",
+     "Der Preis liegt 5 % über dem Durchschnitt.",
+     "Der Preis liegt 5% über dem Durchschnitt.",
+     "Der Preis liegt fünf Prozent über dem Durchschnitt.",
+     "Der Preis liegt 5 Prozent über dem Durchschnitt.",
+     "Der Preis ist um 5 % höher als der Durchschnitt.",
+     "Der Preis ist um 5% höher als der Durchschnitt.",
+     "Der Preis ist um fünf Prozent höher als der Durchschnitt.",
+     "Der Preis ist um 5 Prozent höher als der Durchschnitt.",
+     "Der Preis ist 5 % höher als der Durchschnitt.",
+     "Der Preis ist 5% höher als der Durchschnitt.",
+     "Der Preis ist fünf Prozent höher als der Durchschnitt.",
+     "Der Preis ist 5 Prozent höher als der Durchschnitt."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Это самый дорогой объект в районе.",
+    "a": [
+     "Das ist das teuerste Objekt im Stadtteil.",
+     "Das ist das teuerste Objekt in diesem Stadtteil.",
+     "Das ist das teuerste Objekt im ganzen Stadtteil."
+    ],
+    "h": "der Stadtteil"
+   },
+   {
+    "t": "translate",
+    "q": "Пять лет назад крышу обновили.",
+    "a": [
+     "Vor fünf Jahren wurde das Dach erneuert.",
+     "Das Dach wurde vor fünf Jahren erneuert.",
+     "Das Dach ist vor fünf Jahren erneuert worden.",
+     "Vor fünf Jahren ist das Dach erneuert worden.",
+     "Vor fünf Jahren hat man das Dach erneuert.",
+     "Man hat das Dach vor fünf Jahren erneuert."
+    ],
+    "h": "vor + Dativ Plural; erneuern"
+   },
+   {
+    "t": "fix",
+    "q": "Das Haus wurde in 1975 gebaut.",
+    "a": [
+     "Das Haus wurde 1975 gebaut.",
+     "Das Haus wurde im Jahr 1975 gebaut."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Gespräch findet am neunzehn Oktober statt.",
+    "a": [
+     "Das Gespräch findet am neunzehnten Oktober statt."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Das Grundstück ist größer wie das Nachbargrundstück.",
+    "a": [
+     "Das Grundstück ist größer als das Nachbargrundstück."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Für Familien ist diese Lage am beste.",
+    "a": [
+     "Für Familien ist diese Lage am besten.",
+     "Für Familien ist diese Lage die beste."
+    ]
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Собеседование назначено на 19 октября в 10 часов.",
+    "de": "Das Vorstellungsgespräch ist am neunzehnten Oktober um zehn Uhr."
+   },
+   {
+    "ru": "Дом построен в 1978 году и модернизирован в 2015 году.",
+    "de": "Das Haus wurde neunzehnhundertachtundsiebzig gebaut und zweitausendfünfzehn modernisiert."
+   },
+   {
+    "ru": "Жилая площадь составляет 124,5 квадратного метра.",
+    "de": "Die Wohnfläche beträgt hundertvierundzwanzig Komma fünf Quadratmeter."
+   },
+   {
+    "ru": "Площадь участка составляет около 850 квадратных метров.",
+    "de": "Die Grundstücksfläche beträgt rund achthundertfünfzig Quadratmeter."
+   },
+   {
+    "ru": "Цена покупки на 8 процентов выше среднего по району.",
+    "de": "Der Kaufpreis liegt um acht Prozent über dem Durchschnitt im Stadtteil."
+   },
+   {
+    "ru": "Этот участок в два раза больше соседнего.",
+    "de": "Dieses Grundstück ist doppelt so groß wie das Nachbargrundstück."
+   },
+   {
+    "ru": "Офис находится на третьем этаже здания (по-немецки 2. OG: Erdgeschoss при счёте этажей не учитывается).",
+    "de": "Das Büro befindet sich im zweiten Obergeschoss des Gebäudes."
+   },
+   {
+    "ru": "Процентная ставка сейчас составляет 3,75 процента.",
+    "de": "Der Zinssatz liegt derzeit bei drei Komma fünfundsiebzig Prozent."
+   },
+   {
+    "ru": "Это самый большой объект, который я когда-либо оценивал.",
+    "de": "Das ist das größte Objekt, das ich je bewertet habe."
+   },
+   {
+    "ru": "Пять лет назад цены были значительно ниже.",
+    "de": "Vor fünf Jahren waren die Preise deutlich niedriger."
+   },
+   {
+    "ru": "Средняя цена квадратного метра в этом районе — 3200 евро.",
+    "de": "Der durchschnittliche Quadratmeterpreis in diesem Stadtteil liegt bei dreitausendzweihundert Euro."
+   },
+   {
+    "ru": "Собственник жил в этом доме до сорока лет.",
+    "de": "Der Eigentümer hat bis zu seinem vierzigsten Lebensjahr in diesem Haus gewohnt."
+   }
+  ]
+ },
+ "g-konj2": {
+  "id": "g-konj2",
+  "day": 13,
+  "de": "Höfliche Bitten und Fragen: Konjunktiv II",
+  "ru": "Вежливые просьбы и вопросы: Konjunktiv II",
+  "rule": "<p>Konjunktiv II делает просьбу или вопрос вежливыми. На осмотре объекта и на собеседовании это стандарт, прямое <i>Zeigen Sie mir …</i> звучит резко.</p><p>Формы с умлаутом: <b>wäre, hätte, könnte, dürfte, müsste, würde</b>; без умлаута — <b>sollte, wollte</b>. Для остальных глаголов — <b>würde + Infinitiv</b>: <b>Würden Sie mir die Pläne schicken?</b></p><ul><li>Просьба: <b>Könnten Sie mir bitte den Heizungsraum zeigen?</b></li><li>Желание: <b>Ich hätte gern eine Kopie des Energieausweises.</b></li><li>Предложение: <b>Wäre es möglich, den Termin zu verschieben?</b> (+ zu + Infinitiv)</li><li>Разрешение: <b>Dürfte ich ein paar Fotos machen?</b></li><li>Очень мягко: <b>Es wäre hilfreich, wenn Sie die Unterlagen mitbringen könnten.</b></li><li>Вопрос: <b>Ich würde gern wissen, ob …</b></li></ul><p>На собеседовании: <b>Ich könnte zum ersten Januar anfangen. Ich würde mich freuen, in Ihrem Team zu arbeiten.</b></p><p>Ошибки: <i>konnten, hatte, wurde</i> без умлаута — это прошедшее время, а не вежливость; <i>Könnten Sie mir zeigen den Keller?</i> → инфинитив в конец: <b>… den Keller zeigen?</b>; <i>Wäre es möglich, den Termin verschieben?</i> → <b>zu verschieben</b>.</p>",
+  "examples": [
+   {
+    "de": "Könnten Sie mir bitte den Heizungsraum zeigen?",
+    "ru": "Не могли бы вы показать мне котельную?"
+   },
+   {
+    "de": "Ich hätte gern eine Kopie des Energieausweises.",
+    "ru": "Мне бы хотелось получить копию энергетического паспорта."
+   },
+   {
+    "de": "Wäre es möglich, den Termin auf Donnerstag zu verschieben?",
+    "ru": "Можно ли перенести встречу на четверг?"
+   },
+   {
+    "de": "Dürfte ich kurz ein paar Fotos vom Dachboden machen?",
+    "ru": "Можно мне быстро сделать несколько фото чердака?"
+   },
+   {
+    "de": "Würden Sie mir die Baupläne bis Freitag per E-Mail schicken?",
+    "ru": "Не могли бы вы прислать мне строительные планы по e-mail до пятницы?"
+   },
+   {
+    "de": "Ich würde mich freuen, in Ihrem Team zu arbeiten.",
+    "ru": "Я был бы рад работать в вашей команде."
+   }
+  ],
+  "drills": [
+   {
+    "t": "gap",
+    "q": "___ Sie mir bitte den Keller zeigen? (Konjunktiv II)",
+    "a": [
+     "Könnten",
+     "Würden"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Ich ___ gern eine Kopie des Grundbuchauszugs. (haben, Konjunktiv II)",
+    "a": [
+     "hätte"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "___ Sie mir die Unterlagen bis Freitag schicken?",
+    "o": [
+     "Könnten",
+     "Konnten",
+     "Könnte"
+    ],
+    "a": [
+     "Könnten"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "___ es möglich, den Termin zu verschieben? (sein, Konjunktiv II)",
+    "a": [
+     "Wäre"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Ich ___ gern einen Termin für die Besichtigung.",
+    "o": [
+     "hätte",
+     "hatte",
+     "habe"
+    ],
+    "a": [
+     "hätte"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "___ ich kurz Fotos vom Dachboden machen? (dürfen, Konjunktiv II)",
+    "a": [
+     "Dürfte"
+    ],
+    "h": "dürfen → dürfte: вежливая просьба о разрешении."
+   },
+   {
+    "t": "choice",
+    "q": "Würden Sie mir bitte ___?",
+    "o": [
+     "den Energieausweis zeigen",
+     "zeigen den Energieausweis",
+     "den Energieausweis zeigten"
+    ],
+    "a": [
+     "den Energieausweis zeigen"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Es ___ sehr hilfreich, wenn Sie mir die Baupläne schicken könnten. (sein, Konjunktiv II)",
+    "a": [
+     "wäre"
+    ]
+   },
+   {
+    "t": "choice",
+    "q": "Es wäre schön, wenn Sie mir die Schlüssel ___ könnten.",
+    "o": [
+     "geben",
+     "gegeben",
+     "zu geben"
+    ],
+    "a": [
+     "geben"
+    ]
+   },
+   {
+    "t": "gap",
+    "q": "Ich ___ gern wissen, wie die Einarbeitung abläuft.",
+    "a": [
+     "würde",
+     "möchte"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Höflicher formulieren (Konjunktiv II).",
+    "q": "Können Sie mir den Grundriss zeigen?",
+    "a": [
+     "Könnten Sie mir den Grundriss zeigen?",
+     "Könnten Sie mir bitte den Grundriss zeigen?",
+     "Könnten Sie mir den Grundriss bitte zeigen?",
+     "Würden Sie mir den Grundriss zeigen?",
+     "Würden Sie mir bitte den Grundriss zeigen?",
+     "Würden Sie mir den Grundriss bitte zeigen?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „Ich hätte gern …“ formulieren.",
+    "q": "Geben Sie mir eine Kopie des Mietvertrags.",
+    "a": [
+     "Ich hätte gern eine Kopie des Mietvertrags.",
+     "Ich hätte gerne eine Kopie des Mietvertrags.",
+     "Ich hätte gern eine Kopie des Mietvertrages.",
+     "Ich hätte gerne eine Kopie des Mietvertrages."
+    ]
+   },
+   {
+    "t": "order",
+    "q": "Sie / könnten / mir / bitte / zeigen / den Keller",
+    "a": [
+     "Könnten Sie mir bitte den Keller zeigen?",
+     "Könnten Sie mir den Keller bitte zeigen?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „Wäre es möglich, … zu …?“ formulieren.",
+    "q": "Wir verschieben den Termin auf Montag.",
+    "a": [
+     "Wäre es möglich, den Termin auf Montag zu verschieben?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „Würden Sie …?“ formulieren.",
+    "q": "Schicken Sie mir bitte die Baupläne.",
+    "a": [
+     "Würden Sie mir bitte die Baupläne schicken?",
+     "Würden Sie mir die Baupläne schicken?",
+     "Würden Sie mir die Baupläne bitte schicken?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „Dürfte ich …?“ formulieren.",
+    "q": "Ich will den Heizungsraum sehen.",
+    "a": [
+     "Dürfte ich den Heizungsraum sehen?",
+     "Dürfte ich bitte den Heizungsraum sehen?",
+     "Dürfte ich mir den Heizungsraum ansehen?",
+     "Dürfte ich mir den Heizungsraum anschauen?",
+     "Dürfte ich den Heizungsraum besichtigen?",
+     "Dürfte ich mir bitte den Heizungsraum ansehen?",
+     "Dürfte ich mir den Heizungsraum bitte ansehen?",
+     "Dürfte ich den Heizungsraum bitte sehen?"
+    ]
+   },
+   {
+    "t": "order",
+    "q": "wäre / es / möglich, / den Termin / auf Donnerstag / zu verschieben",
+    "a": [
+     "Wäre es möglich, den Termin auf Donnerstag zu verschieben?"
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Mit „Es wäre schön, wenn …“ formulieren.",
+    "q": "Bitte bringen Sie den Energieausweis mit.",
+    "a": [
+     "Es wäre schön, wenn Sie den Energieausweis mitbringen könnten.",
+     "Es wäre schön, wenn Sie den Energieausweis mitbringen würden.",
+     "Es wäre schön, wenn Sie den Energieausweis mitbrächten."
+    ]
+   },
+   {
+    "t": "transform",
+    "i": "Höflich indirekt fragen: „Könnten Sie mir sagen, …?“",
+    "q": "Wann wurde das Dach erneuert?",
+    "a": [
+     "Könnten Sie mir sagen, wann das Dach erneuert wurde?",
+     "Könnten Sie mir sagen, wann das Dach erneuert worden ist?"
+    ]
+   },
+   {
+    "t": "order",
+    "q": "ich / hätte / gern / eine Kopie / des Energieausweises",
+    "a": [
+     "Ich hätte gern eine Kopie des Energieausweises.",
+     "Eine Kopie des Energieausweises hätte ich gern."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Не могли бы вы показать мне подвал?",
+    "a": [
+     "Könnten Sie mir den Keller zeigen?",
+     "Könnten Sie mir bitte den Keller zeigen?",
+     "Könnten Sie mir den Keller bitte zeigen?",
+     "Würden Sie mir den Keller zeigen?",
+     "Würden Sie mir bitte den Keller zeigen?",
+     "Würden Sie mir den Keller bitte zeigen?"
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Мне бы хотелось копию поэтажного плана.",
+    "a": [
+     "Ich hätte gern eine Kopie des Grundrisses.",
+     "Ich hätte gerne eine Kopie des Grundrisses.",
+     "Ich hätte gern eine Kopie vom Grundriss.",
+     "Ich hätte gerne eine Kopie vom Grundriss.",
+     "Ich möchte gern eine Kopie des Grundrisses.",
+     "Ich möchte gerne eine Kopie des Grundrisses.",
+     "Ich würde gern eine Kopie des Grundrisses haben.",
+     "Ich würde gerne eine Kopie des Grundrisses haben.",
+     "Ich möchte eine Kopie des Grundrisses."
+    ],
+    "h": "der Grundriss"
+   },
+   {
+    "t": "translate",
+    "q": "Можно было бы перенести осмотр на пятницу?",
+    "a": [
+     "Wäre es möglich, die Besichtigung auf Freitag zu verschieben?",
+     "Wäre es möglich, die Ortsbesichtigung auf Freitag zu verschieben?",
+     "Wäre es möglich, den Besichtigungstermin auf Freitag zu verschieben?",
+     "Könnten wir die Besichtigung auf Freitag verschieben?",
+     "Könnten wir die Ortsbesichtigung auf Freitag verschieben?",
+     "Könnte man die Besichtigung auf Freitag verschieben?",
+     "Könnten wir den Besichtigungstermin auf Freitag verschieben?",
+     "Könnte man die Ortsbesichtigung auf Freitag verschieben?",
+     "Könnte man den Besichtigungstermin auf Freitag verschieben?"
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Можно мне сфотографировать крышу?",
+    "a": [
+     "Dürfte ich das Dach fotografieren?",
+     "Dürfte ich Fotos vom Dach machen?",
+     "Könnte ich das Dach fotografieren?",
+     "Könnte ich Fotos vom Dach machen?",
+     "Darf ich das Dach fotografieren?",
+     "Darf ich Fotos vom Dach machen?",
+     "Dürfte ich ein paar Fotos vom Dach machen?",
+     "Könnte ich ein paar Fotos vom Dach machen?",
+     "Darf ich ein paar Fotos vom Dach machen?"
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Было бы очень полезно, если бы вы прислали мне документы.",
+    "a": [
+     "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen schicken könnten.",
+     "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen schicken würden.",
+     "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen zuschicken könnten.",
+     "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen zuschicken würden.",
+     "Es wäre sehr hilfreich, wenn Sie mir die Dokumente schicken könnten.",
+     "Es wäre sehr hilfreich, wenn Sie mir die Dokumente schicken würden.",
+     "Es wäre sehr nützlich, wenn Sie mir die Unterlagen schicken könnten.",
+     "Es wäre sehr hilfreich, wenn Sie mir die Unterlagen senden könnten."
+    ]
+   },
+   {
+    "t": "translate",
+    "q": "Я был бы рад работать в вашей команде.",
+    "a": [
+     "Ich würde mich freuen, in Ihrem Team zu arbeiten.",
+     "Ich würde mich sehr freuen, in Ihrem Team zu arbeiten.",
+     "Ich würde mich freuen, in Ihrem Team arbeiten zu dürfen.",
+     "Ich würde mich freuen, wenn ich in Ihrem Team arbeiten könnte.",
+     "Ich wäre froh, in Ihrem Team zu arbeiten.",
+     "Ich würde mich freuen, wenn ich in Ihrem Team arbeiten dürfte."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Konnten Sie mir bitte den Dachboden zeigen?",
+    "a": [
+     "Könnten Sie mir bitte den Dachboden zeigen?"
+    ],
+    "h": "Вежливая форма — с умлаутом."
+   },
+   {
+    "t": "fix",
+    "q": "Ich hatte gern eine Kopie des Mietvertrags.",
+    "a": [
+     "Ich hätte gern eine Kopie des Mietvertrags."
+    ]
+   },
+   {
+    "t": "fix",
+    "q": "Würden Sie mir bitte zeigen den Heizungsraum?",
+    "a": [
+     "Würden Sie mir bitte den Heizungsraum zeigen?",
+     "Würden Sie mir den Heizungsraum bitte zeigen?"
+    ],
+    "h": "Место инфинитива."
+   },
+   {
+    "t": "fix",
+    "q": "Wäre es möglich, den Termin auf Montag verschieben?",
+    "a": [
+     "Wäre es möglich, den Termin auf Montag zu verschieben?"
+    ]
+   }
+  ],
+  "speak": [
+   {
+    "ru": "Не могли бы вы показать мне котельную и подвал?",
+    "de": "Könnten Sie mir bitte den Heizungsraum und den Keller zeigen?"
+   },
+   {
+    "ru": "Мне бы хотелось получить копию энергетического паспорта.",
+    "de": "Ich hätte gern eine Kopie des Energieausweises."
+   },
+   {
+    "ru": "Можно ли перенести осмотр на следующую неделю?",
+    "de": "Wäre es möglich, die Besichtigung auf nächste Woche zu verschieben?"
+   },
+   {
+    "ru": "Можно мне сделать несколько фотографий мансарды?",
+    "de": "Dürfte ich ein paar Fotos vom Dachgeschoss machen?"
+   },
+   {
+    "ru": "Не могли бы вы прислать мне строительные планы до пятницы?",
+    "de": "Würden Sie mir die Baupläne bis Freitag schicken?"
+   },
+   {
+    "ru": "Было бы очень полезно, если бы вы подготовили все документы.",
+    "de": "Es wäre sehr hilfreich, wenn Sie alle Unterlagen vorbereiten könnten."
+   },
+   {
+    "ru": "Не могли бы вы сказать, когда была обновлена крыша?",
+    "de": "Könnten Sie mir sagen, wann das Dach erneuert wurde?"
+   },
+   {
+    "ru": "Я был бы рад работать в вашей команде.",
+    "de": "Ich würde mich freuen, in Ihrem Team zu arbeiten."
+   },
+   {
+    "ru": "Можно задать вопрос о введении в должность?",
+    "de": "Dürfte ich eine Frage zur Einarbeitung stellen?"
+   },
+   {
+    "ru": "Я мог бы приступить к работе с первого января.",
+    "de": "Ich könnte zum ersten Januar anfangen."
+   },
+   {
+    "ru": "Не могли бы вы повторить вопрос, пожалуйста?",
+    "de": "Könnten Sie die Frage bitte wiederholen?"
+   },
+   {
+    "ru": "Можно было бы осмотреть ещё и чердак?",
+    "de": "Wäre es möglich, auch den Dachboden zu besichtigen?"
+   }
+  ]
+ }
 };

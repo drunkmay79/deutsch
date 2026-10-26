@@ -34,7 +34,7 @@ function courseDate(n) { var p = D.course.start.split('-'); return new Date(+p[0
 function calendarDay() { return Math.floor((startOfDay() - courseDate(1)) / DAY) + 1; }
 
 /* ---------- Speicher: localStorage sofort, claude db im Hintergrund ---------- */
-var DOCS = ['profile', 'settings', 'srs', 'prog', 'errs', 'chats', 'custom', 'exam'];
+var DOCS = ['profile', 'settings', 'srs', 'prog', 'errs', 'chats', 'custom', 'exam', 'mine'];
 /* Kompakte Form der Kartenstände: ein Array pro Karte statt eines Objekts (Dokumentgrenze 256 KB) */
 function r2(x) { return Math.round((x || 0) * 100) / 100; }
 var Pack = {

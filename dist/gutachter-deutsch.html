@@ -12241,7 +12241,7 @@ function courseDate(n) { var p = D.course.start.split('-'); return new Date(+p[0
 function calendarDay() { return Math.floor((startOfDay() - courseDate(1)) / DAY) + 1; }
 
 /* ---------- Speicher: localStorage sofort, claude db im Hintergrund ---------- */
-var DOCS = ['profile', 'settings', 'srs', 'prog', 'errs', 'chats', 'custom', 'exam'];
+var DOCS = ['profile', 'settings', 'srs', 'prog', 'errs', 'chats', 'custom', 'exam', 'mine'];
 /* Kompakte Form der Kartenstände: ein Array pro Karte statt eines Objekts (Dokumentgrenze 256 KB) */
 function r2(x) { return Math.round((x || 0) * 100) / 100; }
 var Pack = {
@@ -14501,6 +14501,7 @@ Views.gespraech = function (el, opts) {
   }
   if (opts.qbank) return qbank(el);
   if (opts.exam) return examView(el);
+  if (opts.mine) return mineView(el);
   var cur = Store.get('chats').cur;
   var grid = h('div', { class: 'partners' });
   FREE.forEach(function (sc) {
@@ -14509,6 +14510,8 @@ Views.gespraech = function (el, opts) {
   });
   grid.appendChild(h('button', { class: 'partner', type: 'button', onclick: function () { App.go('gespraech', { qbank: true }); } },
     h('b', { text: 'Interview-Fragenbank' }), h('span', { class: 'ru small', text: 'Банк вопросов: ответ голосом → оценка и образец' })));
+  if (Store.get('mine').title) grid.appendChild(h('button', { class: 'partner', type: 'button', onclick: function () { App.go('gespraech', { mine: true }); } },
+    h('b', { text: 'Mein Prüfungsgutachten' }), h('span', { class: 'ru small', text: 'Рассказ о моём заключении, вопросы экзаменатора, разговор' })));
   var nEx = (Store.get('exam').list || []).length;
   grid.appendChild(h('button', { class: 'partner', type: 'button', onclick: function () { App.go('gespraech', { exam: true }); } },
     h('b', { text: 'DEKRA-Prüfungsfragen' }), h('span', { class: 'ru small', text: 'Тест + обоснование вслух по-немецки' }), h('span', { class: 'pill', text: nEx + ' Fragen' })));
@@ -14534,6 +14537,11 @@ function qbank(el) {
       h('p', { class: 'doc big', text: q.q }), speakBtn(q.q),
       h('p', { class: 'ru small', text: q.ru }),
       h('details', {}, h('summary', { text: 'Tipp und Schlüsselwendungen' }), h('p', { class: 'ru small', text: q.tip }), h('div', { class: 'chips' }, (q.key || []).map(function (k) { return h('span', { class: 'chip static', text: k }); })))));
+    /* persönliche Musterantwort aus dem Lebenslauf (nur im eigenen Speicher) */
+    var mineA = (Store.get('profile').answers || {})[q.id];
+    if (mineA) stage.appendChild(h('details', { class: 'model' }, h('summary', { text: 'Meine Musterantwort (erst selbst antworten!)' }),
+      h('p', { class: 'doc', text: mineA }), h('div', { class: 'row' }, speakBtn(mineA),
+        h('button', { class: 'btn ghost', type: 'button', text: 'Satz für Satz nachsprechen', onclick: function (ev) { ev.target.replaceWith(shadowing((mineA.match(/[^.!?]+[.!?]/g) || [mineA]).map(function (x) { return x.trim(); }), null)); } }))));
     var ta = answerBox({ rows: 5, focus: false, ph: 'Erst laut antworten, dann diktieren …' });
     stage.appendChild(ta); stage.appendChild(dictHint());
     var row = h('div', { class: 'row' });
@@ -14547,6 +14555,91 @@ function qbank(el) {
     TTS.speak(q.q);
   }
   pick();
+}
+
+/* ---------- Mein Prüfungsgutachten: Vortrag, Fragen, Fachgespräch, Wörter und Fehler ---------- */
+function mineView(el) {
+  var m = Store.get('mine');
+  el.appendChild(h('button', { class: 'btn ghost', type: 'button', text: '← Andere Gesprächspartner', onclick: function () { App.go('gespraech'); } }));
+  el.appendChild(h('h2', { class: 'sub', text: m.title || 'Mein Prüfungsgutachten' }));
+  var tabs = h('div', { class: 'steps' }), stage = h('div', { class: 'stage' });
+  el.appendChild(tabs); el.appendChild(stage);
+  var names = [['ueber', 'Überblick'], ['vortrag', 'Vortrag 3 Min.'], ['fragen', 'Fragen'], ['gespraech', 'Fachgespräch'], ['woerter', 'Wörter und Fehler']], cur = 'ueber';
+  function draw() {
+    tabs.textContent = '';
+    names.forEach(function (n) { tabs.appendChild(h('button', { type: 'button', class: n[0] === cur ? 'on' : '', text: n[1], onclick: function () { TTS.stop(); Chat.stop(); cur = n[0]; draw(); } })); });
+    stage.textContent = '';
+    if (cur === 'ueber') {
+      stage.appendChild(h('div', { class: 'rcard' }, h('p', { class: 'doc', text: m.summary_de || '' }), speakBtn(m.summary_de || ''), m.summary_ru ? h('details', {}, h('summary', { text: 'По-русски' }), h('p', { class: 'ru', text: m.summary_ru })) : null));
+      if (m.facts) stage.appendChild(h('div', { class: 'facts' }, h('p', { class: 'eyebrow', text: 'Daten' }), h('p', { class: 'doc task', text: m.facts })));
+      if (m.issues && m.issues.length) stage.appendChild(h('div', { class: 'note' }, h('p', { text: 'Worauf Prüfer und Interviewer achten könnten:' }), h('ul', {}, m.issues.map(function (x) { return h('li', { class: 'ru small', text: x }); }))));
+    } else if (cur === 'vortrag') {
+      stage.appendChild(h('p', { class: 'hint', text: 'Erst anhören, dann Satz für Satz nachsprechen, dann frei vortragen (3 Minuten) und die eigene Fassung prüfen lassen.' }));
+      stage.appendChild(h('div', { class: 'rcard' }, h('p', { class: 'doc', text: m.talk || '' }), speakBtn(m.talk || '', 'Vortrag anhören')));
+      stage.appendChild(shadowing((String(m.talk || '').match(/[^.!?]+[.!?]/g) || []).map(function (x) { return x.trim(); }), null));
+      if (AI.ready()) {
+        var ta = answerBox({ rows: 6, focus: false, ph: 'Meine freie Fassung (diktiert) …' });
+        var ck = h('button', { class: 'btn', type: 'button', text: 'Meine Fassung prüfen lassen' });
+        ck.addEventListener('click', function () { if (ta.value.trim().length < 60) { toast('Bitte ausführlicher.'); return; } ck.disabled = true; stage.appendChild(feedbackPanel(Prompts.monologue('Vorstellung meines Prüfungsgutachtens', ta.value), { src: 'gutachten' })); });
+        stage.appendChild(ta); stage.appendChild(dictHint()); stage.appendChild(ck);
+      }
+    } else if (cur === 'fragen') {
+      var qa = m.qa || [], i = 0;
+      var box = h('div', {});
+      stage.appendChild(box);
+      var showQ = function () {
+        box.textContent = '';
+        var x = qa[i % Math.max(1, qa.length)]; if (!x) return;
+        box.appendChild(h('div', { class: 'rcard' },
+          h('p', { class: 'eyebrow', text: 'Frage ' + (i % qa.length + 1) + ' von ' + qa.length }),
+          h('p', { class: 'doc big', text: x.q }), speakBtn(x.q), h('p', { class: 'ru small', text: x.ru || '' }),
+          x.tip ? h('p', { class: 'ru small', text: x.tip }) : null));
+        var ta = answerBox({ rows: 5, focus: false, ph: 'Erst laut antworten, dann diktieren …' });
+        box.appendChild(ta); box.appendChild(dictHint());
+        var res = h('div', { class: 'stage' });
+        var row = h('div', { class: 'row' });
+        if (AI.ready()) {
+          var ck = h('button', { class: 'btn primary', type: 'button', text: 'Antwort bewerten lassen' });
+          ck.addEventListener('click', function () { if (ta.value.trim().length < 20) { toast('Bitte ausführlicher.'); return; } ck.disabled = true; res.appendChild(feedbackPanel(Prompts.interviewAnswer({ q: x.q, tip: 'Antwort passend zum Prüfungsgutachten. Musterantwort: ' + x.a }, ta.value), { src: 'gutachten', modelLabel: 'Musterantwort' })); });
+          row.appendChild(ck);
+        }
+        row.appendChild(h('button', { class: 'btn', type: 'button', text: 'Musterantwort zeigen', onclick: function (ev) { ev.target.remove(); res.appendChild(h('div', { class: 'model' }, h('p', { class: 'doc', text: x.a }), speakBtn(x.a))); TTS.speak(x.a); } }));
+        row.appendChild(h('button', { class: 'btn ghost', type: 'button', text: 'Nächste Frage', onclick: function () { i++; TTS.stop(); showQ(); } }));
+        box.appendChild(row); box.appendChild(res);
+        TTS.speak(x.q);
+      };
+      showQ();
+    } else if (cur === 'gespraech') {
+      var sc = Object.assign({ id: 'mine-sc', kind: 'fach', facts: m.facts }, m.scenario || {});
+      stage.appendChild(scenarioIntro(sc));
+      if (!AI.ready()) { stage.appendChild(h('p', { class: 'note', text: 'Claude ist hier nicht verfügbar.' })); return; }
+      stage.appendChild(chatPanel(sc, { key: 'mine-sc', onDone: function () { cur = 'ueber'; draw(); } }));
+    } else {
+      var ph = m.phrases || [], fx = m.fixes || [];
+      if (ph.length) {
+        stage.appendChild(h('h4', { text: 'Formulierungen aus meinem Gutachten → Karten' }));
+        var pl = pickList(ph, function (x) { return [h('p', { class: 'doc', text: x.de }), h('p', { class: 'ru small', text: x.ru })]; });
+        stage.appendChild(pl.el);
+        stage.appendChild(h('button', { class: 'btn', type: 'button', text: 'In „Neue Wörter“ aufnehmen', onclick: function (ev) {
+          var cu = Store.get('custom'); cu.items = cu.items || {}; cu.queue = cu.queue || [];
+          pl.picked().forEach(function (x) { var id = 'c-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5); cu.items[id] = { type: 'cust', kind: 'chunk', de: x.de, ru: x.ru, ex: '', exRu: '' }; cu.queue.push(id); });
+          Store.save('custom'); ev.target.disabled = true; ev.target.textContent = 'Aufgenommen';
+        } }));
+      }
+      if (fx.length) {
+        stage.appendChild(h('h4', { text: 'Sprachliche Fehler in meinem Gutachten → Fehlerkarten' }));
+        var fl = pickList(fx, function (x) { return [h('p', { class: 'doc wrongline', text: x.wrong }), h('p', { class: 'doc', text: x.right }), h('p', { class: 'ru small', text: x.why_ru || '' })]; });
+        stage.appendChild(fl.el);
+        stage.appendChild(h('button', { class: 'btn', type: 'button', text: 'Als Fehlerkarten üben', onclick: function (ev) {
+          var chosen = fl.picked();
+          chosen.forEach(function (x) { Cards.addX('fix', { wrong: x.wrong, right: x.right, why: x.why_ru || '' }); });
+          logErrors(chosen, 'gutachten');
+          ev.target.disabled = true; ev.target.textContent = chosen.length + ' Karten aufgenommen';
+        } }));
+      }
+    }
+  }
+  draw();
 }
 
 /* ---------- DEKRA-Prüfungsfragen: auswählen, prüfen, mündlich begründen ---------- */

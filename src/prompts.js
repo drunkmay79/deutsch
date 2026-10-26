@@ -166,7 +166,8 @@ var Prompts = {
       'Auf dem Foto sind Multiple-Choice-Prüfungsfragen zur Immobilienbewertung (z. B. DEKRA D1, Folie oder Buchseite). Grün oder anders markierte Antworten sind die richtigen.',
       '„(1+)“ bedeutet: eine oder mehrere Antworten sind richtig, „(1)“: genau eine.',
       'Antworte nur mit einem JSON-Array, ein Objekt pro Frage:',
-      '[{"id":"Fragecode vom Foto oder leer","q":"Fragetext","multi":true|false,"o":["Antwort 1","Antwort 2","…"],"a":[Indizes der richtigen Antworten, ab 0],"marked":true|false,"ru":"Erklärung auf Russisch, 2–4 Sätze: warum richtig/falsch","say":"Begründung auf Deutsch in 1–2 Sätzen, die der Lerner mündlich sagen kann"}]',
+      '[{"kind":"mc","id":"Fragecode vom Foto oder leer","q":"Fragetext","multi":true|false,"o":["Antwort 1","Antwort 2","…"],"a":[Indizes der richtigen Antworten, ab 0],"marked":true|false,"ru":"Erklärung auf Russisch, 2–4 Sätze: warum richtig/falsch","say":"Begründung auf Deutsch in 1–2 Sätzen, die der Lerner mündlich sagen kann"}]',
+      'Rechenaufgaben (z. B. „O-004“, Daten und „max. n Punkte“) stattdessen so: {"kind":"calc","id":"…","q":"vollständige Aufgabe mit allen Daten, Zeilen mit \\n","points":"max. n Punkte","solution":["Schritt 1 mit Rechnung","…"],"answer":"Ergebnis","ru":"Erklärung auf Russisch","say":"Rechenweg in 2–4 Sätzen zum Nachsprechen"}. Offene Fragen ohne Antworten: "kind":"open" mit "answer" (Musterantwort) und "solution" (Stichpunkte).',
       'Texte genau abschreiben. Wenn keine Markierung erkennbar ist, bestimme die richtigen Antworten fachlich, setze "marked": false und schreibe in "ru", dass dies Claudes Einschätzung ist.',
       'Wenn nichts lesbar ist, antworte mit [].'
     ].join('\n');
@@ -174,10 +175,11 @@ var Prompts = {
   examExplain: function (x, user) {
     return [
       'Prüfungstraining Immobilienbewertung (DEKRA D1). Der Lerner (Deutsch B1–B2) begründet mündlich (diktiert) die richtige Lösung einer Prüfungsfrage.',
-      'FRAGE: ' + x.q,
-      'RICHTIGE ANTWORT(EN): ' + x.a.map(function (i) { return x.o[i]; }).join(' | '),
-      'FALSCHE ANTWORTEN: ' + x.o.filter(function (_, i) { return x.a.indexOf(i) < 0; }).join(' | '),
-      'BEGRÜNDUNG DES LERNERS: ' + user,
+      'FRAGE / AUFGABE: ' + x.q,
+      x.kind === 'calc' || x.kind === 'open'
+        ? 'MUSTERLÖSUNG: ' + (x.solution || []).join(' | ') + (x.answer ? ' | ERGEBNIS: ' + x.answer : '')
+        : 'RICHTIGE ANTWORT(EN): ' + x.a.map(function (i) { return x.o[i]; }).join(' | ') + '\nFALSCHE ANTWORTEN: ' + x.o.filter(function (_, i) { return x.a.indexOf(i) < 0; }).join(' | '),
+      (x.kind === 'calc' ? 'RECHENWEG DES LERNERS (mündlich erklärt): ' : 'BEGRÜNDUNG DES LERNERS: ') + user,
       'Antworte nur mit JSON: {"score":1-5,"ru":"Rückmeldung auf Russisch: fachlich richtig? sprachlich? 2–3 Sätze","de":"fachlich präzise, gut sprechbare Musterbegründung in 2–4 Sätzen, nah an der Formulierung des Lerners","errors":[{"wrong":"…","right":"…","why_ru":"…","cat":"adj|kasus|verbstellung|tempus|praep|artikel|wortwahl|rektion|konj|andere"}]}',
       'Höchstens 6 errors.'
     ].join('\n');

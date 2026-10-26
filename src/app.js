@@ -306,7 +306,7 @@ function examView(el) {
   el.appendChild(h('button', { class: 'btn ghost', type: 'button', text: '← Andere Gesprächspartner', onclick: function () { App.go('gespraech'); } }));
   var stage = h('div', { class: 'stage' }), tools = h('div', { class: 'panel' });
   el.appendChild(stage); el.appendChild(tools);
-  var list = function () { return Store.get('exam').list || []; };
+  var list = function () { return (Store.get('exam').list || []).filter(function (x) { return x.kind !== 'other' && (x.kind === 'calc' || x.kind === 'open' || (x.o && x.o.length && x.a && x.a.length)); }); };
   var cur = null;
   function stats() { var p = Store.get('prog'); p.exam = p.exam || {}; return p.exam; }
   function pick() {
@@ -324,6 +324,7 @@ function examView(el) {
     cur = pick();
     if (!cur) { stage.appendChild(h('div', { class: 'empty' }, h('p', { text: 'Noch keine Prüfungsfragen. Fotografieren Sie unten eine Folie oder Buchseite mit Fragen.' }))); return; }
     var st = stats()[cur.id] || [0, 0], chosen = {};
+    if (cur.kind === 'calc' || cur.kind === 'open') return showTask(st);
     var card = h('div', { class: 'rcard' },
       h('p', { class: 'eyebrow', text: (cur.id ? cur.id + ' · ' : '') + (cur.multi ? 'eine oder mehrere Antworten richtig' : 'genau eine Antwort richtig') + (st[1] ? ' · bisher ' + st[0] + '/' + st[1] : '') }),
       h('p', { class: 'doc big', text: cur.q }), speakBtn(cur.q));
@@ -371,6 +372,52 @@ function examView(el) {
     card.appendChild(ck); card.appendChild(res);
     stage.appendChild(card);
   }
+  /* Rechen- und offene Aufgaben: selbst lösen, Lösung vergleichen, Rechenweg laut erklären */
+  function showTask(st) {
+    var calc = cur.kind === 'calc';
+    var card = h('div', { class: 'rcard' },
+      h('p', { class: 'eyebrow', text: (cur.id ? cur.id + ' · ' : '') + (calc ? 'Rechenaufgabe' : 'Offene Frage') + (cur.points ? ' · ' + cur.points : '') + (st[1] ? ' · bisher ' + st[0] + '/' + st[1] : '') }),
+      h('p', { class: 'doc big task', text: cur.q }), speakBtn(cur.q.replace(/\n/g, '. ')));
+    var mine = calc ? h('input', { type: 'text', class: 'search', id: 'ex-res', placeholder: 'Mein Ergebnis, z. B. 10.000 €' }) : null;
+    if (mine) card.appendChild(h('label', { class: 'small muted', for: 'ex-res', text: 'Rechnen Sie auf Papier und tragen Sie Ihr Ergebnis ein.' }));
+    if (mine) card.appendChild(mine);
+    var res = h('div', { class: 'result' });
+    var showBtn = h('button', { class: 'btn primary', type: 'button', text: 'Lösung zeigen' });
+    showBtn.addEventListener('click', function () {
+      showBtn.remove();
+      if (cur.solution && cur.solution.length) res.appendChild(h('ol', { class: 'steps-list doc' }, cur.solution.map(function (x) { return h('li', { text: x }); })));
+      if (cur.answer) res.appendChild(h('p', { class: 'verdict ok', text: (calc ? 'Ergebnis: ' : '') + cur.answer }));
+      if (mine && mine.value.trim()) res.appendChild(h('p', { class: 'muted small', text: 'Ihr Ergebnis: ' + mine.value.trim() }));
+      if (cur.ru) res.appendChild(h('p', { class: 'ru', text: cur.ru }));
+      if (cur.note) res.appendChild(h('p', { class: 'note', text: cur.note }));
+      var grade = function (ok) {
+        var s = stats(); s[cur.id] = s[cur.id] || [0, 0]; s[cur.id][1]++; if (ok) s[cur.id][0]++; Store.save('prog');
+        gr.remove(); after();
+      };
+      var gr = h('div', { class: 'row' },
+        h('button', { class: 'btn', type: 'button', text: 'Richtig gelöst', onclick: function () { grade(true); } }),
+        h('button', { class: 'btn ghost', type: 'button', text: 'Nicht gelöst', onclick: function () { grade(false); } }));
+      res.appendChild(gr);
+    });
+    function after() {
+      if (cur.say) res.appendChild(h('div', { class: 'model' }, h('p', { class: 'eyebrow', text: calc ? 'Rechenweg zum Nachsprechen' : 'Musterantwort' }), h('p', { class: 'doc', text: cur.say }), speakBtn(cur.say)));
+      res.appendChild(h('p', { class: 'instr', text: calc ? 'Erklären Sie den Rechenweg laut auf Deutsch, Schritt für Schritt (zunächst …, anschließend …, daraus ergibt sich …).' : 'Beantworten Sie die Frage laut auf Deutsch, dann diktieren und prüfen lassen.' }));
+      var ta = answerBox({ rows: 4, focus: false, ph: calc ? 'Mein Rechenweg …' : 'Meine Antwort …' });
+      res.appendChild(ta); res.appendChild(dictHint());
+      var row = h('div', { class: 'row' });
+      if (AI.ready()) {
+        var fb = h('button', { class: 'btn', type: 'button', text: 'Bewerten lassen' });
+        fb.addEventListener('click', function () { if (ta.value.trim().length < 15) { toast('Bitte etwas ausführlicher.'); return; } fb.disabled = true; res.insertBefore(feedbackPanel(Prompts.examExplain(cur, ta.value), { src: 'pruefung', modelLabel: 'Muster von Claude' }), row); });
+        row.appendChild(fb);
+      }
+      row.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Nächste Aufgabe', onclick: show }));
+      res.appendChild(row);
+      if (Store.get('settings').autoTts !== false && cur.say) TTS.speak(cur.say);
+    }
+    card.appendChild(showBtn); card.appendChild(res);
+    stage.appendChild(card);
+  }
+
   /* neue Fragen per Foto */
   tools.appendChild(h('h2', { class: 'sub', text: 'Neue Fragen vom Foto' }));
   tools.appendChild(h('p', { class: 'ru small', text: 'Сфотографируйте слайд или страницу с тестовыми вопросами: Claude перепишет вопрос и отмеченные ответы.' }));
@@ -385,7 +432,12 @@ function examView(el) {
     file.value = '';
     out.textContent = ''; out.appendChild(h('p', { class: 'muted', text: 'Claude liest das Foto …' }));
     AI.fn.json(Prompts.examPhoto(), { images: [f], modelTier: 'default', cache: false }).then(function (arr) {
-      arr = (Array.isArray(arr) ? arr : []).filter(function (x) { return x && typeof x.q === 'string' && Array.isArray(x.o) && x.o.length >= 2 && Array.isArray(x.a) && x.a.length && x.a.every(function (i) { return i === +i && i >= 0 && i < x.o.length; }); });
+      arr = (Array.isArray(arr) ? arr : []).filter(function (x) {
+        if (!x || typeof x.q !== 'string') return false;
+        if (x.kind === 'calc' || x.kind === 'open') return Array.isArray(x.solution) || typeof x.answer === 'string';
+        x.kind = 'mc';
+        return Array.isArray(x.o) && x.o.length >= 2 && Array.isArray(x.a) && x.a.length && x.a.every(function (i) { return i === +i && i >= 0 && i < x.o.length; });
+      });
       out.textContent = '';
       if (!arr.length) return out.appendChild(h('p', { text: 'Keine Frage erkannt. Bitte ein schärferes Foto versuchen.' }));
       var ex = Store.get('exam'); ex.list = ex.list || [];
@@ -393,7 +445,7 @@ function examView(el) {
       var added = 0;
       arr.forEach(function (x) {
         x.id = (x.id && String(x.id).trim()) || ('F-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5));
-        x.multi = x.multi !== false && (x.multi === true || x.a.length > 1);
+        if (x.kind === 'mc') x.multi = x.multi !== false && (x.multi === true || x.a.length > 1);
         if (have[x.id]) return;
         ex.list.push(x); have[x.id] = 1; added++;
       });

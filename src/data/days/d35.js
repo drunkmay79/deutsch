@@ -20,7 +20,7 @@ D.days[35] = {
     "mit dem Baupreisindex auf den Stichtag hochrechnen",
     "die durchschnittlichen Herstellungskosten"
    ],
-   "note": "auf Basis + Gen.: auf Basis der NHK 2010. После des прилагательное всегда на -en: des aktuellen Baupreisindex. ermitteln: ich ermittle (без второго -e-), ermittelte – hat ermittelt."
+   "note": "auf Basis + Gen.: auf Basis der NHK 2010. После des прилагательное всегда на -en: des aktuellen Baupreisindex. ermitteln: ich ermittle, er ermittelt; ermittelte – hat ermittelt."
   },
   {
    "id": "v35-002",
@@ -34,7 +34,7 @@ D.days[35] = {
    "col": [
     "sich aus + Dat. ergeben",
     "das Verhältnis von A zu B",
-    "linear abschreiben"
+    "die lineare Alterswertminderung"
    ],
    "note": "sich ergeben aus + Dat.: aus dem Verhältnis; ergab sich – hat sich ergeben. 48 durch 80 = 48 разделить на 80. Сам износ (Alterswertminderung) = 1 − 0,60 = 40 %, коэффициент = 0,60 — не путать."
   },
@@ -42,7 +42,7 @@ D.days[35] = {
    "id": "v35-003",
    "kind": "phrase",
    "de": "Erst durch den Sachwertfaktor wird aus dem Substanzwert ein marktangepasster Wert.",
-   "ru": "Только благодаря коэффициенту рыночной корректировки (Sachwertfaktor) из стоимости «по субстанции» получается стоимость, приведённая к рынку.",
+   "ru": "Только благодаря коэффициенту рыночной корректировки (Sachwertfaktor) затратная стоимость (Substanzwert) превращается в стоимость, приведённую к рынку.",
    "ex": "Erst durch den Sachwertfaktor wird aus dem reinen Substanzwert ein marktangepasster Wert, hier rund 407.000 Euro.",
    "exRu": "Только благодаря коэффициенту Sachwertfaktor из чисто затратной стоимости получается стоимость, приведённая к рынку, здесь около 407 000 евро.",
    "cloze": "Erst durch den Sachwertfaktor wird aus dem reinen Substanzwert ein ___ Wert, hier rund 407.000 Euro.",
@@ -122,9 +122,9 @@ D.days[35] = {
    "id": "v35-008",
    "kind": "phrase",
    "de": "Schon ein halber Prozentpunkt beim Liegenschaftszinssatz kann den Ertragswert um mehrere Prozent verändern.",
-   "ru": "Уже полпроцентного пункта в ставке капитализации может изменить доходную стоимость на несколько процентов.",
+   "ru": "Уже половина процентного пункта в ставке капитализации может изменить доходную стоимость на несколько процентов.",
    "ex": "Schon ein halber Prozentpunkt beim Liegenschaftszinssatz verändert den Ertragswert der Ahornstraße 7 um mehr als 40.000 Euro.",
-   "exRu": "Уже полпроцентного пункта в ставке капитализации меняет доходную стоимость объекта Ahornstraße 7 более чем на 40 000 евро.",
+   "exRu": "Уже половина процентного пункта в ставке капитализации меняет доходную стоимость объекта Ahornstraße 7 более чем на 40 000 евро.",
    "cloze": "Schon ein ___ Prozentpunkt beim Liegenschaftszinssatz verändert den Ertragswert der Ahornstraße 7 um mehr als 40.000 Euro.",
    "ans": "halber",
    "col": [
@@ -132,7 +132,7 @@ D.days[35] = {
     "empfindlich auf den Zinssatz reagieren",
     "eine Sensitivitätsrechnung durchführen"
    ],
-   "note": "ein + прилагательное + м.р. (Nom.): ein halber Prozentpunkt (-er); в Akk.: um einen halben Prozentpunkt. Prozentpunkt ≠ Prozent: 4,0 → 4,5 % = плюс полпроцентного пункта. um + число = на сколько (разница)."
+   "note": "ein + прилагательное + м.р. (Nom.): ein halber Prozentpunkt (-er); в Akk.: um einen halben Prozentpunkt. Prozentpunkt ≠ Prozent: 4,0 → 4,5 % = плюс 0,5 процентного пункта. um + число = на сколько (разница)."
   },
   {
    "id": "v35-009",
@@ -172,7 +172,7 @@ D.days[35] = {
   "id": "t35",
   "kind": "Lernzettel zur Interviewvorbereitung",
   "title": "Lernzettel: Sach- und Ertragswertverfahren auf einen Blick",
-  "de": "Sachwertverfahren, Beispiel Lindenweg 12: Zuerst wird der Kostenkennwert der NHK 2010 mit der Brutto-Grundfläche multipliziert und mit dem Baupreisindex auf den Stichtag hochgerechnet. Daraus ergeben sich durchschnittliche Herstellungskosten von rund 418.000 Euro. Sie werden mit dem Regionalfaktor von 1,00 und dem Alterswertminderungsfaktor von 0,60 multipliziert; so bleiben rund 250.800 Euro. Zuzüglich der Außenanlagen und des Bodenwerts erhält man einen vorläufigen Sachwert von rund 428.800 Euro. Erst der Sachwertfaktor von 0,95 passt ihn an den Markt an: Der marktangepasste vorläufige Sachwert beträgt rund 407.000 Euro.\n\nErtragswertverfahren, Beispiel Ahornstraße 7: Aus 420 Quadratmetern und der marktüblichen Miete von 7,40 Euro ergibt sich ein jährlicher Rohertrag von rund 37.300 Euro. Abzüglich der Bewirtschaftungskosten bleibt ein Reinertrag von rund 28.500 Euro. Davon wird die Bodenwertverzinsung abgezogen; der Rest wird mit dem Liegenschaftszinssatz von 4,0 Prozent über die Restnutzungsdauer kapitalisiert. Zuzüglich des Bodenwerts beträgt der vorläufige Ertragswert rund 576.300 Euro.\n\nDrei häufige Prüferfragen. Erstens: Wonach richtet sich die Verfahrenswahl? Nach der Objektart, den Gepflogenheiten im gewöhnlichen Geschäftsverkehr und der Datenlage. Zweitens: Warum nicht immer das Sachwertverfahren? Weil Käufer von Renditeobjekten mit Erträgen kalkulieren, nicht mit Baukosten. Drittens: Welches Verfahren führt bei der Marktstraße 5? Das Ertragswertverfahren, denn das Wohn- und Geschäftshaus wird als Renditeobjekt gehandelt; das Sachwertverfahren dient nur zur Ergänzung.\n\nTypische Sprachfehler: Es heißt „multipliziert mit“, nicht „multipliziert um“. „Die Bewirtschaftungskosten“ stehen im Plural, also „die Kosten sind“, nicht „ist“. Nach „abzüglich“ und „zuzüglich“ steht in der Regel der Genitiv: abzüglich der Bewirtschaftungskosten. Und ein Wert sinkt „um“ rund 7 Prozent, aber „auf“ rund 535.100 Euro.",
+  "de": "Sachwertverfahren, Beispiel Lindenweg 12: Zuerst wird der Kostenkennwert der NHK 2010 mit der Brutto-Grundfläche multipliziert; das Ergebnis wird mit dem Baupreisindex auf den Stichtag hochgerechnet. Daraus ergeben sich durchschnittliche Herstellungskosten von rund 418.000 Euro. Sie werden mit dem Regionalfaktor von 1,00 und dem Alterswertminderungsfaktor von 0,60 multipliziert; so bleiben rund 250.800 Euro. Zuzüglich der Außenanlagen und des Bodenwerts erhält man einen vorläufigen Sachwert von rund 428.800 Euro. Erst der Sachwertfaktor von 0,95 passt ihn an den Markt an: Der marktangepasste vorläufige Sachwert beträgt rund 407.000 Euro.\n\nErtragswertverfahren, Beispiel Ahornstraße 7: Aus der marktüblichen Miete von 7,40 Euro je Quadratmeter ergibt sich ein Rohertrag von rund 37.300 Euro im Jahr. Abzüglich der Bewirtschaftungskosten bleibt ein Reinertrag von rund 28.500 Euro. Davon wird die Bodenwertverzinsung abgezogen; der Rest wird mit dem Liegenschaftszinssatz von 4,0 Prozent über die Restnutzungsdauer kapitalisiert. Zuzüglich des Bodenwerts ergibt sich ein vorläufiger Ertragswert von rund 576.300 Euro.\n\nDrei häufige Prüferfragen. Erstens: Wonach richtet sich die Verfahrenswahl? Nach der Objektart, den Gepflogenheiten im gewöhnlichen Geschäftsverkehr und der Datenlage. Zweitens: Warum nicht immer das Sachwertverfahren? Weil Käufer von Renditeobjekten mit Erträgen kalkulieren, nicht mit Baukosten. Drittens: Welches Verfahren führt bei der Marktstraße 5? Das Ertragswertverfahren, denn das Wohn- und Geschäftshaus wird als Renditeobjekt gehandelt; das Sachwertverfahren dient nur zur Ergänzung.\n\nTypische Sprachfehler: „multipliziert mit“, nicht „multipliziert um“. „Die Bewirtschaftungskosten“ stehen im Plural: „die Kosten sind“. Nach „abzüglich“ und „zuzüglich“ steht in der Regel der Genitiv: abzüglich der Bewirtschaftungskosten. Ein Wert sinkt „um“ rund 7 Prozent, aber „auf“ rund 535.100 Euro.",
   "ru": "Шпаргалка к собеседованию: ход затратного и доходного подходов на цифрах недели, три типичных вопроса экзаменатора о выборе метода и частые языковые ошибки.",
   "q": [
    {
@@ -270,7 +270,7 @@ D.days[35] = {
   "kind": "interview",
   "title": "Probe-Interview: Fachrunde Sach- und Ertragswert",
   "ru": "Пробное собеседование в Sparkasse: профессиональный раунд с двумя членами комиссии по затратному и доходному подходам",
-  "role": "Sie sind das Auswahlgremium der Sparkasse Musterstadt in der fachlichen Interviewrunde und sprechen abwechselnd in zwei Rollen: Herr Hoffmann, Leiter der Immobilienbewertung, stellt die Fachfragen, und Frau Schulte, Personalreferentin, bittet nach komplizierten Antworten darum, es noch einmal einfach zu erklären, so wie für einen Kunden. Beginnen Sie jeden Beitrag mit dem Namen der sprechenden Person, siezen Sie den Bewerber und stellen Sie immer nur eine Frage auf einmal. Gehen Sie sieben Fragen quer durch die Woche durch, wie im Gesprächsverlauf beschrieben, darunter eine Kopfrechenaufgabe, deren Lösung Sie nicht vorwegnehmen. Haken Sie nach, wenn Begriffe verwechselt werden, etwa Rohertrag und Reinertrag, Liegenschaftszinssatz und Bauzins oder Prozent und Prozentpunkt. Zum Schluss gibt Herr Hoffmann ein kurzes Feedback: zwei Stärken und zwei Verbesserungspunkte, einen zur Fachsprache und einen zur Grammatik, jeweils mit einer korrigierten Formulierung.",
+  "role": "Sie sind das Auswahlgremium der Sparkasse Musterstadt in der fachlichen Interviewrunde und sprechen abwechselnd in zwei Rollen: Herr Hoffmann, Leiter der Immobilienbewertung, stellt die Fachfragen, und Frau Schulte, Personalreferentin, bittet nach komplizierten Antworten darum, es noch einmal einfach zu erklären, so wie für einen Kunden. Beginnen Sie jeden Beitrag mit dem Namen der sprechenden Person, siezen Sie den Bewerber und stellen Sie immer nur eine Frage auf einmal. Stellen Sie insgesamt sieben Fragen zu den Themen der Woche, wie im Gesprächsverlauf beschrieben, darunter eine Kopfrechenaufgabe, deren Lösung Sie nicht vorwegnehmen. Haken Sie nach, wenn Begriffe verwechselt werden, etwa Rohertrag und Reinertrag, Liegenschaftszinssatz und Bauzins oder Prozent und Prozentpunkt. Zum Schluss gibt Herr Hoffmann ein kurzes Feedback: zwei Stärken und zwei Verbesserungspunkte, einen zur Fachsprache und einen zur Grammatik, jeweils mit einer korrigierten Formulierung.",
   "goal": "Пройти пробный профессиональный раунд по темам 5-й недели: изложить ход затратного и доходного подходов с цифрами, объяснить Sachwertfaktor и принцип соответствия модели, различить валовой и чистый доход, устно посчитать валовой доход, обосновать выбор метода для Marktstraße 5 и корректно сформулировать допущение о будущем; в конце получить отзыв: две сильные стороны и два пункта для улучшения.",
   "open": "Herr Hoffmann: Guten Tag, schön, dass Sie da sind. Ich leite die Immobilienbewertung, und neben mir sitzt Frau Schulte aus der Personalabteilung. Wir steigen gleich fachlich ein: Wie gehen Sie im Sachwertverfahren vor, Schritt für Schritt?",
   "steps": [
@@ -278,7 +278,7 @@ D.days[35] = {
    "Sachwertfaktor und Modellkonformität: Wozu dient der Faktor von 0,95, woher stammt er, und warum müssen Gesamtnutzungsdauer und Außenanlagen wie im Modell des Gutachterausschusses angesetzt werden?",
    "Rohertrag und Reinertrag abgrenzen; danach Kopfrechenaufgabe: Mehrfamilienhaus mit 500 m² Wohnfläche, marktüblich 8 Euro je Quadratmeter und Monat – wie hoch ist der jährliche Rohertrag? (Lösung: 48.000 Euro; nicht vorsagen)",
    "Liegenschaftszinssatz: Was ist das, warum ist er kein Bauzins, und was passiert bei der Ahornstraße 7, wenn er von 4,0 auf 4,5 Prozent steigt? (rund 535.100 statt 576.300 Euro, also rund 7 Prozent weniger)",
-   "Verfahrenswahl für die Marktstraße 5 begründen lassen; danach Zukunftsfrage: In Musterstadt erwarten viele weiter steigende Mieten – rechnen Sie damit? (Erwartet: allgemeine Markterwartungen stecken bereits im Liegenschaftszinssatz; künftige Änderungen nur, wenn sie aufgrund konkreter Tatsachen hinreichend sicher sind; Annahmen ausdrücklich kennzeichnen)",
+   "Verfahrenswahl für die Marktstraße 5 begründen lassen; danach Zukunftsfrage: In Musterstadt erwarten viele weiter steigende Mieten – setzen Sie im Ertragswertverfahren künftige Mietsteigerungen an? (Erwartet: allgemeine Markterwartungen stecken bereits im Liegenschaftszinssatz; künftige Änderungen nur, wenn sie aufgrund konkreter Tatsachen mit hinreichender Sicherheit zu erwarten sind; konkret absehbare wesentliche Änderungen gegebenenfalls im periodischen Ertragswertverfahren; Annahmen ausdrücklich kennzeichnen)",
    "Abschluss: Frau Schulte bedankt sich kurz, Herr Hoffmann gibt Feedback – zwei Stärken, ein Punkt zur Fachsprache, ein Punkt zur Grammatik, jeweils mit korrigierter Formulierung."
   ],
   "use": [
@@ -287,10 +287,10 @@ D.days[35] = {
    "Den Sachwertfaktor wende ich nur modellkonform an.",
    "Vom Rohertrag ziehe ich die Bewirtschaftungskosten ab und erhalte so den Reinertrag.",
    "Das rechne ich kurz im Kopf: Fläche mal Miete mal zwölf Monate.",
-   "Der Liegenschaftszinssatz ist kein Bauzins, sondern wird aus Kaufpreisen abgeleitet.",
-   "Steigt der Liegenschaftszinssatz um einen halben Prozentpunkt, sinkt der Ertragswert um rund 7 Prozent.",
+   "Der Liegenschaftszinssatz ist kein Bauzins, sondern wird aus Kaufpreisen und Reinerträgen abgeleitet.",
+   "Steigt der Liegenschaftszinssatz um einen halben Prozentpunkt, sinkt der Ertragswert hier um rund 7 Prozent.",
    "Bei der Marktstraße 5 ist das Ertragswertverfahren führend, das Sachwertverfahren ziehe ich nur ergänzend heran.",
-   "Künftige Entwicklungen berücksichtige ich nur, wenn sie aufgrund konkreter Tatsachen hinreichend sicher sind.",
+   "Künftige Änderungen berücksichtige ich nur, wenn sie aufgrund konkreter Tatsachen mit hinreichender Sicherheit zu erwarten sind.",
    "Das ist eine Annahme, und so kennzeichne ich sie auch im Gutachten."
   ],
   "facts": "Alle Objekte fiktiv, Musterstadt im Ruhrgebiet. Lindenweg 12 (freistehendes Einfamilienhaus, Baujahr 1994): Kostenkennwert 869 €/m² BGF × 260 m² = 225.940 € (Kostenstand 2010); Baupreisindex 185,0 (2010 = 100) → durchschnittliche Herstellungskosten rund 418.000 €; Regionalfaktor 1,00; Gesamtnutzungsdauer 80 Jahre, Restnutzungsdauer 48 Jahre, Alterswertminderungsfaktor 0,60 → rund 250.800 €; Außenanlagen 4 % = rund 10.000 €; Bodenwert 600 m² × 280 €/m² = 168.000 €; vorläufiger Sachwert rund 428.800 €; Sachwertfaktor 0,95 → marktangepasster vorläufiger Sachwert rund 407.000 €. Ahornstraße 7 (Mehrfamilienhaus, 6 Wohnungen, 420 m² Wohnfläche): Ist-Miete im Schnitt 6,70 €/m², marktüblich 7,40 €/m² → Rohertrag 37.296 €; Bewirtschaftungskosten rund 8.790 € → Reinertrag rund 28.500 €; Bodenwert 175.000 €; Liegenschaftszinssatz 4,0 % (Spanne 3,5–4,5 %); Bodenwertverzinsung 7.000 €; Restnutzungsdauer 35 Jahre, Barwertfaktor 18,6646 → vorläufiger Ertragswert rund 576.300 €; bei 3,5 % rund 622.500 €, bei 4,5 % rund 535.100 €. Marktstraße 5 (Wohn- und Geschäftshaus, Baujahr 1962): Laden rund 110 m² an eine Bäckerei vermietet, drei Wohnungen mit zusammen rund 230 m², eine davon eigengenutzt; gewerblicher Anteil am Rohertrag rund 40 %; Liegenschaftszinssatz für gemischt genutzte Objekte veröffentlicht, kein Sachwertfaktor, kaum Vergleichsverkäufe."
@@ -306,7 +306,7 @@ D.days[35] = {
    "Verfahrenswahl: Eigennutzerobjekt oder Renditeobjekt",
    "Plausibilisierung mit einem zweiten Verfahren"
   ],
-  "model": "Ich erkläre die beiden Verfahren gern an zwei Beispielen. Beim Einfamilienhaus Lindenweg 12 habe ich das Sachwertverfahren angewendet. Zuerst habe ich den Kostenkennwert der NHK 2010 mit der Brutto-Grundfläche multipliziert und mit dem Baupreisindex auf den Stichtag hochgerechnet. Das waren rund 418.000 Euro. Davon habe ich die Alterswertminderung abgezogen und die Außenanlagen und den Bodenwert hinzugerechnet. Mit dem Sachwertfaktor von 0,95 kam ich auf rund 407.000 Euro. Bei der Ahornstraße 7, einem Mehrfamilienhaus, war dagegen das Ertragswertverfahren führend. Aus der marktüblichen Miete ergab sich ein Rohertrag von rund 37.300 Euro, nach Abzug der Bewirtschaftungskosten ein Reinertrag von rund 28.500 Euro. Mit einem Liegenschaftszinssatz von 4,0 Prozent lag der vorläufige Ertragswert bei rund 576.300 Euro. Der wichtigste Unterschied ist: Das Sachwertverfahren geht von der Substanz aus, das Ertragswertverfahren von den nachhaltigen Erträgen. Deshalb wähle ich bei eigengenutzten Häusern meist das Sachwertverfahren und bei Renditeobjekten das Ertragswertverfahren. Wenn es die Datenlage erlaubt, plausibilisiere ich das Ergebnis mit einem zweiten Verfahren.",
+  "model": "Ich erkläre die beiden Verfahren an zwei Beispielen. Beim Einfamilienhaus Lindenweg 12 habe ich das Sachwertverfahren angewendet. Zuerst habe ich den Kostenkennwert der NHK 2010 mit der Brutto-Grundfläche multipliziert und das Ergebnis mit dem Baupreisindex auf den Stichtag hochgerechnet. Das waren rund 418.000 Euro. Davon habe ich die Alterswertminderung abgezogen und die Außenanlagen und den Bodenwert hinzugerechnet. Mit dem Sachwertfaktor von 0,95 kam ich auf rund 407.000 Euro. Bei der Ahornstraße 7, einem Mehrfamilienhaus, war dagegen das Ertragswertverfahren führend. Aus der marktüblichen Miete ergab sich ein Rohertrag von rund 37.300 Euro, nach Abzug der Bewirtschaftungskosten ein Reinertrag von rund 28.500 Euro. Mit einem Liegenschaftszinssatz von 4,0 Prozent lag der vorläufige Ertragswert bei rund 576.300 Euro. Der wichtigste Unterschied ist: Das Sachwertverfahren geht von der Substanz aus, das Ertragswertverfahren von den nachhaltigen Erträgen. Deshalb wähle ich bei eigengenutzten Häusern meist das Sachwertverfahren und bei Renditeobjekten das Ertragswertverfahren. Wenn es die Datenlage erlaubt, plausibilisiere ich das Ergebnis mit einem zweiten Verfahren.",
   "shadow": [
    "Zuerst multipliziere ich den Kostenkennwert mit der Brutto-Grundfläche.",
    "Mit dem Baupreisindex rechne ich die Kosten auf den Stichtag hoch.",

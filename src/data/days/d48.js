@@ -14,7 +14,7 @@ D.days[48] = {
    "pl": "Feststellungen",
    "ru": "констатация; факт, установленный лично при осмотре (≠ сведения третьих лиц)",
    "ex": "Im Protokoll trenne ich eigene Feststellungen klar von den Angaben des Eigentümers.",
-   "exRu": "В протоколе я чётко отделяю собственные выводы осмотра от сведений собственника.",
+   "exRu": "В протоколе я чётко отделяю собственные наблюдения на месте от сведений собственника.",
    "cloze": "Im Protokoll trenne ich eigene ___ klar von den Angaben des Eigentümers.",
    "ans": "Feststellungen",
    "col": [
@@ -130,7 +130,7 @@ D.days[48] = {
     "in die Mängelliste aufnehmen",
     "laut Mängelliste"
    ],
-   "note": "der Mangel — мн. ч. die Mängel (с умлаутом), отсюда Mängelliste. Mangel — любое отклонение от нормального состояния, понятие шире, чем Schaden (повреждение)."
+   "note": "der Mangel — мн. ч. die Mängel (с умлаутом), отсюда Mängelliste. В перечень на практике попадают и Baumängel (ошибки при строительстве), и Bauschäden (повреждения, возникшие позже)."
   },
   {
    "id": "v48-008",
@@ -266,7 +266,7 @@ D.days[48] = {
    "col": [
     "o. B. = ohne Befund",
     "ohne besondere Auffälligkeiten",
-    "einen Befund feststellen"
+    "einen Befund erheben"
    ],
    "note": "Пришло из медицины. В протоколе o. B. значит «визуально без замечаний», а не «проверено специалистом». Без артикля! der Befund — выявленное при обследовании, мн. ч. die Befunde."
   },
@@ -316,14 +316,14 @@ D.days[48] = {
     "durch einen Fachbetrieb prüfen lassen",
     "Ich empfehle, …"
    ],
-   "note": "Безличный пассив: es wird empfohlen; если впереди другое слово, es выпадает: Daher wird empfohlen, … zu стоит перед lassen: klären zu lassen. Для сложных причин точнее — durch einen Bausachverständigen."
+   "note": "Безличный пассив: es wird empfohlen. Если в начале стоит другое слово, es выпадает: Daher wird empfohlen, … zu lassen. zu стоит перед lassen: klären zu lassen. Для сложных причин точнее — durch einen Bausachverständigen."
   }
  ],
  "grammar": {
   "id": "g-d48",
   "de": "Partizipialattribute im Protokoll: Partizipialgruppen, nachgestellte Partizipien und Stichpunktstil",
   "ru": "Причастные конструкции в протоколе: причастные обороты, обособленные причастия и тезисный стиль",
-  "rule": "<p><b>Partizipialattribut</b> заменяет определительное придаточное — типичный приём протоколов и заключений.</p><ul><li><b>Partizip II</b> — пассив или завершённость: <b>der 1996 eingebaute Kessel</b> (= der Kessel, der 1996 eingebaut wurde). <b>Partizip I</b> — одновременное действие: <b>die von außen eindringende Feuchtigkeit</b>.</li><li>Порядок: артикль → распространение → причастие → существительное. Окончания как у прилагательных: <b>die vom Eigentümer vorgelegten Rechnungen</b>, <b>an der stark verwitterten Fassade</b> (Dat.), <b>in den kaum beheizten Kellerräumen</b> (Dat. Pl.: -en и -n).</li><li><b>Обособленное причастие</b> после существительного, в запятых, — <b>без окончания</b>: <b>Die Nordwand, im Sockelbereich stark durchfeuchtet, zeigt Salzausblühungen.</b></li><li><b>Оборот в начале предложения</b>: его подразумеваемый субъект = подлежащее главного: <b>Vom Eigentümer begleitet, besichtigte der Sachverständige den Keller.</b> Неверно: <i>…, begann die Besichtigung</i> — осмотр никто не сопровождал.</li></ul><p><b>Stichpunktstil</b>: без артикля и вспомогательного глагола; <b>-bar</b> = «можно»: <b>Putz abgeplatzt; Rinne undicht; Ursache nicht feststellbar.</b> В заключении — полное предложение:</p><table><tr><th>Stichpunkt</th><th>Satz</th></tr><tr><td>Putz abgeplatzt</td><td><b>Der Putz ist abgeplatzt.</b> — Perfekt с sein</td></tr><tr><td>Rinnen 2018 erneuert</td><td><b>Die Rinnen wurden 2018 erneuert.</b> — действие (Vorgangspassiv)</td></tr><tr><td>Wand durchfeuchtet</td><td><b>Die Wand ist durchfeuchtet.</b> — состояние</td></tr></table>",
+  "rule": "<p><b>Partizipialattribut</b> — свёрнутое определительное придаточное, типично для протоколов.</p><ul><li><b>Partizip II</b> — пассив или завершённость: <b>der 1996 eingebaute Kessel</b> (= der Kessel, der 1996 eingebaut wurde). <b>Partizip I</b> — одновременное действие: <b>die von außen eindringende Feuchtigkeit</b>.</li><li>Порядок: артикль → распространение → причастие → сущ.; окончания как у прилагательных: <b>die vom Eigentümer vorgelegten Rechnungen</b>, <b>an der stark verwitterten Fassade</b> (Dat.), <b>in den kaum beheizten Kellerräumen</b> (Dat. Pl.: -en и -n).</li><li><b>Обособленное причастие</b> (после сущ., в запятых) — <b>без окончания</b>: <b>Die Nordwand, im Sockelbereich stark durchfeuchtet, zeigt Salzausblühungen.</b></li><li><b>Оборот в начале</b>: его субъект = подлежащее главного предложения: <b>Vom Eigentümer begleitet, besichtigte der Sachverständige den Keller.</b> Неверно: <i>…, begann die Besichtigung</i> (собственник «сопровождал» осмотр).</li></ul><p><b>Stichpunktstil</b>: без артикля и связки (ist/wurde); <b>-bar</b> = «можно»: <b>Putz abgeplatzt; Ursache nicht feststellbar.</b> В заключении — полное предложение:</p><table><tr><th>Stichpunkt</th><th>Satz</th></tr><tr><td>Putz abgeplatzt</td><td><b>Der Putz ist abgeplatzt.</b> — Perfekt с sein</td></tr><tr><td>Rinnen 2018 erneuert</td><td><b>Die Rinnen wurden 2018 erneuert.</b> — действие</td></tr><tr><td>Wand durchfeuchtet</td><td><b>Die Wand ist durchfeuchtet.</b> — состояние</td></tr></table>",
   "examples": [
    {
     "de": "Der 1996 eingebaute Gaskessel hat das Ende seiner üblichen Lebensdauer erreicht.",
@@ -354,77 +354,114 @@ D.days[48] = {
    {
     "t": "gap",
     "q": "Der 1996 ___ Gaskessel hat das Ende seiner üblichen Lebensdauer erreicht. (einbauen, Partizip II)",
-    "a": ["eingebaute"],
+    "a": [
+     "eingebaute"
+    ],
     "h": "Partizip II как прилагательное: der eingebaute Kessel — Nom. Sg. после der → -e. einbauen — отделяемый: ein-ge-baut."
    },
    {
     "t": "gap",
     "q": "Die vom Eigentümer ___ Rechnungen betreffen nur die Erneuerung des Bades. (vorlegen, Partizip II)",
-    "a": ["vorgelegten"],
+    "a": [
+     "vorgelegten"
+    ],
     "h": "Мн. ч. после die → -en: die vorgelegten Rechnungen. vorlegen — отделяемый: vor-ge-legt."
    },
    {
     "t": "choice",
     "q": "Die ___ Dachrinne über dem Eingang muss kurzfristig erneuert werden.",
-    "o": ["durchgerostet", "durchgerostete", "durchgerosteten"],
-    "a": ["durchgerostete"],
+    "o": [
+     "durchgerostet",
+     "durchgerostete",
+     "durchgerosteten"
+    ],
+    "a": [
+     "durchgerostete"
+    ],
     "h": "Перед существительным причастие склоняется: die durchgerostete Rinne (Nom. Sg. f. → -e). Без окончания — только после существительного или в тезисе: Rinne durchgerostet."
    },
    {
     "t": "gap",
     "q": "Mehrere Fotos der stark ___ Fassade sind dem Protokoll beigefügt. (verwittern, Partizip II)",
-    "a": ["verwitterten"],
+    "a": [
+     "verwitterten"
+    ],
     "h": "Genitiv: der Fassade → der verwitterten Fassade (-en)."
    },
    {
     "t": "choice",
     "q": "Stichpunkt „Putz im Sockelbereich abgeplatzt“ → Der Putz ___ im Sockelbereich abgeplatzt.",
-    "o": ["hat", "ist", "wird"],
-    "a": ["ist"],
+    "o": [
+     "hat",
+     "ist",
+     "wird"
+    ],
+    "a": [
+     "ist"
+    ],
     "h": "abplatzen — изменение состояния, без объекта → Perfekt с sein. Пассива от abplatzen нет."
    },
    {
     "t": "gap",
     "q": "Die von außen ___ Feuchtigkeit hat den Putz mürbe gemacht. (eindringen, Partizip I)",
-    "a": ["eindringende"],
+    "a": [
+     "eindringende"
+    ],
     "h": "Partizip I = инфинитив + -d: eindringend; die eindringende Feuchtigkeit (Nom. Sg. f. → -e)."
    },
    {
     "t": "choice",
     "q": "Stichpunkt „Rinnen 2018 erneuert, Rechnung liegt vor“ → Die Rinnen ___ 2018 erneuert.",
-    "o": ["sind", "haben", "wurden"],
-    "a": ["wurden"],
-    "h": "Действие в прошлом с датой → Vorgangspassiv: wurden erneuert. «sind erneuert» описывает состояние и с датой не сочетается."
+    "o": [
+     "werden",
+     "haben",
+     "wurden"
+    ],
+    "a": [
+     "wurden"
+    ],
+    "h": "Действие в прошлом с датой → Vorgangspassiv Präteritum: wurden erneuert. werden — настоящее время, а 2018 год уже прошёл; с haben пассив не образуется."
    },
    {
     "t": "gap",
     "q": "Ursache der Durchfeuchtung ohne Bauteilöffnung nicht ___. (feststellen, Adjektiv auf -bar)",
-    "a": ["feststellbar"],
+    "a": [
+     "feststellbar"
+    ],
     "h": "-bar = «можно»: feststellbar = kann festgestellt werden. В тезисе глагол-связка опускается."
    },
    {
     "t": "order",
     "q": "Gasheizung / die / eingebaute / 1996 / hat das Ende ihrer üblichen Lebensdauer erreicht",
-    "a": ["Die 1996 eingebaute Gasheizung hat das Ende ihrer üblichen Lebensdauer erreicht."],
+    "a": [
+     "Die 1996 eingebaute Gasheizung hat das Ende ihrer üblichen Lebensdauer erreicht."
+    ],
     "h": "Порядок: артикль → распространение (1996) → причастие → существительное."
    },
    {
     "t": "transform",
     "i": "Den Relativsatz in ein Partizipialattribut umformen.",
     "q": "Die Rechnungen, die vom Eigentümer vorgelegt wurden, betreffen nur das Bad.",
-    "a": ["Die vom Eigentümer vorgelegten Rechnungen betreffen nur das Bad."],
+    "a": [
+     "Die vom Eigentümer vorgelegten Rechnungen betreffen nur das Bad.",
+     "Die von dem Eigentümer vorgelegten Rechnungen betreffen nur das Bad."
+    ],
     "h": "Пассивное придаточное → Partizip II перед существительным; wurden исчезает, окончание -en (мн. ч. после die)."
    },
    {
     "t": "gap",
     "q": "Die Nordwand, im Sockelbereich bis ca. 80 cm ___, zeigt deutliche Salzausblühungen. (durchfeuchten, Partizip II)",
-    "a": ["durchfeuchtet"],
+    "a": [
+     "durchfeuchtet"
+    ],
     "h": "Обособленное причастие после существительного (в запятых) не склоняется."
    },
    {
     "t": "fix",
     "q": "Die vom Eigentümer vorgelegte Rechnungen betreffen nur das Bad.",
-    "a": ["Die vom Eigentümer vorgelegten Rechnungen betreffen nur das Bad."],
+    "a": [
+     "Die vom Eigentümer vorgelegten Rechnungen betreffen nur das Bad."
+    ],
     "h": "Мн. ч. с определённым артиклем → -en: die vorgelegten Rechnungen."
    },
    {
@@ -466,7 +503,9 @@ D.days[48] = {
    {
     "t": "fix",
     "q": "In den kaum beheizten Kellerräume riecht es muffig.",
-    "a": ["In den kaum beheizten Kellerräumen riecht es muffig."],
+    "a": [
+     "In den kaum beheizten Kellerräumen riecht es muffig."
+    ],
     "h": "Dat. Pl.: in den Räumen — существительное получает -n."
    },
    {
@@ -482,22 +521,35 @@ D.days[48] = {
      "Der 1996 installierte Gaskessel ist noch in Betrieb.",
      "Der 1996 installierte Gaskessel ist immer noch in Betrieb.",
      "Der im Jahr 1996 installierte Gaskessel ist noch in Betrieb.",
-     "Der im Jahr 1996 installierte Gaskessel ist immer noch in Betrieb."
+     "Der im Jahr 1996 installierte Gaskessel ist immer noch in Betrieb.",
+     "Der 1996 installierte Gaskessel ist nach wie vor in Betrieb.",
+     "Der im Jahr 1996 installierte Gaskessel ist nach wie vor in Betrieb.",
+     "Der 1996 eingebaute Gaskessel ist weiterhin in Betrieb.",
+     "Der 1996 installierte Gaskessel ist weiterhin in Betrieb."
     ],
     "h": "Распространение (1996) стоит между артиклем и причастием: der 1996 eingebaute Gaskessel."
    },
    {
     "t": "choice",
     "q": "Vom Eigentümer begleitet, ___.",
-    "o": ["begann die Besichtigung im Keller", "besichtigte der Sachverständige zunächst den Keller", "wurde zunächst der Keller besichtigt"],
-    "a": ["besichtigte der Sachverständige zunächst den Keller"],
+    "o": [
+     "begann die Besichtigung im Keller",
+     "besichtigte der Sachverständige zunächst den Keller",
+     "wurde zunächst der Keller besichtigt"
+    ],
+    "a": [
+     "besichtigte der Sachverständige zunächst den Keller"
+    ],
     "h": "Подразумеваемый субъект оборота = подлежащее главного предложения: собственник сопровождал оценщика, а не осмотр и не подвал."
    },
    {
     "t": "transform",
     "i": "Den Relativsatz in ein Partizipialattribut umformen (Partizip I).",
     "q": "Die Feuchtigkeit, die seitlich in die Kellerwand eindringt, lässt den Putz abplatzen.",
-    "a": ["Die seitlich in die Kellerwand eindringende Feuchtigkeit lässt den Putz abplatzen."],
+    "a": [
+     "Die seitlich in die Kellerwand eindringende Feuchtigkeit lässt den Putz abplatzen.",
+     "Die in die Kellerwand seitlich eindringende Feuchtigkeit lässt den Putz abplatzen."
+    ],
     "h": "Активное придаточное в настоящем → Partizip I: eindringend + окончание -e; всё распространение — перед причастием."
    },
    {
@@ -518,14 +570,18 @@ D.days[48] = {
      "Die vom Eigentümer vorgelegten Rechnungen betreffen nur das Bad.",
      "Die vom Eigentümer vorgelegten Rechnungen betreffen lediglich das Bad.",
      "Die vom Eigentümer vorgelegten Rechnungen betreffen ausschließlich das Bad.",
-     "Die von dem Eigentümer vorgelegten Rechnungen betreffen nur das Bad."
+     "Die von dem Eigentümer vorgelegten Rechnungen betreffen nur das Bad.",
+     "Die von dem Eigentümer vorgelegten Rechnungen betreffen lediglich das Bad.",
+     "Die von dem Eigentümer vorgelegten Rechnungen betreffen ausschließlich das Bad."
     ],
     "h": "von + dem = vom; die vorgelegten Rechnungen (мн. ч. после die → -en)."
    },
    {
     "t": "fix",
     "q": "Der Putz hat an der Wetterseite stellenweise abgeplatzt.",
-    "a": ["Der Putz ist an der Wetterseite stellenweise abgeplatzt."],
+    "a": [
+     "Der Putz ist an der Wetterseite stellenweise abgeplatzt."
+    ],
     "h": "abplatzen — изменение состояния → Perfekt с sein."
    },
    {
@@ -535,7 +591,10 @@ D.days[48] = {
      "Vom Eigentümer begleitet, besichtigte der Sachverständige zunächst den Keller.",
      "Der Sachverständige besichtigte, vom Eigentümer begleitet, zunächst den Keller.",
      "Der Sachverständige besichtigte zunächst, vom Eigentümer begleitet, den Keller.",
-     "Zunächst besichtigte der Sachverständige, vom Eigentümer begleitet, den Keller."
+     "Zunächst besichtigte der Sachverständige, vom Eigentümer begleitet, den Keller.",
+     "Der Sachverständige, vom Eigentümer begleitet, besichtigte zunächst den Keller.",
+     "Der Sachverständige besichtigte zunächst den Keller, vom Eigentümer begleitet.",
+     "Zunächst besichtigte der Sachverständige den Keller, vom Eigentümer begleitet."
     ],
     "h": "Оборот можно поставить в начало (сразу за ним — глагол) или вставить в запятых после глагола."
    },
@@ -546,9 +605,7 @@ D.days[48] = {
      "Der Putz ist im Sockelbereich abgeplatzt, siehe Foto Nr. 7.",
      "Im Sockelbereich ist der Putz abgeplatzt, siehe Foto Nr. 7.",
      "Der Putz ist im Sockelbereich abgeplatzt, siehe Foto Nummer 7.",
-     "Im Sockelbereich ist der Putz abgeplatzt, siehe Foto Nummer 7.",
-     "Der Putz ist im Sockelbereich abgeplatzt (siehe Foto Nr. 7).",
-     "Im Sockelbereich ist der Putz abgeplatzt (siehe Foto Nr. 7)."
+     "Im Sockelbereich ist der Putz abgeplatzt, siehe Foto Nummer 7."
     ],
     "h": "Perfekt с sein: ist abgeplatzt; «см.» — siehe, «№» — Nr."
    },
@@ -556,7 +613,9 @@ D.days[48] = {
     "t": "transform",
     "i": "Den Nebensatz durch eine Partizipialgruppe am Satzanfang ersetzen.",
     "q": "Nachdem der Sachverständige vom Eigentümer begrüßt worden war, besichtigte er zuerst den Keller.",
-    "a": ["Vom Eigentümer begrüßt, besichtigte der Sachverständige zuerst den Keller."],
+    "a": [
+     "Vom Eigentümer begrüßt, besichtigte der Sachverständige zuerst den Keller."
+    ],
     "h": "Partizip II с дополнением — в начало; подлежащее (der Sachverständige) переходит в главное предложение, er исчезает."
    },
    {
@@ -573,14 +632,18 @@ D.days[48] = {
    {
     "t": "fix",
     "q": "Die Nordwand, im Sockelbereich stark durchfeuchtete, zeigt Salzausblühungen.",
-    "a": ["Die Nordwand, im Sockelbereich stark durchfeuchtet, zeigt Salzausblühungen."],
+    "a": [
+     "Die Nordwand, im Sockelbereich stark durchfeuchtet, zeigt Salzausblühungen."
+    ],
     "h": "Обособленное причастие после существительного не склоняется: …, durchfeuchtet, …"
    },
    {
     "t": "transform",
     "i": "Zu einem Satz verbinden: den ersten Satz als nachgestellte Partizipialgruppe zwischen Kommas.",
     "q": "Die Dachrinne ist an zwei Stellen durchgerostet. Sie lässt Regenwasser an der Fassade herablaufen.",
-    "a": ["Die Dachrinne, an zwei Stellen durchgerostet, lässt Regenwasser an der Fassade herablaufen."],
+    "a": [
+     "Die Dachrinne, an zwei Stellen durchgerostet, lässt Regenwasser an der Fassade herablaufen."
+    ],
     "h": "ist durchgerostet → обособленное причастие без окончания сразу после Die Dachrinne; sie исчезает."
    },
    {
@@ -663,7 +726,7 @@ D.days[48] = {
   "id": "t48",
   "kind": "Musterprotokoll einer Ortsbesichtigung",
   "title": "Besichtigungsprotokoll Zechenstraße 7",
-  "de": "Besichtigungsprotokoll – Zweifamilienhaus Zechenstraße 7, Musterstadt-Nord\n\nOrtstermin am 14. Oktober von 10:00 bis 11:30 Uhr. Teilnehmer: Herr Brandt als Eigentümer, Frau Neumann als Kaufinteressentin und der unterzeichnende Sachverständige. Witterung bedeckt und trocken, Sichtverhältnisse außen und innen gut. Besichtigt wurden Außenanlagen, Keller, beide Wohnungen und die Garage.\n\nFeststellungen im Keller: Nordwand bis ca. 80 cm durchfeuchtet, Putz mürbe, Salzausblühungen im Sockelbereich, siehe Foto Nr. 4 bis 6. Diagonaler Riss an der Kellertreppe, ca. 2 mm breit, Foto Nr. 7.\n\nFeststellungen außen und an der Haustechnik: Betondachsteine von 1985, punktuell repariert. Dachrinnen an mehreren Stellen undicht, Foto Nr. 9. Garagendach aus Faserzement-Wellplatten, Asbestverdacht, Foto Nr. 12. Gaskessel von 1996, äußerlich ohne Befund.\n\nNicht besichtigt: Spitzboden, da keine Leiter vorhanden war.\n\nAngaben des Eigentümers: Feuchtigkeit erst seit einem Starkregen im Frühjahr; Keller 1990 von innen gestrichen. Rechnungen oder Fotos liegen nicht vor.\n\nHinweise und Empfehlungen: Die im Sockelbereich festgestellten Salzausblühungen deuten eher auf eine länger andauernde Durchfeuchtung hin. Es wird empfohlen, die Ursache durch einen Fachbetrieb klären zu lassen. Die Wellplatten sollten bis zum Ergebnis einer Beprobung nicht bearbeitet werden. Die undichten Rinnen sind kurzfristig instand zu setzen. Der Gaskessel hat das Ende seiner üblichen Lebensdauer erreicht.\n\nGesamteindruck: baujahrestypischer, durchschnittlich gepflegter Zustand mit Instandsetzungsbedarf an Keller, Rinnen und Garagendach.",
+  "de": "Besichtigungsprotokoll – Zweifamilienhaus Zechenstraße 7, Musterstadt-Nord\n\nOrtstermin am 14. Oktober von 10:00 bis 11:30 Uhr. Teilnehmer: Herr Brandt als Eigentümer, Frau Neumann als Kaufinteressentin und der unterzeichnende Sachverständige. Witterung bedeckt und trocken, Sichtverhältnisse außen und innen gut. Besichtigt wurden Außenanlagen, Keller, beide Wohnungen und die Garage.\n\nFeststellungen im Keller: Nordwand bis ca. 80 cm durchfeuchtet, Putz mürbe, Salzausblühungen im Sockelbereich, siehe Foto Nr. 4 bis 6. Diagonaler Riss in der Wand neben der Kellertreppe, ca. 2 mm breit, Foto Nr. 7.\n\nFeststellungen außen und an der Haustechnik: Betondachsteine von 1985, punktuell repariert. Dachrinnen an mehreren Stellen undicht, Foto Nr. 9. Garagendach aus Faserzement-Wellplatten, Asbestverdacht, Foto Nr. 12. Gaskessel von 1996, äußerlich ohne Befund.\n\nNicht besichtigt: Spitzboden, da keine Leiter vorhanden war.\n\nAngaben des Eigentümers: Feuchtigkeit erst seit einem Starkregen im Frühjahr; Keller 1990 von innen gestrichen. Rechnungen oder Fotos liegen nicht vor.\n\nHinweise und Empfehlungen: Die im Sockelbereich festgestellten Salzausblühungen deuten eher auf eine länger andauernde Durchfeuchtung hin. Es wird empfohlen, die Ursache durch einen Fachbetrieb klären zu lassen. Die Wellplatten sollten bis zum Ergebnis einer Beprobung nicht bearbeitet werden. Die undichten Rinnen sind kurzfristig instand zu setzen. Der Gaskessel hat das Ende seiner üblichen Lebensdauer erreicht.\n\nGesamteindruck: baujahrestypischer, durchschnittlich gepflegter Zustand mit Instandsetzungsbedarf an Keller, Rinnen und Garagendach.",
   "ru": "Образец протокола осмотра дома Zechenstraße 7: шапка (дата, время, участники, погода), выводы по зонам в тезисах со ссылками на фото, неосмотренные зоны, сведения собственника, указания и рекомендации, общее впечатление.",
   "q": [
    {
@@ -784,16 +847,16 @@ D.days[48] = {
    "Ich habe den Satz geändert, weil sich die Partizipialgruppe auf das Subjekt beziehen muss.",
    "Die vom Eigentümer angekündigte Rechnung für das Bad wird nachgereicht."
   ],
-  "facts": "Notizen vom Ortstermin Am Förderturm 3, Musterstadt (fiktiv): Doppelhaushälfte (Siedlungshaus), Baujahr 1936, ca. 95 m² Wohnfläche; Eigentümer Herr Wagner, 74, möchte verkaufen. Termin: 21. Oktober, 14:00–15:15 Uhr; Teilnehmer: Herr Wagner (Eigentümer), Gutachter. Wetter: Nieselregen; Sicht außen eingeschränkt, innen gut. Außen: Sockelputz an der Straßenseite abgeplatzt, Salzausblühungen (Foto 3–4); Dachrinne über dem Eingang durchgerostet, Wasserflecken an der Fassade darunter (Foto 5); Dacheindeckung von der Straße aus ohne erkennbare Schäden (Foto 6) – Eigentümer: 2015 neu eingedeckt, keine Rechnung. Keller: Giebelwand frisch gestrichen, muffiger Geruch (Foto 7); Außenwand zur Straße mit Holzpaneelen verkleidet, dahinter nicht einsehbar (Foto 8) – Eigentümer: Keller immer trocken. Spitzboden: nicht besichtigt, Einschubtreppe klemmt, Eigentümer wollte sie nicht mit Gewalt öffnen (Foto 9: Luke). Bad: Eigentümer: 2019 erneuert, Rechnung wird nachgereicht; augenscheinlich neuwertig (Foto 10–11). Heizung: Gas-Brennwertkessel, laut Typenschild Baujahr 2012, äußerlich o. B. (Foto 12). Eindruck: gepflegt, aber Feuchteverdacht im Keller, Zustand des Spitzbodens ungeklärt."
+  "facts": "Notizen vom Ortstermin Am Förderturm 3, Musterstadt (fiktiv): Doppelhaushälfte (Siedlungshaus), Baujahr 1936, ca. 95 m² Wohnfläche; Eigentümer Herr Wagner, 74, möchte verkaufen. Termin: 21. Oktober, 14:00–15:15 Uhr; Teilnehmer: Herr Wagner (Eigentümer), Gutachter. Wetter: Nieselregen; Sicht außen eingeschränkt, innen gut. Außen: Sockelputz an der Straßenseite abgeplatzt, Salzausblühungen (Foto 3–4); Dachrinne über dem Eingang durchgerostet, Wasserflecken an der Fassade darunter (Foto 5); Dacheindeckung von der Straße aus ohne erkennbare Schäden (Foto 6) – Eigentümer: 2015 neu eingedeckt, keine Rechnung. Keller: Giebelwand frisch gestrichen, muffiger Geruch (Foto 7); Außenwand zur Straße mit Holzpaneelen verkleidet, dahinter nicht einsehbar (Foto 8) – Eigentümer: Keller „absolut trocken“, erst auf Nachfrage: nach einem Starkregen vor etwa zwei Jahren eine feuchte Stelle. Spitzboden: nicht besichtigt, Einschubtreppe klemmt, Eigentümer wollte sie nicht mit Gewalt öffnen (Foto 9: Luke). Bad: Eigentümer: 2019 erneuert, Rechnung wird nachgereicht; augenscheinlich neuwertig (Foto 10–11). Heizung: Gas-Brennwertkessel, laut Typenschild Baujahr 2012, äußerlich o. B. (Foto 12). Eindruck: gepflegt, aber Feuchteverdacht im Keller, Zustand des Spitzbodens ungeklärt."
  },
  "fluency": {
   "id": "f48",
   "topic": "Fotos aus der Fotodokumentation beschreiben",
   "ru": "Опишите три фото из фотоприложения так, чтобы находка была понятна без снимка (около 2 минут)",
   "points": [
-   "Foto 1: abgeplatzter Sockelputz mit Salzausblühungen – Ort, Befund, mögliche Ursache",
-   "Foto 2: durchgerostete Dachrinne über dem Eingang – Folgen für die Fassade, Empfehlung",
-   "Foto 3: Spitzbodenluke mit klemmender Einschubtreppe – warum der Spitzboden nicht besichtigt wurde",
+   "Foto Nr. 3: abgeplatzter Sockelputz mit Salzausblühungen – Ort, Befund, mögliche Ursache",
+   "Foto Nr. 5: durchgerostete Dachrinne über dem Eingang – Folgen für die Fassade, Empfehlung",
+   "Foto Nr. 9: Spitzbodenluke mit klemmender Einschubtreppe – warum der Spitzboden nicht besichtigt wurde",
    "Für jedes Foto: Ort – Befund – mögliche Ursache – Hinweis oder Empfehlung",
    "Mindestens drei Partizipialgruppen (im Sockelbereich abgeplatzt, von der Straße aus sichtbar)",
    "Feststellung und Vermutung sprachlich trennen (deutet auf … hin, wahrscheinlich)"

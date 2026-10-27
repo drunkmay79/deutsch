@@ -84,7 +84,7 @@ D.days[40] = {
    "de": "TVöD-S",
    "art": "der",
    "pl": "",
-   "ru": "тарифный договор общественной службы в редакции для Sparkassen",
+   "ru": "тарифный договор для общественной службы, особая часть для Sparkassen",
    "ex": "In unserer Sparkasse richtet sich die Vergütung nach dem TVöD-S.",
    "exRu": "В нашей Sparkasse оплата труда определяется по тарифному договору TVöD-S.",
    "cloze": "In unserer Sparkasse richtet sich die Vergütung nach dem ___.",
@@ -94,7 +94,7 @@ D.days[40] = {
     "die Entgeltgruppe nach TVöD-S",
     "die tarifliche Vergütung"
    ],
-   "note": "TVöD = Tarifvertrag für den öffentlichen Dienst, S — Sparkassen. Род по слову der Tarifvertrag: nach dem TVöD-S (часто и без артикля: nach TVöD-S). sich richten nach + Dat."
+   "note": "TVöD = Tarifvertrag für den öffentlichen Dienst, S — Besonderer Teil Sparkassen. Род по слову der Tarifvertrag: nach dem TVöD-S (часто и без артикля: nach TVöD-S). sich richten nach + Dat."
   },
   {
    "id": "v40-006",
@@ -236,7 +236,7 @@ D.days[40] = {
     "eine Anstalt des öffentlichen Rechts",
     "privatrechtlich (Gegenteil)"
    ],
-   "note": "Без артикля, ср. р.: als öffentlich-rechtliches Kreditinstitut (-es). Правовая форма Sparkasse — Anstalt des öffentlichen Rechts; противоположность — privatrechtlich (например, AG)."
+   "note": "Без артикля, ср. р.: als öffentlich-rechtliches Kreditinstitut (-es). Правовая форма Sparkasse, как правило, — Anstalt des öffentlichen Rechts; противоположность — privatrechtlich (например, AG)."
   },
   {
    "id": "v40-014",
@@ -294,7 +294,7 @@ D.days[40] = {
    "de": "langfristige Kundenbeziehungen pflegen",
    "ru": "поддерживать долгосрочные отношения с клиентами",
    "ex": "Als Sparkasse pflegen wir langfristige Kundenbeziehungen, oft über mehrere Finanzierungen hinweg.",
-   "exRu": "Как Sparkasse, мы поддерживаем долгосрочные отношения с клиентами, часто на протяжении нескольких финансирований.",
+   "exRu": "Мы как Sparkasse поддерживаем долгосрочные отношения с клиентами, часто на протяжении нескольких финансирований.",
    "cloze": "Als Sparkasse ___ wir langfristige Kundenbeziehungen, oft über mehrere Finanzierungen hinweg.",
    "ans": "pflegen",
    "col": [
@@ -318,14 +318,14 @@ D.days[40] = {
     "der Region zugutekommen",
     "Es ist mir wichtig, … zu …"
    ],
-   "note": "zugutekommen + Dat.: кому? — den Menschen (Dat. мн. ч. с -n). Отделяемый: Das kommt der Region zugute. Подлежащие разные (ich — meine Arbeit), поэтому dass, а не инфинитив с zu."
+   "note": "zugutekommen + Dat.: кому? — den Menschen (Dat. мн. ч. с -n). Отделяемый: Das kommt der Region zugute. Лица разные (mir — meine Arbeit), поэтому dass, а не инфинитив с zu."
   }
  ],
  "grammar": {
   "id": "g-d40",
   "de": "Infinitivsätze mit zu: Motivation und Ziele formulieren",
   "ru": "Инфинитивные обороты с zu: формулируем мотивацию и цели",
-  "rule": "<p>Инфинитив с <b>zu</b> заменяет придаточное, когда у обоих действий <b>одно и то же лицо</b>: <b>Ich habe vor, mich bei Ihnen zu bewerben.</b> Инфинитив стоит в конце, запятую лучше ставить всегда.</p><ul><li>после глаголов: <b>vorhaben, beabsichtigen, hoffen, versuchen</b>;</li><li>после существительных: <b>das Ziel, die Möglichkeit, die Chance</b> — <b>Mein Ziel ist es, …</b>;</li><li>после прилагательных: <b>bereit, froh, stolz</b>; <b>Es ist mir wichtig, …</b></li></ul><p>Отделяемая приставка — zu внутри слова: <b>einzubringen, teilzunehmen, weiterzubilden</b>.</p><p>Если глагол управляет предлогом, в главном предложении стоит <b>da(r)- + предлог</b>: <b>sich freuen auf → Ich freue mich darauf, …</b>; <b>interessiert sein an → daran</b>; <b>Wert legen auf → darauf</b>; <b>Es kommt mir darauf an, …</b></p><table><tr><th>Форма</th><th>Пример</th></tr><tr><td>одновременно</td><td><b>… bald mitzuarbeiten</b></td></tr><tr><td>раньше (Infinitiv Perfekt)</td><td><b>… abgeschlossen zu haben / gezogen zu sein</b></td></tr><tr><td>пассив</td><td><b>… eingebunden zu werden</b></td></tr><tr><td>пассив, раньше</td><td><b>… eingeladen worden zu sein</b></td></tr></table><p>haben или sein — как в Perfekt: <b>ziehen → gezogen zu sein</b>.</p><p>Разные подлежащие → только <b>dass</b>: <b>Ich hoffe, dass Sie mir bald antworten.</b> Без zu: после модальных глаголов, <b>werden</b> и <b>lassen</b>: <b>Ich möchte mich einbringen.</b> Не путать с <b>um … zu</b> (цель, Tag 30) и <b>sein + zu</b> (Tag 17).</p>",
+  "rule": "<p>Инфинитив с <b>zu</b> заменяет dass-предложение, если действует то же лицо, что в главном (ich, mir, Ihnen): <b>Ich habe vor, mich zu bewerben.</b> <b>Wir bieten Ihnen die Möglichkeit, sich weiterzubilden.</b> Запятую лучше ставить всегда.</p><ul><li>после глаголов: <b>vorhaben, beabsichtigen, hoffen, versuchen</b>;</li><li>после существительных: <b>das Ziel, die Möglichkeit, die Chance</b> — <b>Mein Ziel ist es, …</b>;</li><li>после прилагательных: <b>bereit, froh, stolz</b>; <b>Es ist mir wichtig, …</b></li></ul><p>Отделяемая приставка: zu внутри слова — <b>einzubringen, teilzunehmen</b>.</p><p>Глагол с предлогом → в главном предложении <b>da(r)- + предлог</b>: <b>sich freuen auf → Ich freue mich darauf, …</b>; <b>interessiert sein an → daran</b>; <b>Wert legen auf, ankommen auf → darauf</b>.</p><table><tr><th>Форма</th><th>Пример</th></tr><tr><td>одновременно</td><td><b>… bald mitzuarbeiten</b></td></tr><tr><td>раньше (Infinitiv Perfekt)</td><td><b>… abgeschlossen zu haben / gezogen zu sein</b></td></tr><tr><td>пассив</td><td><b>… eingebunden zu werden</b></td></tr><tr><td>пассив, раньше</td><td><b>… eingeladen worden zu sein</b></td></tr></table><p>haben или sein — как в Perfekt: <b>ziehen → gezogen zu sein</b>.</p><p>Разные лица → только <b>dass</b>: <b>Ich hoffe, dass Sie bald antworten.</b> Без zu: после модальных глаголов, <b>werden</b> и <b>lassen</b>: <b>Ich möchte mich einbringen.</b> Не путать с <b>um … zu</b> (цель, Tag 30) и <b>sein + zu</b> (Tag 17).</p>",
   "examples": [
    {
     "de": "Ich habe vor, mich bei der Sparkasse Musterstadt zu bewerben.",
@@ -507,7 +507,10 @@ D.days[40] = {
     "t": "transform",
     "i": "Infinitiv Perfekt statt dass-Satz.",
     "q": "Ich bin stolz darauf, dass ich zahlreiche Bewertungsgutachten erstellt habe.",
-    "a": ["Ich bin stolz darauf, zahlreiche Bewertungsgutachten erstellt zu haben."],
+    "a": [
+     "Ich bin stolz darauf, zahlreiche Bewertungsgutachten erstellt zu haben.",
+     "Ich bin stolz, zahlreiche Bewertungsgutachten erstellt zu haben."
+    ],
     "h": "Действие раньше главного → erstellt zu haben; коррелят darauf остаётся."
    },
    {
@@ -516,6 +519,7 @@ D.days[40] = {
     "a": [
      "Ich hoffe, dass Sie mir bald eine Rückmeldung geben.",
      "Ich hoffe, dass Sie mir bald Rückmeldung geben.",
+     "Ich hoffe, dass Sie mir bald eine Rückmeldung geben werden.",
      "Ich hoffe, Sie geben mir bald eine Rückmeldung.",
      "Ich hoffe, Sie geben mir bald Rückmeldung."
     ],
@@ -549,7 +553,8 @@ D.days[40] = {
     "a": [
      "Ich bin froh, mich für den Beruf des Gutachters entschieden zu haben.",
      "Ich bin froh darüber, mich für den Beruf des Gutachters entschieden zu haben.",
-     "Ich bin froh, mich für den Gutachterberuf entschieden zu haben."
+     "Ich bin froh, mich für den Gutachterberuf entschieden zu haben.",
+     "Ich bin froh darüber, mich für den Gutachterberuf entschieden zu haben."
     ],
     "h": "sich entscheiden — Perfekt с haben: entschieden zu haben; возвратное mich сохраняется."
    },
@@ -565,8 +570,8 @@ D.days[40] = {
    },
    {
     "t": "fix",
-    "q": "Ich bin sehr darauf interessiert, mich in der Sparkasse weiterzuentwickeln.",
-    "a": ["Ich bin sehr daran interessiert, mich in der Sparkasse weiterzuentwickeln."],
+    "q": "Ich bin sehr darauf interessiert, mich bei der Sparkasse weiterzuentwickeln.",
+    "a": ["Ich bin sehr daran interessiert, mich bei der Sparkasse weiterzuentwickeln."],
     "h": "interessiert sein an + Dat. → daran (darauf — от sich freuen auf, Wert legen auf)."
    },
    {
@@ -635,8 +640,8 @@ D.days[40] = {
     "de": "Ich freue mich, zu diesem Gespräch eingeladen worden zu sein."
    },
    {
-    "ru": "Надеюсь, что вы скоро дадите мне обратную связь.",
-    "de": "Ich hoffe, dass Sie mir bald eine Rückmeldung geben."
+    "ru": "Sparkasse даёт возможность регулярно повышать квалификацию.",
+    "de": "Die Sparkasse bietet die Möglichkeit, sich regelmäßig weiterzubilden."
    },
    {
     "ru": "Я не собираюсь в ближайшие годы менять работодателя.",
@@ -765,7 +770,7 @@ D.days[40] = {
    "In fünf Jahren sehe ich mich als erfahrenen Gutachter in Ihrem Team.",
    "Ich bin froh, die Zertifizierung bereits abgeschlossen zu haben."
   ],
-  "facts": "Sparkasse Musterstadt (fiktiv): öffentlich-rechtliches Kreditinstitut (Anstalt des öffentlichen Rechts); Träger: Stadt Musterstadt; Geschäftsgebiet: Musterstadt und Umland im Ruhrgebiet; rund 850 Beschäftigte. Team Immobilienbewertung: sechs Gutachterinnen und Gutachter; Markt- und Beleihungswerte für Wohn- und Gewerbeobjekte, Plausibilisierung von Fremdgutachten. Arbeitgeber: Vergütung nach TVöD-S, Gleitzeit, Weiterbildung über Lehrgänge innerhalb der Sparkassen-Finanzgruppe, Einarbeitung mit Patin oder Pate. Öffentlicher Auftrag (Sparkassengesetz NRW): geld- und kreditwirtschaftliche Versorgung von Bevölkerung und Wirtschaft, besonders im eigenen Geschäftsgebiet; im Kreditgeschäft vorwiegend Mittelstand; Geschäfte nach kaufmännischen Grundsätzen, Gewinnerzielung ist nicht Hauptzweck. Regionalprinzip: Die Sparkasse ist im Wesentlichen in ihrem eigenen Geschäftsgebiet tätig."
+  "facts": "Sparkasse Musterstadt (fiktiv): öffentlich-rechtliches Kreditinstitut (Anstalt des öffentlichen Rechts); Träger: Stadt Musterstadt; Geschäftsgebiet: Musterstadt und Umland im Ruhrgebiet; rund 850 Beschäftigte. Team Immobilienbewertung: sechs Gutachterinnen und Gutachter; Markt- und Beleihungswerte für Wohn- und Gewerbeobjekte, Plausibilisierung von Fremdgutachten. Arbeitgeber: Vergütung nach TVöD-S, Gleitzeit, Weiterbildung über Lehrgänge innerhalb der Sparkassen-Finanzgruppe, Einarbeitung mit Patin oder Pate. Öffentlicher Auftrag (Sparkassengesetz NRW): geld- und kreditwirtschaftliche Versorgung von Bevölkerung und Wirtschaft, besonders im eigenen Geschäftsgebiet; im Kreditgeschäft vorwiegend Mittelstand und wirtschaftlich schwächere Bevölkerungskreise; Geschäfte nach kaufmännischen Grundsätzen, Gewinnerzielung ist nicht Hauptzweck. Regionalprinzip: Die Sparkasse ist im Wesentlichen in ihrem eigenen Geschäftsgebiet tätig."
  },
  "fluency": {
   "id": "f40",

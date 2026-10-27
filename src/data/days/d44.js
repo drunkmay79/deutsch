@@ -14,7 +14,7 @@ D.days[44] = {
    "pl": "Dacheindeckungen",
    "ru": "кровельное покрытие (черепица, бетонная черепица, натуральный сланец)",
    "ex": "Die Dacheindeckung aus Betondachsteinen stammt aus dem Jahr 1985 und ist stark verwittert.",
-   "exRu": "Кровельное покрытие из бетонной черепицы положено в 1985 году и сильно выветрилось.",
+   "exRu": "Кровельное покрытие из бетонной черепицы уложено в 1985 году и сильно выветрилось.",
    "cloze": "Die ___ aus Betondachsteinen stammt aus dem Jahr 1985 und ist stark verwittert.",
    "ans": "Dacheindeckung",
    "col": [
@@ -130,7 +130,7 @@ D.days[44] = {
     "der Asbestzement",
     "der Asbestverdacht"
    ],
-   "note": "der Asbest, обычно без артикля и только ед. ч. Пока материал цел, опасность ограничена; сверлить, резать и демонтировать его могут только специализированные фирмы."
+   "note": "der Asbest, обычно без артикля и только ед. ч. Пока материал цел, опасность ограничена; сверление, резка и демонтаж — только силами специализированных фирм с соответствующей квалификацией."
   },
   {
    "id": "v44-008",
@@ -275,7 +275,7 @@ D.days[44] = {
    "de": "Es besteht der Verdacht auf … (Akk.)",
    "ru": "есть подозрение на …",
    "ex": "Bei den Nachtspeicheröfen im Dachgeschoss besteht der Verdacht auf Asbest.",
-   "exRu": "У ночных аккумуляционных обогревателей в мансарде есть подозрение на асбест.",
+   "exRu": "Есть подозрение, что ночные аккумуляционные обогреватели в мансарде содержат асбест.",
    "cloze": "Bei den Nachtspeicheröfen im Dachgeschoss besteht der ___ auf Asbest.",
    "ans": "Verdacht",
    "col": [
@@ -283,7 +283,7 @@ D.days[44] = {
     "Der Verdacht hat sich nicht bestätigt.",
     "asbestverdächtig"
    ],
-   "note": "Verdacht auf + Akk. Слово сильного склонения (не N-Deklination): den Verdacht, des Verdachts. Dat. Pl. -n: bei den Nachtspeicheröfen."
+   "note": "Verdacht auf + Akk.: der Verdacht auf Hausschwamm. Склонение обычное, не N-Deklination: den Verdacht, des Verdachts. Снять подозрение — den Verdacht ausräumen."
   },
   {
    "id": "v44-017",
@@ -322,7 +322,7 @@ D.days[44] = {
   "id": "g-d44",
   "de": "Passiv in allen Zeiten: Plusquamperfekt und Futur; worden – geworden – werden",
   "ru": "Пассив во всех временах: плюсквамперфект и будущее; worden – geworden – werden",
-  "rule": "<p>Vorgangspassiv = <b>werden</b> + Partizip II. Меняется только форма werden, Partizip стоит в конце.</p><table><tr><th>Время</th><th>Пример</th></tr><tr><td>Präsens</td><td><b>Das Dach wird neu eingedeckt.</b></td></tr><tr><td>Präteritum</td><td><b>Das Dach wurde 1985 neu eingedeckt.</b></td></tr><tr><td>Perfekt</td><td><b>Das Dach ist 1985 neu eingedeckt worden.</b></td></tr><tr><td>Plusquamperfekt</td><td><b>Das Dach war schon 1985 neu eingedeckt worden.</b></td></tr><tr><td>Futur I</td><td><b>Das Dach wird neu eingedeckt werden.</b></td></tr></table><ul><li>В Perfekt и Plusquamperfekt вспомогательный глагол всегда <b>sein</b>: ist/war … <b>worden</b>, никогда не haben.</li><li><b>Plusquamperfekt</b> — действие раньше другого прошедшего: <b>Nachdem die Rinnen erneuert worden waren, drang kein Wasser mehr ein.</b> В придаточном глагол в конце: <b>…, dass die Fenster nie gewartet worden waren.</b></li><li><b>Futur I</b> — план или прогноз, звучит официально. В речи чаще Präsens + время: <b>Die Platten werden nächste Woche beprobt.</b> С модальным: <b>Das Dach wird erneuert werden müssen.</b></li></ul><p><b>werden</b> в трёх ролях: «становиться» — <b>Der Putz ist brüchig geworden.</b>; Futur — <b>Der Gutachter wird das Dach prüfen.</b>; пассив — <b>Der Putz ist ausgebessert worden.</b> <b>geworden</b> — только «стал», <b>worden</b> — только в пассиве.</p><p>Состояние или процесс: <b>Die Fassade war gedämmt</b> (так было при осмотре) — <b>Die Fassade war 2005 gedämmt worden</b> (действие раньше). Исполнитель — <b>von</b> + Dat., причина — <b>durch</b> + Akk.: <b>durch eindringendes Wasser beschädigt</b>.</p>",
+  "rule": "<p>Vorgangspassiv = <b>werden</b> + Partizip II. Меняется только werden, Partizip — в конце.</p><table><tr><th>Время</th><th>Пример</th></tr><tr><td>Präsens</td><td><b>Das Dach wird neu eingedeckt.</b></td></tr><tr><td>Präteritum</td><td><b>Das Dach wurde 1985 neu eingedeckt.</b></td></tr><tr><td>Perfekt</td><td><b>Das Dach ist 1985 neu eingedeckt worden.</b></td></tr><tr><td>Plusquamperfekt</td><td><b>Das Dach war schon 1985 neu eingedeckt worden.</b></td></tr><tr><td>Futur I</td><td><b>Das Dach wird neu eingedeckt werden.</b></td></tr></table><ul><li>В Perfekt и Plusquamperfekt — всегда <b>sein</b>: ist/war … <b>worden</b> (не haben).</li><li><b>Plusquamperfekt</b> — действие раньше другого прошедшего: <b>Nachdem die Rinnen erneuert worden waren, drang kein Wasser mehr ein.</b> В придаточном: <b>…, dass die Fenster nie gewartet worden waren.</b></li><li><b>Futur I</b> — план или прогноз, звучит официально; в речи чаще Präsens + время: <b>Die Platten werden nächste Woche beprobt.</b> С модальным: <b>Das Dach wird erneuert werden müssen.</b></li></ul><p><b>werden</b> трижды: «становиться» — <b>Der Putz ist brüchig geworden.</b>; Futur — <b>Der Gutachter wird das Dach prüfen.</b>; пассив — <b>Der Putz ist ausgebessert worden.</b> <b>geworden</b> = «стал», <b>worden</b> = только пассив.</p><p>Состояние: <b>Die Fassade war gedämmt</b> (так было при осмотре); действие раньше: <b>Die Fassade war 2005 gedämmt worden.</b> Исполнитель — <b>von</b> + Dat., причина — <b>durch</b> + Akk.</p>",
   "examples": [
    {
     "de": "Das Dach ist 1985 mit Betondachsteinen neu eingedeckt worden.",
@@ -379,7 +379,7 @@ D.days[44] = {
     "t": "gap",
     "q": "Die asbestverdächtigen Wellplatten ___ nächste Woche beprobt. (Passiv Präsens)",
     "a": ["werden"],
-    "h": "Präsens пассива: werden + Partizip II; план на будущее часто выражают Präsens + указанием времени."
+    "h": "Präsens пассива: werden + Partizip II; план на будущее часто выражают через Präsens с указанием времени."
    },
    {
     "t": "choice",
@@ -456,7 +456,7 @@ D.days[44] = {
    },
    {
     "t": "transform",
-    "i": "Ins Plusquamperfekt Passiv setzen.",
+    "i": "Ins Plusquamperfekt Passiv setzen (Vorgeschichte vor dem Kauf 2010).",
     "q": "Die Fassade wurde 2005 gedämmt.",
     "a": [
      "Die Fassade war 2005 gedämmt worden.",
@@ -507,9 +507,8 @@ D.days[44] = {
     "a": [
      "Die Materialproben werden im Labor auf Asbest untersucht werden.",
      "Im Labor werden die Materialproben auf Asbest untersucht werden.",
-     "Auf Asbest werden die Materialproben im Labor untersucht werden.",
-     "Die Materialproben werden auf Asbest im Labor untersucht werden."
-    ]
+     "Auf Asbest werden die Materialproben im Labor untersucht werden."
+         ]
    },
    {
     "t": "translate",
@@ -573,14 +572,14 @@ D.days[44] = {
    },
    {
     "t": "transform",
-    "i": "Ins Passiv setzen (Plusquamperfekt) und anschließen: „Die Sparrenköpfe sind morsch, weil …“",
+    "i": "Ins Passiv setzen (Plusquamperfekt) und anschließen: „Die Sparrenköpfe waren morsch geworden, weil …“",
     "q": "Niemand hatte die undichten Rinnen repariert.",
     "a": [
-     "Die Sparrenköpfe sind morsch, weil die undichten Rinnen nicht repariert worden waren.",
-     "Die Sparrenköpfe sind morsch, weil die undichten Rinnen nie repariert worden waren.",
-     "Die Sparrenköpfe sind morsch, weil die undichten Rinnen von niemandem repariert worden waren."
+     "Die Sparrenköpfe waren morsch geworden, weil die undichten Rinnen nicht repariert worden waren.",
+     "Die Sparrenköpfe waren morsch geworden, weil die undichten Rinnen nie repariert worden waren.",
+     "Die Sparrenköpfe waren morsch geworden, weil die undichten Rinnen von niemandem repariert worden waren."
     ],
-    "h": "niemand → отрицание nicht/nie; в weil-придаточном порядок: repariert worden waren."
+    "h": "niemand → отрицание nicht/nie; в weil-придаточном порядок: repariert worden waren. В главном morsch geworden — полнозначный werden."
    },
    {
     "t": "fix",
@@ -664,11 +663,11 @@ D.days[44] = {
   "id": "t44",
   "kind": "Stellungnahme eines Bausachverständigen (E-Mail)",
   "title": "E-Mail: Befunde zur Zechenstraße 7",
-  "de": "Betreff: Zechenstraße 7 – Ergebnisse meiner Begehung\n\nSehr geehrter Herr Kollege,\n\nwie besprochen fasse ich die wichtigsten Befunde für Ihr Gutachten zusammen.\n\nDach: Das Dach war bereits 1985 mit Betondachsteinen neu eingedeckt worden, als der Eigentümer das Haus 1992 kaufte. Seitdem ist die Eindeckung nur punktuell repariert worden. Sie nähert sich dem Ende ihrer üblichen Lebensdauer und wird in den nächsten Jahren erneuert werden müssen. Dringender sind die Dachrinnen aus Zinkblech: Sie sind an mehreren Stellen undicht, und die Sparrenköpfe darunter sind durch Tropfwasser teilweise morsch geworden. Der Dachstuhl selbst ist trocken; ein Verdacht auf Hausschwamm hat sich nicht bestätigt.\n\nFassade und Fenster: An der Wetterseite ist der Putz brüchig und stellenweise abgeplatzt. Die Holzfenster wurden laut Eigentümer zuletzt in den Neunzigerjahren gestrichen; mehrere schließen nicht mehr dicht.\n\nHaustechnik und Schadstoffe: Der Heizkessel von 1996 hat das Ende der üblichen Lebensdauer erreicht. Bei den Faserzement-Wellplatten auf der 1974 errichteten Garage und bei zwei älteren Nachtspeicheröfen im Dachgeschoss besteht der Verdacht auf Asbest. Beides wird nächste Woche beprobt werden. Bis das Ergebnis vorliegt, sollten die Platten weder angebohrt noch abgebaut werden.\n\nIch empfehle, zuerst die Rinnen und die Sparrenköpfe instand zu setzen, damit kein weiteres Wasser eindringt. Eine schriftliche Kostenschätzung erhalten Sie bis Ende nächster Woche.\n\nMit freundlichen Grüßen\nThomas Krämer",
+  "de": "Betreff: Zechenstraße 7 – Ergebnisse meiner Begehung\n\nSehr geehrter Herr Kollege,\n\nwie besprochen fasse ich die wichtigsten Befunde für Ihr Gutachten zusammen.\n\nDach: Die Betondachsteine waren bereits 1985 verlegt worden, als der Eigentümer das Haus 1992 kaufte; seitdem ist die Eindeckung nur punktuell repariert worden. Sie nähert sich dem Ende ihrer üblichen Lebensdauer und wird in den nächsten Jahren erneuert werden müssen. Dringender sind die Dachrinnen aus Zinkblech: Sie sind an mehreren Stellen undicht, und die Sparrenköpfe darunter sind durch Tropfwasser teilweise morsch geworden. Der Dachstuhl selbst ist trocken; ein Verdacht auf Hausschwamm hat sich nicht bestätigt.\n\nFassade und Fenster: An der Wetterseite ist der Putz brüchig und stellenweise abgeplatzt. Die Holzfenster wurden laut Eigentümer zuletzt in den Neunzigerjahren gestrichen; mehrere schließen nicht mehr dicht.\n\nHaustechnik und Schadstoffe: Der Heizkessel von 1996 hat das Ende der üblichen Lebensdauer erreicht. Bei den Faserzement-Wellplatten auf der 1974 errichteten Garage und bei zwei älteren Nachtspeicheröfen im Dachgeschoss besteht der Verdacht auf Asbest. Beides wird nächste Woche beprobt werden. Bis das Ergebnis vorliegt, sollten die Platten nicht angebohrt und die Öfen nicht geöffnet werden.\n\nIch empfehle, zuerst die Rinnen und die Sparrenköpfe instand zu setzen, damit kein weiteres Wasser eindringt. Eine schriftliche Kostenschätzung erhalten Sie bis Ende nächster Woche.\n\nMit freundlichen Grüßen\nThomas Krämer",
   "ru": "Эксперт по строительным дефектам сообщает оценщику результаты осмотра дома Zechenstraße 7: стареющая кровля, протекающие желоба и сгнившие концы стропил, повреждённая штукатурка, неплотные окна, старый котёл и подозрение на асбест.",
   "q": [
    {
-    "q": "Wann war das Dach neu eingedeckt worden?",
+    "q": "Wann waren die Betondachsteine verlegt worden?",
     "o": ["1974", "1985", "1992"],
     "a": 1
    },

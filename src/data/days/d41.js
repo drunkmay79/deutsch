@@ -30,7 +30,7 @@ D.days[41] = {
    "de": "Durchsetzungsvermögen",
    "art": "das",
    "pl": "",
-   "ru": "умение отстоять свою позицию, напористость",
+   "ru": "умение отстоять свою позицию, настойчивость",
    "ex": "Als Gutachter braucht man Durchsetzungsvermögen, wenn der Vertrieb einen höheren Wert erwartet.",
    "exRu": "Оценщику нужно умение отстоять свою позицию, когда отдел продаж ожидает более высокой стоимости.",
    "cloze": "Als Gutachter braucht man ___, wenn der Vertrieb einen höheren Wert erwartet.",
@@ -67,9 +67,9 @@ D.days[41] = {
    "art": "die",
    "pl": "",
    "ru": "самокритика",
-   "ex": "Ein gesundes Maß an Selbstkritik wirkt im Vorstellungsgespräch glaubwürdiger als ein perfektes Bild.",
-   "exRu": "Здоровая доля самокритики на собеседовании звучит убедительнее, чем идеальный образ.",
-   "cloze": "Ein gesundes Maß an ___ wirkt im Vorstellungsgespräch glaubwürdiger als ein perfektes Bild.",
+   "ex": "Ein gesundes Maß an Selbstkritik wirkt im Vorstellungsgespräch glaubwürdiger als ein makelloses Selbstbild.",
+   "exRu": "Здоровая доля самокритики на собеседовании звучит убедительнее, чем безупречный образ себя.",
+   "cloze": "Ein gesundes Maß an ___ wirkt im Vorstellungsgespräch glaubwürdiger als ein makelloses Selbstbild.",
    "ans": "Selbstkritik",
    "col": [
     "ein gesundes Maß an Selbstkritik",
@@ -94,7 +94,7 @@ D.days[41] = {
     "Kritik üben an + Dat.",
     "kritikfähig sein"
    ],
-   "note": "zur = zu der. Kritik üben an + Dat. — критиковать что-либо: an einem Gutachten Kritik üben. der Kollege — N-Deklination: der Kollegen (Gen. мн. ч.)."
+   "note": "zur = zu der. Kritik üben an + Dat. — критиковать что-либо: an einem Gutachten Kritik üben. der Kollege — N-Deklination: des Kollegen; мн. ч. die Kollegen, Gen. мн. ч. der Kollegen."
   },
   {
    "id": "v41-006",
@@ -104,7 +104,7 @@ D.days[41] = {
    "pl": "Meinungsverschiedenheiten",
    "ru": "расхождение во мнениях, разногласие",
    "ex": "Mit einer Kollegin hatte ich eine Meinungsverschiedenheit über die Restnutzungsdauer eines Mehrfamilienhauses.",
-   "exRu": "У меня с коллегой было разногласие по поводу оставшегося срока использования многоквартирного дома.",
+   "exRu": "У меня с коллегой было разногласие по поводу оставшегося срока экономической жизни многоквартирного дома.",
    "cloze": "Mit einer Kollegin hatte ich eine ___ über die Restnutzungsdauer eines Mehrfamilienhauses.",
    "ans": "Meinungsverschiedenheit",
    "col": [
@@ -155,7 +155,7 @@ D.days[41] = {
    "kind": "verb",
    "de": "sich durchsetzen",
    "forms": "setzt sich durch – setzte sich durch – hat sich durchgesetzt",
-   "rek": "sich (gegen jdn./etw. Akk.) durchsetzen; sich mit etw. (Dat.) durchsetzen",
+   "rek": "sich (gegen jdn./etw. (Akk.)) durchsetzen; sich mit etw. (Dat.) durchsetzen",
    "ru": "настоять на своём, добиться своего (против)",
    "ex": "Mit belastbaren Vergleichsdaten habe ich mich am Ende gegen den höheren Wertansatz durchgesetzt.",
    "exRu": "Опираясь на надёжные сравнительные данные, я в итоге отстоял свою позицию против более высокой стоимости.",
@@ -284,7 +284,7 @@ D.days[41] = {
     "oberste Priorität haben",
     "nach Dringlichkeit ordnen"
    ],
-   "note": "die Priorität, мн. ч. die Prioritäten; ударение на последний слог: Prioritä́t. Dat. мн. ч.: bei zwölf offenen Bewertungen (-en)."
+   "note": "die Priorität, мн. ч. die Prioritäten; ударение на последний слог: Priori-TÄT. Dat. мн. ч.: bei zwölf offenen Bewertungen (-en)."
   },
   {
    "id": "v41-017",
@@ -327,8 +327,8 @@ D.days[41] = {
   "rule": "<p><b>Модальные частицы</b> безударны и передают отношение говорящего. Их место — <b>середина предложения</b>: после спрягаемого глагола и местоимений, перед <b>nicht</b> и второй частью сказуемого; <b>на первое место их не ставят</b>: <b>Sie haben ja gesehen, …</b></p><table><tr><th>Частица</th><th>Функция</th><th>Пример</th></tr><tr><td><b>ja</b></td><td>«ведь, же»: известно обоим</td><td><b>Das ist ja der Sinn der Prüfung.</b></td></tr><tr><td><b>doch</b></td><td>напоминание, мягкое возражение</td><td><b>Wir hatten doch vereinbart, dass …</b></td></tr><tr><td><b>eben</b> (разг. halt)</td><td>«так уж есть»</td><td><b>Das braucht eben Zeit.</b></td></tr><tr><td><b>mal</b></td><td>смягчает просьбу</td><td><b>Lassen Sie mich das mal kurz erklären.</b></td></tr><tr><td><b>schon</b></td><td>уступка «это-то да, но»</td><td><b>Das stimmt schon, aber …</b></td></tr><tr><td><b>wohl</b></td><td>предположение «видимо»</td><td><b>Er hat wohl mehr erwartet.</b></td></tr></table><p><b>Смягчение:</b> eher, etwas, ein wenig, tendenziell, nicht ganz; <b>усиление:</b> durchaus, wirklich. Стоят перед прилагательным: <b>eher unwahrscheinlich, durchaus berechtigt</b>.</p><p><b>Дозировка на собеседовании.</b> Сильную сторону не смягчайте: не <b>Ich bin eigentlich ziemlich belastbar</b>, а <b>Ich bin belastbar.</b> Слабость называйте честно, с оговоркой: <b>Ich neige manchmal etwas zur Ungeduld.</b> Слова eigentlich и vielleicht звучат неуверенно; вежливость — через Konjunktiv II (Tag 13).</p>",
   "examples": [
    {
-    "de": "Die Restnutzungsdauer hängt ja stark von den Modernisierungen ab.",
-    "ru": "Оставшийся срок использования ведь сильно зависит от модернизаций (это известно обоим)."
+    "de": "Bei älteren Gebäuden hängt die Restnutzungsdauer ja stark von den Modernisierungen ab.",
+    "ru": "У старых зданий оставшийся срок экономической жизни ведь сильно зависит от модернизаций (это известно обоим)."
    },
    {
     "de": "Wir hatten doch vereinbart, dass Sie die Mietverträge nachreichen.",
@@ -355,12 +355,12 @@ D.days[41] = {
    {
     "t": "gap",
     "q": "Könnten Sie ___ in der Kreditakte nachsehen, ob der Grundbuchauszug aktuell ist? (смягчающая частица, «-ка»)",
-    "a": ["mal", "bitte mal", "vielleicht mal"],
+    "a": ["mal", "bitte mal", "vielleicht mal", "mal kurz"],
     "h": "mal делает просьбу мягче и непринуждённее; стоит в середине предложения после Sie."
    },
    {
     "t": "gap",
-    "q": "Die Restnutzungsdauer hängt ___ stark vom Modernisierungsgrad ab. (общеизвестный факт, без упрёка)",
+    "q": "Die Restnutzungsdauer hängt ___ auch vom Modernisierungsgrad ab. (общеизвестный факт, без упрёка)",
     "a": ["ja"],
     "h": "ja = «ведь, как мы оба знаем». doch добавило бы оттенок возражения или упрёка."
    },
@@ -387,8 +387,8 @@ D.days[41] = {
    {
     "t": "gap",
     "q": "Das stimmt ___, aber ohne Innenbesichtigung kann ich den Zustand nicht beurteilen. (частица уступки, не zwar)",
-    "a": ["schon"],
-    "h": "schon … aber: признаём довод собеседника («это-то да»), но возражаем."
+    "a": ["schon", "ja"],
+    "h": "schon … aber: признаём довод собеседника («это-то да»), но возражаем. Так же возможно ja … aber."
    },
    {
     "t": "transform",
@@ -434,7 +434,7 @@ D.days[41] = {
    },
    {
     "t": "gap",
-    "q": "Der Darlehensnehmer hat ___ mit einem höheren Wert gerechnet. (частица предположения: «видимо»)",
+    "q": "Der Darlehensnehmer hat ___ mit einem höheren Wert gerechnet. (частица из таблицы: «видимо»)",
     "a": ["wohl"],
     "h": "wohl выражает предположение говорящего: «видимо, наверное»."
    },
@@ -468,7 +468,7 @@ D.days[41] = {
    },
    {
     "t": "choice",
-    "q": "Ihre Kritik ist ___ berechtigt: Ich habe die Auswahl der Vergleichsfälle zu knapp begründet.",
+    "q": "Ihre Kritik ist ___ berechtigt: Ich habe die Auswahl der Vergleichsfälle zu knapp begründet. (признание: «вполне»)",
     "o": ["durchaus", "mal", "eben"],
     "a": ["durchaus"],
     "h": "durchaus = «вполне, безусловно» — признаём критику без самоуничижения."
@@ -498,7 +498,7 @@ D.days[41] = {
      "Der Kaufpreis ist schon hoch, er liegt aber im Rahmen der Vergleichspreise.",
      "Der Kaufpreis ist schon hoch, liegt aber im Rahmen der Vergleichspreise."
     ],
-    "h": "schon — перед прилагательным: «высоковата-то она высоковата, но …»."
+    "h": "schon — перед прилагательным: «цена-то высокая, но …»."
    },
    {
     "t": "translate",
@@ -506,7 +506,8 @@ D.days[41] = {
     "a": [
      "Ich bin eher Analytiker als Verkäufer.",
      "Ich bin eher ein Analytiker als ein Verkäufer.",
-     "Ich bin eher ein Analytiker als Verkäufer."
+     "Ich bin eher ein Analytiker als Verkäufer.",
+     "Ich bin eher der Analytiker als der Verkäufer."
     ],
     "h": "eher … als — «скорее …, чем»; профессию после sein можно без артикля."
    },
@@ -622,7 +623,7 @@ D.days[41] = {
     "de": "Wir hatten doch vereinbart, dass Sie die Mietverträge bis Freitag schicken."
    },
    {
-    "ru": "Позвольте, я коротко объясню, как я определил оставшийся срок использования.",
+    "ru": "Позвольте, я коротко объясню, как я определил оставшийся срок экономической жизни.",
     "de": "Lassen Sie mich mal kurz erklären, wie ich die Restnutzungsdauer ermittelt habe."
    },
    {
@@ -667,7 +668,7 @@ D.days[41] = {
   "id": "t41",
   "kind": "Kommentierte Musterantworten (Bewerbungsratgeber)",
   "title": "Drei Fragen, drei Antworten",
-  "de": "Aus einem Bewerbungsratgeber für Gutachter in Banken (fiktiv)\n\nFrage 1: „Was ist Ihre größte Stärke?“ Zu hart: „Ich bin belastbarer als alle anderen.“ Zu unsicher: „Ich bin eigentlich ziemlich belastbar, glaube ich.“ Gut dosiert: „Ich bin belastbar. Am letzten Quartalsende hatte ich zwölf offene Bewertungen. Ich habe Prioritäten gesetzt, die Teamleitung früh informiert, und alle Gutachten sind rechtzeitig fertig geworden.“ Kommentar: Eine Stärke schwächt man nicht ab. Ein konkretes Beispiel überzeugt mehr als jedes Adjektiv.\n\nFrage 2: „Und Ihre größte Schwäche?“ Zu hart: „Ich habe keine.“ Zu unsicher: „Vielleicht bin ich irgendwie zu perfektionistisch …“ Gut dosiert: „Ich neige manchmal etwas zur Ungeduld, vor allem bei lückenhaften Unterlagen. Inzwischen arbeite ich mit einer Checkliste und fordere fehlende Unterlagen gleich am ersten Tag nach.“ Kommentar: Hier passen Abschwächungen wie etwas oder eher. Die Schwäche soll ehrlich, aber nicht dramatisch klingen.\n\nFrage 3: „Erzählen Sie von einem Konflikt.“ Zu hart: „Meine Kollegin lag einfach falsch.“ Zu unsicher: „Konflikte habe ich eigentlich nie.“ Gut dosiert: „Eine Kollegin und ich hatten eine Meinungsverschiedenheit über die Restnutzungsdauer eines Mehrfamilienhauses. Ich habe das Gespräch gesucht, und wir sind die Modernisierungsnachweise Punkt für Punkt durchgegangen. Am Ende haben wir uns auf einen Wert geeinigt, den wir beide begründen konnten. Das ist ja der Sinn des Vier-Augen-Prinzips.“ Kommentar: Das ja verweist auf gemeinsames Wissen und wirkt kollegial, nicht belehrend. Achten Sie auf das Perfekt: Wir sind die Nachweise durchgegangen, aber wir haben uns geeinigt.",
+  "de": "Aus einem Bewerbungsratgeber für Gutachter in Banken (fiktiv)\n\nFrage 1: „Was ist Ihre größte Stärke?“ Zu hart: „Ich bin belastbarer als alle anderen.“ Zu unsicher: „Ich bin eigentlich ziemlich belastbar, glaube ich.“ Gut dosiert: „Ich bin belastbar. Am letzten Quartalsende hatte ich zwölf offene Bewertungen. Ich habe Prioritäten gesetzt, die Teamleitung früh informiert, und alle Gutachten sind rechtzeitig fertig geworden.“ Kommentar: Eine Stärke schwächt man nicht ab. Ein konkretes Beispiel überzeugt mehr als jedes Adjektiv.\n\nFrage 2: „Und Ihre größte Schwäche?“ Zu hart: „Ich habe keine.“ Zu unsicher: „Vielleicht bin ich irgendwie zu perfektionistisch …“ Gut dosiert: „Ich neige manchmal etwas zur Ungeduld, vor allem bei lückenhaften Unterlagen. Inzwischen arbeite ich mit einer Checkliste und fordere fehlende Unterlagen gleich am ersten Tag nach.“ Kommentar: Hier passen Abschwächungen wie „etwas“ oder „eher“. Die Schwäche soll ehrlich, aber nicht dramatisch klingen.\n\nFrage 3: „Erzählen Sie von einem Konflikt.“ Zu hart: „Meine Kollegin lag einfach falsch.“ Zu unsicher: „Konflikte habe ich eigentlich nie.“ Gut dosiert: „Eine Kollegin und ich hatten eine Meinungsverschiedenheit über die Restnutzungsdauer eines Mehrfamilienhauses. Ich habe das Gespräch gesucht, und wir sind die Modernisierungsnachweise Punkt für Punkt durchgegangen. Am Ende haben wir uns auf einen Wert geeinigt, den wir beide begründen konnten. Das ist ja der Sinn des Vier-Augen-Prinzips.“ Kommentar: Das Wort „ja“ verweist auf gemeinsames Wissen und wirkt kollegial, nicht belehrend. Achten Sie auf das Perfekt: Wir sind die Nachweise durchgegangen, aber wir haben uns geeinigt.",
   "ru": "Отрывок из вымышленного пособия для соискателей: три типичных вопроса (сильная сторона, слабость, конфликт) с ответами «слишком жёстко», «слишком неуверенно» и «хорошо дозировано» и комментариями о действии частиц и смягчений.",
   "q": [
    {
@@ -707,7 +708,7 @@ D.days[41] = {
     "a": 1
    },
    {
-    "q": "Welche Wirkung hat das ja im letzten Beispielsatz laut Kommentar?",
+    "q": "Welche Wirkung hat das Wort „ja“ im letzten Beispielsatz laut Kommentar?",
     "o": [
      "Es verweist auf gemeinsames Wissen und wirkt kollegial.",
      "Es drückt Zweifel am Ergebnis aus.",
@@ -736,7 +737,7 @@ D.days[41] = {
    },
    {
     "de": "die Restnutzungsdauer",
-    "ru": "оставшийся срок экономического использования здания"
+    "ru": "оставшийся срок экономической жизни здания"
    },
    {
     "de": "der Modernisierungsnachweis",

@@ -402,6 +402,8 @@ function examView(el) {
   var list = function () { return (Store.get('exam').list || []).filter(function (x) { return x.kind !== 'other' && (x.kind === 'calc' || x.kind === 'open' || (x.o && x.o.length && x.a && x.a.length)); }); };
   var cur = null;
   function stats() { var p = Store.get('prog'); p.exam = p.exam || {}; return p.exam; }
+  /* mehrere richtige Indizes = Mehrfachauswahl, egal was beim Import angegeben war */
+  function isMulti(x) { return x.multi === true || (x.a || []).length > 1; }
   function pick() {
     var l = list(), st = stats();
     if (!l.length) return null;
@@ -419,14 +421,14 @@ function examView(el) {
     var st = stats()[cur.id] || [0, 0], chosen = {};
     if (cur.kind === 'calc' || cur.kind === 'open') return showTask(st);
     var card = h('div', { class: 'rcard' },
-      h('p', { class: 'eyebrow', text: (cur.id ? cur.id + ' · ' : '') + (cur.multi ? 'eine oder mehrere Antworten richtig' : 'genau eine Antwort richtig') + (st[1] ? ' · bisher ' + st[0] + '/' + st[1] : '') }),
+      h('p', { class: 'eyebrow', text: (cur.id ? cur.id + ' · ' : '') + (isMulti(cur) ? 'eine oder mehrere Antworten richtig' : 'genau eine Antwort richtig') + (st[1] ? ' · bisher ' + st[0] + '/' + st[1] : '') }),
       h('p', { class: 'doc big', text: cur.q }), speakBtn(cur.q));
     var opts = h('div', { class: 'choices' });
     cur.o.forEach(function (o, i) {
       var b = h('button', { class: 'choice', type: 'button', 'aria-pressed': 'false', text: (i + 1) + '. ' + o });
       b.addEventListener('click', function () {
         if (checked) return;
-        if (!cur.multi) { Object.keys(chosen).forEach(function (k) { delete chosen[k]; }); Array.prototype.forEach.call(opts.children, function (c) { c.classList.remove('on'); c.setAttribute('aria-pressed', 'false'); }); }
+        if (!isMulti(cur)) { Object.keys(chosen).forEach(function (k) { delete chosen[k]; }); Array.prototype.forEach.call(opts.children, function (c) { c.classList.remove('on'); c.setAttribute('aria-pressed', 'false'); }); }
         chosen[i] = !chosen[i];
         b.classList.toggle('on', !!chosen[i]); b.setAttribute('aria-pressed', chosen[i] ? 'true' : 'false');
       });
@@ -478,7 +480,7 @@ function examView(el) {
     var showBtn = h('button', { class: 'btn primary', type: 'button', text: 'Lösung zeigen' });
     showBtn.addEventListener('click', function () {
       showBtn.remove();
-      if (cur.solution && cur.solution.length) res.appendChild(h('ol', { class: 'steps-list doc' }, cur.solution.map(function (x) { return h('li', { text: x }); })));
+      if (Array.isArray(cur.solution) && cur.solution.length) res.appendChild(h('ol', { class: 'steps-list doc' }, cur.solution.map(function (x) { return h('li', { text: x }); })));
       if (cur.answer) res.appendChild(h('p', { class: 'verdict ok', text: (calc ? 'Ergebnis: ' : '') + cur.answer }));
       if (mine && mine.value.trim()) res.appendChild(h('p', { class: 'muted small', text: 'Ihr Ergebnis: ' + mine.value.trim() }));
       if (cur.ru) res.appendChild(h('p', { class: 'ru', text: cur.ru }));
@@ -527,20 +529,28 @@ function examView(el) {
     AI.fn.json(Prompts.examPhoto(), { images: [f], modelTier: 'default', cache: false }).then(function (arr) {
       arr = (Array.isArray(arr) ? arr : []).filter(function (x) {
         if (!x || typeof x.q !== 'string') return false;
-        if (x.kind === 'calc' || x.kind === 'open') return Array.isArray(x.solution) || typeof x.answer === 'string';
+        if (x.kind === 'calc' || x.kind === 'open') {
+          if (typeof x.solution === 'string') x.solution = x.solution.split(/\n+/).map(function (s) { return s.replace(/^\s*(?:[•\-–*]|\d+[.)])\s*/, '').trim(); }).filter(Boolean);
+          if (x.solution && !Array.isArray(x.solution)) delete x.solution;
+          return Array.isArray(x.solution) || typeof x.answer === 'string';
+        }
         x.kind = 'mc';
         return Array.isArray(x.o) && x.o.length >= 2 && Array.isArray(x.a) && x.a.length && x.a.every(function (i) { return i === +i && i >= 0 && i < x.o.length; });
       });
       out.textContent = '';
       if (!arr.length) return out.appendChild(h('p', { text: 'Keine Frage erkannt. Bitte ein schärferes Foto versuchen.' }));
       var ex = Store.get('exam'); ex.list = ex.list || [];
-      var have = {}; ex.list.forEach(function (x) { have[x.id] = 1; });
+      /* doppelt ist eine Frage nur bei gleichem Text samt Antworten; gleiche Nummer mit anderem Text bekommt eine eigene ID */
+      var qk = function (x) { return normA(x.q + ' ' + (x.o || []).join(' ')); };
+      var have = {}, texts = {}; ex.list.forEach(function (x) { have[x.id] = 1; texts[qk(x)] = 1; });
       var added = 0;
       arr.forEach(function (x) {
-        x.id = (x.id && String(x.id).trim()) || ('F-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5));
-        if (x.kind === 'mc') x.multi = x.multi !== false && (x.multi === true || x.a.length > 1);
-        if (have[x.id]) return;
-        ex.list.push(x); have[x.id] = 1; added++;
+        if (texts[qk(x)]) return;
+        var id = (x.id && String(x.id).trim()) || ('F-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5)), n = 2;
+        while (have[id + (n > 2 ? '·' + (n - 1) : '')]) n++;
+        x.id = id + (n > 2 ? '·' + (n - 1) : '');
+        if (x.kind === 'mc') x.multi = x.multi === true || x.a.length > 1;
+        ex.list.push(x); have[x.id] = 1; texts[qk(x)] = 1; added++;
       });
       Store.save('exam');
       out.appendChild(h('p', { class: 'verdict ok', role: 'status', text: added ? added + ' neue Frage(n) aufgenommen.' : 'Diese Fragen waren schon da.' }));

@@ -177,7 +177,7 @@ var Prompts = {
       'Prüfungstraining Immobilienbewertung (DEKRA D1). Der Lerner (Deutsch B1–B2) begründet mündlich (diktiert) die richtige Lösung einer Prüfungsfrage.',
       'FRAGE / AUFGABE: ' + x.q,
       x.kind === 'calc' || x.kind === 'open'
-        ? 'MUSTERLÖSUNG: ' + (x.solution || []).join(' | ') + (x.answer ? ' | ERGEBNIS: ' + x.answer : '')
+        ? 'MUSTERLÖSUNG: ' + (Array.isArray(x.solution) ? x.solution : x.solution ? [String(x.solution)] : []).join(' | ') + (x.answer ? ' | ERGEBNIS: ' + x.answer : '')
         : 'RICHTIGE ANTWORT(EN): ' + x.a.map(function (i) { return x.o[i]; }).join(' | ') + '\nFALSCHE ANTWORTEN: ' + x.o.filter(function (_, i) { return x.a.indexOf(i) < 0; }).join(' | '),
       (x.kind === 'calc' ? 'RECHENWEG DES LERNERS (mündlich erklärt): ' : 'BEGRÜNDUNG DES LERNERS: ') + user,
       'Antworte nur mit JSON: {"score":1-5,"ru":"Rückmeldung auf Russisch: fachlich richtig? sprachlich? 2–3 Sätze","de":"fachlich präzise, gut sprechbare Musterbegründung in 2–4 Sätzen, nah an der Formulierung des Lerners","errors":[{"wrong":"…","right":"…","why_ru":"…","cat":"adj|kasus|verbstellung|tempus|praep|artikel|wortwahl|rektion|konj|andere"}]}',

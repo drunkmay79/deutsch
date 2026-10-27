@@ -80,6 +80,9 @@ var Merge = {
         });
       }
     });
+    /* Prüfungsfragen: je Frage der Stand mit mehr Versuchen */
+    o.exam = {};
+    [r.exam || {}, l.exam || {}].forEach(function (src) { for (var q in src) { var a = o.exam[q]; if (!a || src[q][1] > a[1] || (src[q][1] === a[1] && src[q][0] > a[0])) o.exam[q] = src[q]; } });
     /* Grammatik-Auffrischung: je Einheit [erledigte Stufen, Kurstag der letzten Stufe]; weiter fortgeschrittene Seite gilt */
     o.gs = Object.assign({}, r.gs || {});
     for (var u in l.gs || {}) if (!o.gs[u] || l.gs[u][0] > o.gs[u][0] || (l.gs[u][0] === o.gs[u][0] && l.gs[u][1] > o.gs[u][1])) o.gs[u] = l.gs[u];
@@ -97,7 +100,7 @@ var Merge = {
     return o;
   },
   xcards: function (l, r) { return { items: Object.assign({}, r.items || {}, l.items || {}) }; },
-  exam: function (l, r) { return { list: uniq((l.list || []).concat(r.list || []), function (x) { return x.id; }) }; },
+  exam: function (l, r) { return { list: uniq((r.list || []).concat(l.list || []), function (x) { return x.id; }) }; },
   custom: function (l, r) {
     var srs = (Store.get('srs').c) || {};
     return {

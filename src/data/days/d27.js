@@ -36,7 +36,7 @@ D.days[27] = {
     "je nach Marktlage",
     "die Marktlage hat sich verändert"
    ],
-   "note": "Не путать: die Lage — местоположение объекта, die Marktlage — состояние рынка. В ImmoWertV это часть allgemeine Wertverhältnisse на дату оценки (§ 2 Abs. 2): экономическая ситуация, рынок капитала, развитие региона.",
+   "note": "Не путать: die Lage — местоположение объекта, die Marktlage — состояние рынка. В терминах ImmoWertV ситуация на рынке относится к allgemeine Wertverhältnisse на дату оценки (§ 2 Abs. 2): общая экономическая ситуация, рынок капитала, развитие региона.",
    "ex": "Die Marktlage hat sich seit dem Zinsanstieg spürbar verändert.",
    "exRu": "Ситуация на рынке заметно изменилась после роста процентных ставок.",
    "cloze": "Die ___ hat sich seit dem Zinsanstieg spürbar verändert.",
@@ -232,7 +232,7 @@ D.days[27] = {
     "eine nachvollziehbare Herleitung",
     "für den Auftraggeber nachvollziehbar"
    ],
-   "note": "Ключевое требование к заключению: оно должно быть nachvollziehbar, begründet und vollständig — у каждого показателя есть источник или обоснование. Окончания: ein nachvollziehbares Ergebnis, eine nachvollziehbare Herleitung.",
+   "note": "Ключевое требование к заключению: оно должно быть nachvollziehbar, begründet und vollständig — у каждого показателя должен быть источник или обоснование. Окончания: ein nachvollziehbares Ergebnis, eine nachvollziehbare Herleitung.",
    "ex": "Das Gutachten enthält eine nachvollziehbare Herleitung des Verkehrswerts.",
    "exRu": "Заключение содержит понятный и проверяемый вывод рыночной стоимости.",
    "cloze": "Das Gutachten enthält eine ___ Herleitung des Verkehrswerts.",
@@ -264,7 +264,7 @@ D.days[27] = {
     "ich habe mir mehr erhofft",
     "sich (Dat.) viel von etw. versprechen"
    ],
-   "note": "sich здесь в Dat.: ich habe mir (не mich!) mehr erhofft; у Sie форма совпадает: Sie haben sich … erhofft. Perfekt с haben. Эмпатичное начало перед объяснением: Ich verstehe, dass Sie sich … erhofft haben.",
+   "note": "sich здесь в Dat.: ich habe mir (не mich!) mehr erhofft; у Sie Dat. и Akk. совпадают: Sie haben sich … erhofft. Perfekt с haben. Эмпатичное начало перед объяснением: Ich verstehe, dass Sie sich … erhofft haben.",
    "ex": "Ich verstehe gut, dass Sie sich einen höheren Wert erhofft haben.",
    "exRu": "Я хорошо понимаю, что вы надеялись на более высокую стоимость.",
    "cloze": "Ich verstehe gut, dass Sie sich einen höheren Wert ___ haben.",
@@ -308,7 +308,7 @@ D.days[27] = {
   "id": "g-d27",
   "de": "Konjunktiv II der Vergangenheit: Was wäre gewesen, wenn …?",
   "ru": "Сослагательное наклонение прошедшего времени: что было бы, если бы …?",
-  "rule": "<p><b>Konjunktiv II прошедшего времени</b> описывает то, что могло бы произойти, но <b>не произошло</b>: нереальное условие, сожаление, упрёк. С клиентом так объясняют, что повысило бы стоимость.</p><p>Форма: <b>hätte / wäre + Partizip II</b>; haben или sein — <b>как в Perfekt</b>.</p><table><tr><th>Indikativ</th><th>Konjunktiv II прошедшего</th></tr><tr><td>Er hat das Dach erneuert.</td><td><b>Er hätte das Dach erneuert.</b></td></tr><tr><td>Die Nachfrage ist gesunken.</td><td><b>Die Nachfrage wäre gesunken.</b></td></tr><tr><td>Die Heizung wurde erneuert.</td><td><b>Die Heizung wäre erneuert worden.</b></td></tr><tr><td>Man musste das prüfen.</td><td><b>Man hätte das prüfen müssen.</b></td></tr></table><ul><li>Условие: <b>Wenn er modernisiert hätte, wäre der Wert höher ausgefallen.</b> Без wenn глагол на первом месте: <b>Hätte er modernisiert, wäre …</b></li><li>Пассив: <b>wäre + Partizip II + worden</b> (не geworden).</li><li>Модальный глагол: двойной инфинитив без ge-: <b>hätte … berücksichtigen müssen</b>. В придаточном hätte стоит перед ним: <b>…, dass er das Dach hätte erneuern müssen.</b></li><li>Условие в прошлом, следствие сейчас: <b>Hätte er modernisiert, wäre das Haus heute mehr wert.</b></li><li>Сожаление: <b>Hätte ich doch nur früher verkauft!</b></li></ul><p>Не путайте: <b>hatte / war</b> — реальный факт (Plusquamperfekt), <b>hätte / wäre</b> — нереальность. Вместо редкой формы <i>würde … verkauft haben</i> говорите <b>hätte … verkauft</b>.</p>",
+  "rule": "<p><b>Konjunktiv II прошедшего времени</b> описывает то, что могло бы произойти, но <b>не произошло</b>: нереальное условие, сожаление, упрёк. С клиентом так объясняют, что повысило бы стоимость.</p><p>Форма: <b>hätte / wäre + Partizip II</b>; haben или sein — <b>как в Perfekt</b>.</p><table><tr><th>Indikativ</th><th>Konjunktiv II прошедшего</th></tr><tr><td>Er hat das Dach erneuert.</td><td><b>Er hätte das Dach erneuert.</b></td></tr><tr><td>Die Nachfrage ist gesunken.</td><td><b>Die Nachfrage wäre gesunken.</b></td></tr><tr><td>Die Heizung wurde erneuert.</td><td><b>Die Heizung wäre erneuert worden.</b></td></tr><tr><td>Man musste das prüfen.</td><td><b>Man hätte das prüfen müssen.</b></td></tr></table><ul><li>Условие: <b>Wenn er modernisiert hätte, wäre der Wert höher ausgefallen.</b> Без wenn глагол на первом месте: <b>Hätte er modernisiert, wäre …</b></li><li>Пассив: <b>wäre + Partizip II + worden</b> (не geworden).</li><li>Модальный глагол: двойной инфинитив без ge-: <b>hätte … berücksichtigen müssen</b>. В придаточном hätte стоит перед ним: <b>…, dass er das Dach hätte erneuern müssen.</b></li><li>Условие в прошлом, следствие сейчас: <b>Hätte er modernisiert, wäre das Haus heute mehr wert.</b></li><li>Сожаление: <b>Hätte ich doch nur früher verkauft!</b></li></ul><p>Не путайте: <b>hatte / war</b> + Partizip II — реальный факт (Plusquamperfekt), <b>hätte / wäre</b> — нереальность. Вместо редкой формы <i>würde … verkauft haben</i> говорите <b>hätte … verkauft</b>.</p>",
   "examples": [
    {
     "de": "Wenn der Eigentümer das Dach erneuert hätte, wäre der Wert höher ausgefallen.",
@@ -338,7 +338,7 @@ D.days[27] = {
   "drills": [
    {
     "t": "gap",
-    "q": "Wenn der Eigentümer das Dach erneuert ___, wäre der Wert höher ausgefallen. (Hilfsverb, Konjunktiv II)",
+    "q": "Wenn der Eigentümer das Dach erneuert ___, wäre der Wert höher ausgefallen. (haben/sein, Konjunktiv II)",
     "a": [
      "hätte"
     ],
@@ -346,7 +346,7 @@ D.days[27] = {
    },
    {
     "t": "gap",
-    "q": "Wenn die Zinsen nicht so stark gestiegen ___, wäre die Nachfrage stabil geblieben. (Hilfsverb, Konjunktiv II)",
+    "q": "Wenn die Zinsen nicht so stark gestiegen ___, wäre die Nachfrage stabil geblieben. (haben/sein, Konjunktiv II)",
     "a": [
      "wären"
     ],
@@ -354,7 +354,7 @@ D.days[27] = {
    },
    {
     "t": "gap",
-    "q": "Vor dem Zinsanstieg ___ Sie für das Haus wahrscheinlich mehr bekommen. (Hilfsverb, Konjunktiv II)",
+    "q": "Vor dem Zinsanstieg ___ Sie für das Haus wahrscheinlich mehr bekommen. (haben/sein, Konjunktiv II)",
     "a": [
      "hätten"
     ],
@@ -417,7 +417,8 @@ D.days[27] = {
     "q": "wenn / der Eigentümer / modernisiert / hätte / wäre / der Wert / höher / ausgefallen",
     "a": [
      "Wenn der Eigentümer modernisiert hätte, wäre der Wert höher ausgefallen.",
-     "Der Wert wäre höher ausgefallen, wenn der Eigentümer modernisiert hätte."
+     "Der Wert wäre höher ausgefallen, wenn der Eigentümer modernisiert hätte.",
+     "Höher wäre der Wert ausgefallen, wenn der Eigentümer modernisiert hätte."
     ],
     "h": "В придаточном hätte в конце; главное предложение после него начинается с wäre."
    },
@@ -691,7 +692,7 @@ D.days[27] = {
   "id": "t27",
   "kind": "E-Mail",
   "title": "Am Hang 7: Warum nur 295.000 Euro?",
-  "de": "Betreff: Ihr Verkehrswertgutachten für das Haus Am Hang 7\n\nSehr geehrte Frau Albers, vielen Dank für Ihre Nachricht. Ich kann gut nachvollziehen, dass Sie sich einen höheren Wert erhofft haben. Gerne erläutere ich Ihnen, wie das Gutachtenergebnis von 295.000 Euro zustande gekommen ist.\n\nIhr Nachbar hat das Haus Nr. 9 vor drei Jahren für 375.000 Euro verkauft. Diesen Preis muss man jedoch richtig einordnen: Das Haus war vor dem Verkauf kernsaniert worden. Ihr Haus, Baujahr 1968, ist dagegen kaum modernisiert. Fenster und Dach sind weitgehend im Originalzustand, die Heizung ist veraltet. Daraus ergibt sich ein erheblicher energetischer Sanierungsbedarf. Wäre Ihr Haus ebenfalls modernisiert worden, hätte sich das deutlich positiv auf den Wert ausgewirkt.\n\nHinzu kommt ein Lagenachteil: Ihr Grundstück liegt direkt an der Durchgangsstraße, das Nachbarhaus etwas weiter entfernt. Ohne den Verkehrslärm wäre der Wert höher ausgefallen.\n\nAußerdem hat sich die Marktlage verändert. Ihr Nachbar hat noch vor dem Zinsanstieg verkauft. Seitdem ist die Nachfrage nach unsanierten Häusern spürbar gesunken. Hätten Sie zum selben Zeitpunkt verkauft, hätten Sie vermutlich einen höheren Preis erzielt. Der Verkehrswert spiegelt jedoch die Verhältnisse am Wertermittlungsstichtag wider, nicht die Preise von vor drei Jahren.\n\nIhre Preisvorstellung von 380.000 Euro ist daher aus heutiger Sicht nicht marktgerecht. Gerne bespreche ich das Gutachten mit Ihnen auch persönlich. Falls Sie Nachweise über Modernisierungen haben, die mir nicht vorlagen, prüfe ich diese selbstverständlich.\n\nMit freundlichen Grüßen, Andreas Klein, Sachverständiger für Immobilienbewertung",
+  "de": "Betreff: Ihr Verkehrswertgutachten für das Haus Am Hang 7\n\nSehr geehrte Frau Albers, vielen Dank für Ihre Nachricht. Ich kann gut nachvollziehen, dass Sie sich einen höheren Wert erhofft haben. Gerne erläutere ich Ihnen, wie das Gutachtenergebnis von 295.000 Euro zustande gekommen ist.\n\nSie verweisen auf Ihren Nachbarn: Er hat das Haus Nr. 9 vor drei Jahren für 375.000 Euro verkauft. Diesen Preis muss man jedoch richtig einordnen: Das Haus war vor dem Verkauf kernsaniert worden. Ihr Haus, Baujahr 1968, ist dagegen kaum modernisiert. Fenster und Dach sind weitgehend im Originalzustand, die Heizung ist veraltet. Daraus ergibt sich ein erheblicher energetischer Sanierungsbedarf. Wäre Ihr Haus ebenfalls modernisiert worden, hätte sich das deutlich positiv auf den Wert ausgewirkt.\n\nHinzu kommt ein Lagenachteil: Ihr Grundstück liegt direkt an der Durchgangsstraße, das Nachbarhaus etwas weiter entfernt. Ohne den Verkehrslärm wäre der Wert höher ausgefallen.\n\nAußerdem hat sich die Marktlage verändert. Ihr Nachbar hat noch vor dem Zinsanstieg verkauft. Seitdem ist die Nachfrage nach unsanierten Häusern spürbar gesunken. Hätten Sie zum selben Zeitpunkt verkauft, hätten Sie vermutlich einen höheren Preis erzielt. Der Verkehrswert spiegelt jedoch die Verhältnisse am Wertermittlungsstichtag wider, nicht die Preise von vor drei Jahren.\n\nIhre Preisvorstellung von 380.000 Euro ist daher aus heutiger Sicht nicht marktgerecht. Gerne bespreche ich das Gutachten mit Ihnen auch persönlich. Falls Sie Nachweise über Modernisierungen haben, die mir nicht vorlagen, prüfe ich diese selbstverständlich.\n\nMit freundlichen Grüßen, Andreas Klein, Sachverständiger für Immobilienbewertung",
   "ru": "Оценщик отвечает владелице дома, которая ждала 380 000 € из-за продажи соседнего дома: он объясняет, почему стоимость составляет 295 000 € — состояние без модернизации, шум транзитной улицы, рост процентных ставок и привязка к дате оценки.",
   "q": [
    {
@@ -790,7 +791,7 @@ D.days[27] = {
   "title": "Frau Albers: „Mein Nachbar hat viel mehr bekommen!“",
   "ru": "Личная встреча в бюро с разочарованной владелицей дома, которая не согласна с результатом оценки",
   "role": "Sie sind Frau Albers, Eigentümerin des Einfamilienhauses Am Hang 7 in Musterstadt-Nord, und sitzen im Büro des Sachverständigen, der Ihr Haus mit 295.000 Euro bewertet hat; siezen Sie ihn. Sie sind enttäuscht und emotional, weil Sie 380.000 Euro erwartet haben und Ihr Nachbar für das Haus Nr. 9 375.000 Euro bekommen hat; sagen Sie Sätze wie „Mein Nachbar hat viel mehr bekommen!“ oder „Dann hätte ich das Gutachten gar nicht bezahlen sollen!“. Werden Sie erst ruhiger, wenn der Sachverständige Verständnis zeigt und Schritt für Schritt sachlich erklärt, und fragen Sie mindestens einmal: „Was hätte ich denn anders machen sollen?“, damit er den Konjunktiv II der Vergangenheit verwendet. Korrigieren Sie pro Antwort höchstens einen Fehler, vor allem bei hätte/wäre + Partizip II und beim Passiv mit „worden“, und erfinden Sie keine Zahlen außerhalb der Datenkarte. Beenden Sie das Gespräch nach etwa sechs Wechseln und bewerten Sie in je einem Satz Empathie, Klarheit und Sachlichkeit.",
-  "goal": "Сохранить спокойствие и эмпатию с эмоциональной клиенткой: показать понимание, шаг за шагом объяснить, из чего складывается стоимость (состояние, местоположение, рынок, дата оценки), правильно интерпретировать цену соседнего дома и с помощью Konjunktiv II прошедшего времени показать, что повысило бы стоимость; результат не менять, но предложить проверить документы о модернизации.",
+  "goal": "Сохранять спокойствие и эмпатию в разговоре с эмоциональной клиенткой: показать понимание, шаг за шагом объяснить, из чего складывается стоимость (состояние, местоположение, рынок, дата оценки), правильно интерпретировать цену соседнего дома и с помощью Konjunktiv II прошедшего времени показать, что повысило бы стоимость; результат не менять, но предложить проверить документы о модернизации.",
   "open": "Guten Tag. Ehrlich gesagt bin ich ziemlich enttäuscht. 295.000 Euro? Mein Nachbar hat für sein Haus 375.000 Euro bekommen, und unsere Häuser sind praktisch gleich! Dann hätte ich das Gutachten gar nicht bezahlen sollen. Wie kommen Sie auf so einen niedrigen Wert?",
   "steps": [
    "Enttäuschung zeigen: 380.000 Euro erwartet, Nachbarhaus Nr. 9 für 375.000 Euro verkauft – eine Erklärung verlangen",

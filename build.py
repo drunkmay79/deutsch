@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Sammelt src/ zu einer Seite für claude.ai: dist/gutachter-deutsch.html
 Aufruf: python3 build.py"""
-import io, os, sys, time
+import io, json, os, re, sys, time
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, 'src')
@@ -17,8 +17,23 @@ def rd(p):
         return f.read().replace('\r\n', '\n')
 
 
+DAY = re.compile(r'^(.*?D\.days\[\d+\]\s*=\s*)(\{.*\})\s*;?\s*$', re.S)
+
+
+def compact(p):
+    # Tagesdateien: JSON ohne Einrückung (spart ~30 % der Seite); sonst unverändert
+    s = rd(p)
+    m = DAY.match(s) if p.startswith('data/days/') else None
+    if not m:
+        return s
+    try:
+        return m.group(1) + json.dumps(json.loads(m.group(2)), ensure_ascii=False, separators=(',', ':')) + ';'
+    except ValueError:
+        return s
+
+
 css = rd('styles.css')
-js = '\n;\n'.join('/* ===== %s ===== */\n%s' % (f, rd(f)) for f in JS if os.path.exists(os.path.join(SRC, f)))
+js = '\n;\n'.join('/* ===== %s ===== */\n%s' % (f, compact(f)) for f in JS if os.path.exists(os.path.join(SRC, f)))
 for bad in ('</script', '</style'):
     if bad in js or bad in css:
         sys.exit('Fehler: %s in den Quellen' % bad)

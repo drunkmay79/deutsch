@@ -80,6 +80,9 @@ var Merge = {
         });
       }
     });
+    /* Grammatik-Auffrischung: je Einheit [erledigte Stufen, Kurstag der letzten Stufe]; weiter fortgeschrittene Seite gilt */
+    o.gs = Object.assign({}, r.gs || {});
+    for (var u in l.gs || {}) if (!o.gs[u] || l.gs[u][0] > o.gs[u][0] || (l.gs[u][0] === o.gs[u][0] && l.gs[u][1] > o.gs[u][1])) o.gs[u] = l.gs[u];
     o.misses = uniq((r.misses || []).concat(l.misses || []), function (m) { return m.day + '|' + m.q; })
       .filter(function (m) { return !(o.mdone[m.day] >= (m.at || 0)); }).slice(-80);
     return o;

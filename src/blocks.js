@@ -3,7 +3,57 @@
 var Runners = {};
 
 /* ---------- 1. Wiederholung ---------- */
-Runners.review = function (ctx) { reviewRunner(ctx.el, ctx.done, ctx.run); };
+Runners.review = function (ctx) { reviewRunner(ctx.el, function () { Refresh.run(ctx); }, ctx.run); };
+
+/* Grammatik in Abständen auffrischen: jede Einheit dreimal, frühestens 2, 7 und 21 Kurstage nach ihrem Tag;
+   je Runde bis zu 3 Einheiten mit 3 Übungen (4 bei unter 80 % richtig), schwache und überfällige zuerst */
+var Refresh = {
+  STEPS: [2, 7, 21],
+  GAP: [0, 4, 10],    // Mindestabstand zur vorigen Stufe, falls Stufen nachgeholt werden
+  MAX: 10,
+  pick: function (b) {
+    var d = b.d, self = this, days = [];
+    for (var x = 2; x < d - 1; x++) days.push(x);
+    var gs = Store.get('prog').gs || {}, stats = Store.get('prog').g || {};
+    return Promise.all(days.map(function (x) {
+      var u = Content.fixedUnitOf(x);
+      if (u || Content.meta(x).fixed) return Promise.resolve(u);
+      if (gs['gen-g' + x] && gs['gen-g' + x][0] >= self.STEPS.length) return Promise.resolve(null);
+      return Content.loadGen(x).then(function (g) { return g && g.grammar; });
+    })).then(function (units) {
+      var cand = [];
+      units.forEach(function (u, i) {
+        var x = days[i];
+        if (!u || !u.drills || u.drills.length < 5 || u.id === 'g-diag') return;
+        if (b.type === 'review' && Math.ceil(x / 7) === Math.ceil(d / 7)) return;   // steckt schon in der Wochenmischung
+        var st = gs[u.id] || [0, 0], k = st[0];
+        if (k >= self.STEPS.length || d - x < self.STEPS[k] || st[1] === d || (k && d - st[1] < self.GAP[k])) return;
+        var acc = stats[u.id] && stats[u.id][1] ? stats[u.id][0] / stats[u.id][1] : 0.7;
+        cand.push({ u: u, acc: acc, score: (d - x - self.STEPS[k]) + (1 - acc) * 10 });
+      });
+      cand.sort(function (a, b2) { return b2.score - a.score; });
+      cand = cand.slice(0, 3);
+      var drills = [];
+      cand.forEach(function (c) {
+        shuffle(c.u.drills).slice(0, c.acc < 0.8 ? 4 : 3).forEach(function (x) { drills.push(Object.assign({ _u: c.u.id, _ude: c.u.de }, x)); });
+      });
+      return { units: cand.map(function (c) { return c.u.id; }), drills: shuffle(drills).slice(0, self.MAX) };
+    });
+  },
+  run: function (ctx) {
+    this.pick(ctx.b).then(function (r) {
+      if (!r.drills.length) return ctx.done();
+      ctx.el.textContent = '';
+      ctx.el.appendChild(h('p', { class: 'hint', text: 'Grammatik auffrischen: ' + r.drills.length + ' Übungen aus früheren Themen, damit sie in Abständen wiederkommen.' }));
+      drillRunner({ el: ctx.el, b: ctx.b, run: ctx.run, done: function () {
+        var p = Store.get('prog'); p.gs = p.gs || {};
+        r.units.forEach(function (id) { var st = p.gs[id] || [0, 0]; p.gs[id] = [st[0] + 1, ctx.b.d]; });
+        Store.save('prog');
+        ctx.done();
+      } }, { id: 'refresh', de: 'Grammatik auffrischen', drills: [] }, r.drills, { mix: true });
+    }).catch(function () { ctx.done(); });
+  }
+};
 
 function modeSwitch(onChange) {
   var s = Store.get('settings'), mode = s.mode || 'speak';
@@ -590,20 +640,26 @@ Runners.wrap = function (ctx) {
     stat(((p.rev || {})[k] || 0), 'Karten wiederholt'),
     stat(Cards.dueToday(), 'heute noch fällig')));
   var misses = (p.misses || []).filter(function (m) { return m.day === ctx.b.d; });
+  var take = function () { return 0; };
   if (misses.length) {
     el.appendChild(h('h4', { text: 'Heutige Fehler aus den Übungen → als Karten' }));
+    el.appendChild(h('p', { class: 'muted small', text: 'Alle markierten werden beim Abschluss des Tages zu Karten. Abwählen, was Sie nicht wiederholen möchten.' }));
     var pl = pickList(misses, function (m) { return [h('p', { class: (m.t === 'translate' ? 'ru' : 'doc'), text: m.q }), h('p', { class: 'doc', text: m.a[0] }), m.user ? h('p', { class: 'muted small', text: 'Ihre Antwort: ' + m.user }) : null]; });
     el.appendChild(pl.el);
-    el.appendChild(h('button', {
-      class: 'btn', type: 'button', text: 'Ausgewählte übernehmen', onclick: function (ev) {
-        var chosen = pl.picked();
-        chosen.forEach(function (m) { Cards.addX('task', { t: m.t, i: m.i, q: m.q, a: m.a }); });
-        logErrors(chosen.map(function (m) { return { wrong: m.user || '–', right: m.a[0], why: m.i, cat: m.cat }; }), 'drill');
-        var pp = Store.get('prog'); pp.mdone = pp.mdone || {}; pp.mdone[ctx.b.d] = Date.now();
-        pp.misses = (pp.misses || []).filter(function (m) { return m.day !== ctx.b.d; }); Store.save('prog');
-        ev.target.disabled = true; ev.target.textContent = chosen.length + ' Karten aufgenommen';
-      }
-    }));
+    var taken = false, takeBtn;
+    take = function () {
+      if (taken) return 0;
+      taken = true;
+      var chosen = pl.picked();
+      chosen.forEach(function (m) { Cards.addX('task', { t: m.t, i: m.i, q: m.q, a: m.a }); });
+      logErrors(chosen.map(function (m) { return { wrong: m.user || '–', right: m.a[0], why: m.i, cat: m.cat }; }), 'drill');
+      var pp = Store.get('prog'); pp.mdone = pp.mdone || {}; pp.mdone[ctx.b.d] = Date.now();
+      pp.misses = (pp.misses || []).filter(function (m) { return m.day !== ctx.b.d; }); Store.save('prog');
+      takeBtn.disabled = true; takeBtn.textContent = chosen.length + ' Karten aufgenommen';
+      return chosen.length;
+    };
+    takeBtn = h('button', { class: 'btn', type: 'button', text: 'Jetzt übernehmen', onclick: function () { take(); } });
+    el.appendChild(takeBtn);
   } else el.appendChild(h('p', { class: 'muted', text: 'Keine offenen Übungsfehler von heute.' }));
   var nd = ctx.b.d + 1, nm = Content.meta(nd);
   if (nm && !nm.fixed && AI.ready()) {
@@ -615,7 +671,7 @@ Runners.wrap = function (ctx) {
     });
     el.appendChild(genBox);
   }
-  el.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Tag abschließen', onclick: ctx.done }));
+  el.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Tag abschließen', onclick: function () { take(); ctx.done(); } }));
 };
 function stat(v, l) { return h('div', { class: 'stat' }, h('b', { text: String(v) }), h('span', { text: l })); }
 

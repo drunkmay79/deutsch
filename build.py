@@ -21,15 +21,18 @@ DAY = re.compile(r'^(.*?D\.days\[\d+\]\s*=\s*)(\{.*\})\s*;?\s*$', re.S)
 
 
 def compact(p):
-    # Tagesdateien: JSON ohne Einrückung (spart ~30 % der Seite); sonst unverändert
+    # Tagesdateien: JSON ohne Einrückung (spart ~30 % der Seite); kaputte Tagesdateien weglassen,
+    # damit eine gerade entstehende Datei nicht die ganze Seite lahmlegt (der Tag wird dann in der App erzeugt)
     s = rd(p)
-    m = DAY.match(s) if p.startswith('data/days/') else None
-    if not m:
+    if not p.startswith('data/days/'):
         return s
+    m = DAY.match(s)
     try:
-        return m.group(1) + json.dumps(json.loads(m.group(2)), ensure_ascii=False, separators=(',', ':')) + ';'
-    except ValueError:
-        return s
+        body = re.sub(r',(\s*[\]}])', r'\1', m.group(2))   # in JS erlaubte Schlusskommas
+        return m.group(1) + json.dumps(json.loads(body), ensure_ascii=False, separators=(',', ':')) + ';'
+    except (AttributeError, ValueError):
+        print('übersprungen (ungültig): %s' % p)
+        return ''
 
 
 css = rd('styles.css')

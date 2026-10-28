@@ -76,7 +76,7 @@ D.days[67] = {
     "mit dem Erbbaurechtsfaktor multiplizieren",
     "der Erbbaugrundstücksfaktor"
    ],
-   "note": "Erbbaurechtsfaktor = отношение цены сделки (vorläufiger Vergleichswert) к финансово-математической стоимости права (§ 22 ImmoWertV). Не путать с Erbbaurechtskoeffizient — отношением к стоимости fiktives Volleigentum (§ 23). der Faktor — die Faktoren (ударение меняется: FAKtor — FakTOren)."
+   "note": "Erbbaurechtsfaktor = отношение vorläufiger Vergleichswert (выводится из цен сделок) к финансово-математической стоимости права (§ 22 ImmoWertV). Не путать с Erbbaurechtskoeffizient — отношением к стоимости fiktives Volleigentum (§ 23). der Faktor — die Faktoren (ударение меняется: FAKtor — FakTOren)."
   },
   {
    "id": "v67-005",
@@ -252,7 +252,7 @@ D.days[67] = {
     "die versteigerungsfeste Erbbauzinsreallast",
     "das Bestehenbleiben vereinbaren"
    ],
-   "note": "§ 9 Abs. 3 ErbbauRG позволяет договориться, что Erbbauzins-Reallast сохраняется при принудительных торгах. Для банка это упрощает залоговую оценку: Erbbauzins не «съедает» место перед Grundschuld."
+   "note": "§ 9 Abs. 3 ErbbauRG позволяет договориться, что Erbbauzins-Reallast сохраняется при принудительных торгах. Тогда собственник земли может без риска уступить первый ранг Grundschuld банка: при торгах Erbbauzins всё равно сохранится. Для залоговой оценки это большой плюс."
   },
   {
    "id": "v67-015",
@@ -833,7 +833,7 @@ D.days[67] = {
   "kind": "fach",
   "title": "Fachgespräch: Erbbaurecht",
   "ru": "Профессиональная беседа в сберкассе: оценка и залог права застройки",
-  "role": "Sie sind Herr Albers, Teamleiter Kreditsicherheiten in der Marktfolge der Sparkasse Musterstadt (fiktiv), und führen mit dem Bewerber ein Fachgespräch über das Erbbaurecht Am Kirchberg 9 (Datenkarte); siezen Sie ihn. Fragen Sie nacheinander, wie sich die Verkehrswertermittlung nach ImmoWertV vom Beleihungswert nach § 21 BelWertV unterscheidet, was gilt, wenn die Restlaufzeit kürzer ist als die geplante Darlehenslaufzeit, welche Erklärungen die Sparkasse vom Erbbaurechtsgeber braucht und was mit der Grundschuld beim Heimfall passiert (sie bleibt bestehen, § 33 ErbbauRG). Verlangen Sie präzise Bedingungen mit „Sollte …“, „für den Fall, dass …“ und „andernfalls“, und korrigieren Sie sofort, wenn der Bewerber „Erbpacht“ statt „Erbbaurecht“ sagt. Korrigieren Sie sonst pro Antwort höchstens zwei sprachliche Fehler kurz am Ende, damit das Gespräch flüssig bleibt. Zum Schluss geben Sie ein kurzes Feedback: eine fachliche Stärke, einen sprachlichen Punkt und eine Nachfrage, die im echten Gespräch kommen könnte.",
+  "role": "Sie sind Herr Albers, Teamleiter Kreditsicherheiten in der Marktfolge der Sparkasse Musterstadt (fiktiv), und führen mit dem Bewerber ein Fachgespräch über das Erbbaurecht Am Kirchberg 9 (Datenkarte); siezen Sie ihn. Fragen Sie nacheinander, wie sich die Verkehrswertermittlung nach ImmoWertV vom Beleihungswert nach § 21 BelWertV unterscheidet, was gilt, wenn die Restlaufzeit kürzer ist als die geplante Darlehenslaufzeit, welche Erklärungen die Sparkasse vom Erbbaurechtsgeber braucht und was mit der Grundschuld beim Heimfall passiert (sie bleibt bestehen, § 33 ErbbauRG). Verlangen Sie präzise Bedingungen mit „Sollte …“, „für den Fall, dass …“ und „andernfalls“, und korrigieren Sie sofort, wenn der Bewerber „Erbpacht“ statt „Erbbaurecht“ sagt. Korrigieren Sie sonst pro Antwort höchstens zwei sprachliche Fehler kurz am Ende, damit das Gespräch flüssig bleibt, und geben Sie zum Schluss ein kurzes Feedback: eine fachliche Stärke, einen sprachlichen Punkt und eine Nachfrage, die im echten Gespräch kommen könnte.",
   "goal": "Чётко объяснить разницу между рыночной оценкой права застройки (ImmoWertV) и залоговой (§ 21 BelWertV), риски короткого остаточного срока и нужные заявления собственника земли — формулируя условия через Sollte …, für den Fall, dass … и andernfalls.",
   "open": "Guten Tag, schön, dass Sie da sind. Wir haben gerade einen Finanzierungsantrag für eine Doppelhaushälfte im Erbbaurecht auf dem Tisch, Am Kirchberg 9. Wie gehen Sie bei der Bewertung eines Erbbaurechts vor, und was ist für uns als Sparkasse anders als beim Verkehrswert?",
   "steps": [
@@ -873,7 +873,7 @@ D.days[67] = {
    "Ein Haus im Erbbaurecht wird meist günstiger angeboten.",
    "Man kauft das Gebäude, aber nicht den Boden selbst.",
    "Jedes Jahr zahlt man einen Erbbauzins an den Eigentümer.",
-   "Für den Fall einer Anpassungsklausel kann der Zins steigen.",
+   "Für den Fall, dass es eine Anpassungsklausel gibt, kann der Zins steigen.",
    "Sollte die Restlaufzeit kurz sein, wird die Finanzierung schwieriger.",
    "Man muss die Restlaufzeit prüfen, andernfalls droht eine Überraschung.",
    "Ich würde mir den Erbbaurechtsvertrag immer vollständig ansehen.",

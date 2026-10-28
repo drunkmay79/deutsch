@@ -40,7 +40,7 @@ D.days[67] = {
     "die Entschädigung für das Bauwerk",
     "die Entschädigung vertraglich ausschließen"
    ],
-   "note": "При истечении срока собственник земли платит компенсацию за здание (§ 27 ErbbauRG); размер можно определить в договоре или даже исключить. При Heimfall говорят о Vergütung (вознаграждении), а не об Entschädigung."
+   "note": "При истечении срока собственник земли платит компенсацию за здание (§ 27 ErbbauRG); размер можно определить в договоре или даже исключить (не для прав, выданных для жилья малообеспеченных: там минимум две трети, § 27 Abs. 2). При Heimfall говорят о Vergütung (вознаграждении), а не об Entschädigung."
   },
   {
    "id": "v67-003",
@@ -138,7 +138,7 @@ D.days[67] = {
    "de": "Stillhalteerklärung",
    "art": "die",
    "pl": "Stillhalteerklärungen",
-   "ru": "обязательство (собственника земли или банка) при принудительных торгах обеспечить сохранение Erbbauzins и права",
+   "ru": "обязательство собственника земли перед банком (или банка перед собственником) при принудительных торгах не использовать свой лучший ранг в ущерб другой стороне",
    "ex": "Die Kirchengemeinde hat eine Stillhalteerklärung zugunsten der Sparkasse abgegeben.",
    "exRu": "Церковная община дала в пользу сберкассы обязательство не препятствовать сохранению права при торгах.",
    "cloze": "Die Kirchengemeinde hat eine ___ zugunsten der Sparkasse abgegeben.",
@@ -268,7 +268,7 @@ D.days[67] = {
     "der finanzmathematische Wert des Erbbaugrundstücks",
     "mit dem Erbbaurechtsfaktor multiplizieren"
    ],
-   "note": "§ 50 ImmoWertV: (fiktives Volleigentum − Bodenwert) + капитализированная за остаточный срок разница angemessener − erzielbarer Erbbauzins. Затем × Erbbaurechtsfaktor. Окончания: der …-e Wert, den …-en Wert."
+   "note": "§ 50 ImmoWertV: (fiktives Volleigentum − Bodenwert) + капитализированная за остаточный срок разница angemessener − erzielbarer Erbbauzins; если здание переживёт право, ещё минус дисконтированная доля здания, за которую не будет компенсации. Затем × Erbbaurechtsfaktor (§ 49). Окончания: der …-e Wert, den …-en Wert."
   },
   {
    "id": "v67-016",

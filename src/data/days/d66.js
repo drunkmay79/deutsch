@@ -40,7 +40,7 @@ D.days[66] = {
     "laut Sterbetafel",
     "eine Sterbetafel zugrunde legen"
    ],
-   "note": "В заключении указывают, какая таблица (какой выпуск) использована — актуальная на дату оценки. des Statistischen Bundesamtes — слабое окончание -en после des."
+   "note": "В заключении указывают, какая таблица (какой выпуск) использована — актуальная на дату оценки. Готовые коэффициенты Destatis публикует как «Versicherungsbarwerte für Leibrenten». des Statistischen Bundesamtes — слабое окончание -en после des."
   },
   {
    "id": "v66-003",
@@ -340,8 +340,8 @@ D.days[66] = {
     "ru": "Право проживания стоит по очерёдности перед поземельным долгом, поэтому нам нужна уступка ранга."
    },
    {
-    "de": "Wer ein Wohnungsrecht hat, darf die Wohnung bis zu seinem Tod nutzen.",
-    "ru": "Кто обладает правом проживания, тот может пользоваться квартирой до своей смерти."
+    "de": "Wer ein lebenslanges Wohnungsrecht hat, darf die Wohnung bis zu seinem Tod nutzen.",
+    "ru": "Кто обладает пожизненным правом проживания, тот может пользоваться квартирой до своей смерти."
    },
    {
     "de": "Wer ein belastetes Haus kauft, dem muss klar sein, dass das Recht bestehen bleibt.",
@@ -375,7 +375,7 @@ D.days[66] = {
    },
    {
     "t": "gap",
-    "q": "___ ein Wohnungsrecht hat, darf die Wohnung bis zu seinem Tod nutzen.",
+    "q": "___ ein lebenslanges Wohnungsrecht hat, darf die Wohnung bis zu seinem Tod nutzen.",
     "a": [
      "Wer"
     ],
@@ -504,10 +504,10 @@ D.days[66] = {
    {
     "t": "transform",
     "i": "Formen Sie um: „Wer …, (der) …“.",
-    "q": "Jeder, der ein Wohnungsrecht hat, darf die Wohnung lebenslang nutzen.",
+    "q": "Jeder, der ein Wohnungsrecht hat, darf die Wohnung unter Ausschluss des Eigentümers nutzen.",
     "a": [
-     "Wer ein Wohnungsrecht hat, darf die Wohnung lebenslang nutzen.",
-     "Wer ein Wohnungsrecht hat, der darf die Wohnung lebenslang nutzen."
+     "Wer ein Wohnungsrecht hat, darf die Wohnung unter Ausschluss des Eigentümers nutzen.",
+     "Wer ein Wohnungsrecht hat, der darf die Wohnung unter Ausschluss des Eigentümers nutzen."
     ],
     "h": "Jeder, der … → Wer …; der во второй части можно опустить (оба раза Nominativ)."
    },
@@ -674,8 +674,8 @@ D.days[66] = {
     "de": "Die Eltern haben sich ein Wohnungsrecht vorbehalten, was den Wert des Hauses mindert."
    },
    {
-    "ru": "Кто обладает правом проживания, тот может пользоваться квартирой до конца жизни.",
-    "de": "Wer ein Wohnungsrecht hat, darf die Wohnung bis zum Lebensende nutzen."
+    "ru": "Кто обладает правом проживания, тот может пользоваться квартирой, пока это право действует.",
+    "de": "Wer ein Wohnungsrecht hat, darf die Wohnung nutzen, solange das Recht besteht."
    },
    {
     "ru": "Кто покупает такой дом, тому должно быть ясно, что право сохраняется.",

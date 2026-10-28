@@ -323,8 +323,8 @@ D.days[75] = {
   "rule": "<p>В коротком докладе слушателю важно сразу понять: <b>откуда цифра</b>, <b>о чём речь</b> и <b>что главное</b>.</p><ul><li><b>Источник</b>: <b>laut</b> + Dat. (без артикля обычно без окончания: <b>laut Marktbericht</b>, но <b>laut dem aktuellen Marktbericht</b>); <b>nach Angaben</b> + Gen.: <b>nach Angaben des Gutachterausschusses</b>; <b>zufolge</b> стоит <b>после</b> существительного в Dat.: <b>dem Marktbericht zufolge</b>.</li><li><b>Тема</b>: <b>Was die Mieten betrifft / angeht, …</b> — глагол всегда в ед. ч. (<b>betrifft</b>), а вся конструкция занимает первое место, поэтому дальше <b>сразу глагол</b>: <b>Was die Bautätigkeit betrifft, wurden 2025 nur 310 Wohnungen fertiggestellt.</b> Можно вставить <b>so</b>: <b>…, so wurden …</b>. Книжный вариант: <b>hinsichtlich</b> + Gen.: <b>hinsichtlich der Bautätigkeit</b>.</li><li><b>Акцент</b>: оценка на первом месте + придаточное: <b>Entscheidend ist, dass …</b>, <b>Bemerkenswert ist vor allem …</b>; конструкция <b>Was mich überrascht hat, ist …</b> (рус. «Что меня удивило, так это …»).</li><li><b>Связь с данными</b> — местоименные наречия по управлению глагола: <b>Daraus folgt, dass …</b> (folgen aus), <b>Davon profitieren …</b> (profitieren von), <b>Darauf komme ich gleich zurück.</b> (zurückkommen auf). Перед гласной — <b>dar-</b>.</li><li><b>Вопросы из зала</b>: <b>Danke, darauf gehe ich gern ein.</b> <b>Dazu habe ich keine belastbaren Zahlen, aber …</b> <b>Mit Vorbehalt würde ich sagen, dass …</b></li></ul>",
   "examples": [
    {
-    "de": "Nach Angaben der Stadt liegt die Einwohnerzahl seit 2015 stabil bei rund 182.000.",
-    "ru": "По данным города, численность населения с 2015 года стабильно держится на уровне около 182 000."
+    "de": "Nach Angaben der Stadt liegt die Einwohnerzahl bei rund 110.000 und ist seit 2015 nur leicht gesunken.",
+    "ru": "По данным города, численность населения составляет около 110 000 человек и с 2015 года лишь немного сократилась."
    },
    {
     "de": "Dem Grundstücksmarktbericht zufolge liegt der Median bei 2.050 Euro pro Quadratmeter.",
@@ -668,8 +668,8 @@ D.days[75] = {
     "de": "Laut Marktbericht ist die Zahl der Kauffälle leicht gestiegen."
    },
    {
-    "ru": "По данным города, численность населения уже много лет стабильна.",
-    "de": "Nach Angaben der Stadt ist die Einwohnerzahl seit Jahren stabil."
+    "ru": "По данным города, численность населения уже много лет немного сокращается.",
+    "de": "Nach Angaben der Stadt ist die Einwohnerzahl seit Jahren leicht rückläufig."
    },
    {
     "ru": "Согласно отчёту о земельном рынке, медиана составляет 2050 евро за квадратный метр.",
@@ -717,14 +717,14 @@ D.days[75] = {
   "id": "t75",
   "kind": "Vortragsmanuskript",
   "title": "Wohnimmobilienmarkt Musterstadt: Entwicklung, Einflussfaktoren, Ausblick",
-  "de": "Guten Morgen zusammen! In den nächsten fünf Minuten gebe ich Ihnen einen kurzen Überblick über den Wohnimmobilienmarkt in Musterstadt: Entwicklung, Einflussfaktoren und Ausblick. Alle Zahlen sind fiktiv.\n\nZunächst zur Bevölkerung. Nach Angaben der Stadt liegt die Einwohnerzahl seit 2015 stabil bei rund 182.000. Dahinter stehen allerdings zwei gegenläufige Bewegungen: Einerseits ziehen Studierende und junge Familien zu, andererseits wandern viele Haushalte mit mittlerem Einkommen ins Umland ab. Die Arbeitslosenquote liegt laut städtischer Statistik bei 9,1 Prozent und damit über dem Landesdurchschnitt.\n\nWas die Bautätigkeit betrifft, so ist sie gering. 2025 wurden nur rund 310 neue Wohnungen fertiggestellt. Damit lässt sich der Wohnungsbedarf nicht decken.\n\nEntscheidend ist aber, dass Musterstadt kein einheitlicher Markt ist. Dem aktuellen Grundstücksmarktbericht zufolge liegt der Bodenrichtwert für Wohnbauland im Nordviertel bei 175 Euro pro Quadratmeter, im Südpark dagegen bei 420 Euro. Hinsichtlich der Kauffälle zeigt sich eine leichte Erholung: Der Gutachterausschuss hat 2025 insgesamt 1.840 Kauffälle registriert, 4,5 Prozent mehr als im Vorjahr. Bei Eigentumswohnungen im Weiterverkauf liegt der Median bei 2.050 Euro pro Quadratmeter Wohnfläche.\n\nWas mich überrascht hat, ist die große Spanne der Preise innerhalb einzelner Stadtteile. Darauf komme ich bei den Rückfragen gern zurück.\n\nZum Schluss mein Ausblick: Vor diesem Hintergrund rechne ich in guten Lagen mit einer leichten Erholung der Preise, in einfachen Lagen eher mit einer Seitwärtsbewegung. Daraus folgt für uns, dass wir Lage und Teilmarkt in jedem Gutachten genau beschreiben müssen. Vielen Dank für Ihre Aufmerksamkeit!",
+  "de": "Guten Morgen zusammen! In den nächsten fünf Minuten gebe ich Ihnen einen kurzen Überblick über den Wohnimmobilienmarkt in Musterstadt: Entwicklung, Einflussfaktoren und Ausblick. Alle Zahlen sind fiktiv.\n\nZunächst zur Bevölkerung. Nach Angaben der Stadt liegt die Einwohnerzahl bei rund 110.000 und ist seit 2015 nur leicht gesunken. Dahinter stehen allerdings zwei gegenläufige Bewegungen: Einerseits ziehen Studierende und junge Familien zu, andererseits wandern viele Haushalte mit mittlerem Einkommen ins Umland ab. Die Arbeitslosenquote liegt laut städtischer Statistik bei 9,1 Prozent und damit über dem Landesdurchschnitt.\n\nWas die Bautätigkeit betrifft, so ist sie gering. 2025 wurden nur rund 310 neue Wohnungen fertiggestellt. Damit lässt sich der Wohnungsbedarf nicht decken.\n\nEntscheidend ist aber, dass Musterstadt kein einheitlicher Markt ist. Dem aktuellen Grundstücksmarktbericht zufolge liegt der Bodenrichtwert für Wohnbauland im Nordviertel bei 175 Euro pro Quadratmeter, im Südpark dagegen bei 420 Euro. Hinsichtlich der Kauffälle zeigt sich eine leichte Erholung: Der Gutachterausschuss hat 2025 insgesamt 1.840 Kauffälle registriert, 4,5 Prozent mehr als im Vorjahr. Bei Eigentumswohnungen im Weiterverkauf liegt der Median bei 2.050 Euro pro Quadratmeter Wohnfläche.\n\nWas mich überrascht hat, ist die große Spanne der Preise innerhalb einzelner Stadtteile. Darauf komme ich bei den Rückfragen gern zurück.\n\nZum Schluss mein Ausblick: Vor diesem Hintergrund rechne ich in guten Lagen mit einer leichten Erholung der Preise, in einfachen Lagen eher mit einer Seitwärtsbewegung. Daraus folgt für uns, dass wir Lage und Teilmarkt in jedem Gutachten genau beschreiben müssen. Vielen Dank für Ihre Aufmerksamkeit!",
   "ru": "Рукопись пятиминутного доклада о фиктивном рынке жилья Мустерштадта: население, безработица, строительство, разрыв в стоимости земли между районами, сделки и осторожный прогноз.",
   "q": [
    {
     "q": "Wie hat sich die Einwohnerzahl seit 2015 entwickelt?",
     "o": [
      "Sie ist deutlich gesunken.",
-     "Sie ist stabil geblieben.",
+     "Sie ist leicht gesunken.",
      "Sie ist stark gestiegen."
     ],
     "a": 1
@@ -823,7 +823,7 @@ D.days[75] = {
    "Feedback anhören und eine korrigierte Formulierung wiederholen"
   ],
   "use": [
-   "Nach Angaben der Stadt liegt die Einwohnerzahl seit 2015 stabil bei rund 182.000.",
+   "Nach Angaben der Stadt liegt die Einwohnerzahl bei rund 110.000 und ist seit 2015 nur leicht gesunken.",
    "Dem Grundstücksmarktbericht zufolge liegt der Median bei 2.050 Euro pro Quadratmeter.",
    "Was die Bautätigkeit betrifft, wurden 2025 nur rund 310 Wohnungen fertiggestellt.",
    "Entscheidend ist, dass Musterstadt kein einheitlicher Markt ist.",
@@ -834,7 +834,7 @@ D.days[75] = {
    "Daraus folgt, dass wir in einfachen Lagen mit einer längeren Vermarktungsdauer rechnen müssen.",
    "Vor diesem Hintergrund rechne ich mit einer leichten Erholung der Preise in guten Lagen."
   ],
-  "facts": "Alle Daten fiktiv, Musterstadt im Ruhrgebiet. Einwohner: seit 2015 stabil bei rund 182.000 (Quelle: Stadt); Zuzug v. a. von Studierenden und jungen Familien, Abwanderung von Haushalten mit mittlerem Einkommen ins Umland. Arbeitslosenquote: 9,1 % (städtische Statistik), über dem Landesdurchschnitt. Baufertigstellungen 2025: rund 310 Wohnungen. Bodenrichtwerte Wohnbauland (Grundstücksmarktbericht): Nordviertel 175 €/m², Südpark 420 €/m². Kauffälle 2025 insgesamt: 1.840 (+4,5 % gegenüber 2024, Gutachterausschuss). Eigentumswohnungen im Weiterverkauf: Median 2.050 €/m² Wohnfläche."
+  "facts": "Alle Daten fiktiv, Musterstadt im Ruhrgebiet. Einwohner: rund 110.000, seit 2015 leicht rückläufig (Quelle: Stadt); Zuzug v. a. von Studierenden und jungen Familien, Abwanderung von Haushalten mit mittlerem Einkommen ins Umland. Arbeitslosenquote: 9,1 % (städtische Statistik), über dem Landesdurchschnitt. Baufertigstellungen 2025: rund 310 Wohnungen. Bodenrichtwerte Wohnbauland (Grundstücksmarktbericht): Nordviertel 175 €/m², Südpark 420 €/m². Kauffälle 2025 insgesamt: 1.840 (+4,5 % gegenüber 2024, Gutachterausschuss). Eigentumswohnungen im Weiterverkauf: Median 2.050 €/m² Wohnfläche."
  },
  "fluency": {
   "id": "f75",

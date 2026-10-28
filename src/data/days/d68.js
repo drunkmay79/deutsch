@@ -284,7 +284,7 @@ D.days[68] = {
     "Zahlungen an die Gemeinschaft",
     "das Gemeinschaftsvermögen"
    ],
-   "note": "С реформы 2020 года GdWE — правоспособное лицо; внешне её представляет управляющий. Gen. Pl.: der Wohnungseigentümer (без -n, т. к. это не Dativ)."
+   "note": "С реформы 2020 года GdWE полностью правоспособна (§ 9a WEG; частично — уже с 2007 года); внешне её представляет управляющий (§ 9b WEG). Gen. Pl.: der Wohnungseigentümer (без -n, т. к. это не Dativ)."
   },
   {
    "id": "v68-017",

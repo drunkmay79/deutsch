@@ -56,7 +56,7 @@ D.days[70] = {
    "de": "Für die Bank kommt es vor allem darauf an, welchen Rang das Recht hat.",
    "ru": "Для банка прежде всего важно, какую очерёдность (ранг) имеет право.",
    "ex": "Für die Beleihung kommt es vor allem darauf an, ob das Wohnungsrecht vor oder nach der Grundschuld steht.",
-   "exRu": "Для кредитования под залог прежде всего важно, стоит ли право проживания перед поземельным долгом или после него.",
+   "exRu": "Для кредитования под залог прежде всего важно, стоит ли право проживания по очерёдности перед поземельным долгом или после него.",
    "cloze": "Für die Beleihung kommt es vor allem ___ an, ob das Wohnungsrecht vor oder nach der Grundschuld steht.",
    "ans": "darauf",
    "note": "es kommt auf + Akk. an — «зависит от, важно»; перед придаточным — коррелят darauf. der Rang (m.): welchen Rang — Akk. m.; im Rang vor/nach + Dat.: vor der Grundschuld."
@@ -67,7 +67,7 @@ D.days[70] = {
    "de": "Beim Erbbaurecht gehe ich vom Wert des fiktiven Volleigentums aus.",
    "ru": "При праве застройки я исхожу из стоимости условной полной собственности.",
    "ex": "Beim Erbbaurecht Am Kirchberg 9 bin ich vom Wert des fiktiven Volleigentums ausgegangen.",
-   "exRu": "При оценке права застройки на Ам Кирхберг 9 я исходил из стоимости условной полной собственности.",
+   "exRu": "При оценке права застройки по адресу Ам Кирхберг 9 я исходил из стоимости условной полной собственности.",
    "cloze": "Beim Erbbaurecht Am Kirchberg 9 ___ ich vom Wert des fiktiven Volleigentums ausgegangen.",
    "ans": "bin",
    "note": "ausgehen von + Dat.: ging aus – ist ausgegangen (Perfekt с sein!). vom = von dem. das Volleigentum (n.): des fiktiven Volleigentums — Gen. n.: прилагательное -en, существительное -s."
@@ -89,7 +89,7 @@ D.days[70] = {
    "de": "Bei einer Eigentumswohnung sehe ich mir die Protokolle der letzten drei Jahre und den Wirtschaftsplan an.",
    "ru": "При оценке квартиры я просматриваю протоколы собраний за последние три года и годовой финансовый план.",
    "ex": "Bei der Wohnung im Lärchenweg 22 habe ich mir die Protokolle der letzten drei Eigentümerversammlungen angesehen.",
-   "exRu": "По квартире на Линденвег 12 я просмотрел протоколы последних трёх собраний собственников.",
+   "exRu": "По квартире на Лерхенвег 22 я просмотрел протоколы последних трёх собраний собственников.",
    "cloze": "Bei der Wohnung im Lärchenweg 22 habe ich mir die Protokolle der letzten drei Eigentümerversammlungen ___.",
    "ans": "angesehen",
    "note": "sich (Dat.) etwas ansehen — возвратный глагол с Dativ: ich sehe mir … an, du siehst dir … an. sah an – hat angesehen. das Protokoll, Pl. die Protokolle; der Wirtschaftsplan (m.). der letzten drei Jahre — Gen. Pl. -en."

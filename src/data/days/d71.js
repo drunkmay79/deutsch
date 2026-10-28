@@ -22,7 +22,7 @@ D.days[71] = {
     "ein knappes Angebot",
     "Angebot und Nachfrage"
    ],
-   "note": "Предложение ЧЕГО: das Angebot an + Dat. (an Wohnungen), не von. Порядок в паре всегда Angebot und Nachfrage."
+   "note": "Предложение ЧЕГО: das Angebot an + Dat. (an Wohnungen), не von. Устойчивая пара обычно в порядке Angebot und Nachfrage."
   },
   {
    "id": "v71-002",
@@ -614,7 +614,8 @@ D.days[71] = {
     "a": [
      "Während die Zahl der Kauffälle um ein Drittel gefallen ist, haben die Preise nur um knapp acht Prozent nachgegeben.",
      "Die Zahl der Kauffälle ist um ein Drittel gefallen, während die Preise nur um knapp acht Prozent nachgegeben haben.",
-     "Die Preise haben nur um knapp acht Prozent nachgegeben, während die Zahl der Kauffälle um ein Drittel gefallen ist."
+     "Die Preise haben nur um knapp acht Prozent nachgegeben, während die Zahl der Kauffälle um ein Drittel gefallen ist.",
+     "Während die Preise nur um knapp acht Prozent nachgegeben haben, ist die Zahl der Kauffälle um ein Drittel gefallen."
     ],
     "h": "В придаточном вспомогательный глагол в самом конце: gefallen ist, nachgegeben haben."
    },

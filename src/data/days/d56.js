@@ -56,7 +56,7 @@ D.days[56] = {
    "de": "Jeder Abschnitt der Lage- und Objektbeschreibung endet bei mir mit einer klaren Beurteilung.",
    "ru": "У меня каждый раздел описания местоположения и объекта заканчивается чёткой оценкой.",
    "ex": "Die Lagebeschreibung endet mit dem Satz: Die Wohnlage ist als mittel bis gut einzustufen.",
-   "exRu": "Описание местоположения заканчивается фразой: жилую локацию следует отнести к категории «от средней до хорошей».",
+   "exRu": "Описание местоположения заканчивается фразой: качество жилого местоположения следует оценить как «от среднего до хорошего».",
    "cloze": "Die Lagebeschreibung endet mit dem Satz: Die Wohnlage ist als mittel bis gut ___.",
    "ans": "einzustufen",
    "note": "sein + zu + инфинитив = «следует»: ist einzustufen = следует отнести (к категории). einstufen — отделяемый, zu внутри: einzustufen. enden mit + Dat.: mit einer klaren Beurteilung (Dat. f. → -en)."
@@ -67,7 +67,7 @@ D.days[56] = {
    "de": "Jeder Wertansatz braucht eine Quelle oder eine nachvollziehbare Begründung.",
    "ru": "Каждый параметр расчёта нуждается в источнике или понятном обосновании.",
    "ex": "Den Bodenrichtwert gebe ich mit Quelle und Stichtag an, damit der Ansatz nachvollziehbar ist.",
-   "exRu": "Стандартную стоимость земли я указываю с источником и датой, чтобы параметр можно было проверить.",
+   "exRu": "Нормативную стоимость земли (Bodenrichtwert) я указываю с источником и датой, чтобы параметр можно было проверить.",
    "cloze": "Den Bodenrichtwert gebe ich mit Quelle und Stichtag an, damit der Ansatz ___ ist.",
    "ans": "nachvollziehbar",
    "note": "nachvollziehbar = понятный и проверяемый (ход мысли можно повторить). der Ansatz, die Ansätze; in Ansatz bringen = заложить в расчёт. angeben — отделяемый: gebe … an. damit + придаточное (глагол в конце) — цель."

@@ -110,7 +110,7 @@ D.days[78] = {
    "col": [
     "langjährige Auslandserfahrung",
     "Auslandserfahrung mitbringen",
-    "internationale Bewertungsstandards"
+    "Auslandserfahrung sammeln"
    ],
    "note": "Соединительное -s-: Auslands|erfahrung. helfen + Dat.: hilft mir (не mich)."
   },
@@ -695,7 +695,7 @@ D.days[78] = {
    "Ein Satz Motivation",
    "Keine Endungsfehler bei Kunde, Kollege, Kandidat und Sachverständiger"
   ],
-  "model": "Kurz zu meiner Person: Ich bin Ökonom und arbeite seit vielen Jahren als Sachverständiger für Immobilienbewertung. Meine drei Kernkompetenzen sind erstens die Bewertung von Wohn- und Gewerbeimmobilien, zweitens die Prüfung von Kreditsicherheiten und drittens die verständliche Kommunikation mit Kunden und Kollegen. Ein Beispiel aus der Praxis: Bei einem Mehrfamilienhaus in Musterstadt lag die vertraglich vereinbarte Miete deutlich über der Marktmiete. Für den Beleihungswert habe ich deshalb nur die nachhaltig erzielbare Miete angesetzt. Das habe ich dem Kunden und dem zuständigen Kollegen aus der Kreditabteilung genau erklärt. Der Kunde war zuerst enttäuscht, hat die Begründung aber akzeptiert. Als zertifizierter Sachverständiger weiß ich: Ein vorsichtiger Wert schützt am Ende beide Seiten. Was mich an Ihrer Stelle besonders anspricht, ist genau diese Verbindung von Bank und Bewertung. Auf den Punkt gebracht: Sie bekommen einen Kandidaten, der beide Seiten kennt.",
+  "model": "Kurz zu meiner Person: Ich bin Ökonom und arbeite seit vielen Jahren als Sachverständiger für Immobilienbewertung. Meine drei Kernkompetenzen sind erstens die Bewertung von Wohn- und Gewerbeimmobilien, zweitens die Prüfung von Kreditsicherheiten und drittens die verständliche Kommunikation mit Kunden und Kollegen. Ein Beispiel aus der Praxis: Bei einem Mehrfamilienhaus in Musterstadt lag die vertraglich vereinbarte Miete deutlich über der Marktmiete. Für den Beleihungswert habe ich deshalb nur die nachhaltig erzielbare Miete angesetzt. Das habe ich dem Kunden und dem zuständigen Kollegen aus der Kreditabteilung genau erklärt. Der Kunde war zuerst enttäuscht, hat die Begründung aber akzeptiert. Als zertifizierter Sachverständiger weiß ich: Ein vorsichtiger Wert schützt am Ende beide Seiten. Was mich an dieser Stelle besonders anspricht, ist genau diese Verbindung von Bank und Bewertung. Auf den Punkt gebracht: Sie bekommen einen Kandidaten, der beide Seiten kennt.",
   "shadow": [
    "Kurz zu meiner Person: Ich bin Ökonom und Sachverständiger.",
    "Ich arbeite seit vielen Jahren als zertifizierter Sachverständiger.",

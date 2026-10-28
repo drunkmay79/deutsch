@@ -650,7 +650,9 @@ D.days[87] = {
      "Wenn der Vertrieb sagen würde, die BelWertV sei hier zu streng, würde ich ruhig die Regeln erklären.",
      "Wenn der Vertrieb sagte, die BelWertV sei hier zu streng, würde ich die Regeln ruhig erklären.",
      "Würde der Vertrieb sagen, die BelWertV sei hier zu streng, würde ich die Regeln ruhig erklären.",
-     "Wenn der Vertrieb sagen würde, dass die BelWertV hier zu streng sei, würde ich die Regeln ruhig erklären."
+     "Wenn der Vertrieb sagen würde, dass die BelWertV hier zu streng sei, würde ich die Regeln ruhig erklären.",
+     "Wenn der Vertrieb sagte, dass die BelWertV hier zu streng sei, würde ich die Regeln ruhig erklären.",
+     "Würde der Vertrieb sagen, dass die BelWertV hier zu streng sei, würde ich die Regeln ruhig erklären."
     ],
     "h": "Два наклонения в одном предложении: условие и реакция — Konjunktiv II (würde), чужие слова — Konjunktiv I (sei)."
    }
@@ -710,7 +712,7 @@ D.days[87] = {
   "id": "t87",
   "kind": "Fehlercheck: Irrtümer zum Beleihungswert (interne Lernunterlage, fiktiv)",
   "title": "Zehn Irrtümer zum Beleihungswert – und was wirklich gilt",
-  "de": "Diese Lernunterlage der Sparkasse Musterstadt (fiktiv) sammelt Aussagen, die ein neuer Kollege in einer Teambesprechung gemacht haben soll – mit Richtigstellung nach der BelWertV.\n\nErstens: Der Beleihungswert sei 60 Prozent des Marktwerts. Falsch – er wird eigenständig ermittelt. 60 Prozent des Beleihungswerts bilden die Beleihungsgrenze.\n\nZweitens: Maßgeblich sei immer der höhere Wert aus Ertrags- und Sachwert. Nein, regelmäßig ist der Ertragswert maßgeblich; er darf nicht überschritten werden.\n\nDrittens: Der Mindestkapitalisierungszinssatz liege fest bei fünf Prozent. Das ist veraltet: Heute hängt er von der Rendite 30-jähriger Bundesanleihen ab.\n\nViertens: Ein Gutachten des Kunden könne man übernehmen. Nein, ein vom Darlehensnehmer vorgelegtes oder beauftragtes Gutachten darf nicht zugrunde gelegt werden.\n\nFünftens: Bei Kleindarlehen entfalle jede Wertermittlung. Es entfällt nur das Gutachten: Bei Wohnimmobilien genügt bis 600.000 Euro einschließlich aller Vorlasten eine vereinfachte Wertermittlung.\n\nSechstens: Der Gutachter setze den Beleihungswert selbst fest. Genau das darf er nicht.\n\nSiebtens: Es spiele keine Rolle, wenn der Sachwert hinter dem Ertragswert zurückbleibe. Doch: Bei mehr als 20 Prozent sind die Erträge und ihre Kapitalisierung besonders zu prüfen.\n\nAchtens: Der zehnprozentige Sicherheitsabschlag werde vom Beleihungswert abgezogen. Falsch – er wird vom Herstellungswert oder, im Vergleichswertverfahren, vom Ausgangswert abgezogen.\n\nNeuntens: Eine Miete über dem nachhaltigen Niveau dürfe man ansetzen. Nein, angesetzt wird nur die nachhaltig erzielbare Miete.\n\nZehntens: Nach der Auszahlung schaue niemand mehr auf den Wert. Falsch – der Beleihungswert ist längstens jährlich zu überwachen und bei Bedarf zu mindern.\n\nFazit: Wer rechnet, als ob der Beleihungswert nur ein Abschlag vom Marktwert wäre, übersieht die Nachhaltigkeit.",
+  "de": "Diese Lernunterlage der Sparkasse Musterstadt (fiktiv) sammelt Aussagen, die ein neuer Kollege in einer Teambesprechung gemacht haben soll – mit Richtigstellung nach der BelWertV.\n\nErstens: Der Beleihungswert sei 60 Prozent des Marktwerts. Falsch – er wird eigenständig ermittelt. 60 Prozent des Beleihungswerts bilden die Beleihungsgrenze.\n\nZweitens: Maßgeblich sei immer der höhere Wert aus Ertrags- und Sachwert. Nein, regelmäßig ist der Ertragswert maßgeblich; er darf nicht überschritten werden.\n\nDrittens: Der Mindestkapitalisierungszinssatz liege fest bei fünf Prozent. Das ist veraltet: Heute hängt er von der Rendite 30-jähriger Bundesanleihen ab.\n\nViertens: Ein Gutachten des Kunden könne man übernehmen. Nein, ein vom Darlehensnehmer vorgelegtes oder beauftragtes Gutachten darf nicht zugrunde gelegt werden.\n\nFünftens: Bei Kleindarlehen entfalle jede Wertermittlung. Es entfällt nur das Gutachten: Bei Wohnimmobilien genügt eine vereinfachte Wertermittlung, wenn das Darlehen einschließlich aller Vorlasten 600.000 Euro nicht übersteigt.\n\nSechstens: Der Gutachter setze den Beleihungswert selbst fest. Genau das darf er nicht.\n\nSiebtens: Es spiele keine Rolle, wenn der Sachwert hinter dem Ertragswert zurückbleibe. Doch: Bleibt er um mehr als 20 Prozent zurück, sind die Nachhaltigkeit der Erträge und ihre Kapitalisierung besonders zu prüfen.\n\nAchtens: Der zehnprozentige Sicherheitsabschlag werde vom Beleihungswert abgezogen. Falsch – er wird vom Herstellungswert oder, im Vergleichswertverfahren, vom Ausgangswert abgezogen.\n\nNeuntens: Eine Miete über dem nachhaltigen Niveau dürfe man ansetzen. Nein, angesetzt wird nur die nachhaltig erzielbare Miete.\n\nZehntens: Nach der Auszahlung schaue niemand mehr auf den Wert. Falsch – der Beleihungswert ist längstens jährlich zu überwachen und bei Bedarf zu mindern.\n\nFazit: Wer rechnet, als ob der Beleihungswert nur ein Abschlag vom Marktwert wäre, übersieht die Nachhaltigkeit.",
   "ru": "Учебный материал сберкассы: десять ошибочных утверждений о залоговой стоимости в косвенной речи и их исправление по BelWertV.",
   "q": [
    {
@@ -841,7 +843,7 @@ D.days[87] = {
    "Der Marktwert ist der Preis, den man heute erzielen würde.",
    "Der Beleihungswert muss über die ganze Laufzeit tragen.",
    "Viele Kunden meinen, die Bank rechne ihr Haus klein.",
-   "Die Bank rechnet nicht, als ob jedes Jahr ein Boomjahr wäre.",
+   "Die Bank rechnet nicht so, als ob jedes Jahr ein Boomjahr wäre.",
    "Ich setze nur nachhaltig erzielbare Erträge an.",
    "Der Kapitalisierungszinssatz darf die Mindestsätze nicht unterschreiten.",
    "Regelmäßig ist der Ertragswert maßgeblich, und er darf nicht überschritten werden.",

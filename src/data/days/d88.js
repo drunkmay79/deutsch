@@ -565,6 +565,7 @@ D.days[88] = {
     "a": [
      "Im Zuge der Besichtigung wurde eine Gipsmarke gesetzt.",
      "Eine Gipsmarke wurde im Zuge der Besichtigung gesetzt.",
+     "Eine Gipsmarke wurde im Zuge der Besichtigung des Hauses gesetzt.",
      "Im Zuge der Besichtigung des Hauses wurde eine Gipsmarke gesetzt.",
      "Im Zuge der Ortsbesichtigung wurde eine Gipsmarke gesetzt."
     ],
@@ -641,7 +642,9 @@ D.days[88] = {
     "q": "Перед сдачей заключения я провожу заключительную проверку и проверяю перечень приложений. (Vor … Abgabe; eine Schlusskontrolle durchführen; prüfen)",
     "a": [
      "Vor Abgabe des Gutachtens führe ich eine Schlusskontrolle durch und prüfe das Anlagenverzeichnis.",
-     "Vor der Abgabe des Gutachtens führe ich eine Schlusskontrolle durch und prüfe das Anlagenverzeichnis."
+     "Vor der Abgabe des Gutachtens führe ich eine Schlusskontrolle durch und prüfe das Anlagenverzeichnis.",
+     "Ich führe vor Abgabe des Gutachtens eine Schlusskontrolle durch und prüfe das Anlagenverzeichnis.",
+     "Ich führe vor der Abgabe des Gutachtens eine Schlusskontrolle durch und prüfe das Anlagenverzeichnis."
     ],
     "h": "vor + Dat.: vor (der) Abgabe des Gutachtens; затем сразу глагол: führe ich … durch."
    },
@@ -830,7 +833,7 @@ D.days[88] = {
    "Nachdem ich den Keller besichtigt hatte, war klar, dass ein Bausachverständiger hinzugezogen werden sollte.",
    "Im Zuge der Besichtigung habe ich eine orientierende Feuchtemessung durchgeführt."
   ],
-  "facts": "Doppelhaushälfte Hüttenstraße 9, Musterstadt (fiktiv): Baujahr 1958, voll unterkellert, Wohnfläche ca. 118 m²; Ölheizung (Kessel) von 1994; Fenster laut Eigentümerin 2008 erneuert, Rechnungen liegen nicht vor; Riss an der Giebelwand ca. 2 mm, Putz daneben klingt hohl, Gipsmarke gesetzt; Kellerwand zur Straße punktuell feucht (orientierende Messung, Ursache offen); Spitzboden nicht zugänglich (Bodenluke verschlossen, Schlüssel fehlt); Instandsetzungskosten grob geschätzt ca. 18.000 €; Ortstermin 10:00–11:15 Uhr."
+  "facts": "Doppelhaushälfte Hüttenstraße 9, Musterstadt (fiktiv): Baujahr 1958, voll unterkellert, Wohnfläche ca. 118 m²; Ölheizung (Kessel) von 1994; Fenster laut Eigentümerin 2008 erneuert, Rechnungen liegen nicht vor; Riss an der Giebelwand ca. 2 mm, Putz daneben klingt hohl, Gipsmarke gesetzt; Kellerwand zur Straße punktuell feucht (orientierende Messung, Ursache offen); Spitzboden nicht zugänglich (Bodenluke verschlossen, Schlüssel fehlt); Instandsetzungskosten grob geschätzt ca. 18.000 €; Ortstermin 10:00–11:00 Uhr."
  },
  "fluency": {
   "id": "f88",
@@ -846,7 +849,7 @@ D.days[88] = {
   "model": "Bevor ich zu einem Ortstermin fahre, sehe ich mir Grundbuchauszug, Flurkarte, Pläne und den Bodenrichtwert an. Bei der Besichtigung gehe ich systematisch vor: zuerst außen, dann vom Keller bis zum Dach. Während ich die Räume begehe, mache ich Fotos und notiere die Bauteile für die Standardstufen. Wenn ich einen Riss sehe, messe ich die Rissbreite und dokumentiere das Schadensbild. Ist ein Bereich nicht zugänglich, halte ich das ausdrücklich fest. Als ich einmal ein älteres Zweifamilienhaus bewertet habe, war der Keller deutlich feucht. Nachdem ich die Feuchte gemessen hatte, war klar, dass ein Bausachverständiger die Ursache klären muss. Im Zuge der Ausarbeitung schreibe ich zuerst die Beschreibung und danach die Wertermittlung. Vor der Abgabe mache ich eine Schlusskontrolle: Stimmen die Stichtage, sind alle Anlagen im Verzeichnis, ist der Bauschaden nur einmal berücksichtigt? Zum Schluss lasse ich den Entwurf gegenlesen.",
   "shadow": [
    "Bevor ich zum Ortstermin fahre, prüfe ich die Unterlagen.",
-   "Bei der Besichtigung gehe ich vom Keller bis zum Dach.",
+   "Bei der Besichtigung gehe ich systematisch vom Keller bis zum Dach vor.",
    "Während ich die Räume begehe, mache ich Fotos.",
    "Wenn ich einen Riss sehe, messe ich die Rissbreite.",
    "Nicht zugängliche Bereiche halte ich ausdrücklich fest.",

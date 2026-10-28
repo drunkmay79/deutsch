@@ -86,7 +86,7 @@ D.days[85] = {
    "pl": "Eintragungsbewilligungen",
    "ru": "согласие на внесение записи (документ-основание записи)",
    "ex": "Den genauen Inhalt des Leitungsrechts entnehme ich der Eintragungsbewilligung.",
-   "exRu": "Точное содержание права на прокладку коммуникаций я беру из согласия на внесение записи.",
+   "exRu": "Точное содержание права на прокладку коммуникаций я узнаю из согласия на внесение записи.",
    "cloze": "Den genauen Inhalt des Leitungsrechts entnehme ich der ___.",
    "ans": "Eintragungsbewilligung",
    "col": [
@@ -102,7 +102,7 @@ D.days[85] = {
    "de": "Grundbuchblatt",
    "art": "das",
    "pl": "Grundbuchblätter",
-   "ru": "лист (раздел) поземельной книги",
+   "ru": "лист поземельной книги (все записи по одному участку)",
    "ex": "Für jedes Grundstück wird in der Regel ein eigenes Grundbuchblatt geführt.",
    "exRu": "Для каждого участка, как правило, ведётся отдельный лист поземельной книги.",
    "cloze": "Für jedes Grundstück wird in der Regel ein eigenes ___ geführt.",

@@ -148,7 +148,7 @@ D.days[75] = {
     "eine hohe / niedrige Arbeitslosenquote",
     "die Arbeitslosenquote sinkt"
    ],
-   "note": "liegen bei + Dat.: bei 9,1 Prozent. Соединительное -n-: Arbeitslose-n-quote."
+   "note": "liegen bei + Dat.: bei 9,1 Prozent. Первая часть — die Arbeitslosen (безработные, мн. ч.): Arbeitslosen|quote."
   },
   {
    "id": "v75-009",
@@ -273,7 +273,7 @@ D.days[75] = {
    "de": "im regionalen Vergleich",
    "ru": "в региональном сравнении",
    "ex": "Im regionalen Vergleich sind die Kaufpreise in Musterstadt eher moderat.",
-   "exRu": "В региональном сравнении цены покупки в Мустерштадте скорее умеренные.",
+   "exRu": "В региональном сравнении покупные цены в Мустерштадте скорее умеренные.",
    "cloze": "Im ___ Vergleich sind die Kaufpreise in Musterstadt eher moderat.",
    "ans": "regionalen",
    "col": [
@@ -354,7 +354,8 @@ D.days[75] = {
     "a": [
      "Laut",
      "Gemäß",
-     "Nach"
+     "Nach",
+     "Entsprechend"
     ],
     "h": "laut + Dat. стоит перед существительным: laut dem aktuellen Marktbericht. Также возможно gemäß или nach."
    },
@@ -538,7 +539,8 @@ D.days[75] = {
      "Die Zahl der Kauffälle ist dem Marktbericht zufolge 2025 gestiegen.",
      "Die Zahl der Kauffälle ist 2025 dem Marktbericht zufolge gestiegen.",
      "2025 ist die Zahl der Kauffälle dem Marktbericht zufolge gestiegen.",
-     "2025 ist dem Marktbericht zufolge die Zahl der Kauffälle gestiegen."
+     "2025 ist dem Marktbericht zufolge die Zahl der Kauffälle gestiegen.",
+     "Dem Marktbericht zufolge ist 2025 die Zahl der Kauffälle gestiegen."
     ]
    },
    {
@@ -560,7 +562,8 @@ D.days[75] = {
      "Ich komme bei den Rückfragen gern darauf zurück.",
      "Ich komme darauf bei den Rückfragen gern zurück.",
      "Ich komme gern bei den Rückfragen darauf zurück.",
-     "Gern komme ich bei den Rückfragen darauf zurück."
+     "Gern komme ich bei den Rückfragen darauf zurück.",
+     "Gern komme ich darauf bei den Rückfragen zurück."
     ]
    },
    {
@@ -813,7 +816,7 @@ D.days[75] = {
   "ru": "Вы делаете на совещании отдела пятиминутный доклад о рынке жилья в фиктивном Мустерштадте и отвечаете на вопросы руководителя и кредитного консультанта — как на презентационном задании при отборе.",
   "role": "Sie spielen abwechselnd zwei Personen in einer Teambesprechung der Sparkasse Musterstadt (fiktiv): Frau Wagner, Teamleiterin Immobilienbewertung, und Herrn Kessler, Kreditberater; kennzeichnen Sie jeweils, wer spricht, und siezen Sie den Lernenden, der als Gutachter ein Marktupdate hält. Lassen Sie ihn zuerst vier bis fünf Minuten frei vortragen und unterbrechen Sie ihn dabei nicht. Stellen Sie danach nacheinander fünf bis sechs Rückfragen: Quelle einzelner Zahlen, Gründe für das Gefälle zwischen Nordviertel und Südpark, Folgen für Finanzierungen in einfachen Lagen und eine Prognose für 2027; haken Sie nach, wenn eine Quelle oder Vergleichsbasis fehlt. Zum Schluss geben Sie als Sprachcoach kurzes Feedback zu Struktur, Zahlen und Redemitteln: zwei Stärken und höchstens drei Fehler mit korrigierter Version, besonders zu laut/zufolge mit Dativ, zur Wortstellung nach „Was … betrifft“ und zu Pronominaladverbien.",
   "goal": "Свободно, по структуре и со ссылками на источники представить рынок региона, затем уверенно и осторожно ответить на вопросы, используя laut/nach Angaben/zufolge, Was … betrifft, Entscheidend ist, dass … и darauf/davon/daraus.",
-  "open": "Guten Morgen! Wie besprochen haben Sie heute fünf Minuten für das Marktupdate, danach haben Herr Kessler und ich sicher ein paar Fragen. Bitte, Sie haben das Wort.",
+  "open": "Frau Wagner: Guten Morgen! Wie besprochen haben Sie heute fünf Minuten für das Marktupdate, danach haben Herr Kessler und ich sicher ein paar Fragen. Bitte, Sie haben das Wort.",
   "steps": [
    "Kurzvortrag frei halten: Einstieg und Aufbau, Bevölkerung und Arbeitsmarkt, Bautätigkeit, Bodenrichtwerte und Kauffälle, Ausblick",
    "Rückfrage Herr Kessler: Woher stammen die Zahlen zu den Kauffällen und zum Median? – Quelle präzise nennen",

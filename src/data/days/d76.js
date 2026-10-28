@@ -131,7 +131,7 @@ D.days[76] = {
     "Klumpenrisiken begrenzen",
     "ein Klumpenrisiko eingehen"
    ],
-   "note": "der Klumpen — ком, сгусток. Разговорный банковский термин; в надзорных текстах чаще die Risikokonzentration."
+   "note": "der Klumpen — ком, сгусток. Распространённый банковский термин; в надзорных текстах (MaRisk) — die Risikokonzentration."
   },
   {
    "id": "v76-008",
@@ -497,7 +497,8 @@ D.days[76] = {
     "q": "Offenbar sind die Preise in einfachen Lagen gesunken.",
     "a": [
      "Die Preise in einfachen Lagen scheinen gesunken zu sein.",
-     "In einfachen Lagen scheinen die Preise gesunken zu sein."
+     "In einfachen Lagen scheinen die Preise gesunken zu sein.",
+     "Die Preise scheinen in einfachen Lagen gesunken zu sein."
     ],
     "h": "sinken → ist gesunken → Infinitiv Perfekt: gesunken zu sein."
    },
@@ -506,7 +507,8 @@ D.days[76] = {
     "i": "Formulieren Sie mit „scheinen zu“ (Vergangenheit).",
     "q": "Offenbar hat der Markt den Zinsanstieg bereits eingepreist.",
     "a": [
-     "Der Markt scheint den Zinsanstieg bereits eingepreist zu haben."
+     "Der Markt scheint den Zinsanstieg bereits eingepreist zu haben.",
+     "Den Zinsanstieg scheint der Markt bereits eingepreist zu haben."
     ],
     "h": "einpreisen → hat eingepreist → Infinitiv Perfekt: eingepreist zu haben."
    },
@@ -607,7 +609,9 @@ D.days[76] = {
      "Es spricht vieles dafür, dass der Markt den Zinsanstieg bereits eingepreist hat.",
      "Es spricht vieles dafür, dass der Markt den Zinsanstieg schon eingepreist hat.",
      "Vieles spricht dafür, dass der Markt den Zinsanstieg bereits eingepreist hat.",
-     "Vieles spricht dafür, dass der Markt den Zinsanstieg schon eingepreist hat."
+     "Vieles spricht dafür, dass der Markt den Zinsanstieg schon eingepreist hat.",
+     "Es spricht viel dafür, dass der Markt den Zinsanstieg bereits eingepreist hat.",
+     "Es spricht viel dafür, dass der Markt den Zinsanstieg schon eingepreist hat."
     ],
     "h": "sprechen für → dafür, dass …; einpreisen → hat eingepreist (в придаточном hat в конце)."
    },
@@ -716,7 +720,7 @@ D.days[76] = {
   "id": "t76",
   "kind": "Diskussionspapier",
   "title": "Thesenpapier: Risiken im Wohnimmobilienmarkt 2026–2030",
-  "de": "Thesenpapier der Abteilung Immobilienbewertung der Sparkasse Musterstadt: Risiken im Wohnimmobilienmarkt 2026 bis 2030. Alle Zahlen sind fiktiv.\n\nNach der Preiskorrektur der letzten Jahre scheint sich der Markt in Musterstadt zu stabilisieren. Für die nächsten Jahre unterscheiden wir drei Szenarien. Im Basisszenario steigen die Preise um ein bis zwei Prozent pro Jahr; diesem Szenario messen wir die höchste Eintrittswahrscheinlichkeit bei. Im Stressszenario steigen die Zinsen um 1,5 Prozentpunkte, und die Preise sinken um zehn Prozent. Im Positivszenario sollen die Preise laut einer externen Studie um drei Prozent pro Jahr zulegen. Diese Prognose halten wir für zu optimistisch.\n\nDas größte Risiko sehen wir bei den Anschlussfinanzierungen: Bei rund 30 Prozent unserer Wohnbaudarlehen endet die Zinsbindung bis 2028. Es ist nicht auszuschließen, dass einzelne Kreditnehmer die höhere Rate nicht tragen können.\n\nZweitens scheinen energetisch unsanierte Häuser deutlich an Wert verloren zu haben. Käufer preisen die Sanierungskosten inzwischen offenbar vollständig ein. Drittens könnte in einfachen Lagen ein Überangebot entstehen, wenn dort viele ältere Eigentümer gleichzeitig verkaufen. Viertens besteht ein regionales Klumpenrisiko, weil der weit überwiegende Teil unserer Sicherheiten im eigenen Geschäftsgebiet liegt.\n\nFolgerung: Die Sicherheitenwerte sind eng zu überwachen. Für die Pfandbriefdeckung verlangt die BelWertV ohnehin, den Beleihungswert längstens jährlich zu überwachen. Gibt es Anhaltspunkte für eine deutliche Verschlechterung, etwa einen spürbaren Rückgang des regionalen Preisniveaus, ist der Beleihungswert zu überprüfen und bei Bedarf zu mindern.",
+  "de": "Thesenpapier der Abteilung Immobilienbewertung der Sparkasse Musterstadt: Risiken im Wohnimmobilienmarkt 2026 bis 2030. Alle Zahlen sind fiktiv.\n\nNach der Preiskorrektur der letzten Jahre scheint sich der Markt in Musterstadt zu stabilisieren. Für die nächsten Jahre unterscheiden wir drei Szenarien. Im Basisszenario steigen die Preise um ein bis zwei Prozent pro Jahr; diesem Szenario messen wir die höchste Eintrittswahrscheinlichkeit bei. Im Stressszenario steigen die Zinsen um 1,5 Prozentpunkte, und die Preise sinken um zehn Prozent. Im Positivszenario sollen die Preise laut einer externen Studie um drei Prozent pro Jahr zulegen. Diese Prognose halten wir für zu optimistisch.\n\nDas größte Risiko sehen wir bei den Anschlussfinanzierungen: Bei rund 30 Prozent unserer Wohnbaudarlehen endet die Zinsbindung bis 2028. Es ist nicht auszuschließen, dass einzelne Kreditnehmer die höhere Rate nicht tragen können.\n\nZweitens scheinen energetisch unsanierte Häuser deutlich an Wert verloren zu haben. Käufer preisen die Sanierungskosten inzwischen offenbar vollständig ein. Drittens könnte in einfachen Lagen ein Überangebot entstehen, wenn dort viele ältere Eigentümer gleichzeitig verkaufen. Viertens besteht ein regionales Klumpenrisiko, weil der weit überwiegende Teil unserer Sicherheiten im eigenen Geschäftsgebiet liegt.\n\nFolgerung: Die Sicherheitenwerte sind eng zu überwachen. Für die Pfandbriefdeckung verlangt die BelWertV ohnehin, den Beleihungswert längstens jährlich zu überwachen. Gibt es Anhaltspunkte für eine nicht nur unerhebliche Verschlechterung, etwa einen deutlichen Rückgang des regionalen Preisniveaus, ist der Beleihungswert zu überprüfen und bei Bedarf zu mindern.",
   "ru": "Вымышленный внутренний аналитический документ отдела оценки сберкассы: три сценария развития рынка жилья до 2030 года, риски рефинансирования, неотремонтированных домов, избытка предложения и региональной концентрации, вывод — внимательно отслеживать стоимость залогов.",
   "q": [
    {
@@ -837,7 +841,7 @@ D.days[76] = {
     "Das ist eine Vermutung, keine gesicherte Tatsache.",
     "Deshalb sollten wir die Sicherheitenwerte eng überwachen."
   ],
-  "facts": "Thesenpapier Sparkasse Musterstadt (fiktiv): Basisszenario +1 bis +2 % pro Jahr (höchste Eintrittswahrscheinlichkeit); Stressszenario Zinsen +1,5 Prozentpunkte, Preise −10 %; Positivszenario laut externer Studie +3 % pro Jahr. Rund 30 % der Wohnbaudarlehen mit Ende der Zinsbindung bis 2028. Weitere Risiken: energetisch unsanierte Häuser, mögliches Überangebot in einfachen Lagen, regionales Klumpenrisiko. BelWertV (Pfandbriefdeckung): Beleihungswert längstens jährlich überwachen, bei deutlicher Verschlechterung überprüfen und bei Bedarf mindern."
+  "facts": "Thesenpapier Sparkasse Musterstadt (fiktiv): Basisszenario +1 bis +2 % pro Jahr (höchste Eintrittswahrscheinlichkeit); Stressszenario Zinsen +1,5 Prozentpunkte, Preise −10 %; Positivszenario laut externer Studie +3 % pro Jahr. Rund 30 % der Wohnbaudarlehen mit Ende der Zinsbindung bis 2028. Weitere Risiken: energetisch unsanierte Häuser, mögliches Überangebot in einfachen Lagen, regionales Klumpenrisiko. BelWertV (Pfandbriefdeckung): Beleihungswert längstens jährlich überwachen, bei nicht nur unerheblicher Verschlechterung überprüfen und bei Bedarf mindern."
  },
  "fluency": {
   "id": "f76",
@@ -850,7 +854,7 @@ D.days[76] = {
    "Einschränkung: einfache Lagen mit Leerstand, unsanierte Häuser",
    "Fazit mit abgestufter Sicherheit: höchstwahrscheinlich, möglicherweise, kaum"
   ],
-  "model": "Ob es im Ruhrgebiet eine Preisblase gibt, ist eine spannende Frage. Für eine Blase spricht auf den ersten Blick, dass die Kaufpreise nach vielen Jahren niedriger Zinsen stark gestiegen waren. Laut einigen Studien sollen die Preise bald wieder kräftig anziehen. Da sehe ich das allerdings etwas anders. Im Ruhrgebiet scheinen die Kaufpreise im Verhältnis zu den Mieten und Einkommen eher moderat zu sein. Außerdem hat der Markt nach dem Zinsanstieg bereits eine Preiskorrektur erlebt. Gleichzeitig wird derzeit relativ wenig gebaut, ein Überangebot in guten Lagen ist also kaum zu erwarten. In einfachen Lagen mit Leerstand ist aber nicht auszuschließen, dass die Preise weiter nachgeben. Mein Fazit: Eine flächendeckende Preisblase gibt es im Ruhrgebiet höchstwahrscheinlich nicht. Möglicherweise wachsen aber die Unterschiede zwischen guten und einfachen Lagen und zwischen sanierten und unsanierten Häusern. Als Gutachter betrachte ich deshalb jedes Objekt einzeln.",
+  "model": "Ob es im Ruhrgebiet eine Preisblase gibt, ist eine spannende Frage. Für eine Blase spricht auf den ersten Blick, dass die Kaufpreise nach vielen Jahren niedriger Zinsen stark gestiegen sind. Laut einigen Studien sollen die Preise bald wieder kräftig anziehen. Da sehe ich das allerdings etwas anders. Im Ruhrgebiet scheinen die Kaufpreise im Verhältnis zu den Mieten und Einkommen eher moderat zu sein. Außerdem hat der Markt nach dem Zinsanstieg bereits eine Preiskorrektur erlebt. Gleichzeitig wird derzeit relativ wenig gebaut, ein Überangebot in guten Lagen ist also kaum zu erwarten. In einfachen Lagen mit Leerstand ist aber nicht auszuschließen, dass die Preise weiter nachgeben. Mein Fazit: Eine flächendeckende Preisblase gibt es im Ruhrgebiet höchstwahrscheinlich nicht. Möglicherweise wachsen aber die Unterschiede zwischen guten und einfachen Lagen und zwischen sanierten und unsanierten Häusern. Als Gutachter betrachte ich deshalb jedes Objekt einzeln.",
   "shadow": [
    "Ob es im Ruhrgebiet eine Preisblase gibt, ist eine spannende Frage.",
    "Laut einigen Studien sollen die Preise bald wieder kräftig anziehen.",

@@ -412,7 +412,8 @@ D.days[80] = {
     "a": [
      "Zunächst prüfe ich die Eckdaten des Objekts.",
      "Ich prüfe zunächst die Eckdaten des Objekts.",
-     "Die Eckdaten des Objekts prüfe ich zunächst."
+     "Die Eckdaten des Objekts prüfe ich zunächst.",
+     "Ich prüfe die Eckdaten des Objekts zunächst."
     ],
     "h": "Глагол всегда на 2-м месте: Zunächst prüfe ich … / Ich prüfe zunächst …"
    },
@@ -485,8 +486,7 @@ D.days[80] = {
     "t": "order",
     "q": "nachdem ich / den Rohertrag / berechnet habe / vergleiche ich / den Vervielfältiger / mit dem Marktbericht",
     "a": [
-     "Nachdem ich den Rohertrag berechnet habe, vergleiche ich den Vervielfältiger mit dem Marktbericht.",
-     "Ich vergleiche den Vervielfältiger mit dem Marktbericht, nachdem ich den Rohertrag berechnet habe."
+     "Nachdem ich den Rohertrag berechnet habe, vergleiche ich den Vervielfältiger mit dem Marktbericht."
     ],
     "h": "Придаточное с nachdem: глагол в конце (berechnet habe); затем главное предложение начинается с глагола (vergleiche ich)."
    },

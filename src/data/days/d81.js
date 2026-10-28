@@ -591,7 +591,10 @@ D.days[81] = {
      "Darüber habe ich mir vor dem Gespräch schon Gedanken gemacht.",
      "Schon vor dem Gespräch habe ich mir Gedanken darüber gemacht.",
      "Schon vor dem Gespräch habe ich mir darüber Gedanken gemacht.",
-     "Ich habe mir schon vor dem Gespräch darüber Gedanken gemacht."
+     "Ich habe mir schon vor dem Gespräch darüber Gedanken gemacht.",
+     "Vor dem Gespräch habe ich mir schon Gedanken darüber gemacht.",
+     "Vor dem Gespräch habe ich mir schon darüber Gedanken gemacht.",
+     "Vor dem Gespräch habe ich mir darüber schon Gedanken gemacht."
     ],
     "h": "sich (Dat.) Gedanken über etw. machen → darüber; Perfekt: Ich habe mir … gemacht."
    },
@@ -810,16 +813,16 @@ D.days[81] = {
   "topic": "Mein größter Misserfolg und was ich daraus gelernt habe",
   "ru": "Две минуты по схеме «ситуация – просчёт – последствия – вывод» на вымышленном или обезличенном примере из оценки",
   "points": [
-   "Einstieg mit einer Redewendung zum Zeitgewinn (Da muss ich kurz ausholen …)",
+   "Einstieg mit einer Redewendung zum Zeitgewinn (Da muss ich etwas weiter ausholen …)",
    "Situation: welches Objekt, welche Aufgabe",
    "Fehleinschätzung: welche Annahme war zu optimistisch",
    "Konsequenz: wie der Fehler entdeckt und korrigiert wurde",
    "Lerneffekt mit mindestens zwei Dativ-Reflexivverben (sich etw. eingestehen, sich etw. vornehmen)",
    "Abschluss: warum Sie heute offen darüber sprechen"
   ],
-  "model": "Da muss ich kurz ausholen, aber ich fasse mich kurz. Vor einigen Jahren habe ich ein älteres Bürogebäude bewertet. Der Eigentümer hatte gerade das Dach und die Fenster erneuert, und ich habe die Restnutzungsdauer deshalb zu optimistisch angesetzt. Ein erfahrener Kollege hat das Gutachten geprüft und mich auf die veraltete Haustechnik hingewiesen. Zuerst habe ich mich ein bisschen gerechtfertigt, aber dann habe ich mir den Fehler eingestanden. Ich habe die Modernisierungen noch einmal systematisch erfasst, die Restnutzungsdauer korrigiert und das Gutachten rechtzeitig vor der Kreditentscheidung angepasst. Der Wert ist dadurch spürbar gesunken. Seitdem habe ich mir vorgenommen, jede Annahme ausführlich zu begründen und bei Zweifeln eine zweite Meinung einzuholen. Heute bin ich mir sicher, dass mich dieser Misserfolg zu einem genaueren Gutachter gemacht hat. Ich spreche offen darüber, weil Fehler zum Beruf gehören, wenn man aus ihnen lernt.",
+  "model": "Da muss ich etwas weiter ausholen, aber ich fasse mich kurz. Vor einigen Jahren habe ich ein älteres Bürogebäude bewertet. Der Eigentümer hatte gerade das Dach und die Fenster erneuert, und ich habe die Restnutzungsdauer deshalb zu optimistisch angesetzt. Ein erfahrener Kollege hat das Gutachten geprüft und mich auf die veraltete Haustechnik hingewiesen. Zuerst habe ich mich ein bisschen gerechtfertigt, aber dann habe ich mir den Fehler eingestanden. Ich habe die Modernisierungen noch einmal systematisch erfasst, die Restnutzungsdauer korrigiert und das Gutachten rechtzeitig vor der Kreditentscheidung angepasst. Der Wert ist dadurch spürbar gesunken. Seitdem habe ich mir vorgenommen, jede Annahme ausführlich zu begründen und bei Zweifeln eine zweite Meinung einzuholen. Heute bin ich mir sicher, dass mich dieser Misserfolg zu einem genaueren Gutachter gemacht hat. Ich spreche offen darüber, weil Fehler zum Beruf gehören, wenn man aus ihnen lernt.",
   "shadow": [
-   "Da muss ich kurz ausholen, aber ich fasse mich kurz.",
+   "Da muss ich etwas weiter ausholen, aber ich fasse mich kurz.",
    "Ich habe die Restnutzungsdauer zu optimistisch angesetzt.",
    "Zuerst habe ich mich ein bisschen gerechtfertigt.",
    "Dann habe ich mir den Fehler eingestanden.",

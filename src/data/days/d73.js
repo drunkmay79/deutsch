@@ -148,7 +148,7 @@ D.days[73] = {
     "auf einem Tiefststand liegen",
     "seit dem Tiefststand 2023"
    ],
-   "note": "Höchst-/Tiefst- — превосходная степень внутри слова; род по der Stand. Не путать с der Tiefpunkt (тоже «низшая точка»)."
+   "note": "Höchst-/Tiefst- — превосходная степень внутри слова; род по der Stand. Близкий синоним: der Tiefpunkt (низшая точка)."
   },
   {
    "id": "v73-009",
@@ -661,7 +661,8 @@ D.days[73] = {
     "q": "Der Index liegt noch unterhalb dem Höchststand von 2022.",
     "a": [
      "Der Index liegt noch unterhalb des Höchststands von 2022.",
-     "Der Index liegt noch unterhalb des Höchststandes von 2022."
+     "Der Index liegt noch unterhalb des Höchststandes von 2022.",
+     "Der Index liegt noch unter dem Höchststand von 2022."
     ],
     "h": "unterhalb + Gen.: des Höchststands. (Dat. — только после unter: unter dem Höchststand.)"
    }
@@ -797,8 +798,8 @@ D.days[73] = {
     "ru": "сделка купли-продажи (учтённая в статистике)"
    },
    {
-    "de": "der dargestellte Zeitraum",
-    "ru": "показанный (на графике) период"
+    "de": "der Zinsanstieg",
+    "ru": "рост процентных ставок"
    },
    {
     "de": "im Preis nachgeben",

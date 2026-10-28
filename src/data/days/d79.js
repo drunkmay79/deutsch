@@ -76,7 +76,7 @@ D.days[79] = {
     "die Anerkennung ausländischer Abschlüsse",
     "die berufliche Anerkennung"
    ],
-   "note": "Gen.: die Anerkennung des Abschlusses. Обязательна только для регулируемых профессий (врач, учитель и т. п.); для нерегулируемых хватает Zeugnisbewertung."
+   "note": "Gen.: die Anerkennung des Abschlusses. Обязательна только для регулируемых профессий (врач, учитель и т. п.); для нерегулируемых признание не нужно, но можно получить Zeugnisbewertung."
   },
   {
    "id": "v79-005",
@@ -84,7 +84,7 @@ D.days[79] = {
    "de": "Zeugnisbewertung",
    "art": "die",
    "pl": "Zeugnisbewertungen",
-   "ru": "оценка иностранного диплома о высшем образовании (выдаёт ZAB); для нерегулируемых профессий заменяет формальное признание",
+   "ru": "оценка иностранного диплома о высшем образовании (выдаёт ZAB); не признание, но помогает работодателю при нерегулируемых профессиях",
    "ex": "Die Zeugnisbewertung zeigt Arbeitgebern, wie mein ausländischer Hochschulabschluss einzuordnen ist.",
    "exRu": "Оценка диплома показывает работодателям, как соотносится мой иностранный диплом с немецкими.",
    "cloze": "Die ___ zeigt Arbeitgebern, wie mein ausländischer Hochschulabschluss einzuordnen ist.",
@@ -323,7 +323,7 @@ D.days[79] = {
   "id": "g-d79",
   "de": "Perfekt und Präteritum II: sein ohne Bewegung, Doppelinfinitiv und seit + Präsens",
   "ru": "Perfekt и Präteritum II: sein без движения, двойной инфинитив и seit + настоящее время",
-  "rule": "<p><b>1. Perfekt с sein без движения.</b> Кроме глаголов движения, sein берут глаголы события и изменения состояния: <b>gelingen, misslingen, passieren, geschehen, vorkommen, auffallen, bleiben, werden, sein</b>. <b>Es ist mir gelungen, … · Was ist damals passiert?</b></p><p><b>2. Один глагол — два вспомогательных.</b> Без Akk.-дополнения — sein, с ним — haben: <b>Die Verbindung ist abgebrochen</b> / <b>Ich habe das Projekt abgebrochen</b>. Внимание: <b>Ich bin umgezogen</b> (переехал), но <b>Ich habe mich umgezogen</b> (переоделся).</p><p><b>3. Двойной инфинитив</b> (модальные глаголы и lassen + инфинитив): <b>Ich habe meinen Abschluss bewerten lassen. Ich habe neu anfangen müssen.</b> В придаточном haben стоит перед обоими инфинитивами: <b>…, weil ich ihn habe bewerten lassen.</b> Устно проще: <b>…, weil ich neu anfangen musste.</b> Без инфинитива — обычное причастие: <b>Ich habe die Unterlagen im Büro gelassen.</b></p><p><b>4. seit + Präsens</b> — состояние длится до сегодня: <b>Seit drei Jahren wohne ich in Musterstadt</b> (не «habe gewohnt»). <b>vor + Perfekt</b> — событие завершено: <b>Vor drei Jahren bin ich umgezogen.</b></p><p><b>5. Plusquamperfekt</b> — то, что было ещё раньше: <b>Als ich nach Deutschland kam, hatte ich bereits viele Jahre Gutachten erstellt / war ich lange im Kreditbereich tätig gewesen.</b></p><p>Устно sein, haben и модальные — чаще в Präteritum (<b>war, hatte, musste</b>), остальное — в Perfekt.</p>",
+  "rule": "<p><b>1. Perfekt с sein без движения.</b> Кроме глаголов движения, sein берут глаголы события и изменения состояния, а также bleiben и sein: <b>gelingen, misslingen, passieren, geschehen, vorkommen, auffallen, werden, bleiben, sein</b>. <b>Es ist mir gelungen, … · Was ist damals passiert?</b></p><p><b>2. Один глагол — два вспомогательных.</b> Без Akk.-дополнения — sein, с ним — haben: <b>Die Verbindung ist abgebrochen</b> / <b>Ich habe das Projekt abgebrochen</b>. Внимание: <b>Ich bin umgezogen</b> (переехал), но <b>Ich habe mich umgezogen</b> (переоделся).</p><p><b>3. Двойной инфинитив</b> (модальные глаголы и lassen + инфинитив): <b>Ich habe meinen Abschluss bewerten lassen. Ich habe neu anfangen müssen.</b> В придаточном haben стоит перед обоими инфинитивами: <b>…, weil ich ihn habe bewerten lassen.</b> Устно проще: <b>…, weil ich neu anfangen musste.</b> Без инфинитива — обычное причастие: <b>Ich habe die Unterlagen im Büro gelassen.</b></p><p><b>4. seit + Präsens</b> — состояние длится до сегодня: <b>Seit drei Jahren wohne ich in Musterstadt</b> (не «habe gewohnt»). <b>vor + Perfekt</b> — событие завершено: <b>Vor drei Jahren bin ich umgezogen.</b></p><p><b>5. Plusquamperfekt</b> — то, что было ещё раньше: <b>Als ich nach Deutschland kam, hatte ich bereits viele Jahre Gutachten erstellt / war ich lange im Kreditbereich tätig gewesen.</b></p><p>Устно sein, haben и модальные — чаще в Präteritum (<b>war, hatte, musste</b>), остальное — в Perfekt.</p>",
   "examples": [
    {
     "de": "Es ist mir gelungen, die Zertifizierung innerhalb eines Jahres abzuschließen.",
@@ -418,7 +418,8 @@ D.days[79] = {
      "Seit zwei Jahren arbeite ich als Sachverständiger in Musterstadt.",
      "Seit zwei Jahren arbeite ich in Musterstadt als Sachverständiger.",
      "In Musterstadt arbeite ich seit zwei Jahren als Sachverständiger.",
-     "Als Sachverständiger arbeite ich seit zwei Jahren in Musterstadt."
+     "Als Sachverständiger arbeite ich seit zwei Jahren in Musterstadt.",
+     "Ich arbeite als Sachverständiger seit zwei Jahren in Musterstadt."
     ],
     "h": "seit + Präsens: arbeite (не «habe gearbeitet»). Глагол — на 2-м месте."
    },
@@ -487,7 +488,9 @@ D.days[79] = {
      "Ich wohne seit drei Jahren schon in Musterstadt.",
      "Schon seit drei Jahren wohne ich in Musterstadt.",
      "In Musterstadt wohne ich seit drei Jahren.",
-     "In Musterstadt wohne ich schon seit drei Jahren."
+     "In Musterstadt wohne ich schon seit drei Jahren.",
+     "Ich wohne in Musterstadt seit drei Jahren.",
+     "Ich wohne in Musterstadt schon seit drei Jahren."
     ],
     "h": "Состояние до сегодня → seit + Präsens: Seit drei Jahren wohne ich …"
    },
@@ -529,7 +532,9 @@ D.days[79] = {
      "Der Wiedereinstieg ist mir schnell nach dem Kurs gelungen.",
      "Schnell ist mir nach dem Kurs der Wiedereinstieg gelungen.",
      "Nach dem Kurs ist mir schnell der Wiedereinstieg gelungen.",
-     "Mir ist nach dem Kurs schnell der Wiedereinstieg gelungen."
+     "Mir ist nach dem Kurs schnell der Wiedereinstieg gelungen.",
+     "Mir ist der Wiedereinstieg schnell nach dem Kurs gelungen.",
+     "Schnell ist mir der Wiedereinstieg nach dem Kurs gelungen."
     ],
     "h": "gelingen: ist + Partizip в конце; человек в Dat. (mir)."
    },

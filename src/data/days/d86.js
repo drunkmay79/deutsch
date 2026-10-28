@@ -68,7 +68,7 @@ D.days[86] = {
    "pl": "Zeitwerte",
    "ru": "текущая (остаточная) стоимость",
    "ex": "Die Fertiggarage setze ich pauschal mit ihrem Zeitwert von 5.000 Euro an.",
-   "exRu": "Сборный гараж я учитываю по паушальной текущей стоимости 5 000 евро.",
+   "exRu": "Сборный гараж я укрупнённо учитываю по его текущей стоимости — 5 000 евро.",
    "cloze": "Die Fertiggarage setze ich pauschal mit ihrem ___ von 5.000 Euro an.",
    "ans": "Zeitwert",
    "col": [

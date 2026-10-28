@@ -456,7 +456,9 @@ D.days[74] = {
      "Die Zahl der Kauffälle im Erstverkauf ist um 35 Prozent zurückgegangen.",
      "Die Kauffälle im Erstverkauf sind um 35 Prozent zurückgegangen.",
      "Im Erstverkauf ist die Zahl der Kauffälle um 35 Prozent zurückgegangen.",
-     "Im Erstverkauf sind die Kauffälle um 35 Prozent zurückgegangen."
+     "Im Erstverkauf sind die Kauffälle um 35 Prozent zurückgegangen.",
+     "Die Zahl der Kauffälle ist im Erstverkauf um 35 Prozent zurückgegangen.",
+     "Die Kauffälle sind im Erstverkauf um 35 Prozent zurückgegangen."
     ],
     "h": "zurückgehen — движение/изменение состояния → Perfekt с sein. die Zahl — ед. ч. (ist), die Kauffälle — мн. ч. (sind)."
    },
@@ -534,7 +536,8 @@ D.days[74] = {
      "Die Preise im Weiterverkauf haben sich nach einem leichten Rückgang stabilisiert.",
      "Nach einem leichten Rückgang haben sich im Weiterverkauf die Preise stabilisiert.",
      "Die Preise haben sich im Weiterverkauf nach einem leichten Rückgang stabilisiert.",
-     "Die Preise haben sich nach einem leichten Rückgang im Weiterverkauf stabilisiert."
+     "Die Preise haben sich nach einem leichten Rückgang im Weiterverkauf stabilisiert.",
+     "Im Weiterverkauf haben sich nach einem leichten Rückgang die Preise stabilisiert."
     ],
     "h": "Возвратный глагол → Perfekt с haben: haben sich stabilisiert; Partizip в конце."
    },
@@ -608,7 +611,9 @@ D.days[74] = {
      "Der Geldumsatz hat stärker zugenommen als die Zahl der Kauffälle.",
      "Der Geldumsatz hat stärker zugenommen als die Kauffälle.",
      "Der Geldumsatz ist stärker gewachsen als die Zahl der Kauffälle.",
-     "Der Geldumsatz ist stärker gewachsen als die Kauffälle."
+     "Der Geldumsatz ist stärker gewachsen als die Kauffälle.",
+     "Der Geldumsatz ist stärker angestiegen als die Zahl der Kauffälle.",
+     "Der Geldumsatz ist stärker angestiegen als die Kauffälle."
     ],
     "h": "steigen, wachsen → ist gestiegen / ist gewachsen; zunehmen → hat zugenommen. als-часть стоит после Partizip."
    },
@@ -756,7 +761,7 @@ D.days[74] = {
   "kind": "fach",
   "title": "Fachgespräch: Daten des Gutachterausschusses",
   "ru": "Владелица оценочного бюро на собеседовании проверяет, как вы читаете отчёт о рынке и применяете данные комитета экспертов",
-  "role": "Sie sind Frau Albers, Inhaberin eines Sachverständigenbüros für Immobilienbewertung in Musterstadt, und führen den fachlichen Teil eines Vorstellungsgesprächs; der Lernende bewirbt sich als Sachverständiger, siezen Sie ihn. Sie legen ihm den Auszug aus dem Grundstücksmarktbericht (Datenkarte) vor und stellen nacheinander, immer nur eine Frage pro Beitrag: welche Daten des Gutachterausschusses er im Verkehrswertgutachten nutzt, warum Median und Mittelwert auseinanderliegen, warum Erst- und Weiterverkauf getrennt ausgewertet werden, wie er mit nur 46 Kauffällen umgeht, was Modellkonformität bei Sachwertfaktoren bedeutet und wie aktuell die Daten zum Wertermittlungsstichtag sein müssen. Bitten Sie ihn mindestens einmal, eine Angabe im Nominalstil, etwa „Rückgang der Kauffälle im Erstverkauf von 71 auf 46“, mündlich mit einem Verb wiederzugeben. Am Ende geben Sie kurzes Feedback zu höchstens drei Fehlern, vor allem bei um/auf, Adjektivendungen und Perfekt mit sein/haben.",
+  "role": "Sie sind Frau Albers, Inhaberin eines Sachverständigenbüros für Immobilienbewertung in Musterstadt, und führen den fachlichen Teil eines Vorstellungsgesprächs; der Lernende bewirbt sich als Sachverständiger, siezen Sie ihn. Sie legen ihm den Auszug aus dem Grundstücksmarktbericht (Datenkarte) vor und fragen nacheinander, immer nur eine Frage pro Beitrag, welche Daten des Gutachterausschusses er im Verkehrswertgutachten nutzt, warum Median und Mittelwert auseinanderliegen, warum Erst- und Weiterverkauf getrennt ausgewertet werden, wie er mit nur 46 Kauffällen umgeht, was Modellkonformität bei Sachwertfaktoren bedeutet und wie aktuell die Daten zum Wertermittlungsstichtag sein müssen. Bitten Sie ihn mindestens einmal, eine Angabe im Nominalstil, etwa „Rückgang der Kauffälle im Erstverkauf von 71 auf 46“, mündlich mit einem Verb wiederzugeben. Am Ende geben Sie kurzes Feedback zu höchstens drei Fehlern, vor allem bei um/auf, Adjektivendungen und Perfekt mit sein/haben.",
   "goal": "Уверенно объяснить, какие данные Gutachterausschuss вы используете и как; растолковать медиану, среднее и разброс; обосновать осторожность при малом числе сделок; упомянуть принцип модельного соответствия (§ 10 ImmoWertV) и актуальность данных; устно «развернуть» номинальные формулировки отчёта в глаголы.",
   "open": "Schön, dass Sie da sind. Ich habe Ihnen einen Auszug aus dem aktuellen Grundstücksmarktbericht mitgebracht. Zum Einstieg: Welche Daten des Gutachterausschusses nutzen Sie, wenn Sie ein Verkehrswertgutachten erstellen?",
   "steps": [

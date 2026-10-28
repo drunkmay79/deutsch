@@ -22,7 +22,7 @@ D.days[68] = {
     "den Wirtschaftsplan aufstellen",
     "die Vorschüsse nach dem Wirtschaftsplan"
    ],
-   "note": "План — на будущий год, Jahresabrechnung — отчёт о прошлом. Составляет управляющий (aufstellen), собственники голосуют об авансах на его основе; в речи: der Wirtschaftsplan wurde beschlossen."
+   "note": "План — на будущий год, Jahresabrechnung — отчёт о прошлом. Составляет управляющий (aufstellen), на его основе собственники принимают решение об авансовых платежах; в речи: der Wirtschaftsplan wurde beschlossen."
   },
   {
    "id": "v68-002",
@@ -202,7 +202,7 @@ D.days[68] = {
     "eine ausreichende Rücklage ansparen",
     "der angesparte Betrag"
    ],
-   "note": "Отделяемая приставка: Die Gemeinschaft spart Geld an. Синонимы: ansammeln (так в законе), aufstocken — пополнять уже имеющийся фонд."
+   "note": "Отделяемая приставка: Die Gemeinschaft spart Geld an. Синонимы: ansammeln (в законе: die Ansammlung einer angemessenen Erhaltungsrücklage, § 19 WEG), aufstocken — пополнять уже имеющийся фонд."
   },
   {
    "id": "v68-012",
@@ -675,7 +675,7 @@ D.days[68] = {
     "de": "Die Sonderumlage hätte im Exposé erwähnt werden müssen."
    },
    {
-    "ru": "Возможно, задолженность по взносам тем временем уже предъявлена в суде.",
+    "ru": "Возможно, долги по взносам тем временем уже предъявлены к взысканию в суде.",
     "de": "Die Hausgeldrückstände könnten inzwischen gerichtlich geltend gemacht worden sein."
    }
   ]
@@ -778,7 +778,7 @@ D.days[68] = {
   "kind": "roleplay",
   "title": "Kapitalanleger hält die WEG-Unterlagen für Papierkram",
   "ru": "Инвестор, который покупает сданную квартиру, нетерпеливо спрашивает, зачем оценщику сберкассы протоколы и отчёты сообщества собственников",
-  "role": "Sie sind Herr Becker, Kapitalanleger und Kunde der Sparkasse Musterstadt; Sie wollen die vermietete Wohnung Lärchenweg 22, Nr. 5, für 159.000 Euro kaufen und sprechen mit dem Gutachter der Sparkasse, den Sie siezen. Sie denken nur an die Rendite, halten den „Papierkram“ der WEG für überflüssig und fragen ungeduldig, immer nur eine Frage pro Beitrag: warum er Protokolle und Vermögensbericht sehen will, ob Sie die beschlossene Sonderumlage zahlen müssen, ob Sie die Hausgeldrückstände eines anderen Eigentümers betreffen und warum eine bezugsfreie Wohnung mehr wert wäre. Wenn er eine Rechtsfrage sehr verbindlich beantwortet, fragen Sie skeptisch nach („Sind Sie da ganz sicher?“), sodass er auf den Kaufvertrag und den Notar verweisen muss. Reagieren Sie auf seine Erklärungen natürlich und benutzen Sie die Datenkarte. Am Ende geben Sie kurzes Feedback zu höchstens drei Fehlern, vor allem beim Passiv mit Modalverben in der Vergangenheit (hätte … werden müssen, dürfte … worden sein).",
+  "role": "Sie sind Herr Becker, Kapitalanleger und Kunde der Sparkasse Musterstadt; Sie wollen die vermietete Wohnung Lärchenweg 22, Nr. 5, für 159.000 Euro kaufen und sprechen mit dem Gutachter der Sparkasse, den Sie siezen. Sie denken nur an die Rendite, halten den „Papierkram“ der WEG für überflüssig und fragen ungeduldig, immer nur eine Frage pro Beitrag: warum er Protokolle und Vermögensbericht sehen will, ob Sie die beschlossene Sonderumlage zahlen müssen, ob die Hausgeldrückstände eines anderen Eigentümers Sie betreffen und warum eine bezugsfreie Wohnung mehr wert wäre. Wenn er eine Rechtsfrage sehr verbindlich beantwortet, fragen Sie skeptisch nach („Sind Sie da ganz sicher?“), sodass er auf den Kaufvertrag und den Notar verweisen muss. Reagieren Sie auf seine Erklärungen natürlich und benutzen Sie die Datenkarte. Am Ende geben Sie kurzes Feedback zu höchstens drei Fehlern, vor allem beim Passiv mit Modalverben in der Vergangenheit (hätte … werden müssen, dürfte … worden sein).",
   "goal": "Спокойно и по делу объяснить инвестору, зачем нужны документы WEG и как сбор, резервный фонд и долги других собственников влияют на оценку; по правовым вопросам сослаться на договор купли-продажи и нотариуса; использовать пассив с модальными глаголами в прошедшем времени.",
   "open": "Guten Tag. Ich will die Wohnung im Lärchenweg kaufen, der Mieter zahlt pünktlich, die Rendite stimmt. Warum brauchen Sie jetzt noch Protokolle und einen Vermögensbericht? Das ist doch reiner Papierkram!",
   "steps": [

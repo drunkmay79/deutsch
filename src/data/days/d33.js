@@ -282,7 +282,7 @@ D.days[33] = {
    "col": [
     "ergänzend zur Plausibilisierung",
     "vorrangig heranziehen",
-    "zog heran – hat herangezogen"
+    "ein weiteres Verfahren heranziehen"
    ],
    "note": "heranziehen — отделяемый: ich ziehe … heran; Perfekt hat herangezogen; пассив: Das Verfahren wird ergänzend herangezogen. О людях чаще hinzuziehen: einen Sachverständigen hinzuziehen."
   },
@@ -811,7 +811,7 @@ D.days[33] = {
    "Abschluss: um ein allgemeines Fazit in zwei, drei Sätzen bitten (Nach welchen Kriterien wählen Sie grundsätzlich?) und kurzes Feedback geben"
   ],
   "use": [
-   "Nach § 6 ImmoWertV richte ich mich nach der Objektart, der Marktpraxis und der Datenlage.",
+   "Gemäß § 6 ImmoWertV richte ich mich nach der Objektart, der Marktpraxis und der Datenlage.",
    "Ich orientiere mich daran, wie Käufer solcher Objekte ihren Kaufpreis kalkulieren.",
    "Einerseits ist die Halle eigengenutzt, andererseits werden Gewerbeobjekte am Markt nach dem Ertrag bewertet.",
    "Zum einen liegen genügend Vergleichspreise vor, zum anderen veröffentlicht der Gutachterausschuss Vergleichsfaktoren.",

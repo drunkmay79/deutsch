@@ -59,7 +59,7 @@ D.days[28] = {
    "exRu": "Если по рядным домам недостаточно цен-аналогов, я использую сравнительные коэффициенты комитета экспертов.",
    "cloze": "Liegen für Reihenhäuser nicht genügend Vergleichspreise vor, greife ich auf Vergleichsfaktoren des Gutachterausschusses ___.",
    "ans": "zurück",
-   "note": "Условие без wenn: глагол на первом месте (Liegen … vor, …) = Wenn … nicht genügend Vergleichspreise vorliegen, … zurückgreifen auf + Akk.: griff zurück – hat zurückgegriffen."
+   "note": "Условие без wenn: глагол на первом месте (Liegen … vor, …) = Wenn nicht genügend Vergleichspreise vorliegen, … . zurückgreifen auf + Akk.: griff zurück – hat zurückgegriffen."
   },
   {
    "id": "v28-006",

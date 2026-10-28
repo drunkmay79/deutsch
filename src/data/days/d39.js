@@ -158,7 +158,7 @@ D.days[39] = {
    "rek": "etw. (Akk.) beanstanden",
    "ru": "делать замечание, выражать претензию (к чему-л.), браковать",
    "ex": "Ich habe beanstandet, dass der Hobbyraum im Keller zur Wohnfläche gerechnet wurde.",
-   "exRu": "Я сделал замечание, что хобби-комнату в подвале включили в жилую площадь.",
+   "exRu": "В замечаниях я указал, что хобби-комнату в подвале включили в жилую площадь.",
    "cloze": "Ich habe ___, dass der Hobbyraum im Keller zur Wohnfläche gerechnet wurde.",
    "ans": "beanstandet",
    "col": [
@@ -306,15 +306,15 @@ D.days[39] = {
    "id": "v39-018",
    "kind": "phrase",
    "de": "Ein Gutachten, das der Darlehensnehmer selbst in Auftrag gegeben hat, darf die Bank der Beleihungswertermittlung nicht zugrunde legen.",
-   "ru": "Заключение, которое заказал сам заёмщик, банк не может положить в основу определения залоговой стоимости.",
+   "ru": "Заключение, которое заказал сам заёмщик, банк не вправе положить в основу определения залоговой стоимости.",
    "ex": "Ein Gutachten, das der Darlehensnehmer selbst in Auftrag gegeben hat, darf die Bank der Beleihungswertermittlung nicht zugrunde legen.",
-   "exRu": "Заключение, которое заказал сам заёмщик, банк не может положить в основу определения залоговой стоимости.",
+   "exRu": "Заключение, которое заказал сам заёмщик, банк не вправе положить в основу определения залоговой стоимости.",
    "cloze": "Ein Gutachten, das der Darlehensnehmer selbst in Auftrag gegeben hat, darf die Bank der Beleihungswertermittlung nicht ___ legen.",
    "ans": "zugrunde",
    "col": [
     "etw. einer Bewertung zugrunde legen",
     "ein Gutachten in Auftrag geben",
-    "§ 5 Abs. 2 BelWertV"
+    "der Beleihungswertermittlung zugrunde legen"
    ],
    "note": "Так по § 5 Abs. 2 BelWertV; то же касается заключений, которые заёмщик только представил. zugrunde legen: что — Akk., чему — Dat. Допустимо и написание zu Grunde."
   }
@@ -445,7 +445,8 @@ D.days[39] = {
     "a": [
      "Der Gutachter gibt an, das Dach sei 2015 erneuert worden.",
      "Der Gutachter gibt an, 2015 sei das Dach erneuert worden.",
-     "Das Dach sei 2015 erneuert worden, gibt der Gutachter an."
+     "Das Dach sei 2015 erneuert worden, gibt der Gutachter an.",
+     "2015 sei das Dach erneuert worden, gibt der Gutachter an."
     ],
     "h": "Без dass sei стоит на 2-м месте, erneuert worden — в конце."
    },
@@ -691,7 +692,7 @@ D.days[39] = {
     "de": "Der Gutachter behauptet, die Preise im Viertel seien stark gestiegen."
    },
    {
-    "ru": "Согласно заключению, общий срок службы — 70 лет, а модель Sachwertfaktor рассчитана на 80 лет.",
+    "ru": "Согласно заключению, общий срок службы — 70 лет, а модель, по которой выведен Sachwertfaktor, исходит из 80 лет.",
     "de": "Laut Gutachten betrage die Gesamtnutzungsdauer 70 Jahre, das Modell des Sachwertfaktors rechnet aber mit 80 Jahren."
    }
   ]
@@ -700,7 +701,7 @@ D.days[39] = {
   "id": "t39",
   "kind": "Prüfvermerk zu einem Fremdgutachten",
   "title": "Prüfvermerk: Kurzgutachten Hüttenstraße 14",
-  "de": "Prüfvermerk der Immobilienbewertung, Sparkasse Musterstadt (fiktiv): Kurzgutachten über das Reihenendhaus Hüttenstraße 14\n\nDas Kurzgutachten hat ein externes Sachverständigenbüro im Auftrag der Sparkasse erstellt. Es weist einen Marktwert von 335.000 Euro aus und wurde einer Plausibilitätsprüfung unterzogen.\n\nDer Verfasser gibt an, das Haus sei 1978 errichtet worden und befinde sich in einem guten Unterhaltungszustand. Das Dach sei 2015 erneuert worden. Die Wohnfläche betrage 128 Quadratmeter. Den Sachwertfaktor habe er dem aktuellen Grundstücksmarktbericht entnommen. Das Objekt sei nur von außen besichtigt worden, weil die Eigentümer zum Termin nicht erschienen seien.\n\nBei der Prüfung sind folgende Unstimmigkeiten aufgefallen. Erstens enthält die Wohnfläche einen Hobbyraum im Keller mit 14 Quadratmetern. Der Raum ist nicht als Aufenthaltsraum genehmigt und gehört nach der WoFlV nicht zur Wohnfläche; anzusetzen sind 114 Quadratmeter. Zweitens wurde die Gesamtnutzungsdauer mit 70 Jahren angesetzt, der verwendete Sachwertfaktor beruht jedoch auf einer Gesamtnutzungsdauer von 80 Jahren. Die Berechnung ist damit nicht modellkonform. Drittens liegt für die Dacherneuerung kein Nachweis vor. Viertens fehlen Fotos vom Keller und von den Innenräumen.\n\nErgebnis: Das Gutachten ist in der vorliegenden Form nicht verwendbar. Beim Büro werden eine Innenbesichtigung, eine korrigierte Wohnflächenberechnung und eine modellkonforme Sachwertermittlung nachgefordert. Bis zur Nachbesserung wird die Beleihungswertermittlung zurückgestellt. Der Vermerk wurde abgezeichnet und zur Kreditakte genommen.",
+  "de": "Prüfvermerk der Immobilienbewertung, Sparkasse Musterstadt (fiktiv): Kurzgutachten über das Reihenendhaus Hüttenstraße 14\n\nDas Kurzgutachten hat ein externes Sachverständigenbüro im Auftrag der Sparkasse erstellt. Es weist einen Marktwert von 335.000 Euro aus und wurde einer Plausibilitätsprüfung unterzogen.\n\nDer Verfasser gibt an, das Haus sei 1978 errichtet worden und befinde sich in einem guten Unterhaltungszustand. Das Dach sei 2015 erneuert worden. Die Wohnfläche betrage 128 Quadratmeter. Den Sachwertfaktor habe er dem aktuellen Grundstücksmarktbericht entnommen. Das Objekt sei nur von außen besichtigt worden, weil die Eigentümer zum Termin nicht erschienen seien.\n\nBei der Prüfung sind folgende Unstimmigkeiten aufgefallen. Erstens enthält die Wohnfläche einen Hobbyraum im Keller mit 14 Quadratmetern. Der Raum ist nicht als Aufenthaltsraum genehmigt und gehört nach der WoFlV nicht zur Wohnfläche; anzusetzen sind 114 Quadratmeter. Zweitens wurde die Gesamtnutzungsdauer mit 70 Jahren angesetzt, der verwendete Sachwertfaktor beruht jedoch auf einer Gesamtnutzungsdauer von 80 Jahren. Die Berechnung ist damit nicht modellkonform. Drittens liegt für die Dacherneuerung kein Nachweis vor. Viertens fehlen Fotos vom Keller und von den Innenräumen.\n\nErgebnis: Das Gutachten ist in der vorliegenden Form nicht verwendbar. Das Büro wird gebeten, die Innenbesichtigung nachzuholen. Außerdem werden eine korrigierte Wohnflächenberechnung, eine modellkonforme Sachwertermittlung und ein Nachweis für die Dacherneuerung nachgefordert. Bis zur Nachbesserung wird die Beleihungswertermittlung zurückgestellt. Der Vermerk wurde abgezeichnet und zur Kreditakte genommen.",
   "ru": "Фиктивная запись о проверке краткого заключения внешнего бюро по дому Hüttenstraße 14: утверждения автора переданы в косвенной речи, затем перечислены нестыковки (подвал в жилой площади, срок службы не по модели, нет подтверждения и фото) и итог — заключение доработать, внутренний осмотр провести.",
   "q": [
    {

@@ -563,7 +563,7 @@ D.days[43] = {
    },
    {
     "t": "transform",
-    "i": "In indirekte Rede setzen (ohne „dass“; hier → dort, letztes Jahr → im Vorjahr). Beginnen Sie mit „Der Eigentümer sagte, …“.",
+    "i": "In indirekte Rede setzen (ohne „dass“, eindeutige Konjunktivform; hier → dort, letztes Jahr → im Vorjahr). Beginnen Sie mit „Der Eigentümer sagte, …“.",
     "q": "„Wir haben hier letztes Jahr den Schimmel entfernt.“",
     "a": [
      "Der Eigentümer sagte, sie hätten dort im Vorjahr den Schimmel entfernt.",
@@ -640,7 +640,7 @@ D.days[43] = {
    },
    {
     "t": "translate",
-    "q": "Собственник сообщил, что стену в 1990 году изолировали изнутри, но влага снова распространилась. (Der Eigentümer gab an, …; die Wand; abdichten, Passiv; die Feuchtigkeit; sich wieder ausbreiten; aber)",
+    "q": "Собственник сообщил, что стену в 1990 году гидроизолировали изнутри, но влага снова распространилась. (Der Eigentümer gab an, …; die Wand; abdichten, Passiv; die Feuchtigkeit; sich wieder ausbreiten; aber)",
     "a": [
      "Der Eigentümer gab an, die Wand sei 1990 von innen abgedichtet worden, die Feuchtigkeit habe sich aber wieder ausgebreitet.",
      "Der Eigentümer gab an, die Wand sei 1990 von innen abgedichtet worden, aber die Feuchtigkeit habe sich wieder ausgebreitet.",
@@ -707,7 +707,7 @@ D.days[43] = {
   "id": "t43",
   "kind": "Besichtigungsbericht (Auszug)",
   "title": "Zechenstraße 7: Feuchtigkeit und Risse im Kellergeschoss",
-  "de": "4.4 Bautechnische Beanstandungen – Kellergeschoss\n\nDas Zweifamilienhaus Zechenstraße 7 in Musterstadt-Nord wurde 1958 errichtet und ist voll unterkellert. Die Ortsbesichtigung fand am 14. Oktober statt. Alle Feststellungen erfolgten durch Inaugenscheinnahme; Bauteilöffnungen wurden nicht vorgenommen.\n\nDie nördliche Kelleraußenwand ist bis in eine Höhe von etwa 80 Zentimetern durchfeuchtet. Der Putz ist dort mürbe, im Sockelbereich sind deutliche Salzausblühungen erkennbar. Die Abdichtung der erdberührten Außenwände entspricht baujahrestypisch nicht den heutigen Anforderungen. Ob eine wirksame Horizontalsperre vorhanden ist, konnte nicht festgestellt werden. An der Kellertreppe verläuft ein diagonaler Riss von etwa zwei Millimetern Breite; in den übrigen Räumen sind im Putz nur Haarrisse vorhanden.\n\nDer Eigentümer gab an, die Feuchtigkeit sei erst nach einem Starkregen im Frühjahr aufgetreten. Vorher habe im Keller nie Wasser gestanden. Der Keller sei 1990 von innen gestrichen worden und werde heute kaum genutzt. Der Riss habe sich nach seinen Angaben seit Jahren nicht verändert. Rechnungen oder Fotos dazu liegen nicht vor.\n\nDie Salzausblühungen sprechen allerdings eher für eine länger andauernde Durchfeuchtung. Als Schadensursache kommen aufsteigende Feuchte oder seitlich eindringendes Wasser in Betracht. Ob der Riss auf Setzungen oder auf bergbauliche Einwirkungen zurückzuführen ist, lässt sich ohne weitere Untersuchungen nicht beurteilen.\n\nIch empfehle, beide Punkte durch einen Bausachverständigen klären zu lassen. Bis dahin berücksichtige ich die Kosten der Trockenlegung mit einem vorsichtig geschätzten Abschlag.",
+  "de": "4.4 Bautechnische Beanstandungen – Kellergeschoss\n\nDas Zweifamilienhaus Zechenstraße 7 in Musterstadt-Nord wurde 1958 errichtet und ist voll unterkellert. Die Ortsbesichtigung fand am 14. Oktober statt. Alle Feststellungen erfolgten durch Inaugenscheinnahme; Bauteilöffnungen wurden nicht vorgenommen.\n\nDie nördliche Kelleraußenwand ist bis in eine Höhe von etwa 80 Zentimetern durchfeuchtet. Der Putz ist dort mürbe, im Sockelbereich sind deutliche Salzausblühungen erkennbar. Die Abdichtung der erdberührten Außenwände entspricht baujahrestypisch nicht den heutigen Anforderungen. Ob eine wirksame Horizontalsperre vorhanden ist, konnte nicht festgestellt werden. An der Kellertreppe verläuft ein diagonaler Riss von etwa zwei Millimetern Breite; in den übrigen Räumen sind im Putz nur Haarrisse vorhanden.\n\nDer Eigentümer gab an, die Feuchtigkeit sei erst nach einem Starkregen im Frühjahr aufgetreten. Vorher habe im Keller nie Wasser gestanden. Der Keller sei 1990 von innen gestrichen worden und werde heute kaum genutzt. Der Riss habe sich nach seinen Angaben seit Jahren nicht verändert. Rechnungen oder Fotos dazu liegen nicht vor.\n\nDie Salzausblühungen sprechen allerdings eher für eine länger andauernde Durchfeuchtung. Als Schadensursache kommen aufsteigende Feuchte oder seitlich eindringendes Wasser in Betracht. Ob der Riss auf Setzungen oder auf bergbauliche Einwirkungen zurückzuführen ist, lässt sich ohne weitere Untersuchungen nicht beurteilen.\n\nIch empfehle, beide Punkte durch einen Bausachverständigen klären zu lassen. Bis dahin berücksichtige ich die Kosten der Trockenlegung in Form eines vorsichtig geschätzten Abschlags.",
   "ru": "Фрагмент отчёта об осмотре подвала дома Zechenstraße 7: собственные выводы оценщика (намокание, высолы, трещина) в Indikativ, сведения собственника в Konjunktiv I и рекомендация привлечь строительного эксперта.",
   "q": [
    {
@@ -731,7 +731,7 @@ D.days[43] = {
    {
     "q": "Warum zweifelt der Gutachter an dieser Angabe?",
     "o": [
-     "Weil der Eigentümer keine Rechnungen vorgelegt hat.",
+     "Weil der Eigentümer den Starkregen bestritten hat.",
      "Weil der Keller frisch gestrichen ist.",
      "Weil die Salzausblühungen eher für eine länger andauernde Durchfeuchtung sprechen."
     ],
@@ -810,7 +810,7 @@ D.days[43] = {
   "open": "Guten Tag! Kommen Sie, hier geht's runter in den Keller – Vorsicht, die Treppe ist etwas steil. Ach, die Flecken an der Wand da hinten? Das ist nur Kondenswasser, das war schon immer so.",
   "steps": [
    "Herr Brandt verharmlost die feuchte Nordwand; der Gutachter fragt nach Beginn und Dauer – erst auf Nachfrage: „seit dem Starkregen im Frühjahr“ (Widerspruch zu „das war schon immer so“)",
-   "Frühere Maßnahmen und Nutzung: Anstrich von innen 1990, nie von außen abgedichtet, keine Rechnungen oder Fotos; Keller nur als Abstellraum genutzt",
+   "Frühere Maßnahmen und Nutzung: Anstrich von innen 1990, nie nachträglich von außen abgedichtet, keine Rechnungen oder Fotos; Keller nur als Abstellraum genutzt",
    "Riss an der Kellertreppe: angeblich seit Jahren unverändert, nie beobachtet oder gemessen; Frage nach Bergbau in der Umgebung – Herr Brandt weiß nichts Genaues",
    "Der Gutachter erklärt, was er ohne weitere Untersuchungen nicht beurteilen kann und dass er die Angaben im Bericht als Eigentümerangaben kennzeichnet",
    "Rollenwechsel: Frau Albers ruft an – „Was hat der Eigentümer gesagt?“; Bericht im Konjunktiv I, eigene Feststellungen im Indikativ",
@@ -828,7 +828,7 @@ D.days[43] = {
    "Selbst festgestellt habe ich eine Durchfeuchtung bis etwa 80 Zentimeter und Salzausblühungen.",
    "Ich empfehle, die Ursache durch einen Bausachverständigen klären zu lassen."
   ],
-  "facts": "Zechenstraße 7, Musterstadt-Nord (fiktiv): Zweifamilienhaus, Baujahr 1958, voll unterkellert, Wohnfläche 2 × 84 m²; Verkauf geplant, der Käufer finanziert über die Sparkasse Musterstadt. Feststellungen beim Ortstermin: nördliche Kelleraußenwand bis ca. 80 cm durchfeuchtet, Putz mürbe, Salzausblühungen im Sockelbereich; Abdichtung der Kelleraußenwände baujahrestypisch einfach (Bitumenanstrich), Horizontalsperre ohne Bauteilöffnung nicht beurteilbar; diagonaler Riss ca. 2 mm an der Kellertreppe; Haarrisse im Putz der übrigen Kellerräume. Eigentümerangaben: Feuchtigkeit erst seit einem Starkregen im Frühjahr, Keller 1990 von innen gestrichen, nie von außen abgedichtet, Riss seit Jahren unverändert, keine Rechnungen oder Fotos; Keller nur als Abstellraum genutzt. Umgebung: früher Bergbau in der Gegend, Einwirkungen auf das Grundstück ungeklärt. Überschlägige Kostenschätzung des Gutachters für eine Außenabdichtung der Nordwand: rd. 15.000 EUR (nur grobe Orientierung, kein Fachgutachten)."
+  "facts": "Zechenstraße 7, Musterstadt-Nord (fiktiv): Zweifamilienhaus, Baujahr 1958, voll unterkellert, Wohnfläche 2 × 84 m²; Verkauf geplant, der Käufer finanziert über die Sparkasse Musterstadt. Feststellungen beim Ortstermin: nördliche Kelleraußenwand bis ca. 80 cm durchfeuchtet, Putz mürbe, Salzausblühungen im Sockelbereich; Abdichtung der Kelleraußenwände baujahrestypisch einfach (Bitumenanstrich), Horizontalsperre ohne Bauteilöffnung nicht beurteilbar; diagonaler Riss ca. 2 mm an der Kellertreppe; Haarrisse im Putz der übrigen Kellerräume. Eigentümerangaben: Feuchtigkeit erst seit einem Starkregen im Frühjahr, Keller 1990 von innen gestrichen, nie nachträglich von außen abgedichtet, Riss seit Jahren unverändert, keine Rechnungen oder Fotos; Keller nur als Abstellraum genutzt. Umgebung: früher Bergbau in der Gegend, Einwirkungen auf das Grundstück ungeklärt. Überschlägige Kostenschätzung des Gutachters für eine Außenabdichtung der Nordwand: rd. 15.000 EUR (nur grobe Orientierung, kein Fachgutachten)."
  },
  "fluency": {
   "id": "f43",

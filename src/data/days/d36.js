@@ -227,9 +227,9 @@ D.days[36] = {
    "kind": "adj",
    "de": "deckungsfähig",
    "ru": "пригодный для покрытия пфандбрифов (в пределах 60 % залоговой стоимости)",
-   "ex": "Deckungsfähig ist nur der Teil des Darlehens, der innerhalb von 60 Prozent des Beleihungswerts liegt.",
+   "ex": "Deckungsfähig ist nur der Teil des Darlehens, der innerhalb der ersten 60 Prozent des Beleihungswerts liegt.",
    "exRu": "Пригодна для покрытия только та часть кредита, которая находится в пределах 60 % залоговой стоимости.",
-   "cloze": "___ ist nur der Teil des Darlehens, der innerhalb von 60 Prozent des Beleihungswerts liegt.",
+   "cloze": "___ ist nur der Teil des Darlehens, der innerhalb der ersten 60 Prozent des Beleihungswerts liegt.",
    "ans": "Deckungsfähig",
    "col": [
     "ein deckungsfähiges Darlehen",
@@ -466,7 +466,8 @@ D.days[36] = {
      "Im Gegensatz zum Marktwert ist der Beleihungswert langfristig ausgerichtet.",
      "Im Gegensatz zum stichtagsbezogenen Marktwert ist der Beleihungswert langfristig ausgerichtet.",
      "Im Gegensatz zu dem Marktwert ist der Beleihungswert langfristig ausgerichtet.",
-     "Im Gegensatz zu dem stichtagsbezogenen Marktwert ist der Beleihungswert langfristig ausgerichtet."
+     "Im Gegensatz zu dem stichtagsbezogenen Marktwert ist der Beleihungswert langfristig ausgerichtet.",
+     "Im Gegensatz zum Marktwert, der stichtagsbezogen ist, ist der Beleihungswert langfristig ausgerichtet."
     ],
     "h": "dagegen уходит: противопоставление уже выражено через im Gegensatz zum Marktwert."
    },

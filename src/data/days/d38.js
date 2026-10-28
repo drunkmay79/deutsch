@@ -58,7 +58,7 @@ D.days[38] = {
     "Interessenkonflikte ausschließen",
     "es liegt ein Interessenkonflikt vor"
    ],
-   "note": "Interesse + n + Konflikt. Dativ мн. ч. с -n: zu Interessenkonflikten. По MaRisk возможные конфликты интересов при оценке обеспечения нужно исключить."
+   "note": "Interesse + n + Konflikt. Dativ мн. ч. с -n: zu Interessenkonflikten. MaRisk требуют организовать процессы так, чтобы избегать конфликтов интересов."
   },
   {
    "id": "v38-004",
@@ -236,7 +236,7 @@ D.days[38] = {
     "die Besorgnis der Befangenheit",
     "sich für befangen erklären"
    ],
-   "note": "Besorgnis der Befangenheit (термин процессуального права) — уже обоснованного сомнения в беспристрастности достаточно. Противоположное: unbefangen, unparteiisch."
+   "note": "Besorgnis der Befangenheit (термин процессуального права): достаточно уже обоснованного сомнения в беспристрастности. Противоположное: unbefangen, unparteiisch."
   },
   {
    "id": "v38-014",
@@ -313,7 +313,7 @@ D.days[38] = {
    "ans": "vorliegen",
    "col": [
     "auf Zuruf",
-    "neue Tatsachen vorlegen",
+    "neue Unterlagen vorlegen",
     "Unterlagen nachreichen"
    ],
    "note": "auf Zuruf — «по окрику», по устной просьбе без оснований. Den Wert стоит первым для акцента; глагол всё равно на втором месте: Den Wert ändere ich …"
@@ -546,7 +546,8 @@ D.days[38] = {
     "a": [
      "Es wäre besser, wenn Sie mir die Mietverträge schicken würden.",
      "Es wäre besser, wenn Sie mir die Mietverträge schickten.",
-     "Besser wäre es, wenn Sie mir die Mietverträge schicken würden."
+     "Besser wäre es, wenn Sie mir die Mietverträge schicken würden.",
+     "Es wäre besser, Sie würden mir die Mietverträge schicken."
     ],
     "h": "Es wäre besser, wenn … + würde-форма в конце придаточного. mir (Dat.) стоит перед die Mietverträge (Akk.)."
    },

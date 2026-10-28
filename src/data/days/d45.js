@@ -58,7 +58,7 @@ D.days[45] = {
     "witterungsbereinigt",
     "das Nutzerverhalten"
    ],
-   "note": "Полное название — Energieverbrauchsausweis. По правилам до конца 2026 года — потребление минимум за три года с поправкой на погоду (witterungsbereinigt); с 2027 года — за два года. sich stützen auf + Akk."
+   "note": "Полное название — Energieverbrauchsausweis. По правилам до конца 2026 года — потребление минимум за три года с поправкой на погоду (witterungsbereinigt); с 2027 года — за два года и с пересчётом на нормированное поведение жильцов, включая пустование. sich stützen auf + Akk."
   },
   {
    "id": "v45-004",
@@ -148,7 +148,7 @@ D.days[45] = {
     "innerhalb von zwei Jahren nach dem Eigentumsübergang",
     "nachrüsten"
    ],
-   "note": "Главное — утеплить верхнее перекрытие без минимальной теплозащиты (§ 35 GModG, раньше § 47 GEG) и доступные неутеплённые трубы отопления и горячей воды в неотапливаемых помещениях (§ 69 GModG, раньше § 71 GEG). Если в доме не больше двух квартир и владелец жил в одной из них уже 1.2.2002, обязанность возникает только у нового владельца: срок — два года после перехода собственности."
+   "note": "Главное — утеплить верхнее перекрытие без минимальной теплозащиты (§ 35 GModG, раньше § 47 GEG) и доступные неутеплённые трубы отопления и горячей воды в неотапливаемых помещениях (§ 69 Abs. 2 GModG). Если в доме не больше двух квартир и владелец жил в одной из них уже 1.2.2002, обязанность возникает только у нового владельца: срок — два года после перехода собственности."
   },
   {
    "id": "v45-009",
@@ -313,10 +313,10 @@ D.days[45] = {
    "ans": "Heizverhalten",
    "col": [
     "Das sagt wenig über das Gebäude aus.",
-    "Leerstand verfälscht die Werte.",
+    "längere Leerstände rechnerisch berücksichtigen",
     "das Nutzerverhalten"
    ],
-   "note": "abhängen von + Dat.: hängt … ab (приставка в конце). vom = von dem. Пустующая квартира или экономные жильцы дают «хорошие» цифры."
+   "note": "abhängen von + Dat.: hängt … ab (приставка в конце). vom = von dem. Экономные жильцы дают «хорошие» цифры; длительное пустование учитывается лишь расчётной поправкой. В паспортах с 2027 года потребление дополнительно пересчитывают на нормированное поведение жильцов."
   }
  ],
  "grammar": {
@@ -366,7 +366,8 @@ D.days[45] = {
      "sodass",
      "so dass",
      "weshalb",
-     "weswegen"
+     "weswegen",
+     "wodurch"
     ],
     "h": "Следствие — sodass (можно писать so dass)."
    },
@@ -559,7 +560,8 @@ D.days[45] = {
     "q": "Можно снизить расходы на отопление, утеплив верхнее перекрытие. (indem; die Heizkosten senken)",
     "a": [
      "Man kann die Heizkosten senken, indem man die oberste Geschossdecke dämmt.",
-     "Indem man die oberste Geschossdecke dämmt, kann man die Heizkosten senken."
+     "Indem man die oberste Geschossdecke dämmt, kann man die Heizkosten senken.",
+     "Die Heizkosten kann man senken, indem man die oberste Geschossdecke dämmt."
     ],
     "h": "Русское деепричастие «утеплив» → indem man … dämmt."
    },
@@ -709,7 +711,7 @@ D.days[45] = {
   "id": "t45",
   "kind": "Energieausweis mit Erläuterung",
   "title": "Energieausweis Zechenstraße 7: Kennwerte und Erläuterung",
-  "de": "Auszug aus dem Energieausweis\n\nGebäude: Zweifamilienhaus Zechenstraße 7, Musterstadt, Baujahr 1958. Art des Ausweises: Energiebedarfsausweis, ausgestellt im März 2024, gültig bis März 2034. Endenergiebedarf: 215 Kilowattstunden pro Quadratmeter und Jahr, Effizienzklasse G. Primärenergiebedarf: 252 Kilowattstunden pro Quadratmeter und Jahr. Heizung: Gas-Zentralheizung von 1996, in der Dachgeschosswohnung zusätzlich zwei Nachtspeicheröfen. Fenster: Isolierverglasung von 1992. Oberste Geschossdecke: ungedämmt.\n\nErläuterung für das Gutachten\n\nFür das Gebäude liegt ein Bedarfs- und kein Verbrauchsausweis vor. Das entspricht den Regeln, die bei der Ausstellung galten: Der Bauantrag wurde vor November 1977 gestellt, das Haus hat weniger als fünf Wohnungen und erreicht nicht das Anforderungsniveau der Wärmeschutzverordnung von 1977. Der Bedarf wird unter Normbedingungen berechnet, sodass er nicht vom Heizverhalten der Bewohner abhängt. Der tatsächliche Verbrauch kann deshalb deutlich abweichen.\n\nMit 215 Kilowattstunden liegt das Haus in der zweitschlechtesten Klasse für Wohngebäude. Die Gebäudehülle ist weitgehend ungedämmt, sodass über Außenwände, oberste Geschossdecke und Fenster viel Wärme verloren geht.\n\nDen Bedarf könnte man spürbar senken, indem man die oberste Geschossdecke und die Heizungsrohre im unbeheizten Keller dämmt. Mehr würde eine Dämmung der Fassade bringen, allerdings zu deutlich höheren Kosten. Eine Wärmepumpe ist denkbar, sollte aber nicht eingebaut werden, ohne dass vorher die Heizlast berechnet wird.\n\nHinweis: Der Eigentümer bewohnt seit 1992 eine der Wohnungen selbst. Ein Käufer müsste die oberste Geschossdecke daher voraussichtlich innerhalb von zwei Jahren nach dem Eigentumsübergang dämmen.",
+  "de": "Auszug aus dem Energieausweis\n\nGebäude: Zweifamilienhaus Zechenstraße 7, Musterstadt, Baujahr 1958. Art des Ausweises: Energiebedarfsausweis, ausgestellt im März 2024, gültig bis März 2034. Endenergiebedarf: 215 Kilowattstunden pro Quadratmeter und Jahr, Effizienzklasse G. Primärenergiebedarf: 252 Kilowattstunden pro Quadratmeter und Jahr. Heizung: Gas-Zentralheizung von 1996, in der Dachgeschosswohnung zusätzlich zwei Nachtspeicheröfen. Fenster: Isolierverglasung von 1992. Oberste Geschossdecke: ungedämmt.\n\nErläuterung für das Gutachten\n\nFür das Gebäude liegt ein Bedarfs- und kein Verbrauchsausweis vor. Das entspricht den Regeln, die bei der Ausstellung galten: Der Bauantrag wurde vor November 1977 gestellt, das Haus hat weniger als fünf Wohnungen und erreicht nicht das Anforderungsniveau der Wärmeschutzverordnung von 1977. Der Bedarf wird unter Normbedingungen berechnet, sodass er nicht vom Heizverhalten der Bewohner abhängt. Der tatsächliche Verbrauch kann deshalb deutlich abweichen.\n\nMit 215 Kilowattstunden liegt das Haus in der zweitschlechtesten Klasse für Wohngebäude. Die Gebäudehülle ist weitgehend ungedämmt, sodass über Außenwände, oberste Geschossdecke und Fenster viel Wärme verloren geht.\n\nDen Bedarf könnte man spürbar senken, indem man die oberste Geschossdecke und die Heizungsrohre im unbeheizten Keller dämmt. Mehr würde eine Dämmung der Fassade bringen, allerdings zu deutlich höheren Kosten. Eine Wärmepumpe ist denkbar, sollte aber nicht eingebaut werden, ohne dass vorher die Heizlast berechnet wird.\n\nHinweis: Der Eigentümer bewohnt seit 1992 eine der Wohnungen selbst. Ein Käufer müsste die oberste Geschossdecke und die ungedämmten Heizungsrohre im Keller daher voraussichtlich innerhalb von zwei Jahren nach dem Eigentumsübergang dämmen.",
   "ru": "Выдержка из энергопаспорта дома Zechenstraße 7 (класс G) и пояснение для заключения: почему паспорт составлен по расчёту, что означает класс и как можно снизить потребность в энергии.",
   "q": [
    {
@@ -810,7 +812,7 @@ D.days[45] = {
    "Frau Neumann fragt, was Klasse G bedeutet; der Gutachter erklärt die Skala von A+ bis H und den Endenergiebedarf.",
    "Grobe Heizkostenrechnung: 215 kWh × ca. 200 m² ≈ 43.000 kWh im Jahr, bei angenommenen 12 Cent rund 5.200 € – mit dem Hinweis, dass der echte Verbrauch abweichen kann.",
    "Frau Neumann fragt, warum kein echter Verbrauch im Ausweis steht; der Gutachter erklärt Bedarfs- und Verbrauchsausweis und rät, sich die Heizkostenabrechnungen des Verkäufers zeigen zu lassen.",
-   "Pflichten nach dem Kauf: Dämmung der obersten Geschossdecke innerhalb von zwei Jahren; keine Pflicht, eine funktionierende Heizung sofort zu ersetzen; Wärmepumpe erst nach Prüfung der Heizlast.",
+   "Pflichten nach dem Kauf: Dämmung der obersten Geschossdecke und der Heizungsrohre im Keller innerhalb von zwei Jahren; keine Pflicht, eine funktionierende Heizung sofort zu ersetzen; Wärmepumpe erst nach Prüfung der Heizlast.",
    "Abschluss: Verweis auf einen Energieberater für verbindliche Aussagen und Förderung; Frau Neumann fasst zusammen, danach Feedback."
   ],
   "use": [
@@ -824,7 +826,7 @@ D.days[45] = {
    "Eine Wärmepumpe sollten Sie nicht einbauen, ohne vorher die Heizlast prüfen zu lassen.",
    "Für verbindliche Aussagen empfehle ich Ihnen einen Energieberater."
   ],
-  "facts": "Zechenstraße 7, Musterstadt (fiktiv): Zweifamilienhaus, Baujahr 1958, Wohnfläche 2 × 84 m², Gebäudenutzfläche laut Ausweis ca. 200 m². Energiebedarfsausweis vom März 2024, gültig bis März 2034: Endenergiebedarf 215 kWh/(m²·a), Effizienzklasse G (Skala für Wohngebäude A+ bis H; G = über 200 bis 250 kWh), Primärenergiebedarf 252 kWh/(m²·a). Heizung: Gas-Zentralheizung von 1996, in der Dachgeschosswohnung zusätzlich zwei Nachtspeicheröfen (Asbestverdacht, Beprobung läuft). Fenster: Isolierverglasung von 1992; oberste Geschossdecke und Fassade ungedämmt. Der Verkäufer bewohnt seit 1992 eine Wohnung selbst, daher muss der Käufer die oberste Geschossdecke voraussichtlich innerhalb von zwei Jahren nach dem Eigentumsübergang dämmen. Grobe Rechnung: 215 × 200 ≈ 43.000 kWh im Jahr; bei angenommenen 12 Cent pro kWh rund 5.200 € (Strom für die Nachtspeicheröfen ist teurer; der tatsächliche Verbrauch kann deutlich abweichen, bei älteren Häusern liegt er oft darunter). Rechtslage: Seit dem 29.07.2026 heißt das GEG Gebäudemodernisierungsgesetz (GModG); die 65-%-Vorgabe für neue Heizungen ist entfallen. Eine funktionierende Heizung muss nicht ausgetauscht werden; neue Gas- oder Ölheizungen sind wieder erlaubt; wer sie nach dem 29.07.2026 einbaut, muss ab 2029 einen steigenden Anteil Biomethan, Bioöl oder Wasserstoff einsetzen (2029: 10 %, 2030: 15 %). Neue Regeln für Energieausweise gelten ab dem 01.01.2027; die Skala A+ bis H bleibt. Für verbindliche Aussagen und Fördermittel: Energieberater."
+  "facts": "Zechenstraße 7, Musterstadt (fiktiv): Zweifamilienhaus, Baujahr 1958, Wohnfläche 2 × 84 m², Gebäudenutzfläche laut Ausweis ca. 200 m². Energiebedarfsausweis vom März 2024, gültig bis März 2034: Endenergiebedarf 215 kWh/(m²·a), Effizienzklasse G (Skala für Wohngebäude A+ bis H; G = über 200 bis 250 kWh), Primärenergiebedarf 252 kWh/(m²·a). Heizung: Gas-Zentralheizung von 1996, in der Dachgeschosswohnung zusätzlich zwei Nachtspeicheröfen (Asbestverdacht, Beprobung läuft). Fenster: Isolierverglasung von 1992; oberste Geschossdecke und Fassade ungedämmt. Der Verkäufer bewohnt seit 1992 eine Wohnung selbst, daher muss der Käufer die oberste Geschossdecke und die zugänglichen ungedämmten Heizungsrohre im unbeheizten Keller voraussichtlich innerhalb von zwei Jahren nach dem Eigentumsübergang dämmen. Grobe Rechnung: 215 × 200 ≈ 43.000 kWh im Jahr; bei angenommenen 12 Cent pro kWh rund 5.200 € (Strom für die Nachtspeicheröfen ist teurer; der tatsächliche Verbrauch kann deutlich abweichen, bei älteren Häusern liegt er oft darunter). Rechtslage: Seit dem 29.07.2026 heißt das GEG Gebäudemodernisierungsgesetz (GModG); die 65-%-Vorgabe für neue Heizungen ist entfallen. Eine funktionierende Heizung muss nicht ausgetauscht werden; in bestehenden Gebäuden sind neue Gas- oder Ölheizungen wieder erlaubt; wer sie nach dem 29.07.2026 einbaut, muss ab 2029 einen steigenden Anteil Biomethan, Bioöl oder Wasserstoff einsetzen (2029: 10 %, 2030: 15 %). Neue Regeln für Energieausweise gelten ab dem 01.01.2027; die Skala A+ bis H bleibt. Für verbindliche Aussagen und Fördermittel: Energieberater."
  },
  "fluency": {
   "id": "f45",

@@ -323,7 +323,7 @@ D.days[32] = {
   "id": "g-d32",
   "de": "Bedingungen ohne „wenn“: Verberststellung, bei + Nomen, angenommen",
   "ru": "Условие без wenn: глагол на первом месте, bei + существительное, angenommen / vorausgesetzt",
-  "rule": "<p>В анализе чувствительности условие часто выражают <b>без wenn</b>. В отличие от оговорок Tag 20 (sofern, soweit) это язык расчёта: меняется X → меняется Y.</p><table><tr><th>Способ</th><th>Пример</th></tr><tr><td>глагол на 1-м месте</td><td><b>Steigt der Liegenschaftszinssatz, (so/dann) sinkt der Ertragswert.</b></td></tr><tr><td><b>bei</b> + Dat.</td><td><b>Bei einem Zinssatz von 4,5 % ergibt sich ein niedrigerer Wert.</b></td></tr><tr><td><b>im Fall(e)</b> + Gen.</td><td><b>Im Fall eines höheren Zinssatzes sinkt der Wert.</b></td></tr><tr><td><b>ohne</b> + Akk.</td><td><b>Ohne Abzug der Bodenwertverzinsung wäre der Wert überhöht.</b></td></tr><tr><td><b>angenommen, vorausgesetzt, gesetzt den Fall</b></td><td><b>Angenommen, die Mieten bleiben stabil, dann …</b></td></tr></table><ul><li>Главное предложение после него тоже начинается с глагола: <b>…, sinkt der Ertragswert</b>, а не <i>der Ertragswert sinkt</i>.</li><li>После bei — Dativ: <b>bei einem höheren Zinssatz, bei einer Restnutzungsdauer von 25 Jahren, bei gleichbleibenden Mieten</b>.</li><li>После <b>angenommen,</b> / <b>vorausgesetzt,</b> — обычный порядок слов; с <b>dass</b> глагол уходит в конец.</li><li>Реальный сценарий — Indikativ, гипотеза — <b>Konjunktiv II</b>: <b>Läge der Zinssatz bei 4,5 %, ergäbe sich …</b></li></ul><p>Формы: liegen → <b>läge</b>, ergeben → <b>ergäbe</b>, betragen → <b>betrüge</b>, sein → <b>wäre</b>; у других обычно <b>würde</b> + Infinitiv: <b>würde … sinken</b>.</p>",
+  "rule": "<p>В анализе чувствительности условие часто выражают <b>без wenn</b>. В отличие от оговорок Tag 20 (sofern, soweit) это язык расчёта: меняется X → меняется Y.</p><table><tr><th>Способ</th><th>Пример</th></tr><tr><td>глагол на 1-м месте</td><td><b>Steigt der Liegenschaftszinssatz, (so/dann) sinkt der Ertragswert.</b></td></tr><tr><td><b>bei</b> + Dat.</td><td><b>Bei einem Zinssatz von 4,5 % ergibt sich ein niedrigerer Wert.</b></td></tr><tr><td><b>im Fall(e)</b> + Gen.</td><td><b>Im Fall eines höheren Zinssatzes sinkt der Wert.</b></td></tr><tr><td><b>ohne</b> + Akk.</td><td><b>Ohne Abzug der Bodenwertverzinsung wäre der Wert überhöht.</b></td></tr><tr><td><b>angenommen, vorausgesetzt, gesetzt den Fall</b></td><td><b>Angenommen, die Mieten bleiben stabil, dann …</b></td></tr></table><ul><li>После условия с глаголом на 1-м месте главное предложение тоже начинается с глагола: <b>…, sinkt der Ertragswert</b>, а не <i>der Ertragswert sinkt</i>.</li><li>После bei — Dativ: <b>bei einem höheren Zinssatz, bei einer Restnutzungsdauer von 25 Jahren, bei gleichbleibenden Mieten</b>.</li><li>После <b>angenommen,</b> / <b>vorausgesetzt,</b> — обычный порядок слов; с <b>dass</b> глагол уходит в конец.</li><li>Реальный сценарий — Indikativ, гипотеза — <b>Konjunktiv II</b>: <b>Läge der Zinssatz bei 4,5 %, ergäbe sich …</b></li></ul><p>Формы: liegen → <b>läge</b>, ergeben → <b>ergäbe</b>, betragen → <b>betrüge</b>, sein → <b>wäre</b>; у других обычно <b>würde</b> + Infinitiv: <b>würde … sinken</b>.</p>",
   "examples": [
    {
     "de": "Steigt der Liegenschaftszinssatz, sinkt der Ertragswert.",
@@ -396,7 +396,7 @@ D.days[32] = {
     "a": [
      "vorausgesetzt"
     ],
-    "h": "vorausgesetzt, + обычный порядок слов = «при условии, что». После vorbehaltlich нужно существительное в Genitiv, а gesetzt работает только в формуле gesetzt den Fall."
+    "h": "vorausgesetzt, + обычный порядок слов = «при условии, что». После vorbehaltlich нужно существительное в Genitiv, а gesetzt в этом значении употребляют практически только в формуле gesetzt den Fall."
    },
    {
     "t": "choice",
@@ -621,7 +621,8 @@ D.days[32] = {
     "t": "order",
     "q": "läge / der Liegenschaftszinssatz / bei 4,5 Prozent / würde / der Ertragswert / um rund 7 Prozent / sinken",
     "a": [
-     "Läge der Liegenschaftszinssatz bei 4,5 Prozent, würde der Ertragswert um rund 7 Prozent sinken."
+     "Läge der Liegenschaftszinssatz bei 4,5 Prozent, würde der Ertragswert um rund 7 Prozent sinken.",
+     "Der Ertragswert würde um rund 7 Prozent sinken, läge der Liegenschaftszinssatz bei 4,5 Prozent."
     ]
    },
    {
@@ -649,7 +650,9 @@ D.days[32] = {
      "Angenommen, dass der Zinssatz um einen halben Prozentpunkt steigt, dann sinkt der Wert um rund 7 Prozent.",
      "Angenommen, dass der Zinssatz um einen halben Prozentpunkt steigt, dann sinkt der Wert um rund 7 %.",
      "Angenommen, der Zinssatz steigt um 0,5 Prozentpunkte, dann sinkt der Wert um rund 7 Prozent.",
-     "Angenommen, der Zinssatz steigt um 0,5 Prozentpunkte, dann sinkt der Wert um rund 7 %."
+     "Angenommen, der Zinssatz steigt um 0,5 Prozentpunkte, dann sinkt der Wert um rund 7 %.",
+     "Angenommen, dass der Zinssatz um 0,5 Prozentpunkte steigt, dann sinkt der Wert um rund 7 Prozent.",
+     "Angenommen, dass der Zinssatz um 0,5 Prozentpunkte steigt, dann sinkt der Wert um rund 7 %."
     ],
     "h": "angenommen, + обычный порядок слов (der Zinssatz steigt …); дальше dann + глагол: dann sinkt der Wert."
    },
@@ -861,7 +864,7 @@ D.days[32] = {
    "Ein Zahlenbeispiel: ein halber Prozentpunkt mehr – rund 7 Prozent weniger Wert",
    "Mindestens drei Bedingungen ohne „wenn“: Verb an erster Stelle, „bei“ + Nomen, „vorausgesetzt“ oder „angenommen“"
   ],
-  "model": "Kunden fragen mich oft, ob steigende Zinsen automatisch den Wert ihrer Immobilie senken. Ganz so einfach ist es nicht. Steigen die Kapitalmarktzinsen, wird die Finanzierung teurer, und viele Anleger kaufen vorsichtiger. Bei geringerer Nachfrage geben die Kaufpreise für Renditeobjekte meist nach. Da der Gutachterausschuss die Liegenschaftszinssätze aus solchen Kaufpreisen ableitet, steigen dann auch diese Zinssätze, allerdings mit Verzögerung und nicht eins zu eins. Der Liegenschaftszinssatz ist eben kein Bauzins, sondern zeigt, was Käufer tatsächlich bezahlen. Erwarten die Käufer steigende Mieten, akzeptieren sie auch eine niedrigere Anfangsverzinsung. Für die Bewertung heißt das: Schon ein halber Prozentpunkt beim Liegenschaftszinssatz kann den Ertragswert spürbar verändern, in einem typischen Beispiel um sieben bis acht Prozent. Vorausgesetzt, die Mieten bleiben stabil, hängt das Ergebnis also stark vom Zinssatz ab. Deshalb ergänze ich meine Gutachten gern um eine kleine Sensitivitätsrechnung. Gerade für eine Bank ist das wichtig: Fällt der Wert, sinkt auch die Sicherheit für den Kredit.",
+  "model": "Kunden fragen mich oft, ob steigende Zinsen automatisch den Wert ihrer Immobilie senken. Ganz so einfach ist es nicht. Steigen die Kapitalmarktzinsen, wird die Finanzierung teurer, und viele Anleger kaufen vorsichtiger. Bei geringerer Nachfrage geben die Kaufpreise für Renditeobjekte meist nach. Da der Gutachterausschuss die Liegenschaftszinssätze aus solchen Kaufpreisen ableitet, steigen dann auch diese Zinssätze, allerdings mit Verzögerung und nicht eins zu eins. Der Liegenschaftszinssatz ist eben kein Bauzins, sondern zeigt, was Käufer tatsächlich bezahlen. Erwarten die Käufer steigende Mieten, akzeptieren sie auch eine niedrigere Anfangsverzinsung. Für die Bewertung heißt das: Schon ein halber Prozentpunkt beim Liegenschaftszinssatz kann den Ertragswert spürbar verändern, in einem typischen Beispiel um sieben bis acht Prozent. Vorausgesetzt, die Mieten bleiben stabil, hängt das Ergebnis also stark vom Zinssatz ab. Deshalb ergänze ich meine Gutachten gern um eine kleine Sensitivitätsrechnung. Gerade für eine Bank ist das wichtig: Fällt der Wert, ist der Kredit schlechter besichert.",
   "shadow": [
    "Steigen die Zinsen, wird die Finanzierung teurer.",
    "Bei geringerer Nachfrage geben die Kaufpreise meist nach.",
@@ -870,7 +873,7 @@ D.days[32] = {
    "Schon ein halber Prozentpunkt verändert den Ertragswert deutlich.",
    "Vorausgesetzt, die Mieten bleiben stabil, hängt viel vom Zinssatz ab.",
    "Läge der Zinssatz bei 4,5 Prozent, wäre der Wert niedriger.",
-   "Fällt der Wert, sinkt auch die Sicherheit für den Kredit."
+   "Fällt der Wert, ist der Kredit schlechter besichert."
   ]
  }
 };

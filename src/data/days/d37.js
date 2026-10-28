@@ -202,7 +202,7 @@ D.days[37] = {
     "in einer Summe auszahlen",
     "die Auszahlung nach Baufortschritt"
    ],
-   "note": "Отделяемая приставка: Die Bank zahlt das Darlehen aus. Лицо — в Dativ (dem Kunden auszahlen), отсюда bekommen-Passiv: Der Kunde bekommt … ausgezahlt. ausbezahlt — разговорный вариант, чаще на юге."
+   "note": "Отделяемая приставка: Die Bank zahlt das Darlehen aus. Лицо — в Dativ (dem Kunden auszahlen), отсюда bekommen-Passiv: Der Kunde bekommt … ausgezahlt. ausbezahlt — тоже нормативный вариант, чаще на юге и в Австрии."
   },
   {
    "id": "v37-012",

@@ -22,7 +22,7 @@ D.days[48] = {
     "die Feststellungen vor Ort",
     "nach eigener Feststellung"
    ],
-   "note": "Устойчиво: eine Feststellung treffen (не machen). Feststellungen — то, что оценщик видел сам; Angaben des Eigentümers — то, что ему сказали. Глагол feststellen — отделяемый: stellte fest, hat festgestellt."
+   "note": "Устойчиво: eine Feststellung treffen (в официальном стиле; в разговоре и machen). Feststellungen — то, что оценщик видел сам; Angaben des Eigentümers — то, что ему сказали. Глагол feststellen — отделяемый: stellte fest, hat festgestellt."
   },
   {
    "id": "v48-002",
@@ -605,7 +605,9 @@ D.days[48] = {
      "Der Putz ist im Sockelbereich abgeplatzt, siehe Foto Nr. 7.",
      "Im Sockelbereich ist der Putz abgeplatzt, siehe Foto Nr. 7.",
      "Der Putz ist im Sockelbereich abgeplatzt, siehe Foto Nummer 7.",
-     "Im Sockelbereich ist der Putz abgeplatzt, siehe Foto Nummer 7."
+     "Im Sockelbereich ist der Putz abgeplatzt, siehe Foto Nummer 7.",
+     "Der Putz im Sockelbereich ist abgeplatzt, siehe Foto Nr. 7.",
+     "Der Putz im Sockelbereich ist abgeplatzt, siehe Foto Nummer 7."
     ],
     "h": "Perfekt с sein: ist abgeplatzt; «см.» — siehe, «№» — Nr."
    },

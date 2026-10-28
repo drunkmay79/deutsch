@@ -340,7 +340,7 @@ D.days[41] = {
    },
    {
     "de": "Das stimmt schon, aber ein einzelner Kaufpreis ist noch kein Beleg für den Marktwert.",
-    "ru": "Это-то верно, но одна цена покупки ещё не доказывает рыночную стоимость."
+    "ru": "Это-то верно, но одна-единственная цена сделки ещё не доказывает рыночную стоимость."
    },
    {
     "de": "Ein Gutachten mit Innenbesichtigung braucht eben seine Zeit.",
@@ -355,7 +355,7 @@ D.days[41] = {
    {
     "t": "gap",
     "q": "Könnten Sie ___ in der Kreditakte nachsehen, ob der Grundbuchauszug aktuell ist? (смягчающая частица, «-ка»)",
-    "a": ["mal", "bitte mal", "vielleicht mal", "mal kurz"],
+    "a": ["mal", "bitte mal", "vielleicht mal", "mal kurz", "einmal", "bitte einmal"],
     "h": "mal делает просьбу мягче и непринуждённее; стоит в середине предложения после Sie."
    },
    {
@@ -563,7 +563,8 @@ D.days[41] = {
      "Ich habe damals wohl meinen Ansatz nicht klar genug erklärt.",
      "Ich habe wohl meinen Ansatz damals nicht klar genug erklärt.",
      "Ich habe wohl damals meinen Ansatz nicht klar genug erklärt.",
-     "Damals habe ich meinen Ansatz wohl nicht klar genug erklärt."
+     "Damals habe ich meinen Ansatz wohl nicht klar genug erklärt.",
+     "Meinen Ansatz habe ich damals wohl nicht klar genug erklärt."
     ],
     "h": "wohl («видимо») — в середине предложения, перед nicht; erklären — Perfekt с haben: habe erklärt."
    },
@@ -590,10 +591,10 @@ D.days[41] = {
    },
    {
     "t": "fix",
-    "q": "Wenn ich die Meinungsverschiedenheit offen ansprach, war die Kollegin zunächst etwas überrascht.",
+    "q": "Wenn ich die Meinungsverschiedenheit damals offen ansprach, war die Kollegin zunächst etwas überrascht.",
     "a": [
-     "Als ich die Meinungsverschiedenheit offen ansprach, war die Kollegin zunächst etwas überrascht.",
-     "Als ich die Meinungsverschiedenheit offen angesprochen habe, war die Kollegin zunächst etwas überrascht."
+     "Als ich die Meinungsverschiedenheit damals offen ansprach, war die Kollegin zunächst etwas überrascht.",
+     "Als ich die Meinungsverschiedenheit damals offen angesprochen habe, war die Kollegin zunächst etwas überrascht."
     ],
     "h": "Однократное событие в прошлом — als; wenn в прошлом только для повторяющихся действий («каждый раз, когда»)."
    },

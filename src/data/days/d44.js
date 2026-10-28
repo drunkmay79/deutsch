@@ -507,8 +507,9 @@ D.days[44] = {
     "a": [
      "Die Materialproben werden im Labor auf Asbest untersucht werden.",
      "Im Labor werden die Materialproben auf Asbest untersucht werden.",
-     "Auf Asbest werden die Materialproben im Labor untersucht werden."
-         ]
+     "Auf Asbest werden die Materialproben im Labor untersucht werden.",
+     "Die Materialproben werden auf Asbest im Labor untersucht werden."
+    ]
    },
    {
     "t": "translate",
@@ -558,7 +559,8 @@ D.days[44] = {
     "a": [
      "Die Rinnen waren schon 2015 von einem Dachdecker abgedichtet worden.",
      "Die Rinnen waren von einem Dachdecker schon 2015 abgedichtet worden.",
-     "Schon 2015 waren die Rinnen von einem Dachdecker abgedichtet worden."
+     "Schon 2015 waren die Rinnen von einem Dachdecker abgedichtet worden.",
+     "Die Rinnen waren 2015 schon von einem Dachdecker abgedichtet worden."
     ],
     "h": "Исполнитель — von + Dat.: von einem Dachdecker; hatte → waren … worden."
    },

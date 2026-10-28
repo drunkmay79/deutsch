@@ -435,7 +435,8 @@ D.days[34] = {
      "Die Mieten werden in Musterstadt in den nächsten Jahren weiter steigen.",
      "Die Mieten werden in den nächsten Jahren in Musterstadt weiter steigen.",
      "In Musterstadt werden die Mieten in den nächsten Jahren weiter steigen.",
-     "In den nächsten Jahren werden in Musterstadt die Mieten weiter steigen."
+     "In den nächsten Jahren werden in Musterstadt die Mieten weiter steigen.",
+     "In Musterstadt werden in den nächsten Jahren die Mieten weiter steigen."
     ]
    },
    {
@@ -498,7 +499,8 @@ D.days[34] = {
      "Der Eigentümer wird die Bäder wohl um 2005 modernisiert haben.",
      "Der Eigentümer wird wohl die Bäder um 2005 modernisiert haben.",
      "Der Eigentümer wird die Bäder um 2005 wohl modernisiert haben.",
-     "Um 2005 wird der Eigentümer die Bäder wohl modernisiert haben."
+     "Um 2005 wird der Eigentümer die Bäder wohl modernisiert haben.",
+     "Um 2005 wird der Eigentümer wohl die Bäder modernisiert haben."
     ]
    },
    {

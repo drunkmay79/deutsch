@@ -499,7 +499,8 @@ D.days[47] = {
      "Dem Eigentümer zufolge wurde das Bad 2019 erneuert.",
      "Das Bad wurde dem Eigentümer zufolge 2019 erneuert.",
      "Dem Eigentümer zufolge wurde 2019 das Bad erneuert.",
-     "2019 wurde das Bad dem Eigentümer zufolge erneuert."
+     "2019 wurde das Bad dem Eigentümer zufolge erneuert.",
+     "Das Bad wurde 2019 dem Eigentümer zufolge erneuert."
     ],
     "h": "Источник назван через zufolge (+ Dat., после существительного) — дальше можно Indikativ: wurde erneuert."
    },
@@ -548,7 +549,10 @@ D.days[47] = {
      "Der Eigentümer will im Keller nie Feuchtigkeit bemerkt haben.",
      "Der Eigentümer will nie Feuchtigkeit im Keller bemerkt haben.",
      "Im Keller will der Eigentümer nie Feuchtigkeit bemerkt haben.",
-     "Feuchtigkeit im Keller will der Eigentümer nie bemerkt haben."
+     "Feuchtigkeit im Keller will der Eigentümer nie bemerkt haben.",
+     "Der Eigentümer will nie im Keller Feuchtigkeit bemerkt haben.",
+     "Der Eigentümer will im Keller noch nie Feuchtigkeit bemerkt haben.",
+     "Der Eigentümer will noch nie Feuchtigkeit im Keller bemerkt haben."
     ],
     "h": "Утверждение о себе → wollen; прошлое — Infinitiv Perfekt: bemerkt haben."
    },

@@ -632,7 +632,8 @@ D.days[27] = {
     "i": "Mit „Ich denke, dass …“ beginnen.",
     "q": "Die Bank hätte das Gutachten genauer prüfen müssen.",
     "a": [
-     "Ich denke, dass die Bank das Gutachten genauer hätte prüfen müssen."
+     "Ich denke, dass die Bank das Gutachten genauer hätte prüfen müssen.",
+     "Ich denke, dass die Bank das Gutachten hätte genauer prüfen müssen."
     ],
     "h": "В придаточном: hätte + два инфинитива в конце (hätte prüfen müssen)."
    }

@@ -40,7 +40,7 @@ D.days[31] = {
     "der marktüblich erzielbare Rohertrag",
     "den Rohertrag ermitteln"
    ],
-   "note": "§ 31 Abs. 2 ImmoWertV: считается от рыночно достижимой Nettokaltmiete; фактическую арендную плату берут, если она рыночная. Мн. ч. с умлаутом: die Roherträge. bei 420 Quadratmetern — Dat. Pl. с -n."
+   "note": "§ 31 Abs. 2 ImmoWertV: считается от рыночно достижимых доходов (на практике — от Nettokaltmiete); фактическую арендную плату берут, если она рыночная. Мн. ч. с умлаутом: die Roherträge. bei 420 Quadratmetern — Dat. Pl. с -n."
   },
   {
    "id": "v31-003",
@@ -321,7 +321,7 @@ D.days[31] = {
  ],
  "grammar": {
   "id": "g-d31",
-  "de": "Präpositionen mit Zahlen: um, auf, von … auf, bis zu, rund",
+  "de": "Präpositionen und Angaben bei Zahlen: um, auf, von … auf, bis zu, rund",
   "ru": "Предлоги и слова при числах: um, auf, von … auf, bis zu, rund",
   "rule": "<p>Главное — не путать <b>um</b> и <b>auf</b>.</p><table><tr><th>Слово</th><th>Значение</th><th>Пример</th></tr><tr><td><b>um</b> + Akk.</td><td>на сколько (разница)</td><td><b>Die Miete steigt um 0,70 Euro.</b></td></tr><tr><td><b>auf</b> + Akk.</td><td>до какого уровня</td><td><b>Sie steigt auf 7,40 Euro.</b></td></tr><tr><td><b>von … auf …</b></td><td>с … до …</td><td><b>von 6,70 auf 7,40 Euro</b></td></tr><tr><td><b>bei</b> + Dat.</td><td>находится на уровне</td><td><b>Die Quote liegt bei 2 Prozent.</b></td></tr><tr><td><b>bis zu / ab</b></td><td>максимум / минимум</td><td><b>bis zu 9 Euro; ab 100 Quadratmetern</b></td></tr></table><ul><li><b>über / unter</b> + Dat.: <b>Die Ist-Miete liegt knapp 10 Prozent unter der Marktmiete.</b> Диапазон: <b>zwischen 6,20 und 7,10 Euro</b>.</li><li>Приблизительно: <b>rund, etwa, circa</b>; <b>knapp</b> — чуть меньше (knapp 24 % = 23,6 %), <b>gut</b> — чуть больше (gut 20 % = 20,3 %).</li><li><b>je / pro</b>: <b>7,40 Euro je Quadratmeter und Monat</b>; <b>mit 2 Prozent ansetzen</b>.</li><li>Perfekt: <b>steigen, sinken</b> → <b>ist gestiegen</b>; <b>erhöhen</b> (что-то) → <b>hat erhöht</b>; <b>sich erhöhen</b> → <b>hat sich erhöht</b>.</li></ul><p><b>Prozent ≠ Prozentpunkt</b>: с 4 до 2,5 % — это <b>um 1,5 Prozentpunkte</b> (относительно — на 37,5 %). База важна: 6,70 на <b>knapp 10 %</b> ниже 7,40, а 7,40 на <b>gut 10 %</b> выше 6,70. <b>Euro</b> и <b>Prozent</b> после чисел не меняются: <b>um 20 Euro</b>.</p>",
   "examples": [
@@ -425,7 +425,9 @@ D.days[31] = {
      "Die Miete ist von 6,70 Euro je Quadratmeter auf 7,40 Euro je Quadratmeter gestiegen.",
      "Die Miete ist von 6,70 Euro je Quadratmeter auf 7,40 Euro gestiegen.",
      "Die Miete ist von 6,70 Euro auf 7,40 Euro gestiegen.",
-     "Die Miete ist von 6,70 auf 7,40 Euro gestiegen."
+     "Die Miete ist von 6,70 auf 7,40 Euro gestiegen.",
+     "Die Miete je Quadratmeter ist von 6,70 Euro auf 7,40 Euro gestiegen.",
+     "Die Miete je Quadratmeter ist von 6,70 auf 7,40 Euro gestiegen."
     ],
     "h": "steigen → ist gestiegen (sein); von — исходный уровень, auf — новый."
    },
@@ -478,7 +480,8 @@ D.days[31] = {
     "a": [
      "Die Ist-Miete liegt knapp 10 Prozent unter der Marktmiete.",
      "Knapp 10 Prozent unter der Marktmiete liegt die Ist-Miete."
-    ]
+    ],
+    "h": "Глагол liegt — на втором месте; unter + Dat.: unter der Marktmiete."
    },
    {
     "t": "transform",
@@ -629,7 +632,9 @@ D.days[31] = {
      "Ich setze das Mietausfallwagnis mit zwei Prozent des Rohertrags an, das sind rund 750 Euro jährlich.",
      "Das Mietausfallwagnis setze ich mit zwei Prozent des Rohertrags an, das sind rund 750 Euro jährlich.",
      "Ich setze das Mietausfallwagnis mit 2 % des Rohertrags an, das sind rund 750 Euro jährlich.",
-     "Das Mietausfallwagnis setze ich mit 2 % des Rohertrags an, das sind rund 750 Euro jährlich."
+     "Das Mietausfallwagnis setze ich mit 2 % des Rohertrags an, das sind rund 750 Euro jährlich.",
+     "Ich setze das Mietausfallwagnis mit 2 Prozent des Rohertrags an, das sind jährlich rund 750 Euro.",
+     "Das Mietausfallwagnis setze ich mit 2 Prozent des Rohertrags an, das sind jährlich rund 750 Euro."
     ],
     "h": "ansetzen mit + Dat.; отделяемая приставка an — в конце главного предложения, перед запятой."
    },

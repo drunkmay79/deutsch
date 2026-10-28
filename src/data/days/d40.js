@@ -412,7 +412,8 @@ D.days[40] = {
      "Ich bin bereit, Verantwortung zu übernehmen.",
      "Ich bin bereit, die Verantwortung zu übernehmen.",
      "Ich bin dazu bereit, Verantwortung zu übernehmen.",
-     "Ich bin gern bereit, Verantwortung zu übernehmen."
+     "Ich bin gern bereit, Verantwortung zu übernehmen.",
+     "Ich bin gerne bereit, Verantwortung zu übernehmen."
     ],
     "h": "übernehmen неотделяемый: zu übernehmen (не überzunehmen)."
    },
@@ -511,7 +512,7 @@ D.days[40] = {
      "Ich bin stolz darauf, zahlreiche Bewertungsgutachten erstellt zu haben.",
      "Ich bin stolz, zahlreiche Bewertungsgutachten erstellt zu haben."
     ],
-    "h": "Действие раньше главного → erstellt zu haben; коррелят darauf остаётся."
+    "h": "Действие раньше главного → erstellt zu haben; коррелят darauf можно сохранить (stolz sein auf)."
    },
    {
     "t": "translate",

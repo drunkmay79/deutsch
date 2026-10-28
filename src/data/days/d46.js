@@ -725,7 +725,7 @@ D.days[46] = {
   "kind": "roleplay",
   "title": "Frau Albers fragt nach den Sanierungskosten",
   "ru": "Кредитный консультант Sparkasse готовит финансирование покупки дома Zechenstraße 7 и расспрашивает оценщика о затратах на ремонт и модернизацию",
-  "role": "Sie sind Frau Albers, Kreditberaterin der Sparkasse Musterstadt (fiktiv), und bereiten die Finanzierung der Zechenstraße 7 vor: Die Kundin kauft das Haus für 310.000 Euro und möchte die Sanierung mitfinanzieren (Datenkarte); Ihr Gesprächspartner ist der Gutachter der Sparkasse, siezen Sie ihn. Fragen Sie nacheinander, wie viel die Kundin investieren muss, was davon dringend ist und was warten kann, und wie sicher die Zahlen sind. Hoffen Sie freundlich, aber hartnäckig, dass das Haus nach der Sanierung einfach um die investierten Kosten mehr wert ist, und lassen Sie sich nur von einer sachlichen Begründung überzeugen. Nennen Sie keine Zahlen außerhalb der Datenkarte. Korrigieren Sie pro Antwort höchstens einen Fehler, vorzugsweise bei Funktionsverbgefügen (Präposition, Artikel, kein/nicht), und nennen Sie am Ende kurz zwei Stärken und einen Verbesserungsvorschlag.",
+  "role": "Sie sind Frau Albers, Kreditberaterin der Sparkasse Musterstadt (fiktiv), und bereiten die Finanzierung der Zechenstraße 7 vor: Die Kundin kauft das Haus für 310.000 Euro und möchte die Sanierung mitfinanzieren (Datenkarte); Ihr Gesprächspartner ist der Gutachter der Sparkasse, siezen Sie ihn. Fragen Sie nacheinander, wie viel die Kundin investieren muss, was davon dringend ist und was warten kann, und wie sicher die Zahlen sind. Gehen Sie freundlich, aber hartnäckig davon aus, dass das Haus nach der Sanierung einfach um die investierten Kosten mehr wert ist, und lassen Sie sich nur von einer sachlichen Begründung überzeugen. Nennen Sie keine Zahlen außerhalb der Datenkarte. Korrigieren Sie pro Antwort höchstens einen Fehler, vorzugsweise bei Funktionsverbgefügen (Präposition, Artikel, kein/nicht), und nennen Sie am Ende kurz zwei Stärken und einen Verbesserungsvorschlag.",
   "goal": "Объяснить кредитному консультанту разницу между срочным восстановительным ремонтом и модернизацией, назвать диапазоны затрат с резервом, порекомендовать сметы подрядчиков и спокойно, независимо объяснить, почему стоимость после санации не равна «цена покупки + затраты».",
   "open": "Guten Tag, schön, dass Sie kurz Zeit haben! Ich bereite gerade die Finanzierung für die Zechenstraße 7 vor, und die Kundin möchte die Sanierung gleich mitfinanzieren. Mit welchen Kosten müssen wir da rechnen?",
   "steps": [
@@ -755,7 +755,7 @@ D.days[46] = {
   "topic": "Warum Sanierungskosten nicht einfach vom Wert abgezogen werden",
   "ru": "Как в профессиональной беседе (около 2 минут): объясните, почему затраты на санацию нельзя просто вычесть из стоимости",
   "points": [
-   "Schadensbeseitigungskosten sind nicht gleich der marktgerechten Wertminderung",
+   "Schadensbeseitigungskosten sind nicht mit der marktgerechten Wertminderung gleichzusetzen",
    "Käufer kalkulieren eigene Abschläge – manchmal höher, manchmal niedriger als die Kosten",
    "Modernisierung verbessert das Objekt und kann die Restnutzungsdauer verlängern",
    "Doppelberücksichtigung vermeiden: Der Modernisierungsstand steckt schon im Verfahren",

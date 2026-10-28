@@ -377,6 +377,7 @@ function normA(s) {
     .replace(/[„“”"«»‹›‚‘'’`]/g, '')
     .replace(/[.,!?;:…()\[\]]+/g, ' ')
     .replace(/\s[–—-]\s/g, ' ')
+    .replace(/\bgerne\b/g, 'gern')   // beide Formen sind richtig
     .replace(/\s+/g, ' ').trim();
 }
 function foldA(s) { return normA(s).replace(/ß/g, 'ss').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue'); }

@@ -313,7 +313,9 @@ var TTS = {
     opts = opts || {};
     speechSynthesis.cancel();
     var rate = (opts.rate || Store.get('settings').rate || 0.95);
-    var parts = String(text).replace(/\s+/g, ' ').match(/[^.!?…]+[.!?…]*[»“"]?\s*/g) || [text];
+    /* nur an Satzgrenzen teilen (Satzzeichen, Leerraum, Großbuchstabe), damit 250.000, Abs. 1 oder ca. 0,3 ganz bleiben */
+    var parts = String(text).replace(/\s+/g, ' ').replace(/([.!?…][»“"]?)\s+(?=[A-ZÄÖÜ„»"])/g, '$1\u0001').split('\u0001').filter(function (p) { return p.trim(); });
+    if (!parts.length) parts = [String(text)];
     var v = this.voice(), n = parts.length;
     parts.forEach(function (p, i) {
       var u = new SpeechSynthesisUtterance(p.trim());
@@ -369,13 +371,16 @@ var AI = {
 /* ---------- Antwortprüfung ---------- */
 function normA(s) {
   return String(s || '').toLowerCase()
-    .replace(/[„“"«»‚‘'’`]/g, '')
+    /* Schreibweisen von Zahlen und Einheiten angleichen: 2.050 = 2050, € = Euro, 15% = 15 %, §34 = § 34 */
+    .replace(/(\d)[.\u00a0\u202f ](?=\d{3}(?!\d))/g, '$1')
+    .replace(/\s*€/g, ' euro').replace(/\s*%/g, ' %').replace(/§\s*/g, '§ ')
+    .replace(/[„“”"«»‹›‚‘'’`]/g, '')
     .replace(/[.,!?;:…()\[\]]+/g, ' ')
     .replace(/\s[–—-]\s/g, ' ')
     .replace(/\s+/g, ' ').trim();
 }
 function foldA(s) { return normA(s).replace(/ß/g, 'ss').replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue'); }
-function caseA(s) { return String(s || '').replace(/[„“"«»‚‘'’`.,!?;:…()]+/g, ' ').replace(/\s+/g, ' ').trim().replace(/^./, function (c) { return c.toLowerCase(); }); }
+function caseA(s) { return String(s || '').replace(/[„“”"«»‹›‚‘'’`.,!?;:…()]+/g, ' ').replace(/\s[–—-]\s/g, ' ').replace(/\s+/g, ' ').trim().replace(/^./, function (c) { return c.toLowerCase(); }); }
 function lev(a, b) {
   /* Editierdistanz mit Vertauschung benachbarter Buchstaben (OSA) */
   if (a === b) return 0;

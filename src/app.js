@@ -223,7 +223,7 @@ Views.sitzung = function (el, opts) {
     holder.appendChild(h('div', { class: 'empty finish' },
       h('p', { class: 'eyebrow', text: 'Tag ' + d }),
       h('h2', { text: both ? 'Tag ' + d + ' abgeschlossen' : 'Sitzung ' + (s === 's1' ? 1 : 2) + ' geschafft' }),
-      h('p', { class: 'muted', text: both ? 'Morgen geht es mit Tag ' + (d + 1) + ' weiter.' : s === 's1' ? 'Sitzung 2 am besten später am Tag: Gespräch, Sprechen, Abschluss.' : 'Sitzung 1 ist noch offen.' }),
+      h('p', { class: 'muted', text: both ? (d < D.course.days ? 'Morgen geht es mit Tag ' + (d + 1) + ' weiter.' : 'Kurs abgeschlossen. Herzlichen Glückwunsch!') : s === 's1' ? 'Sitzung 2 am besten später am Tag: Gespräch, Sprechen, Abschluss.' : 'Sitzung 1 ist noch offen.' }),
       h('button', { class: 'btn primary', type: 'button', text: 'Zur Übersicht', onclick: function () { App.day = both ? App.lessonDay() : d; App.go('heute', { day: App.day }); } })));
   }
   start();

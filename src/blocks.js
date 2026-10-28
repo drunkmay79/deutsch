@@ -361,6 +361,7 @@ function renderDrill(x, report, next) {
     var ck = h('button', { class: 'btn primary', type: 'button', text: 'Prüfen' });
     ck.addEventListener('click', function () {
       var user = built.join(' '); var r = checkAnswer(user, x.a);
+      if (r.res === 'ok') r.note = '';   // Wortkarten behalten ihre Großschreibung, das ist kein Fehler
       ck.remove(); done(r.res !== 'wrong', user, r);
     });
     wrap.appendChild(ck);
@@ -660,6 +661,8 @@ Runners.wrap = function (ctx) {
     };
     takeBtn = h('button', { class: 'btn', type: 'button', text: 'Jetzt übernehmen', onclick: function () { take(); } });
     el.appendChild(takeBtn);
+    /* auch „Sitzung beenden“ in der Fußleiste übernimmt die markierten Fehler */
+    var done0 = ctx.done; ctx.done = function () { take(); done0(); };
   } else el.appendChild(h('p', { class: 'muted', text: 'Keine offenen Übungsfehler von heute.' }));
   var nd = ctx.b.d + 1, nm = Content.meta(nd);
   if (nm && !nm.fixed && AI.ready()) {
@@ -671,7 +674,7 @@ Runners.wrap = function (ctx) {
     });
     el.appendChild(genBox);
   }
-  el.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Tag abschließen', onclick: function () { take(); ctx.done(); } }));
+  el.appendChild(h('button', { class: 'btn primary', type: 'button', text: 'Tag abschließen', onclick: function () { ctx.done(); } }));
 };
 function stat(v, l) { return h('div', { class: 'stat' }, h('b', { text: String(v) }), h('span', { text: l })); }
 
@@ -729,7 +732,7 @@ var Gen = {
   /* alle schon erzeugten Tage laden, damit Claude keine Wörter doppelt liefert */
   known: function (d) {
     var ps = [];
-    for (var x = 15; x < d; x++) ps.push(Content.loadGen(x));
+    for (var x = 15; x < d; x++) if (!Content.meta(x).fixed) ps.push(Content.loadGen(x));
     return Promise.all(ps).then(function () {
       var seen = {}, out = [];
       (D.vocab || []).concat.apply([], Object.keys(Content.gen).map(function (k) { return Content.gen[k].vocab || []; }))

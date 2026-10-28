@@ -225,7 +225,7 @@ D.days[63] = {
   "open": "Guten Tag und herzlich willkommen bei Muster & Partner! Ich bin Frau Sommer, die Inhaberin des Büros. Bei uns ist Kommunikation mindestens so wichtig wie das Rechnen, deshalb geht es heute vor allem darum. Stellen Sie sich doch zunächst kurz vor – ein, zwei Minuten reichen.",
   "steps": [
    "Kurze Vorstellung des Bewerbers, dann die Frage: Wie organisieren Sie einen Ortstermin bei einem vermieteten Objekt?",
-   "Live-Aufgabe: eine Erinnerungs-E-Mail an Herrn Wolff diktieren, der seit zwei Wochen Unterlagen zum Mehrfamilienhaus Lindenweg 12 schuldet (mit Betreff, Anrede, Frist und Grußformel)",
+   "Live-Aufgabe: eine Erinnerungs-E-Mail an Herrn Wolff diktieren, der seit zwei Wochen Unterlagen zum Mehrfamilienhaus Erlenweg 8 schuldet (mit Betreff, Anrede, Frist und Grußformel)",
    "Laienfrage: „Erklären Sie mir als Laie, warum mein Haus weniger wert ist als die Angebote im Internet.“",
    "Rollenspiel-Einschub: Herr Brandt ruft verärgert an, der Verkehrswert sei viel zu niedrig, und er wolle „darüber reden“; dabei erwähnt er ein neues Dach",
    "Fachfrage zur Abstimmung bei eiligen Fällen, danach eine Fallvorstellung im Teamstil von etwa zwei Minuten (Ausgangslage, Problem, Lösung, Fazit)",
@@ -243,7 +243,7 @@ D.days[63] = {
    "Zum Schluss fasse ich die wichtigsten Punkte noch einmal kurz zusammen.",
    "Darf ich fragen, wie bei Ihnen die Einarbeitung neuer Kollegen abläuft?"
   ],
-  "facts": "Muster & Partner (fiktiv), Musterstadt im Ruhrgebiet: fünf Sachverständige; Verkehrswertgutachten für Privatpersonen, Erbengemeinschaften, Unternehmen und Banken; Fallbesprechung jeden Montag. E-Mail-Aufgabe: Mehrfamilienhaus Lindenweg 12, sechs Wohnungen, alle vermietet; Eigentümer Herr Wolff; am 14. Oktober angefordert: aktuelle Mieterliste mit Mieten, Grundrisse, Nachweise über Modernisierungen; Ortstermin am 6. November geplant. Laienfrage: Online-Angebote für vergleichbare Häuser 420.000–450.000 €, ermittelter Verkehrswert 385.000 €; Angebotspreise sind keine Kaufpreise, der Gutachterausschuss wertet tatsächlich gezahlte Kaufpreise aus. Telefon-Einschub: Herr Brandt vertritt eine Erbengemeinschaft, Einfamilienhaus Ahornstraße 5; Verkehrswert 298.000 €, die Erben hatten mit 350.000 € gerechnet; neue Information: Dach angeblich vor wenigen Jahren neu eingedeckt, eine Rechnung lag bisher nicht vor."
+  "facts": "Muster & Partner (fiktiv), Musterstadt im Ruhrgebiet: fünf Sachverständige; Verkehrswertgutachten für Privatpersonen, Erbengemeinschaften, Unternehmen und Banken; Fallbesprechung jeden Montag. E-Mail-Aufgabe: Mehrfamilienhaus Erlenweg 8, sechs Wohnungen, alle vermietet; Eigentümer Herr Wolff; am 14. Oktober angefordert: aktuelle Mieterliste mit Mieten, Grundrisse, Nachweise über Modernisierungen; Ortstermin am 6. November geplant. Laienfrage: Online-Angebote für vergleichbare Häuser 420.000–450.000 €, ermittelter Verkehrswert 385.000 €; Angebotspreise sind keine Kaufpreise, der Gutachterausschuss wertet tatsächlich gezahlte Kaufpreise aus. Telefon-Einschub: Herr Brandt vertritt eine Erbengemeinschaft, Einfamilienhaus Ahornstraße 5; Verkehrswert 298.000 €, die Erben hatten mit 350.000 € gerechnet; neue Information: Dach angeblich vor wenigen Jahren neu eingedeckt, eine Rechnung lag bisher nicht vor."
  },
  "fluency": {
   "id": "f63",

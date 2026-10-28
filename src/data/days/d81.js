@@ -803,7 +803,7 @@ D.days[81] = {
    "Das sehe ich etwas differenzierter.",
    "Da muss ich etwas weiter ausholen, aber ich fasse mich kurz."
   ],
-  "facts": "Fiktiver Fall für die Fangfrage: Einfamilienhaus Lindenweg 12, Musterstadt; Kaufpreis 480.000 €; Marktwert laut Gutachten 450.000 €; Beleihungswert 390.000 €; der Kunde wünschte eine Finanzierung des vollen Kaufpreises; im Gutachten dokumentiert: Feuchtigkeitsschäden im Keller, Heizung über 30 Jahre alt; der Kunde hat die Finanzierung bei einer anderen Bank abgeschlossen."
+  "facts": "Fiktiver Fall für die Fangfrage: freistehendes Einfamilienhaus Lindenweg 12, Musterstadt (Baujahr 1994, BGF 260 m², Wohnfläche rund 150 m², Grundstück 600 m²); Kaufpreis 405.000 €; Marktwert laut Gutachten rund 407.000 €; Beleihungswert 360.000 €; der Kunde wünschte eine Finanzierung des vollen Kaufpreises; im Gutachten dokumentiert: Feuchtigkeitsschäden im Keller, Fenster und Dach noch aus dem Baujahr (nur die Heizung wurde vor rund zwölf Jahren erneuert); der Kunde hat die Finanzierung bei einer anderen Bank abgeschlossen."
  },
  "fluency": {
   "id": "f81",

@@ -355,7 +355,7 @@ D.days[22] = {
    },
    {
     "t": "gap",
-    "q": "Das ___ Objekt liegt im Lindenweg 12 in Musterstadt. (bewerten, Partizip II)",
+    "q": "Das ___ Objekt liegt im Weidenweg 3 in Musterstadt. (bewerten, Partizip II)",
     "a": [
      "bewertete"
     ]
@@ -737,7 +737,7 @@ D.days[22] = {
   "id": "t22",
   "kind": "Sachtext",
   "title": "Verkehrswert nach § 194 BauGB und ImmoWertV 2021 – kurz erklärt",
-  "de": "Der Verkehrswert ist der zentrale Begriff jeder Immobilienbewertung. § 194 BauGB nennt ihn in Klammern auch Marktwert. Er wird durch den Preis bestimmt, der zum maßgeblichen Zeitpunkt im gewöhnlichen Geschäftsverkehr zu erzielen wäre. Zu berücksichtigen sind die rechtlichen Gegebenheiten, die tatsächlichen Eigenschaften, die sonstige Beschaffenheit und die Lage des Grundstücks. Ungewöhnliche oder persönliche Verhältnisse bleiben dabei außer Betracht.\n\nVereinfacht gesagt ist der Verkehrswert kein tatsächlich gezahlter Preis, sondern der wahrscheinlichste Preis bei einem normalen Verkauf. Außerdem ist er stichtagsbezogen: Der beauftragte Sachverständige ermittelt ihn immer zu einem bestimmten Datum.\n\nDie ImmoWertV 2021 unterscheidet zwei Stichtage. Der Wertermittlungsstichtag ist maßgeblich für die allgemeinen Wertverhältnisse, etwa für das geltende Zinsniveau und die herrschende Nachfrage. Der Qualitätsstichtag bestimmt den Grundstückszustand, also die Gesamtheit aller Grundstücksmerkmale. In der Regel fallen beide Stichtage zusammen; abweichen können sie zum Beispiel bei einer Enteignung.\n\nEin fiktives Beispiel: Die Eigentumswohnung im Lindenweg 12 in Musterstadt soll rückwirkend zum 31. Dezember des Vorjahres bewertet werden. Die im Februar abgeschlossene Dachsanierung bleibt unberücksichtigt, denn am Qualitätsstichtag war das Dach noch nicht saniert. Laut den vorliegenden Unterlagen wurde eine vergleichbare Wohnung im selben Haus für 120.000 Euro an einen Verwandten verkauft. Dieser vereinbarte Preis ist kein Maßstab für den Verkehrswert, weil persönliche Verhältnisse ihn beeinflusst haben. Als Vergleichspreis eignet er sich deshalb nicht ohne Weiteres.\n\nFür die Ermittlung sieht die ImmoWertV das Vergleichswert-, das Ertragswert- und das Sachwertverfahren vor. Der Sachverständige wählt das geeignete Verfahren nach der Art des Objekts, kann auch mehrere Verfahren heranziehen und muss seine Wahl begründen.",
+  "de": "Der Verkehrswert ist der zentrale Begriff jeder Immobilienbewertung. § 194 BauGB nennt ihn in Klammern auch Marktwert. Er wird durch den Preis bestimmt, der zum maßgeblichen Zeitpunkt im gewöhnlichen Geschäftsverkehr zu erzielen wäre. Zu berücksichtigen sind die rechtlichen Gegebenheiten, die tatsächlichen Eigenschaften, die sonstige Beschaffenheit und die Lage des Grundstücks. Ungewöhnliche oder persönliche Verhältnisse bleiben dabei außer Betracht.\n\nVereinfacht gesagt ist der Verkehrswert kein tatsächlich gezahlter Preis, sondern der wahrscheinlichste Preis bei einem normalen Verkauf. Außerdem ist er stichtagsbezogen: Der beauftragte Sachverständige ermittelt ihn immer zu einem bestimmten Datum.\n\nDie ImmoWertV 2021 unterscheidet zwei Stichtage. Der Wertermittlungsstichtag ist maßgeblich für die allgemeinen Wertverhältnisse, etwa für das geltende Zinsniveau und die herrschende Nachfrage. Der Qualitätsstichtag bestimmt den Grundstückszustand, also die Gesamtheit aller Grundstücksmerkmale. In der Regel fallen beide Stichtage zusammen; abweichen können sie zum Beispiel bei einer Enteignung.\n\nEin fiktives Beispiel: Die Eigentumswohnung im Weidenweg 3 in Musterstadt soll rückwirkend zum 31. Dezember des Vorjahres bewertet werden. Die im Februar abgeschlossene Dachsanierung bleibt unberücksichtigt, denn am Qualitätsstichtag war das Dach noch nicht saniert. Laut den vorliegenden Unterlagen wurde eine vergleichbare Wohnung im selben Haus für 120.000 Euro an einen Verwandten verkauft. Dieser vereinbarte Preis ist kein Maßstab für den Verkehrswert, weil persönliche Verhältnisse ihn beeinflusst haben. Als Vergleichspreis eignet er sich deshalb nicht ohne Weiteres.\n\nFür die Ermittlung sieht die ImmoWertV das Vergleichswert-, das Ertragswert- und das Sachwertverfahren vor. Der Sachverständige wählt das geeignete Verfahren nach der Art des Objekts, kann auch mehrere Verfahren heranziehen und muss seine Wahl begründen.",
   "ru": "Краткий справочный текст: определение рыночной стоимости по § 194 BauGB, две даты по ImmoWertV 2021 (дата оценки и дата фиксации состояния участка) на примере ретроспективной оценки квартиры, почему цена сделки между родственниками — не рыночная стоимость, и три метода оценки.",
   "q": [
    {
@@ -786,7 +786,7 @@ D.days[22] = {
     "a": 0
    }
   ],
-  "retell": "Erklären Sie mündlich in fünf bis sechs Sätzen, was der Verkehrswert ist und welche Rolle die beiden Stichtage spielen. Nennen Sie das Beispiel Lindenweg 12 und verwenden Sie mindestens vier Partizipien als Attribut, zum Beispiel: die vorliegenden Unterlagen, die im Februar abgeschlossene Dachsanierung, der vereinbarte Preis, der beauftragte Sachverständige.",
+  "retell": "Erklären Sie mündlich in fünf bis sechs Sätzen, was der Verkehrswert ist und welche Rolle die beiden Stichtage spielen. Nennen Sie das Beispiel Weidenweg 3 und verwenden Sie mindestens vier Partizipien als Attribut, zum Beispiel: die vorliegenden Unterlagen, die im Februar abgeschlossene Dachsanierung, der vereinbarte Preis, der beauftragte Sachverständige.",
   "gl": [
    {
     "de": "das Baugesetzbuch (BauGB)",
@@ -841,7 +841,7 @@ D.days[22] = {
   "steps": [
    "Die Klassikerfrage stellen: Was ist der Verkehrswert? Erwartet wird die Definition nach § 194 BauGB in eigenen Worten: Stichtag, gewöhnlicher Geschäftsverkehr, rechtliche Gegebenheiten, tatsächliche Eigenschaften, Lage, keine ungewöhnlichen oder persönlichen Verhältnisse",
    "Nachfragen, worin sich der Verkehrswert vom vereinbarten Kaufpreis unterscheidet, und ein Beispiel verlangen: Verkauf unter Verwandten, Notverkauf, Liebhaberpreis",
-   "Nach dem Unterschied zwischen Wertermittlungsstichtag und Qualitätsstichtag fragen und ein Beispiel verlangen, etwa die rückwirkende Bewertung der Wohnung Lindenweg 12",
+   "Nach dem Unterschied zwischen Wertermittlungsstichtag und Qualitätsstichtag fragen und ein Beispiel verlangen, etwa die rückwirkende Bewertung der Wohnung Weidenweg 3",
    "Fragen, welche Wertermittlungsverfahren die ImmoWertV vorsieht und welches Verfahren der Bewerber für eine Eigentumswohnung und für ein vermietetes Mehrfamilienhaus heranziehen würde",
    "Kurzer Ausblick: Wie verhält sich der Beleihungswert zum Marktwert? Erwartet: vorsichtiger, nachhaltiger Wert, in der Regel unter dem Marktwert",
    "Das Gespräch beenden und Rückmeldung geben: zwei Stärken, zwei verbesserte Formulierungen mit Partizipialattributen oder Adjektivendungen"
@@ -858,7 +858,7 @@ D.days[22] = {
    "Für eine Eigentumswohnung würde ich in erster Linie das Vergleichswertverfahren heranziehen.",
    "Der Beleihungswert ist ein vorsichtiger, nachhaltiger Wert und liegt in der Regel unter dem Marktwert."
   ],
-  "facts": "Sparkasse Musterstadt, Team Immobilienbewertung; Stelle: Gutachter in der Beleihungswertermittlung. Fallbeispiel für Nachfragen: Eigentumswohnung Lindenweg 12, Musterstadt, 3 Zimmer, ca. 78 m² Wohnfläche, Baujahr 1972. Rückwirkende Bewertung zum 31.12. des Vorjahres; Dachsanierung im Februar danach abgeschlossen. Verkauf einer vergleichbaren Wohnung im selben Haus an einen Verwandten: 120.000 EUR. Kaufpreise vergleichbarer Wohnungen laut Gutachterausschuss der Stadt: rund 2.300 bis 2.600 EUR/m² Wohnfläche. Ermittelter Verkehrswert zum Stichtag: rund 185.000 EUR."
+  "facts": "Sparkasse Musterstadt, Team Immobilienbewertung; Stelle: Gutachter in der Beleihungswertermittlung. Fallbeispiel für Nachfragen: Eigentumswohnung Weidenweg 3, Musterstadt, 3 Zimmer, ca. 78 m² Wohnfläche, Baujahr 1972. Rückwirkende Bewertung zum 31.12. des Vorjahres; Dachsanierung im Februar danach abgeschlossen. Verkauf einer vergleichbaren Wohnung im selben Haus an einen Verwandten: 120.000 EUR. Kaufpreise vergleichbarer Wohnungen laut Gutachterausschuss der Stadt: rund 2.300 bis 2.600 EUR/m² Wohnfläche. Ermittelter Verkehrswert zum Stichtag: rund 185.000 EUR."
  },
  "fluency": {
   "id": "f22",

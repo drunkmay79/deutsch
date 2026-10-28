@@ -140,7 +140,7 @@ function reviewCard(id, card, mode, onGrade0) {
     wrap.appendChild(showBtn);
   } else {
     var checked = false;
-    var ta = answerBox({ rows: card.type === 'vocab' ? 1 : 2, value: card.type === 'fix' ? card.wrong : '', onEnter: function () { chk.click(); } });
+    var ta = answerBox({ rows: card.type === 'vocab' && card.kind !== 'phrase' ? 1 : 2, value: card.type === 'fix' ? card.wrong : '', onEnter: function () { chk.click(); } });
     var chk = h('button', { class: 'btn primary', type: 'button', text: 'Prüfen' });
     chk.addEventListener('click', function () {
       if (checked) return; checked = true;
@@ -152,7 +152,7 @@ function reviewCard(id, card, mode, onGrade0) {
       var prim = r.res === 'ok' ? 3 : r.res === 'near' ? 2 : 1;
       var row = gradeRow(id, onGrade, prim);
       res.appendChild(row);
-      if (r.res === 'wrong' && !isWord && AI.ready()) res.appendChild(aiCheckBtn(kindLabel + ': ' + (card.ru || card.wrong || card.q), answers, ta.value, function (ok) { if (ok && wrap.isConnected) onGrade(3); }));
+      if (r.res === 'wrong' && (!isWord || card.kind === 'phrase') && AI.ready()) res.appendChild(aiCheckBtn(kindLabel + ': ' + (card.ru || card.wrong || card.q), answers, ta.value, function (ok) { if (ok && wrap.isConnected) onGrade(3); }));
       row.querySelector('.primary').focus();
     });
     wrap.appendChild(ta);

@@ -36,7 +36,7 @@ D.days[91] = {
     "Leerlauf vermeiden",
     "Termine auf denselben Tag legen"
    ],
-   "note": "derselbe склоняется в обеих частях: auf denselben Tag (Akk. m.), im selben Stadtteil (Dat., слитно со стяжённым предлогом). so …, dass — глагол в конце. entstehen – entstand – ist entstanden (Perfekt с sein). der Außentermin, Pl. die Außentermine; der Leerlauf без мн. ч."
+   "note": "derselbe склоняется в обеих частях: auf denselben Tag (Akk. m.), после стяжённого предлога — selben: im selben Stadtteil (im = in dem). so …, dass — глагол в конце. entstehen – entstand – ist entstanden (Perfekt с sein). der Außentermin, Pl. die Außentermine; der Leerlauf без мн. ч."
   },
   {
    "id": "v91-003",
@@ -44,7 +44,7 @@ D.days[91] = {
    "de": "Bei privaten Auftraggebern halte ich Auftrag und Zweck des Gutachtens vorab schriftlich fest.",
    "ru": "С частными заказчиками я заранее письменно фиксирую задание и цель заключения.",
    "ex": "Den Wertermittlungsstichtag habe ich mit dem Auftraggeber schriftlich festgehalten.",
-   "exRu": "Дату оценки я письменно согласовал и зафиксировал с заказчиком.",
+   "exRu": "Дату оценки я письменно зафиксировал вместе с заказчиком.",
    "cloze": "Den Wertermittlungsstichtag habe ich mit dem Auftraggeber schriftlich ___.",
    "ans": "festgehalten",
    "col": [
@@ -249,7 +249,7 @@ D.days[91] = {
    },
    {
     "de": "der Gutachterausschuss",
-    "ru": "комитет экспертов-оценщиков (публичный орган рыночных данных)"
+    "ru": "комитет экспертов-оценщиков (независимый орган, собирающий данные о сделках)"
    },
    {
     "de": "termintreu",
@@ -275,7 +275,7 @@ D.days[91] = {
   "open": "Guten Tag, mein Name ist Berger – schön, dass Sie da sind, nehmen Sie bitte Platz. Ich mache es kurz: Wir haben eine knappe Stunde, und ich höre lieber zu, als selbst zu reden. Erzählen Sie mir in zwei, drei Minuten, wer Sie sind und was Sie in der Bewertung bisher gemacht haben.",
   "steps": [
    "Selbstpräsentation (zwei bis drei Minuten), danach: „Warum ein Gutachterbüro und nicht eine Bank?“",
-   "Fachfrage 1, Erbauseinandersetzung Rosenstraße 4: „Wie berücksichtigen Sie das lebenslange Wohnungsrecht der Mutter?“ (unbelasteter Wert, wirtschaftlicher Nachteil, Kapitalisierung mit Leibrentenbarwertfaktor, Marktanpassung, Kostentragung laut Bestellungsurkunde)",
+   "Fachfrage 1, Erbauseinandersetzung Rosenstraße 4: „Wie berücksichtigen Sie das lebenslange Wohnungsrecht der Mutter?“ (unbelasteter Wert, wirtschaftlicher Nachteil, Kapitalisierung mit Leibrentenbarwertfaktor, Marktanpassung, Regelung der Nebenkosten)",
    "Fachfrage 2, Mehrfamilienhaus Gartenstraße 7: Ertragswert Schritt für Schritt erläutern lassen; nachfragen, wie die Mindermiete in zwei Wohnungen zu behandeln ist und wie er das Ergebnis plausibilisiert",
    "Fachfrage 3, unzufriedener Auftraggeber: Herr Kramer hält den Wert für zu niedrig und verlangt eine Änderung – einmal hartnäckig nachfassen („Ich bezahle Sie doch!“)",
    "Arbeitsorganisation und Konditionen: Außentermine, Bewertungssoftware, Gehaltsvorstellung, Probearbeitstag, Eintrittstermin; danach Fragen des Bewerbers und Verabschiedung",
@@ -293,7 +293,7 @@ D.days[91] = {
    "Gern zeige ich Ihnen bei einem Probearbeitstag, wie ich arbeite.",
    "Im Vergleich zum ersten Kurstag spreche ich heute deutlich freier und strukturierter."
   ],
-  "facts": "Alle Angaben fiktiv. Stelle: Sachverständiger für Immobilienbewertung (m/w/d), Berger & Partner, Musterstadt; Gesprächspartnerin: Frau Berger, Inhaberin. (1) Rosenstraße 4, Zweifamilienhaus, Zweck: Erbauseinandersetzung einer Erbengemeinschaft aus drei Geschwistern; Verkehrswert ohne Belastung rund 410.000 €; die Mutter (78 Jahre) hat ein lebenslanges Wohnungsrecht an der Erdgeschosswohnung (90 m²), eingetragen in Abt. II; marktübliche Nettokaltmiete der Wohnung 7,50 €/m² = 675 € im Monat = 8.100 € im Jahr; Leibrentenbarwertfaktor laut aktueller Sterbetafel – im Gespräch genügt der Rechenweg. (2) Gartenstraße 7, Mehrfamilienhaus mit sechs Wohnungen, 420 m² Wohnfläche, marktübliche Nettokaltmiete 7,00 €/m²: Rohertrag 35.280 € − Bewirtschaftungskosten 22 % (≈ 7.760 €) = Reinertrag ≈ 27.520 € − Bodenwertverzinsung 4 % von 160.000 € (800 m² × 200 €/m²) = 6.400 € → 21.120 € × Barwertfaktor 17,292 (4 %, RND 30 Jahre) ≈ 365.200 € + Bodenwert 160.000 € = vorläufiger Ertragswert ≈ 525.000 € (≈ 1.250 €/m² Wohnfläche, rund das 14,9-Fache des Rohertrags); zwei Wohnungen sind für 5,50 €/m² vermietet (Mindermiete → boG). (3) Herr Kramer, privater Auftraggeber (Verkauf eines Einfamilienhauses): Gutachten 255.000 €, er erwartet 290.000 € und verweist auf ein Internetangebot im Nachbarort. Konditionen: Gehalt je nach Erfahrung 54.000–60.000 € brutto im Jahr, 30 Tage Urlaub, Probezeit sechs Monate, Dienstwagen für Außentermine, Fortbildungsbudget 1.500 € im Jahr, Probearbeitstag vor der Entscheidung, Eintritt möglichst bald."
+  "facts": "Alle Angaben fiktiv. Stelle: Sachverständiger für Immobilienbewertung (m/w/d), Berger & Partner, Musterstadt; Gesprächspartnerin: Frau Berger, Inhaberin. (1) Rosenstraße 4, Zweifamilienhaus, Zweck: Erbauseinandersetzung einer Erbengemeinschaft aus drei Geschwistern; Verkehrswert ohne Belastung rund 410.000 €; die Mutter (78 Jahre) hat ein lebenslanges Wohnungsrecht an der Erdgeschosswohnung (90 m²), eingetragen in Abt. II; marktübliche Nettokaltmiete der Wohnung 7,50 €/m² = 675 € im Monat = 8.100 € im Jahr; Leibrentenbarwertfaktor auf Basis der aktuellen Sterbetafel des Statistischen Bundesamtes – im Gespräch genügt der Rechenweg. (2) Gartenstraße 7, Mehrfamilienhaus mit sechs Wohnungen, 420 m² Wohnfläche, marktübliche Nettokaltmiete 7,00 €/m²: Rohertrag 35.280 € − Bewirtschaftungskosten 22 % (≈ 7.760 €) = Reinertrag ≈ 27.520 € − Bodenwertverzinsung 4 % von 160.000 € (800 m² × 200 €/m²) = 6.400 € → 21.120 € × Barwertfaktor 17,292 (4 %, RND 30 Jahre) ≈ 365.200 € + Bodenwert 160.000 € = vorläufiger Ertragswert ≈ 525.000 € (≈ 1.250 €/m² Wohnfläche, rund das 14,9-Fache des Rohertrags); zwei Wohnungen sind für 5,50 €/m² vermietet (Mindermiete → boG). (3) Herr Kramer, privater Auftraggeber (Verkauf eines Einfamilienhauses): Gutachten 255.000 €, er erwartet 290.000 € und verweist auf ein Internetangebot im Nachbarort. Konditionen: Gehalt je nach Erfahrung 54.000–60.000 € brutto im Jahr, 30 Tage Urlaub, Probezeit sechs Monate, Dienstwagen für Außentermine, Fortbildungsbudget 1.500 € im Jahr, Probearbeitstag vor der Entscheidung, Eintritt möglichst bald."
  },
  "fluency": {
   "id": "f91",

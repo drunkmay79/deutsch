@@ -70,7 +70,8 @@ var Content = {
   day: function (d) {
     var m = this.meta(d), self = this;
     if (!m) return Promise.resolve(null);
-    if (m.fixed) return Promise.resolve(this.fixedDay(m));
+    /* Wochenrückblick aus Datei: erzeugte Tage der Woche vorher laden, damit ihre Grammatik in die Mischung kommt */
+    if (m.fixed) return (m.type === 'review' ? this.preloadWeek(d) : Promise.resolve()).then(function () { return self.fixedDay(m); });
     return this.loadGen(d).then(function (g) {
       if (!g) return null;
       /* Wochenrückblick: erst die Tage der Woche laden, sonst fehlt die Grammatikmischung */
@@ -91,6 +92,7 @@ var Content = {
       var w = +p.grammar.slice(4);
       b.mix = Object.keys(D.grammar || {}).map(function (k) { return D.grammar[k]; })
         .filter(function (u) { return u.id !== 'g-diag' && Math.ceil(u.day / 7) === w; });
+      for (var x = (w - 1) * 7 + 1; x < d; x++) if (this.gen[x] && this.gen[x].grammar) b.mix.push(this.gen[x].grammar);
     } else b.grammar = (D.grammar || {})[p.grammar] || null;
     return b;
   },

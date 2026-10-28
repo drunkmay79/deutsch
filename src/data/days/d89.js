@@ -534,7 +534,8 @@ D.days[89] = {
      "Beim Ortstermin ist mir ein Riss in der Giebelwand aufgefallen.",
      "Beim Ortstermin ist mir in der Giebelwand ein Riss aufgefallen.",
      "Mir ist beim Ortstermin ein Riss in der Giebelwand aufgefallen.",
-     "Ein Riss in der Giebelwand ist mir beim Ortstermin aufgefallen."
+     "Ein Riss in der Giebelwand ist mir beim Ortstermin aufgefallen.",
+     "Mir ist beim Ortstermin in der Giebelwand ein Riss aufgefallen."
     ],
     "h": "auffallen + Dat. образует Perfekt с sein: ist mir aufgefallen."
    },
@@ -546,7 +547,8 @@ D.days[89] = {
      "Ich habe mit den Mietern und dem Hausverwalter gesprochen.",
      "Mit den Mietern und dem Hausverwalter habe ich gesprochen.",
      "Mit den Mietern und mit dem Hausverwalter habe ich gesprochen.",
-     "Ich habe mit den Mietern und auch mit dem Hausverwalter gesprochen."
+     "Ich habe mit den Mietern und auch mit dem Hausverwalter gesprochen.",
+     "Ich habe sowohl mit den Mietern als auch mit dem Hausverwalter gesprochen."
     ],
     "h": "mit + Dat.: den Mietern (Pl. с -n), dem Hausverwalter (Sg.)."
    },
@@ -565,7 +567,9 @@ D.days[89] = {
      "Bei älteren Häusern sehe ich mir die Außenwände besonders genau an.",
      "Bei älteren Häusern sehe ich mir die Außenwände besonders aufmerksam an.",
      "Ich sehe mir bei älteren Häusern die Außenwände besonders genau an.",
-     "Ich sehe mir die Außenwände bei älteren Häusern besonders genau an."
+     "Ich sehe mir die Außenwände bei älteren Häusern besonders genau an.",
+     "Bei älteren Häusern sehe ich mir die Außenwände besonders sorgfältig an.",
+     "Ich sehe mir bei älteren Häusern die Außenwände besonders aufmerksam an."
     ],
     "h": "bei + Dat. Pl.: älteren Häusern (-n!); sich (Dat.) etw. ansehen → ich sehe mir … an."
    },
@@ -699,7 +703,7 @@ D.days[89] = {
   "ru": "Транскрипт устного ответа кандидата об оценке многоквартирного дома с 15 ошибками: 4 — род терминов, 3 — Dativ Plural без -n, 3 — окончания прилагательных, 2 — Perfekt с haben вместо sein, по одной — als/wenn, возвратное местоимение в Dat. и порядковое числительное.",
   "q": [
    {
-    "q": "Wie muss der erste Satz der Antwort richtig lauten?",
+    "q": "Wie lautet der Satz über das bewertete Objekt richtig?",
     "o": [
      "Vor einiger Zeit habe ich einen Mehrfamilienhaus mit acht Wohnungen bewertet.",
      "Vor einiger Zeit habe ich ein Mehrfamilienhaus mit acht Wohnungen bewertet.",
@@ -784,7 +788,7 @@ D.days[89] = {
    },
    {
     "de": "der Bodenrichtwert",
-    "ru": "ориентировочная (нормативная) стоимость земли"
+    "ru": "ориентировочная стоимость земли (средняя цена 1 м² в зоне)"
    }
   ]
  },
@@ -828,7 +832,7 @@ D.days[89] = {
    "Der Bauschaden: was ich gemacht habe, nachdem … (Plusquamperfekt)",
    "Was ich daraus gelernt habe – mindestens eine Selbstkorrektur mit „Ich korrigiere mich“"
   ],
-  "model": "Mein schwierigster Fall war ein Wohn- und Geschäftshaus in Musterstadt. Die Sparkasse brauchte den Beleihungswert für eine Anschlussfinanzierung. Als ich mir den Grundbuchauszug angesehen habe, ist mir in Abteilung II ein Wohnungsrecht aufgefallen. Die Berechtigte war schon vor Jahren ausgezogen, aber das Recht war nie gelöscht worden. Ich habe mit dem Eigentümer – ich korrigiere mich: mit den Eigentümern, es waren zwei Brüder – ausführlich gesprochen. Beim Ortstermin kam das zweite Problem: Im Keller war eine Wand feucht, und an mehreren Stellen war der Putz abgeplatzt. Nachdem ich alles dokumentiert hatte, habe ich empfohlen, die Ursache von einem Fachbetrieb klären zu lassen. Im Gutachten habe ich das Wohnungsrecht genau beschrieben und die Bank darauf hingewiesen, dass die Löschung veranlasst werden sollte. Daraus habe ich gelernt: Bei unklaren Rechten frage ich sofort nach, und bei Feuchtigkeit lege ich mich nicht vorschnell auf eine Ursache fest.",
+  "model": "Mein schwierigster Fall war ein Wohn- und Geschäftshaus in Musterstadt. Die Sparkasse brauchte den Beleihungswert für eine Anschlussfinanzierung. Als ich mir den Grundbuchauszug angesehen habe, ist mir in Abteilung II ein Wohnungsrecht aufgefallen. Die Berechtigte war schon vor Jahren ausgezogen, aber das Recht war nie gelöscht worden. Ich habe mit dem Eigentümer – ich korrigiere mich: mit den Eigentümern, es waren zwei Brüder – ausführlich gesprochen. Beim Ortstermin kam ein zweites Problem hinzu: Im Keller war eine Wand feucht, und an mehreren Stellen war der Putz abgeplatzt. Nachdem ich alles dokumentiert hatte, habe ich empfohlen, die Ursache von einem Fachbetrieb klären zu lassen. Im Gutachten habe ich das Wohnungsrecht genau beschrieben und die Bank darauf hingewiesen, dass die Löschung veranlasst werden sollte. Daraus habe ich gelernt: Bei unklaren Rechten frage ich sofort nach, und bei Feuchtigkeit lege ich mich nicht vorschnell auf eine Ursache fest.",
   "shadow": [
    "Mein schwierigster Fall war ein Wohn- und Geschäftshaus.",
    "Als ich den Grundbuchauszug geprüft habe, ist mir etwas aufgefallen.",

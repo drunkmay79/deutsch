@@ -155,7 +155,7 @@ D.days[72] = {
    "kind": "verb",
    "de": "finanzieren",
    "forms": "finanziert – finanzierte – hat finanziert",
-   "rek": "etw. (Akk.) mit/über etw. (Akk.) finanzieren",
+   "rek": "etw. (Akk.) mit etw. (Dat.) / über etw. (Akk.) finanzieren",
    "ru": "финансировать",
    "ex": "Den größten Teil des Kaufpreises finanziert die Kundin über ein Annuitätendarlehen.",
    "exRu": "Большую часть цены покупки клиентка финансирует аннуитетным кредитом.",
@@ -184,7 +184,7 @@ D.days[72] = {
     "einen Kredit bei der Sparkasse aufnehmen",
     "ein Darlehen über 230.000 Euro"
    ],
-   "note": "Отделяемая приставка уходит в конец: nimmt … auf. Не «einen Kredit nehmen» — правильно aufnehmen. Сумма: über + Akk."
+   "note": "Отделяемая приставка уходит в конец: nimmt … auf. Разговорное «einen Kredit nehmen» в деловой речи лучше заменить на aufnehmen. Сумма: über + Akk."
   },
   {
    "id": "v72-011",
@@ -318,7 +318,7 @@ D.days[72] = {
   "id": "g-d72",
   "de": "Futur II und Zeitbezug in der Zukunft: Bis zum Ende der Zinsbindung werden Sie rund 40 % getilgt haben",
   "ru": "Futur II и отношения времени в будущем: «К концу срока фиксации вы погасите около 40 %»",
-  "rule": "<p><b>Futur II</b> = <b>werden</b> + Partizip II + <b>haben/sein</b>. В Tag 34 это было предположение о прошлом; сегодня — <b>действие, которое будет завершено к моменту в будущем</b> (часто с <b>bis</b>): <b>Bis zum Ende der Zinsbindung werden Sie rund 40 % getilgt haben.</b></p><ul><li><b>haben/sein</b> — как в Perfekt: <b>Sie werden 180 Raten gezahlt haben.</b> / <b>Die Restschuld wird auf 138.000 € gesunken sein.</b> (sinken → ist gesunken)</li><li>В придаточном werden стоит последним: <b>…, dass Sie bis dahin 40 % getilgt haben werden.</b></li><li>Пассив: вместо громоздкого <i>wird getilgt worden sein</i> лучше Zustandspassiv: <b>Das Darlehen wird dann zu 40 % getilgt sein.</b></li><li>В устной речи часто Perfekt + указание времени: <b>Bis 2041 haben Sie 40 % getilgt.</b></li></ul><p><b>Союзы времени</b> (sobald, bis, bevor, nachdem): в придаточном Präsens или Perfekt, а не Futur: <b>Sobald die Zinsbindung ausgelaufen ist, muss die Restschuld neu finanziert werden.</b> После <b>nachdem</b> — действие, которое произошло раньше: <b>Nachdem das Darlehen ausgezahlt worden ist, beginnt die Tilgung.</b></p><table><tr><th>Предлог</th><th>Пример</th></tr><tr><td>bis zum/zur + Dat.</td><td><b>bis zum Ende der Zinsbindung</b></td></tr><tr><td>nach Ablauf + Gen.</td><td><b>nach Ablauf der Zinsbindung</b></td></tr><tr><td>während + Gen.</td><td><b>während der Zinsbindung</b></td></tr><tr><td>ab + Dat.</td><td><b>ab dem elften Jahr</b> (порядковое с окончанием -en)</td></tr></table>",
+  "rule": "<p><b>Futur II</b> = <b>werden</b> + Partizip II + <b>haben/sein</b>. В Tag 34 акцент был на предположении о прошлом; сегодня — <b>действие, которое будет завершено к моменту в будущем</b> (часто с <b>bis</b>): <b>Bis zum Ende der Zinsbindung werden Sie rund 40 % getilgt haben.</b></p><ul><li><b>haben/sein</b> — как в Perfekt: <b>Sie werden 180 Raten gezahlt haben.</b> / <b>Die Restschuld wird auf 138.000 € gesunken sein.</b> (sinken → ist gesunken)</li><li>В придаточном werden стоит последним: <b>…, dass Sie bis dahin 40 % getilgt haben werden.</b></li><li>Пассив: вместо громоздкого <i>wird getilgt worden sein</i> лучше Zustandspassiv: <b>Das Darlehen wird dann zu 40 % getilgt sein.</b></li><li>В устной речи часто Perfekt + указание времени: <b>Bis 2041 haben Sie 40 % getilgt.</b></li></ul><p><b>Союзы времени</b> (sobald, bis, bevor, nachdem): в придаточном Präsens или Perfekt, а не Futur: <b>Sobald die Zinsbindung ausgelaufen ist, muss die Restschuld neu finanziert werden.</b> После <b>nachdem</b> — действие, которое произошло раньше: <b>Nachdem das Darlehen ausgezahlt worden ist, beginnt die Tilgung.</b></p><table><tr><th>Предлог</th><th>Пример</th></tr><tr><td>bis zum/zur + Dat.</td><td><b>bis zum Ende der Zinsbindung</b></td></tr><tr><td>nach Ablauf + Gen.</td><td><b>nach Ablauf der Zinsbindung</b></td></tr><tr><td>während + Gen.</td><td><b>während der Zinsbindung</b></td></tr><tr><td>ab + Dat.</td><td><b>ab dem elften Jahr</b> (порядковое с окончанием -en)</td></tr></table>",
   "examples": [
    {
     "de": "Bis zum Ende der Zinsbindung werden Sie rund 40 % des Darlehens getilgt haben.",
@@ -636,8 +636,8 @@ D.days[72] = {
     "de": "Ich gehe davon aus, dass die Zinsen bis dahin gestiegen sein werden."
    },
    {
-    "ru": "Через десять лет после выплаты вы сможете расторгнуть кредит без компенсации банку.",
-    "de": "Zehn Jahre nach der Auszahlung können Sie das Darlehen ohne Vorfälligkeitsentschädigung kündigen."
+    "ru": "Через десять лет после полной выплаты кредита вы сможете расторгнуть договор без компенсации банку.",
+    "de": "Zehn Jahre nach der vollständigen Auszahlung können Sie das Darlehen ohne Vorfälligkeitsentschädigung kündigen."
    },
    {
     "ru": "Прежде чем подписать договор, сравните, пожалуйста, эффективные ставки.",
@@ -704,7 +704,7 @@ D.days[72] = {
   "id": "s72",
   "kind": "roleplay",
   "title": "Beratung: 10 oder 15 Jahre Zinsbindung?",
-  "ru": "Вы — кредитный консультант сберкассы; клиентка-первая покупательница задаёт вопросы по предложению о финансировании",
+  "ru": "Вы — кредитный консультант сберкассы; клиентка, впервые покупающая жильё, задаёт вопросы по предложению о финансировании",
   "role": "Sie spielen Frau Neumann, 34, Erstkäuferin einer Eigentumswohnung (Birkenallee 3, Musterstadt, fiktiv); der Lernende ist Ihr Kreditberater bei der Sparkasse Musterstadt, und Sie siezen ihn. Fragen Sie nacheinander nach dem Unterschied zwischen Sollzins und Effektivzins, warum bei gleicher Rate der Tilgungsanteil steigt, ob Sie 10 oder 15 Jahre Zinsbindung wählen sollen, was nach Ablauf der Zinsbindung passiert und was es kostet, wenn Sie die Wohnung schon nach 6 Jahren verkaufen. Bleiben Sie freundlich, haken Sie aber nach, bis er mit konkreten Zahlen von der Datenkarte antwortet, und bitten Sie ihn mindestens einmal, etwas einfacher zu erklären. Lassen Sie ihn möglichst viel sprechen. Nach dem Gespräch geben Sie als Tutor kurzes Feedback: zwei Stärken, höchstens drei Fehler (besonders Futur II mit haben/sein, Wortstellung im Nebensatz, Kasus nach während und nach Ablauf) mit korrigierter Version.",
   "goal": "Понятно, с цифрами объяснить клиентке номинальную и эффективную ставку, аннуитет, остаток долга, выбор срока фиксации, последующее финансирование и последствия досрочной продажи, используя Futur II и союзы времени.",
   "open": "Guten Tag! Danke, dass Sie sich Zeit nehmen. Ich habe Ihren Finanzierungsvorschlag mehrmals gelesen, aber ehrlich gesagt verstehe ich nicht alles. Zum Beispiel: Warum stehen da zwei verschiedene Zinssätze, 3,70 und 3,76 Prozent?",
@@ -744,7 +744,7 @@ D.days[72] = {
   "shadow": [
    "Zinsen wirken auf die Preise vor allem über die Finanzierung.",
    "Bei gleicher Rate sinkt die finanzierbare Darlehenssumme deutlich.",
-   "Steigt der Zins um einen Prozentpunkt, sind es etwa 15 Prozent weniger.",
+   "Steigt der Zins um einen Prozentpunkt, sind es im Beispiel etwa 15 Prozent weniger.",
    "Viele Käufer können dann weniger bieten.",
    "Zuerst geraten Objekte in schwächeren Lagen unter Druck.",
    "Der Liegenschaftszinssatz ist aber kein Kapitalmarktzins.",

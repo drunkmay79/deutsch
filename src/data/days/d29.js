@@ -22,7 +22,7 @@ D.days[29] = {
     "im Sachwertverfahren ermitteln",
     "der vorläufige Sachwert"
    ],
-   "note": "§§ 35–39 ImmoWertV. im = in dem (Dat.): im Sachwertverfahren. Результат метода — der Sachwert; к рыночной стоимости он приводится только через Sachwertfaktor (это тема следующего дня)."
+   "note": "§§ 35–39 ImmoWertV. im = in dem (Dat.): im Sachwertverfahren. Результат метода — der Sachwert. Промежуточный vorläufiger Sachwert приводится к рынку через Sachwertfaktor (это тема следующего дня)."
   },
   {
    "id": "v29-002",
@@ -103,9 +103,9 @@ D.days[29] = {
    "art": "der",
    "pl": "Kostenkennwerte",
    "ru": "удельный показатель затрат (€/м² BGF)",
-   "ex": "Für die Standardstufe 3 beträgt der Kostenkennwert 835 Euro je Quadratmeter Brutto-Grundfläche.",
-   "exRu": "Для уровня стандарта 3 удельный показатель затрат составляет 835 евро за квадратный метр BGF.",
-   "cloze": "Für die Standardstufe 3 beträgt der ___ 835 Euro je Quadratmeter Brutto-Grundfläche.",
+   "ex": "Bei der Gebäudeart 1.01 und Standardstufe 3 beträgt der Kostenkennwert 835 Euro je Quadratmeter Brutto-Grundfläche.",
+   "exRu": "Для типа здания 1.01 и уровня стандарта 3 удельный показатель затрат составляет 835 евро за квадратный метр BGF.",
+   "cloze": "Bei der Gebäudeart 1.01 und Standardstufe 3 beträgt der ___ 835 Euro je Quadratmeter Brutto-Grundfläche.",
    "ans": "Kostenkennwert",
    "col": [
     "der Kostenkennwert der Standardstufe 3",
@@ -326,7 +326,7 @@ D.days[29] = {
    },
    {
     "de": "Multipliziert mit 260 Quadratmetern ergibt das 225.940 Euro.",
-    "ru": "Умноженное на 260 квадратных метров, это даёт 225 940 евро."
+    "ru": "При умножении на 260 квадратных метров получается 225 940 евро."
    },
    {
     "de": "Im zweiten Schritt rechne ich den Betrag mit dem Baupreisindex auf den Stichtag hoch.",

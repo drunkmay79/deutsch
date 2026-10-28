@@ -32,7 +32,7 @@ D.days[30] = {
    "pl": "",
    "ru": "снижение стоимости из-за возраста здания (возрастной износ)",
    "ex": "Die Alterswertminderung berücksichtigt, dass ein 32 Jahre altes Haus weniger wert ist als ein Neubau.",
-   "exRu": "Возрастной износ учитывает, что дом 32-летнего возраста стоит меньше, чем новый.",
+   "exRu": "Возрастной износ учитывает, что 32-летний дом стоит меньше, чем новостройка.",
    "cloze": "Die ___ berücksichtigt, dass ein 32 Jahre altes Haus weniger wert ist als ein Neubau.",
    "ans": "Alterswertminderung",
    "col": [
@@ -284,7 +284,7 @@ D.days[30] = {
     "einen Zuschlag ansetzen",
     "Dachgauben, Balkone, Vordächer"
    ],
-   "note": "zu + Partizip I (Gerundiv): zu veranschlagende Bauteile = Bauteile, die gesondert veranschlagt werden müssen. Термин из Sachwertrichtlinie; в ImmoWertA — werthaltige, in der BGF nicht erfasste Bauteile."
+   "note": "zu + Partizip I (Gerundiv): zu veranschlagende Bauteile = Bauteile, die gesondert veranschlagt werden müssen. Термин из Sachwertrichtlinie (2012); сегодня чаще говорят: werthaltige, in der BGF nicht erfasste Bauteile."
   },
   {
    "id": "v30-017",
@@ -292,7 +292,7 @@ D.days[30] = {
    "de": "die modifizierte Restnutzungsdauer",
    "ru": "скорректированный оставшийся срок службы (с учётом модернизаций)",
    "ex": "Bei dem 60 Jahre alten Haus beträgt die modifizierte Restnutzungsdauer dank der Modernisierungen 45 statt 20 Jahre.",
-   "exRu": "У дома 60-летнего возраста скорректированный оставшийся срок службы благодаря модернизациям составляет 45 лет вместо 20.",
+   "exRu": "У 60-летнего дома скорректированный оставшийся срок службы благодаря модернизациям составляет 45 лет вместо 20.",
    "cloze": "Bei dem 60 Jahre alten Haus beträgt die ___ Restnutzungsdauer dank der Modernisierungen 45 statt 20 Jahre.",
    "ans": "modifizierte",
    "col": [
@@ -300,7 +300,7 @@ D.days[30] = {
     "das fiktive Baujahr",
     "die Restnutzungsdauer verlängern"
    ],
-   "note": "Формулу Anlage 2 ImmoWertV применяют, только если относительный возраст (Alter : GND) выше порога для данного числа баллов; иначе RND = GND − Alter. Предел — 70 % от GND (при Kernsanierung — до 90 %)."
+   "note": "Формулу Anlage 2 ImmoWertV применяют, только если относительный возраст (Alter : GND) достигает порога для данного числа баллов; иначе RND = GND − Alter. Предел — 70 % от GND (при Kernsanierung — до 90 %)."
   },
   {
    "id": "v30-018",
@@ -627,6 +627,8 @@ D.days[30] = {
      "Zur Plausibilisierung des Ergebnisses ziehe ich zusätzlich das Vergleichswertverfahren heran.",
      "Zur Plausibilisierung des Ergebnisses ziehe ich das Vergleichswertverfahren zusätzlich heran.",
      "Zur Plausibilisierung des Ergebnisses ziehe ich ergänzend das Vergleichswertverfahren heran.",
+     "Zur Plausibilisierung des Ergebnisses ziehe ich das Vergleichswertverfahren ergänzend heran.",
+     "Ich ziehe zur Plausibilisierung des Ergebnisses das Vergleichswertverfahren zusätzlich heran.",
      "Ich ziehe zur Plausibilisierung des Ergebnisses zusätzlich das Vergleichswertverfahren heran.",
      "Ich ziehe zur Plausibilisierung des Ergebnisses ergänzend das Vergleichswertverfahren heran.",
      "Ich ziehe zusätzlich das Vergleichswertverfahren zur Plausibilisierung des Ergebnisses heran.",

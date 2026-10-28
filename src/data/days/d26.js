@@ -214,7 +214,7 @@ D.days[26] = {
    "col": [
     "Angaben kritisch hinterfragen",
     "eine Annahme hinterfragen",
-    "Daten nicht ungeprüft übernehmen"
+    "die Datengrundlage hinterfragen"
    ],
    "note": "Неотделяемая приставка hinter-: Partizip II без ge-: hat hinterfragt (не *hintergefragt). Ударение на корне: hinterFRAgen.",
    "ex": "Ein guter Gutachter hinterfragt auch die Angaben des Verkäufers kritisch.",
@@ -405,7 +405,8 @@ D.days[26] = {
      "Nach unserer Rechnung müsste der Wert eigentlich unter 180.000 Euro liegen.",
      "Der Wert müsste nach unserer Rechnung unter 180.000 Euro liegen.",
      "Der Wert müsste nach unserer Rechnung eigentlich unter 180.000 Euro liegen.",
-     "Der Wert müsste eigentlich nach unserer Rechnung unter 180.000 Euro liegen."
+     "Der Wert müsste eigentlich nach unserer Rechnung unter 180.000 Euro liegen.",
+     "Eigentlich müsste der Wert nach unserer Rechnung unter 180.000 Euro liegen."
     ]
    },
    {

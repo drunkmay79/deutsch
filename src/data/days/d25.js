@@ -112,7 +112,7 @@ D.days[25] = {
     "struktureller Leerstand",
     "der Mietausfall bis zur Neuvermietung"
    ],
-   "note": "Глагол обычно пишут раздельно: leer stehen — steht leer. Обычный временный простой в доходном подходе покрывает Mietausfallwagnis; фактический пустующий объект на дату оценки или длительный структурный простой учитывают отдельно как boG."
+   "note": "Глагол обычно пишут раздельно: leer stehen — steht leer. Обычный временный простой в доходном подходе покрывает Mietausfallwagnis; фактическое пустование на дату оценки (потеря аренды до новой сдачи) и длительный структурный простой учитывают отдельно как boG."
   },
   {
    "id": "v25-007",
@@ -848,7 +848,7 @@ D.days[25] = {
    "Feuchteschaden Gartenstraße 3: Warum 15.000 statt 22.000 Euro? Einmal widersprechen: „Der Käufer muss doch 22.000 Euro bezahlen!“; erwartet: marktüblicher Werteinfluss, Verschleiß schon über die Restnutzungsdauer erfasst, neue Abdichtung nach der Sanierung, Doppelberücksichtigung vermeiden",
    "Fragen, wie Leerstand und Mindermiete behandelt werden (Mietausfall bis zur Neuvermietung und Vermietungskosten; Barwert der Mietdifferenz bis zur möglichen Mietanpassung) – mit dem Fall Am Markt 7 aus der Datenkarte",
    "Zwei weitere Nominalstil-Sätze vorlesen und jeweils fragen: „Und wie sagt man das einfacher?“",
-   "Abschluss: sich bedanken, zwei Stärken nennen und zwei Sätze im Verbalstil verbessert wiederholen lassen"
+   "Abschluss: sich bedanken, zwei Stärken und zwei Verbesserungsvorschläge nennen und zwei Sätze im Verbalstil verbessert wiederholen lassen"
   ],
   "use": [
    "Besondere objektspezifische Grundstücksmerkmale sind Merkmale, die erheblich vom Üblichen abweichen.",

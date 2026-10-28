@@ -184,7 +184,7 @@ D.days[61] = {
     "an die Marktfolge weiterleiten",
     "zur Prüfung weiterleiten"
    ],
-   "note": "an + Akk.: an den Kreditberater, an die Kreditsachbearbeitung. В разговоре также с Dativ: Ich leite Ihnen die Mail weiter."
+   "note": "an + Akk.: an den Kreditberater, an die Kreditsachbearbeitung. Также с Dativ лица (и в письменной речи): Ich leite Ihnen die Mail weiter."
   },
   {
    "id": "v61-011",
@@ -520,6 +520,7 @@ D.days[61] = {
     "q": "Frau Kessler: „Rufen Sie mich bitte heute noch zurück.“",
     "a": [
      "Frau Kessler bittet Sie, sie heute noch zurückzurufen.",
+     "Frau Kessler bittet Sie, sie noch heute zurückzurufen.",
      "Frau Kessler bittet Sie, heute noch zurückzurufen.",
      "Frau Kessler bittet Sie darum, sie heute noch zurückzurufen."
     ],

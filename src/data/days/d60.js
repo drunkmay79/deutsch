@@ -130,7 +130,7 @@ D.days[60] = {
     "ein Gegengutachten vorlegen",
     "mit einem Gegengutachten drohen"
    ],
-   "note": "Мн. ч. = ед. ч.: die Gegengutachten. Для залоговой стоимости по BelWertV заключение, представленное или заказанное заёмщиком, нельзя класть в основу — но новые факты из него можно проверить."
+   "note": "Мн. ч. = ед. ч.: die Gegengutachten. Для залоговой стоимости по BelWertV заключение, представленное или заказанное заёмщиком, нельзя брать за основу — но новые факты из него можно проверить."
   },
   {
    "id": "v60-008",
@@ -343,7 +343,7 @@ D.days[60] = {
    },
    {
     "de": "Ich könnte Ihnen anbieten, selbst Einsicht in die Bauakte zu nehmen.",
-    "ru": "Я мог бы предложить сам ознакомиться со строительным делом."
+    "ru": "Я мог бы предложить Вам, что сам ознакомлюсь со строительным делом."
    },
    {
     "de": "Dafür bräuchte ich allerdings eine Vollmacht von Ihnen.",
@@ -467,7 +467,9 @@ D.days[60] = {
     "q": "Das sehe ich anders.",
     "a": [
      "Das würde ich anders sehen.",
-     "Ich würde das anders sehen."
+     "Ich würde das anders sehen.",
+     "Das würde ich etwas anders sehen.",
+     "Ich würde das etwas anders sehen."
     ],
     "h": "würde на 2-м месте, sehen — в конце."
    },
@@ -562,7 +564,8 @@ D.days[60] = {
      "Läge die Genehmigung vor, könnte ich das Dachgeschoss als Wohnfläche ansetzen.",
      "Ich könnte das Dachgeschoss als Wohnfläche ansetzen, wenn die Genehmigung vorläge.",
      "Ich könnte das Dachgeschoss als Wohnfläche ansetzen, wenn die Genehmigung vorliegen würde.",
-     "Wenn die Genehmigung vorläge, dann könnte ich das Dachgeschoss als Wohnfläche ansetzen."
+     "Wenn die Genehmigung vorläge, dann könnte ich das Dachgeschoss als Wohnfläche ansetzen.",
+     "Wenn die Genehmigung vorliegen würde, dann könnte ich das Dachgeschoss als Wohnfläche ansetzen."
     ],
     "h": "Нереальное условие: отрицание исчезает. vorliegen → läge vor; в придаточном: wenn … vorläge."
    },
@@ -659,7 +662,7 @@ D.days[60] = {
    },
    {
     "t": "translate",
-    "q": "Как насчёт того, чтобы мы вместе ознакомились со строительным делом в ведомстве? (Wie wäre es, wenn …; gemeinsam; beim Bauamt einsehen)",
+    "q": "Как насчёт того, чтобы мы вместе ознакомились со строительным делом в строительном ведомстве? (Wie wäre es, wenn …; gemeinsam; beim Bauamt einsehen)",
     "a": [
      "Wie wäre es, wenn wir die Bauakte gemeinsam beim Bauamt einsehen würden?",
      "Wie wäre es, wenn wir gemeinsam die Bauakte beim Bauamt einsehen würden?",
@@ -719,7 +722,7 @@ D.days[60] = {
     "de": "Ich wüsste nicht, wie ich einen höheren Wert im Gutachten begründen sollte."
    },
    {
-    "ru": "Если бы у Вашего соседа был такой же участок, сравнение было бы проще.",
+    "ru": "Если бы у Вашего соседа был участок такого же размера, сравнение было бы проще.",
     "de": "Wenn Ihr Nachbar ein gleich großes Grundstück hätte, wäre der Vergleich einfacher."
    },
    {
@@ -826,7 +829,7 @@ D.days[60] = {
   "kind": "roleplay",
   "title": "„Der Wert ist viel zu niedrig!“",
   "ru": "Возмущённый собственник звонит оценщику сберкассы: стоимость его дома якобы сильно занижена",
-  "role": "Sie spielen Herrn Peter Krüger (fiktiv), Eigentümer der Doppelhaushälfte Am Rosenhang 4 in Musterstadt, den sein Kreditberater an den Gutachter der Sparkasse Musterstadt durchgestellt hat; der Lernende ist dieser Gutachter, und Sie siezen ihn. Sie sind laut und ungeduldig, berufen sich auf das Internetportal (360.000 €) und den Verkauf des Nachbarhauses (375.000 €), beschweren sich über das nicht angerechnete Dachgeschoss und drohen mit einem Bankwechsel und einem Gegengutachten; ruhiger werden Sie erst, wenn der Lernende Verständnis zeigt und sachlich argumentiert. Akzeptieren Sie die erneute Prüfung beim Dachgeschoss, haken Sie bei Portal und Nachbarhaus je einmal nach und fragen Sie, ob die Bank Ihr Gegengutachten übernimmt (fachlich richtig: Ein vom Darlehensnehmer beauftragtes Gutachten darf nach der BelWertV der Beleihungswertermittlung nicht zugrunde gelegt werden, neue Fakten daraus können aber geprüft werden). Korrigieren Sie während des Gesprächs nicht; geben Sie danach als Sprachcoach Feedback zu höchstens fünf Fehlern, besonders zu Konjunktiv II (würde/wurde, könnte/konnte), widersprechen + Dativ und Perfekt mit sein oder haben, und nennen Sie zwei gelungene diplomatische Formulierungen.",
+  "role": "Sie spielen Herrn Peter Krüger (fiktiv), Eigentümer der Doppelhaushälfte Am Rosenhang 4 in Musterstadt, den sein Kreditberater zum Gutachter der Sparkasse Musterstadt durchgestellt hat; der Lernende ist dieser Gutachter, und Sie siezen ihn. Sie sind laut und ungeduldig, berufen sich auf das Internetportal (360.000 €) und den Verkauf des Nachbarhauses (375.000 €), beschweren sich über das nicht angerechnete Dachgeschoss und drohen mit einem Bankwechsel und einem Gegengutachten; ruhiger werden Sie erst, wenn der Lernende Verständnis zeigt und sachlich argumentiert. Akzeptieren Sie die erneute Prüfung beim Dachgeschoss, haken Sie bei Portal und Nachbarhaus je einmal nach und fragen Sie, ob die Bank Ihr Gegengutachten übernimmt (fachlich richtig: Ein vom Darlehensnehmer beauftragtes Gutachten darf nach der BelWertV der Beleihungswertermittlung nicht zugrunde gelegt werden, neue Fakten daraus können aber geprüft werden). Korrigieren Sie während des Gesprächs nicht; geben Sie danach als Sprachcoach Feedback zu höchstens fünf Fehlern, besonders zu Konjunktiv II (würde/wurde, könnte/konnte), widersprechen + Dativ und Perfekt mit sein oder haben, und nennen Sie zwei gelungene diplomatische Formulierungen.",
   "goal": "Показать понимание, отделить обоснованное возражение (мансарда без разрешения в документах) от необоснованных (цены предложения на портале, несопоставимая продажа соседа), дипломатично отказать в изменении стоимости без новых фактов, объяснить позицию по контр-заключению и договориться о следующем шаге со сроком.",
   "open": "Krüger hier. Mein Kreditberater hat mich zu Ihnen durchgestellt. Also, ich sage Ihnen ganz ehrlich: Der Wert in Ihrem Gutachten ist viel zu niedrig! 315.000 Euro – das ist doch lächerlich. Im Internet stehen 360.000! Wie kommen Sie auf so eine Zahl?",
   "steps": [

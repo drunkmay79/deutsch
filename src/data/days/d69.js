@@ -334,7 +334,7 @@ D.days[69] = {
     "ru": "За отсутствием гарантированной возможности застройки задняя часть участка учитывается как садовая земля."
    },
    {
-    "de": "Seitens der Stadt bestehen gegen die Hinterbebauung noch Bedenken.",
+    "de": "Seitens der Stadt bestehen gegen die Hinterlandbebauung noch Bedenken.",
     "ru": "Со стороны города пока есть сомнения относительно застройки задней части."
    },
    {
@@ -452,11 +452,11 @@ D.days[69] = {
    {
     "t": "transform",
     "i": "Ersetzen Sie „von der Stadt“ durch „seitens“ + Genitiv.",
-    "q": "Von der Stadt wurden gegen die geplante Hinterbebauung Bedenken geäußert.",
+    "q": "Von der Stadt wurden gegen die geplante Hinterlandbebauung Bedenken geäußert.",
     "a": [
-     "Seitens der Stadt wurden gegen die geplante Hinterbebauung Bedenken geäußert.",
-     "Seitens der Stadt wurden Bedenken gegen die geplante Hinterbebauung geäußert.",
-     "Gegen die geplante Hinterbebauung wurden seitens der Stadt Bedenken geäußert."
+     "Seitens der Stadt wurden gegen die geplante Hinterlandbebauung Bedenken geäußert.",
+     "Seitens der Stadt wurden Bedenken gegen die geplante Hinterlandbebauung geäußert.",
+     "Gegen die geplante Hinterlandbebauung wurden seitens der Stadt Bedenken geäußert."
     ],
     "h": "seitens + Gen.: seitens der Stadt. Пассив сохраняется: wurden … geäußert."
    },
@@ -477,7 +477,8 @@ D.days[69] = {
     "a": [
      "Angesichts der hohen Nachfrage nach Bauland in Musterstadt sind Baulücken gut verkäuflich.",
      "Baulücken sind angesichts der hohen Nachfrage nach Bauland in Musterstadt gut verkäuflich.",
-     "In Musterstadt sind Baulücken angesichts der hohen Nachfrage nach Bauland gut verkäuflich."
+     "In Musterstadt sind Baulücken angesichts der hohen Nachfrage nach Bauland gut verkäuflich.",
+     "Angesichts der hohen Nachfrage nach Bauland sind Baulücken in Musterstadt gut verkäuflich."
     ],
     "h": "angesichts + Gen.: der hohen Nachfrage (Gen. ж. р. после der — прилагательное -en)."
    },

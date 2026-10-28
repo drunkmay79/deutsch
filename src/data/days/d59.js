@@ -68,7 +68,7 @@ D.days[59] = {
    "pl": "Faustregeln",
    "ru": "эмпирическое правило, правило «на глаз»",
    "ex": "Als Faustregel gilt: Angebotspreise liegen meist über den tatsächlich erzielten Kaufpreisen.",
-   "exRu": "Как правило «на глаз» можно сказать: цены предложения обычно выше фактически достигнутых цен продажи.",
+   "exRu": "Эмпирическое правило таково: цены предложения обычно выше фактически достигнутых цен продажи.",
    "cloze": "Als ___ gilt: Angebotspreise liegen meist über den tatsächlich erzielten Kaufpreisen.",
    "ans": "Faustregel",
    "col": [
@@ -130,7 +130,7 @@ D.days[59] = {
     "in einer Bandbreite von … bis …",
     "die Bandbreite der Kaufpreise"
    ],
-   "note": "Близко к die Spanne / die Wertspanne. Но Bodenrichtwert — всегда одно число на зону, не диапазон."
+   "note": "Близко к die Spanne / die Wertspanne. Но Bodenrichtwert — всегда одно число на зону: диапазоны недопустимы (§ 13 Abs. 2 ImmoWertV)."
   },
   {
    "id": "v59-008",
@@ -509,7 +509,7 @@ D.days[59] = {
    },
    {
     "t": "translate",
-    "q": "Цифры получены от комитета экспертов-оценщиков — независимого органа. (stammen; Apposition)",
+    "q": "Цифры получены от комитета экспертов-оценщиков — независимого органа. (stammen; Gremium; Apposition)",
     "a": [
      "Die Zahlen stammen vom Gutachterausschuss, einem unabhängigen Gremium.",
      "Die Zahlen stammen von dem Gutachterausschuss, einem unabhängigen Gremium."

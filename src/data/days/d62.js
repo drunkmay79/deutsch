@@ -22,7 +22,7 @@ D.days[62] = {
     "eine Folie erstellen",
     "zur nächsten Folie wechseln"
    ],
-   "note": "В презентации говорят die Folie (изначально — плёнка для проектора), реже das Slide. Предлог auf + Dat.: auf der Folie."
+   "note": "В презентации говорят die Folie (изначально — плёнка для проектора); англ. Slide встречается реже. Предлог auf + Dat.: auf der Folie."
   },
   {
    "id": "v62-002",

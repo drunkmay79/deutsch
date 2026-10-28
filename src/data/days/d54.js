@@ -363,7 +363,10 @@ D.days[54] = {
     "t": "gap",
     "q": "Dem Kaufvertragsentwurf ___ beträgt der Kaufpreis 475.000 €. (согласно)",
     "a": [
-     "zufolge"
+     "zufolge",
+     "gemäß",
+     "nach",
+     "entsprechend"
     ],
     "h": "zufolge + Dat. стоит после существительного: dem Kaufvertragsentwurf zufolge = laut Kaufvertragsentwurf."
    },
@@ -459,7 +462,8 @@ D.days[54] = {
     "q": "Der Sachwert ist somit maßgeblich für den Verkehrswert.",
     "a": [
      "Somit ist der Sachwert maßgeblich für den Verkehrswert.",
-     "Somit ist der Sachwert für den Verkehrswert maßgeblich."
+     "Somit ist der Sachwert für den Verkehrswert maßgeblich.",
+     "Somit ist für den Verkehrswert der Sachwert maßgeblich."
     ],
     "h": "На первом месте somit → глагол ist сразу за ним, подлежащее после глагола."
    },
@@ -543,7 +547,8 @@ D.days[54] = {
      "Der Sachwert ist somit für die Ableitung des Verkehrswerts maßgeblich.",
      "Für die Ableitung des Verkehrswerts ist somit der Sachwert maßgeblich.",
      "Für die Ableitung des Verkehrswerts ist der Sachwert somit maßgeblich.",
-     "Der Sachwert ist für die Ableitung des Verkehrswerts somit maßgeblich."
+     "Der Sachwert ist für die Ableitung des Verkehrswerts somit maßgeblich.",
+     "Somit ist für die Ableitung des Verkehrswerts der Sachwert maßgeblich."
     ],
     "h": "ist всегда на втором месте; если somit первое — сразу за ним ist."
    },
@@ -587,7 +592,9 @@ D.days[54] = {
      "Derzeit fehlen infolge des Leerstands Mieteinnahmen.",
      "Derzeit fehlen infolge des Leerstandes Mieteinnahmen.",
      "Infolge des Leerstands der Wohnung fehlen derzeit Mieteinnahmen.",
-     "Infolge des Leerstandes der Wohnung fehlen derzeit Mieteinnahmen."
+     "Infolge des Leerstandes der Wohnung fehlen derzeit Mieteinnahmen.",
+     "Mieteinnahmen fehlen derzeit infolge des Leerstands.",
+     "Mieteinnahmen fehlen derzeit infolge des Leerstandes."
     ],
     "h": "infolge + Gen.: des Leerstands / des Leerstandes. Подлежащее Mieteinnahmen во мн. ч. → fehlen."
    },
@@ -835,7 +842,7 @@ D.days[54] = {
    "Der Ertragswert weicht nur um rund 3 % ab und stützt somit das Ergebnis.",
    "Der Verkehrswert ist aus dem Sachwert abgeleitet und kein Mittelwert der Verfahrensergebnisse.",
    "Der Kaufpreis liegt rund 3 % über dem Verkehrswert; das halte ich für eine moderate Abweichung.",
-   "Der Beleihungswert wird davon unabhängig als nachhaltiger Wert ermittelt."
+   "Der Beleihungswert wird gesondert als nachhaltiger Wert ermittelt und darf den Marktwert nicht übersteigen."
   ],
   "facts": "Eichenstraße 9, Musterstadt-Nord (fiktiv) · freistehendes Zweifamilienhaus, Baujahr 1972, EG 92 m² eigengenutzt, OG 86 m² seit sechs Monaten leer, Doppelgarage · Grundstück 720 m², Bodenrichtwert 290 €/m² → Bodenwert 208.800 € · NHK 2010 Typ 1.12, Standardkennzahl 2,8, Korrekturfaktor für freistehende Zweifamilienhäuser 1,05 · GND 80 Jahre, modifizierte RND 35 Jahre (Modernisierungen: Heizung, Fenster, Bäder) · vorläufiger Sachwert rd. 492.000 € × Sachwertfaktor 0,96 (Grundstücksmarktbericht, linear interpoliert) = rd. 472.000 € · boG: Feuchtigkeitsschaden −12.000 € (überschlägige Kostenschätzung, kein Bauschadensgutachten), Leerstand −4.000 €, Sauna +2.000 € → Sachwert rd. 458.000 € · Ertragswert rd. 446.000 € (Jahresrohertrag 17.100 €, Liegenschaftszinssatz 1,75 %) · Verkehrswert 460.000 € · Kaufpreis lt. Kaufvertragsentwurf 475.000 € (rd. 3 % über dem Verkehrswert)"
  },

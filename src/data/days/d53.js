@@ -274,7 +274,7 @@ D.days[53] = {
    "id": "v53-016",
    "kind": "chunk",
    "de": "über eine Einschubtreppe erreichbar sein",
-   "ru": "быть доступным только по складной чердачной лестнице",
+   "ru": "быть доступным по складной чердачной лестнице",
    "ex": "Das Dachgeschoss ist nur über eine Einschubtreppe erreichbar und nicht ausgebaut.",
    "exRu": "На чердак можно попасть только по складной лестнице, он не переоборудован.",
    "cloze": "Das Dachgeschoss ist nur über eine ___ erreichbar und nicht ausgebaut.",
@@ -489,7 +489,9 @@ D.days[53] = {
     "q": "Die Heizung wurde 2016 eingebaut. Sie ist eine Gas-Brennwerttherme.",
     "a": [
      "Die Heizung, eine Gas-Brennwerttherme, wurde 2016 eingebaut.",
-     "2016 wurde die Heizung, eine Gas-Brennwerttherme, eingebaut."
+     "2016 wurde die Heizung, eine Gas-Brennwerttherme, eingebaut.",
+     "Die Heizung, eine Gas-Brennwerttherme, ist 2016 eingebaut worden.",
+     "2016 ist die Heizung, eine Gas-Brennwerttherme, eingebaut worden."
     ],
     "h": "Второе предложение превращается в приложение сразу после die Heizung: Die Heizung, eine Gas-Brennwerttherme, …"
    },
@@ -708,7 +710,7 @@ D.days[53] = {
   "id": "t53",
   "kind": "Gutachten-Auszug: Gebäudebeschreibung",
   "title": "Eichenstraße 9 – Gebäudebeschreibung",
-  "de": "4.2 Gebäude, Nutzung und Raumprogramm\n\nDas Grundstück ist mit einem freistehenden Zweifamilienhaus, einem Massivbau aus dem Jahr 1972, und einer Doppelgarage bebaut. Das Wohnhaus, voll unterkellert und mit einem Satteldach versehen, verfügt über zwei Vollgeschosse. Das Dachgeschoss, nur über eine Einschubtreppe erreichbar, ist nicht ausgebaut und wird als Abstellfläche genutzt.\n\nDie Wohnung im Erdgeschoss, rund 92 m² groß, umfasst vier Zimmer, Küche, Bad und eine Terrasse; sie wird von der Eigentümerin selbst genutzt. Die Wohnung im Obergeschoss, rund 86 m² groß, besteht aus drei Zimmern, Küche, Bad und Balkon und steht seit sechs Monaten leer. Im Keller befinden sich der Heizungsraum, die Waschküche und eine Sauna, ein Einbaumodell aus den 1990er Jahren. Als Nebengebäude ist eine massive Doppelgarage mit Flachdach vorhanden.\n\nIm Jahr 2016 wurden folgende Modernisierungen durchgeführt: Einbau einer Gas-Brennwerttherme, durch eine Rechnung nachgewiesen, sowie Einbau von Kunststofffenstern mit Isolierverglasung. Die Angabe zu den Fenstern beruht ausschließlich auf Aussagen der Eigentümerin. Die Erneuerung beider Bäder im Jahr 2021 ist durch Rechnungen belegt. Nach Anlage 2 ImmoWertV ergibt sich ein Modernisierungsgrad von 6 Punkten.\n\n4.3 Einzelbauteile und Zustand (Auszug)\n\nDie Geschossdecken sind als Stahlbetondecken ausgeführt, die Außenwände weisen keine zusätzliche Wärmedämmung auf. Die Grundrisskonzeption ist zweckmäßig, die Belichtung aller Wohnräume gut. Der energetische Zustand ist als baujahrestypisch zu beurteilen. An der Kelleraußenwand, Nordseite, wurde ein Feuchtigkeitsschaden festgestellt. Insgesamt machte das Gebäude beim Ortstermin einen gepflegten Gesamteindruck.",
+  "de": "4.2 Gebäude, Nutzung und Raumprogramm\n\nDas Grundstück ist mit einem freistehenden Zweifamilienhaus, einem Massivbau aus dem Jahr 1972, und einer Doppelgarage bebaut. Das Wohnhaus, voll unterkellert und mit einem Satteldach versehen, verfügt über zwei Vollgeschosse. Das Dachgeschoss, nur über eine Einschubtreppe erreichbar, ist nicht ausgebaut und wird als Abstellfläche genutzt.\n\nDie Wohnung im Erdgeschoss, rund 92 m² groß, umfasst vier Zimmer, Küche, Bad und eine Terrasse; sie wird von der Eigentümerin selbst genutzt. Die Wohnung im Obergeschoss, rund 86 m² groß, besteht aus drei Zimmern, Küche, Bad und Balkon und steht seit sechs Monaten leer. Im Keller befinden sich der Heizungsraum, die Waschküche und eine Sauna, ein Einbaumodell aus den 1990er Jahren. Als Nebengebäude ist eine massive Doppelgarage mit Flachdach vorhanden.\n\nIm Jahr 2016 wurden folgende Modernisierungen durchgeführt: Einbau einer Gas-Brennwerttherme, durch eine Rechnung nachgewiesen, sowie Einbau von Kunststofffenstern mit Isolierverglasung. Die Angabe zu den Fenstern beruht ausschließlich auf Aussagen der Eigentümerin. Die Erneuerung beider Bäder im Jahr 2021 ist durch Rechnungen belegt. Nach Anlage 2 ImmoWertV ergeben sich 6 Modernisierungspunkte, also ein mittlerer Modernisierungsgrad.\n\n4.3 Einzelbauteile und Zustand (Auszug)\n\nDie Geschossdecken sind als Stahlbetondecken ausgeführt, die Außenwände weisen keine zusätzliche Wärmedämmung auf. Die Grundrisskonzeption ist zweckmäßig, die Belichtung aller Wohnräume gut. Der energetische Zustand ist als baujahrestypisch zu beurteilen. An der Kelleraußenwand, Nordseite, wurde ein Feuchtigkeitsschaden festgestellt. Insgesamt machte das Gebäude beim Ortstermin einen gepflegten Gesamteindruck.",
   "ru": "Раздел 4 заключения по дому Eichenstraße 9: здание и этажи, состав помещений и использование, модернизации с подтверждениями, конструктивные элементы и состояние — компактно, с приложениями и обособленными причастиями.",
   "q": [
    {
@@ -748,7 +750,7 @@ D.days[53] = {
     "a": 2
    },
    {
-    "q": "Welcher Modernisierungsgrad ergibt sich nach Anlage 2 ImmoWertV?",
+    "q": "Wie viele Modernisierungspunkte ergeben sich nach Anlage 2 ImmoWertV?",
     "o": [
      "4 Punkte",
      "6 Punkte",
@@ -797,7 +799,7 @@ D.days[53] = {
    },
    {
     "de": "der Modernisierungsgrad",
-    "ru": "степень модернизации (в баллах)"
+    "ru": "степень модернизации (по сумме баллов: 6–10 баллов — средняя)"
    }
   ]
  },
@@ -825,7 +827,7 @@ D.days[53] = {
    "Im Jahr 2016 wurden folgende Modernisierungen durchgeführt: Einbau einer Gas-Brennwerttherme und neuer Kunststofffenster.",
    "Die Erneuerung der Bäder wurde durch Rechnungen nachgewiesen.",
    "Die Angabe zu den Fenstern beruht ausschließlich auf Aussagen der Eigentümerin.",
-   "Nach Anlage 2 ImmoWertV ergibt sich ein Modernisierungsgrad von sechs Punkten.",
+   "Nach Anlage 2 ImmoWertV ergeben sich sechs Modernisierungspunkte, also ein mittlerer Modernisierungsgrad.",
    "An der Kelleraußenwand auf der Nordseite wurde ein Feuchtigkeitsschaden festgestellt.",
    "Insgesamt machte das Gebäude beim Ortstermin einen gepflegten Gesamteindruck."
   ],

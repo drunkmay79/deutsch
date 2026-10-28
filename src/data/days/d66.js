@@ -325,7 +325,7 @@ D.days[66] = {
   "examples": [
    {
     "de": "Alles, was in Abteilung II eingetragen ist, prüfe ich anhand der Bewilligung.",
-    "ru": "Всё, что внесено в раздел II, я проверяю по разрешению на регистрацию."
+    "ru": "Всё, что внесено в раздел II, я проверяю по согласию на регистрацию (Bewilligung)."
    },
    {
     "de": "Das Erste, was ich bei einem Wohnungsrecht prüfe, ist das Alter der Berechtigten.",
@@ -542,7 +542,7 @@ D.days[66] = {
    },
    {
     "t": "translate",
-    "q": "Всё, что внесено в раздел II, я проверяю по разрешению на регистрацию. (anhand)",
+    "q": "Всё, что внесено в раздел II, я проверяю по согласию на регистрацию. (anhand; Bewilligung)",
     "a": [
      "Alles, was in Abteilung II eingetragen ist, prüfe ich anhand der Bewilligung.",
      "Ich prüfe alles, was in Abteilung II eingetragen ist, anhand der Bewilligung.",
@@ -658,7 +658,7 @@ D.days[66] = {
   ],
   "speak": [
    {
-    "ru": "Всё, что стоит в разделе II, я проверяю по разрешению на регистрацию.",
+    "ru": "Всё, что стоит в разделе II, я проверяю по согласию на регистрацию (Bewilligung).",
     "de": "Alles, was in Abteilung II steht, prüfe ich anhand der Bewilligung."
    },
    {
@@ -711,7 +711,7 @@ D.days[66] = {
   "id": "t66",
   "kind": "Interne E-Mail des Gutachters an die Kreditberaterin",
   "title": "Birkenweg 3: Wie viel kostet das Wohnungsrecht?",
-  "de": "Betreff: Birkenweg 3 – Bewertung des Wohnungsrechts\n\nLiebe Frau Simon,\nwie besprochen erläutere ich Ihnen kurz, wie ich das Wohnungsrecht im Zweifamilienhaus Birkenweg 3 bewertet habe.\n\nBei der Übertragung des Hauses haben sich die Eltern des Eigentümers, heute 79 und 76 Jahre alt, ein unentgeltliches, lebenslanges Wohnungsrecht an der Erdgeschosswohnung mit 85 m² vorbehalten. Das Erste, was ich ermittelt habe, ist der Jahreswert. Er bemisst sich nach der ortsüblichen Nettokaltmiete: 85 m² mal 7,00 € mal 12 Monate ergeben 7.140 € pro Jahr.\n\nDa es zwei Berechtigte gibt, habe ich einen Leibrentenbarwertfaktor für eine Verbindungsrente angesetzt. Grundlage ist die aktuelle Sterbetafel des Statistischen Bundesamtes; der Zinssatz von 3,0 % orientiert sich am Liegenschaftszinssatz. Daraus ergibt sich ein Faktor von 10,8, was einem Wertnachteil von rund 77.000 € entspricht. Ausgehend vom fiktiv unbelasteten Grundstück mit 420.000 € bewerte ich das belastete Grundstück mit rund 343.000 €. Eine zusätzliche Marktanpassung halte ich hier nicht für erforderlich.\n\nZwei Punkte, die oft missverstanden werden: Der Wert des Rechts für die Eltern ist nicht automatisch gleich dem Wertnachteil des Grundstücks. Und ein Versterben nach dem Stichtag bleibt unberücksichtigt; einen Zuschlag für ein längeres Leben gibt es nicht, weil der Faktor das bereits abbildet.\n\nWichtig für die Kreditentscheidung ist der Rang: Das Wohnungsrecht steht vor der geplanten Grundschuld. Wer das Haus in einer Zwangsversteigerung aus unserer Grundschuld erwirbt, muss das Recht also übernehmen. Ein Rangrücktritt ist nur mit Zustimmung der Eltern möglich, was wir mit dem Kunden offen besprechen sollten.\n\nViele Grüße\nAndreas Brandt, Immobilienbewertung",
+  "de": "Betreff: Birkenweg 3 – Bewertung des Wohnungsrechts\n\nLiebe Frau Simon,\nwie besprochen erläutere ich Ihnen kurz, wie ich das Wohnungsrecht im Zweifamilienhaus Birkenweg 3 bewertet habe.\n\nBei der Übertragung des Hauses haben sich die Eltern des Eigentümers, heute 79 und 76 Jahre alt, ein unentgeltliches, lebenslanges Wohnungsrecht an der Erdgeschosswohnung mit 85 m² vorbehalten. Das Erste, was ich ermittelt habe, ist der Jahreswert. Er bemisst sich nach der ortsüblichen Nettokaltmiete: 85 m² mal 7,00 € pro Quadratmeter mal 12 Monate ergeben 7.140 € pro Jahr.\n\nDa es zwei Berechtigte gibt, habe ich einen Leibrentenbarwertfaktor für eine Verbindungsrente angesetzt. Grundlage ist die aktuelle Sterbetafel des Statistischen Bundesamtes; der Zinssatz von 3,0 % orientiert sich am Liegenschaftszinssatz. Daraus ergibt sich ein Faktor von 10,8, was bei einem Jahreswert von 7.140 € einem Wertnachteil von rund 77.000 € entspricht. Ausgehend vom fiktiv unbelasteten Grundstück mit 420.000 € bewerte ich das belastete Grundstück mit rund 343.000 €. Eine zusätzliche Marktanpassung halte ich hier nicht für erforderlich.\n\nZwei Punkte, die oft missverstanden werden: Der Wert des Rechts für die Eltern ist nicht automatisch gleich dem Wertnachteil des Grundstücks. Und ein Versterben nach dem Stichtag bleibt unberücksichtigt; einen Zuschlag für ein längeres Leben gibt es nicht, weil der Faktor das bereits abbildet.\n\nWichtig für die Kreditentscheidung ist der Rang: Das Wohnungsrecht steht vor der geplanten Grundschuld. Wer das Haus in einer Zwangsversteigerung aus unserer Grundschuld erwirbt, muss das Recht also übernehmen. Ein Rangrücktritt ist nur mit Zustimmung der Eltern möglich, was wir mit dem Kunden offen besprechen sollten.\n\nViele Grüße\nAndreas Brandt, Immobilienbewertung",
   "ru": "Оценщик объясняет кредитному консультанту, как он оценил пожизненное право проживания родителей собственника: годовая стоимость, коэффициент ренты на двух лиц, снижение стоимости участка и значение ранга права для кредита.",
   "q": [
    {

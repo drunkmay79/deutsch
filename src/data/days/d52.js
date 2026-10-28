@@ -22,7 +22,7 @@ D.days[52] = {
     "die technische Infrastruktur",
     "eine gut ausgebaute Infrastruktur"
    ],
-   "note": "Ударение на последний слог: Infrastruktúr. Слова на -ur (die Struktur, die Natur) — женского рода. soziale Infrastruktur — школы, детсады, врачи; technische — дороги, сети, канализация."
+   "note": "Слова на -ur (die Struktur, die Natur, die Kultur) — как правило, женского рода. soziale Infrastruktur — школы, детсады, врачи; technische — дороги, сети, канализация."
   },
   {
    "id": "v52-002",
@@ -545,7 +545,8 @@ D.days[52] = {
     "a": [
      "Das Grundstück liegt in einem gewachsenen Wohngebiet im Musterstädter Norden.",
      "Das Grundstück liegt im Musterstädter Norden in einem gewachsenen Wohngebiet.",
-     "Im Musterstädter Norden liegt das Grundstück in einem gewachsenen Wohngebiet."
+     "Im Musterstädter Norden liegt das Grundstück in einem gewachsenen Wohngebiet.",
+     "In einem gewachsenen Wohngebiet im Musterstädter Norden liegt das Grundstück."
     ],
     "h": "liegt на втором месте. Musterstädter — без окончания, gewachsenen — Dat. n. после einem."
    },
@@ -555,6 +556,7 @@ D.days[52] = {
     "a": [
      "In der Nähe gibt es mehrere kleinere Geschäfte.",
      "Es gibt mehrere kleinere Geschäfte in der Nähe.",
+     "Es gibt in der Nähe mehrere kleinere Geschäfte.",
      "In der Nähe befinden sich mehrere kleinere Geschäfte.",
      "Mehrere kleinere Geschäfte befinden sich in der Nähe.",
      "In der Nähe liegen mehrere kleinere Geschäfte.",
@@ -572,7 +574,7 @@ D.days[52] = {
    },
    {
     "t": "translate",
-    "q": "Влияющих на стоимость воздействий не выявлено. (es; keine; wertbeeinflussend; Passiv Präteritum)",
+    "q": "Влияющих на стоимость воздействий не выявлено. (es; keine; wertbeeinflussend; Immissionen feststellen; Passiv Präteritum)",
     "a": [
      "Es wurden keine wertbeeinflussenden Immissionen festgestellt."
     ],
@@ -601,7 +603,9 @@ D.days[52] = {
      "Die Stadt ist über zwei nahe gelegene Autobahnanschlüsse gut an das überregionale Verkehrsnetz angebunden.",
      "Die Stadt ist über zwei nahegelegene Autobahnanschlüsse gut an das überregionale Verkehrsnetz angebunden.",
      "Über zwei nahe gelegene Autobahnanschlüsse ist die Stadt gut ans überregionale Verkehrsnetz angebunden.",
-     "Die Stadt ist über zwei nahe gelegene Autobahnanschlüsse gut ans überregionale Verkehrsnetz angebunden."
+     "Die Stadt ist über zwei nahe gelegene Autobahnanschlüsse gut ans überregionale Verkehrsnetz angebunden.",
+     "Über zwei nahegelegene Autobahnanschlüsse ist die Stadt gut ans überregionale Verkehrsnetz angebunden.",
+     "Die Stadt ist über zwei nahegelegene Autobahnanschlüsse gut ans überregionale Verkehrsnetz angebunden."
     ],
     "h": "После числительного — сильное окончание: zwei nahe gelegene Autobahnanschlüsse (Akk. Pl. -e). an das überregionale Verkehrsnetz — Akk. n. после das → -e."
    },
@@ -693,7 +697,7 @@ D.days[52] = {
     "de": "In einigen benachbarten Straßen gilt Tempo 30."
    },
    {
-    "ru": "Несмотря на шум транзитной улицы, я оцениваю жилое расположение как среднее-хорошее.",
+    "ru": "Несмотря на шум транзитной улицы, я оцениваю жилое местоположение как «от среднего до хорошего».",
     "de": "Trotz des Verkehrslärms der Durchgangsstraße stufe ich die Wohnlage als mittel bis gut ein."
    }
   ]
@@ -702,7 +706,7 @@ D.days[52] = {
   "id": "t52",
   "kind": "Gutachten-Auszug: Lagebeschreibung (Stichpunkte und ausformulierte Fassung)",
   "title": "Eichenstraße 9 – vom Stichpunkt zur Lagebeschreibung",
-  "de": "Notizen des Sachverständigen: Musterstadt, Ruhrgebiet, ca. 110.000 Einwohner, Mittelzentrum; Strukturwandel vom Bergbau zu Logistik und Dienstleistungen; Bevölkerung leicht rückläufig; Autobahn ca. 4 km, Hauptbahnhof ca. 3 km. Musterstadt-Nord, Wohngebiet der 1960er/70er Jahre, freistehende Ein- und Zweifamilienhäuser, Anliegerverkehr; Bus 300 m, Grundschule 600 m, Supermarkt 800 m, Halde 1 km, Durchgangsstraße 250 m.\n\n3.1.1 Lage, Makrolage: Die Stadt Musterstadt liegt im Ruhrgebiet im Land Nordrhein-Westfalen und hat rund 110.000 Einwohner. Sie hat die Funktion eines Mittelzentrums. Die Wirtschaft ist durch den Strukturwandel geprägt: Nach der Schließung der letzten Zechen haben sich zahlreiche mittelständische Logistik- und Dienstleistungsunternehmen angesiedelt. Die Bevölkerungszahl ist seit einigen Jahren leicht rückläufig. Über einen Autobahnanschluss in ca. 4 km Entfernung ist die Stadt gut an das überregionale Verkehrsnetz angebunden; der Hauptbahnhof liegt ca. 3 km entfernt. Die Makrolage wird insgesamt als mittel beurteilt.\n\nMikrolage: Das Bewertungsobjekt befindet sich im Stadtteil Musterstadt-Nord, rund 3,5 km nördlich der Musterstädter Innenstadt, in einem gewachsenen Wohngebiet der 1960er und 1970er Jahre. Die Nachbarbebauung besteht überwiegend aus freistehenden Ein- und Zweifamilienhäusern mit gepflegten Gärten. In der Eichenstraße herrscht reiner Anliegerverkehr. Eine Bushaltestelle ist in ca. 300 m Entfernung fußläufig erreichbar, eine Grundschule liegt ca. 600 m entfernt. Die Nahversorgung ist durch einen Supermarkt in ca. 800 m Entfernung und mehrere kleinere Geschäfte im Stadtteil gewährleistet. Eine begrünte Halde in ca. 1 km Entfernung dient als Naherholungsgebiet. Von einer Durchgangsstraße in ca. 250 m Entfernung geht lagetypischer Verkehrslärm aus; weitere wertbeeinflussende Immissionen wurden nicht festgestellt. Die Wohnlage ist als mittel bis gut einzustufen.",
+  "de": "Notizen des Sachverständigen: Musterstadt, Ruhrgebiet, ca. 110.000 Einwohner, Mittelzentrum; Strukturwandel vom Bergbau zu Logistik und Dienstleistungen; Bevölkerung leicht rückläufig; Autobahn ca. 4 km, Hauptbahnhof ca. 3 km. Musterstadt-Nord, Wohngebiet der 1960er/70er Jahre, freistehende Ein- und Zweifamilienhäuser, Anliegerverkehr; Bus 300 m, Grundschule 600 m, Supermarkt 800 m, Halde 1 km, Durchgangsstraße 250 m.\n\n3.1.1 Lage, Makrolage: Die Stadt Musterstadt liegt im Ruhrgebiet im Land Nordrhein-Westfalen und hat rund 110.000 Einwohner. Sie hat die Funktion eines Mittelzentrums. Die Wirtschaft ist durch den Strukturwandel geprägt: Nach der Schließung der letzten Zechen haben sich zahlreiche mittelständische Logistik- und Dienstleistungsunternehmen angesiedelt. Die Bevölkerungszahl ist seit einigen Jahren leicht rückläufig. Über einen Autobahnanschluss in ca. 4 km Entfernung ist die Stadt gut an das überregionale Verkehrsnetz angebunden; der Hauptbahnhof liegt ca. 3 km entfernt. Die Makrolage wird insgesamt als mittel beurteilt.\n\nMikrolage: Das Bewertungsobjekt befindet sich im Stadtteil Musterstadt-Nord, rund 3,5 km nördlich der Musterstädter Innenstadt, in einem gewachsenen Wohngebiet der 1960er und 1970er Jahre. Die Nachbarbebauung besteht überwiegend aus freistehenden Ein- und Zweifamilienhäusern mit gepflegten Gärten. In der Eichenstraße herrscht reiner Anliegerverkehr. Eine Bushaltestelle ist in ca. 300 m Entfernung fußläufig erreichbar, eine Grundschule liegt ca. 600 m entfernt. Die Nahversorgung ist durch einen Supermarkt in ca. 800 m Entfernung und mehrere kleinere Geschäfte im Stadtteil gewährleistet. Eine begrünte Halde in ca. 1 km Entfernung dient als Naherholungsgebiet. Von einer Durchgangsstraße in ca. 250 m Entfernung geht lagetypischer Verkehrslärm aus; darüber hinaus wurden keine wertbeeinflussenden Immissionen festgestellt. Die Wohnlage ist als mittel bis gut einzustufen.",
   "ru": "Описание местоположения вымышленного объекта Eichenstraße 9: сначала заметки эксперта, затем готовый раздел 3.1.1 заключения (макро- и микроместоположение с оценкой «средне» и «средне–хорошо»).",
   "q": [
    {

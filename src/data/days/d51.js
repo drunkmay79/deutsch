@@ -14,7 +14,7 @@ D.days[51] = {
    "pl": "Vorbehalte",
    "ru": "оговорка, условие (unter dem Vorbehalt, dass …)",
    "ex": "Die Wertermittlung steht unter dem Vorbehalt, dass die Garage baurechtlich genehmigt ist.",
-   "exRu": "Оценка проводится с оговоркой, что гараж разрешён по строительному праву.",
+   "exRu": "Оценка проводится с оговоркой, что на гараж имеется разрешение на строительство.",
    "cloze": "Die Wertermittlung steht unter dem ___, dass die Garage baurechtlich genehmigt ist.",
    "ans": "Vorbehalt",
    "col": [
@@ -265,7 +265,7 @@ D.days[51] = {
    "de": "nach Angaben des Auftraggebers",
    "ru": "по данным заказчика",
    "ex": "Nach Angaben des Auftraggebers steht die Einliegerwohnung seit dem Frühjahr leer.",
-   "exRu": "По данным заказчика, квартира-пристройка пустует с весны.",
+   "exRu": "По данным заказчика, дополнительная квартира в доме пустует с весны.",
    "cloze": "Nach ___ des Auftraggebers steht die Einliegerwohnung seit dem Frühjahr leer.",
    "ans": "Angaben",
    "col": [
@@ -529,18 +529,19 @@ D.days[51] = {
    },
    {
     "t": "fix",
-    "q": "Ungeprüft wird es unterstellt, dass keine Kontaminationen vorliegen.",
+    "q": "Im Gutachten wird es davon ausgegangen, dass keine Kontaminationen vorliegen.",
     "a": [
-     "Ungeprüft wird unterstellt, dass keine Kontaminationen vorliegen."
+     "Im Gutachten wird davon ausgegangen, dass keine Kontaminationen vorliegen."
     ],
-    "h": "es — только заполнитель первого места. Если первое место занято (Ungeprüft), es исчезает."
+    "h": "В безличном пассиве без подлежащего es — только заполнитель первого места. Если первое место занято (Im Gutachten), es исчезает."
    },
    {
     "t": "translate",
     "q": "Не проверялось, работают ли инженерные системы. (es-Passiv, Präteritum; die haustechnischen Anlagen; funktionsfähig sein)",
     "a": [
      "Es wurde nicht geprüft, ob die haustechnischen Anlagen funktionsfähig sind.",
-     "Es wurde nicht überprüft, ob die haustechnischen Anlagen funktionsfähig sind."
+     "Es wurde nicht überprüft, ob die haustechnischen Anlagen funktionsfähig sind.",
+     "Es wurde nicht geprüft, ob die haustechnischen Anlagen funktionieren."
     ],
     "h": "«ли» = ob; die haustechnischen Anlagen (мн. ч. после die → -en), поэтому sind."
    },
@@ -701,7 +702,7 @@ D.days[51] = {
   "id": "t51",
   "kind": "Gutachten-Auszug: Unterlagen, Auskünfte und Vorbehalte",
   "title": "Eichenstraße 9 – Grundlagen und Vorbehalte",
-  "de": "2.5 Unterlagen und Auskünfte\n\n[1] Grundbuchauszug vom 20.08.2026, vom Auftraggeber zur Verfügung gestellt. [2] Auszug aus der Liegenschaftskarte vom 03.09.2026. [3] Bauzeichnungen und Wohnflächenberechnung aus der Bauakte, eingesehen beim Bauordnungsamt Musterstadt. [4] Auskunft aus dem Baulastenverzeichnis vom 07.09.2026. [5] Auskunft aus dem Altlastenkataster vom 08.09.2026. [6] Bodenrichtwert 290 €/m², Stichtag 01.01.2026. [7] Grundstücksmarktbericht 2026 des Gutachterausschusses Musterstadt. [8] Mietspiegel der Stadt Musterstadt.\n\n2.6 Vorbehalte\n\nDie Feststellungen beruhen auf der Ortsbesichtigung am 15.09.2026 und auf den oben genannten Unterlagen. Der Grundbuchauszug und die Baulastenauskunft wurden vom Unterzeichner selbst ausgewertet. Die Wohnfläche wurde vor Ort stichprobenartig nachgemessen; nennenswerte Abweichungen von der Berechnung aus der Bauakte wurden nicht festgestellt.\n\nDass die Fenster im Jahr 2016 erneuert wurden, beruht ausschließlich auf Angaben der Eigentümerin; Rechnungen wurden nicht vorgelegt. Es wurde nicht geprüft, ob die haustechnischen Anlagen funktionsfähig sind; ihre Funktionsfähigkeit wird unterstellt. Bauteilöffnungen wurden nicht vorgenommen.\n\nLaut Auskunft [5] ist das Grundstück nicht im Altlastenkataster verzeichnet. Eine Bodenuntersuchung erfolgte nicht; es wird ungeprüft unterstellt, dass keine Kontaminationen vorliegen. Ebenso wird die formelle und materielle Legalität der baulichen Anlagen unterstellt. Vorbehaltlich einer abweichenden behördlichen Auskunft wird davon ausgegangen, dass keine Erschließungsbeiträge mehr anfallen.\n\nEs wird darauf hingewiesen, dass das Gutachten nur für den Auftraggeber und den angegebenen Zweck bestimmt ist. Gegenüber Dritten wird keine Haftung übernommen.",
+  "de": "2.5 Unterlagen und Auskünfte\n\n[1] Grundbuchauszug vom 20.08.2026, vom Auftraggeber zur Verfügung gestellt. [2] Auszug aus der Liegenschaftskarte vom 03.09.2026. [3] Bauzeichnungen und Wohnflächenberechnung aus der Bauakte, eingesehen beim Bauordnungsamt Musterstadt. [4] Auskunft aus dem Baulastenverzeichnis vom 07.09.2026. [5] Auskunft aus dem Altlastenkataster vom 08.09.2026. [6] Bodenrichtwert 290 €/m², Stichtag 01.01.2026. [7] Grundstücksmarktbericht 2026 des Gutachterausschusses Musterstadt. [8] Mietspiegel der Stadt Musterstadt.\n\n2.6 Vorbehalte\n\nDie Feststellungen beruhen auf der Ortsbesichtigung am 15.09.2026 und auf den oben genannten Unterlagen. Der Grundbuchauszug und die Baulastenauskunft wurden vom Unterzeichner selbst ausgewertet. Die Wohnfläche wurde vor Ort stichprobenartig nachgemessen; nennenswerte Abweichungen von der Berechnung aus der Bauakte wurden nicht festgestellt.\n\nDie Angabe, dass die Fenster im Jahr 2016 erneuert wurden, beruht ausschließlich auf Aussagen der Eigentümerin; Rechnungen wurden nicht vorgelegt. Es wurde nicht geprüft, ob die haustechnischen Anlagen funktionsfähig sind; ihre Funktionsfähigkeit wird unterstellt. Bauteilöffnungen wurden nicht vorgenommen.\n\nLaut Auskunft [5] ist das Grundstück nicht im Altlastenkataster verzeichnet. Eine Bodenuntersuchung erfolgte nicht; es wird ungeprüft unterstellt, dass keine Kontaminationen vorliegen. Ebenso wird die formelle und materielle Legalität der baulichen Anlagen unterstellt. Vorbehaltlich einer abweichenden behördlichen Auskunft wird davon ausgegangen, dass keine Erschließungsbeiträge mehr anfallen.\n\nEs wird darauf hingewiesen, dass das Gutachten nur für den Auftraggeber und den angegebenen Zweck bestimmt ist. Gegenüber Dritten wird keine Haftung übernommen.",
   "ru": "Отрывок из заключения по дому Eichenstraße 9: пронумерованный список документов и справок с датами и источниками, затем оговорки — что эксперт проверил сам, что взял со слов собственницы и что принимается без проверки.",
   "q": [
    {
@@ -818,7 +819,7 @@ D.days[51] = {
    "Der Haftungsausschluss gegenüber Dritten begrenzt das Risiko, wenn das Gutachten weitergegeben wird.",
    "Jede Angabe bekommt eine Quelle, damit ein Prüfer sie nachvollziehen kann."
   ],
-  "facts": "Gutachten Eichenstraße 9, Musterstadt-Nord (fiktiv): freistehendes Zweifamilienhaus mit Doppelgarage, Baujahr 1972, Grundstück 720 m²; Auftrag der Sparkasse vom 01.09.2026, Ortsbesichtigung am 15.09.2026. Quellen: [1] Grundbuchauszug vom 20.08.2026 (vom Auftraggeber), Abt. II: Leitungsrecht zugunsten der Stadtwerke; [2] Liegenschaftskarte; [3] Bauakte mit Wohnflächenberechnung: 178 m² (EG 92 m², OG 86 m²) – Exposé des Maklers: 191 m² (inkl. Saunaraum im Keller); eigene Stichprobe: Abweichung zur Bauakte unter 1 %; [4] Baulastenauskunft vom 07.09.2026: keine Eintragung; [5] Altlastenauskunft vom 08.09.2026: Grundstück nicht verzeichnet; [6] Bodenrichtwert 290 €/m² (01.01.2026); [7] Grundstücksmarktbericht 2026; [8] Mietspiegel. Fenster laut Eigentümerin 2016 erneuert, keine Rechnung. Gas-Brennwertheizung, Funktion nicht geprüft. Merkposten: Nach BelWertV sind Rechte und Lasten einschließlich Baulasten im Gutachten zu nennen und gegebenenfalls wertmindernd zu berücksichtigen; Grundpfandrechte in Abt. III bleiben bei der Wertermittlung unberücksichtigt."
+  "facts": "Gutachten Eichenstraße 9, Musterstadt-Nord (fiktiv): freistehendes Zweifamilienhaus mit Doppelgarage, Baujahr 1972, Grundstück 720 m²; Auftrag der Sparkasse vom 01.09.2026, Ortsbesichtigung am 15.09.2026. Quellen: [1] Grundbuchauszug vom 20.08.2026 (vom Auftraggeber), Abt. II: Leitungsrecht zugunsten der Stadtwerke; [2] Liegenschaftskarte; [3] Bauakte mit Wohnflächenberechnung: 178 m² (EG 92 m², OG 86 m²) – Exposé des Maklers: 191 m² (inkl. Hobbyraum im Keller); eigene Stichprobe: Abweichung zur Bauakte unter 1 %; [4] Baulastenauskunft vom 07.09.2026: keine Eintragung; [5] Altlastenauskunft vom 08.09.2026: Grundstück nicht verzeichnet; [6] Bodenrichtwert 290 €/m² (01.01.2026); [7] Grundstücksmarktbericht 2026; [8] Mietspiegel. Fenster laut Eigentümerin 2016 erneuert, keine Rechnung. Gas-Brennwertheizung, Funktion nicht geprüft. Merkposten: Nach BelWertV sind Rechte und Lasten einschließlich Baulasten im Gutachten zu nennen und gegebenenfalls wertmindernd zu berücksichtigen; Grundpfandrechte in Abt. III bleiben bei der Wertermittlung unberücksichtigt."
  },
  "fluency": {
   "id": "f51",

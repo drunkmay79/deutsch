@@ -140,7 +140,7 @@ D.days[67] = {
    "pl": "Stillhalteerklärungen",
    "ru": "обязательство собственника земли перед банком (или банка перед собственником) при принудительных торгах не использовать свой лучший ранг в ущерб другой стороне",
    "ex": "Die Kirchengemeinde hat eine Stillhalteerklärung zugunsten der Sparkasse abgegeben.",
-   "exRu": "Церковная община дала в пользу сберкассы обязательство не препятствовать сохранению права при торгах.",
+   "exRu": "Церковная община дала в пользу сберкассы обязательство не использовать при торгах свой преимущественный ранг в ущерб сберкассе.",
    "cloze": "Die Kirchengemeinde hat eine ___ zugunsten der Sparkasse abgegeben.",
    "ans": "Stillhalteerklärung",
    "col": [
@@ -469,7 +469,8 @@ D.days[67] = {
     "a": [
      "Für den Fall, dass der Erbbauzins nicht gezahlt wird, ist ein Heimfallanspruch vereinbart.",
      "Ein Heimfallanspruch ist für den Fall vereinbart, dass der Erbbauzins nicht gezahlt wird.",
-     "Ein Heimfallanspruch ist vereinbart für den Fall, dass der Erbbauzins nicht gezahlt wird."
+     "Ein Heimfallanspruch ist vereinbart für den Fall, dass der Erbbauzins nicht gezahlt wird.",
+     "Ein Heimfallanspruch ist für den Fall, dass der Erbbauzins nicht gezahlt wird, vereinbart."
     ],
     "h": "В придаточном с dass глагол wird — в конце; после придаточного главное начинается с ist."
    },
@@ -841,7 +842,7 @@ D.days[67] = {
    "Beleihungswert nach § 21 BelWertV: Restlaufzeit, Entschädigungsregelung, angemessene Verwertbarkeit, Wertabschläge",
    "Nachfrage: Was gilt, wenn die Restlaufzeit kürzer ist als die Darlehenslaufzeit? Laufzeit, Tilgung oder Finanzierung anpassen",
    "Erklärungen des Erbbaurechtsgebers: Belastungszustimmung, versteigerungsfester Erbbauzins oder Stillhalteerklärung",
-   "Heimfall und Zeitablauf: Grundschuld bleibt beim Heimfall bestehen; bei Zeitablauf greift sie auf die Entschädigungsforderung zu",
+   "Heimfall und Zeitablauf: Grundschuld bleibt beim Heimfall bestehen; bei Zeitablauf setzt sie sich an der Entschädigungsforderung fort",
    "Feedback: eine fachliche Stärke, ein sprachlicher Punkt, eine mögliche Nachfrage"
   ],
   "use": [

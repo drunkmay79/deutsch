@@ -275,7 +275,7 @@ D.days[64] = {
    "de": "das …-Fache der Jahresnettokaltmiete",
    "ru": "…-кратная годовая чистая арендная плата (без коммунальных платежей)",
    "ex": "Der Kaufpreis beträgt das 17,4-Fache der Jahresnettokaltmiete.",
-   "exRu": "Цена покупки составляет 17,4 годовых чистых арендных плат.",
+   "exRu": "Цена покупки в 17,4 раза превышает годовую чистую арендную плату.",
    "cloze": "Der Kaufpreis beträgt das 17,4-___ der Jahresnettokaltmiete.",
    "ans": "Fache",
    "col": [
@@ -389,7 +389,7 @@ D.days[64] = {
     "a": [
      "sind"
     ],
-    "h": "Два подлежащих, ближайшее (die Grundrisse) во мн. ч. → sind."
+    "h": "При sowohl … als auch глагол во мн. ч. → sind (к тому же ближайшее подлежащее die Grundrisse — мн. ч.)."
    },
    {
     "t": "gap",

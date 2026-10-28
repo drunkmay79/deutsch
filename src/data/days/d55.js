@@ -632,7 +632,8 @@ D.days[55] = {
      "Wir sehen das Zweifamilienhaus als gut verwertbares Beleihungsobjekt an.",
      "Das Zweifamilienhaus sehen wir als gut verwertbares Beleihungsobjekt an.",
      "Wir sehen dieses Zweifamilienhaus als ein gut verwertbares Beleihungsobjekt an.",
-     "Wir sehen das Zweifamilienhaus als ein gut verwertbares Beleihungsobjekt an."
+     "Wir sehen das Zweifamilienhaus als ein gut verwertbares Beleihungsobjekt an.",
+     "Dieses Zweifamilienhaus sehen wir als ein gut verwertbares Beleihungsobjekt an."
     ],
     "h": "ansehen + Akk. … als + Akk.; das Beleihungsobjekt (ср. р.) без артикля → gut verwertbares; an — в конце."
    }
@@ -663,7 +664,7 @@ D.days[55] = {
     "de": "Die Annahme zur Restnutzungsdauer hat sich als zutreffend erwiesen."
    },
    {
-    "ru": "Для объекта для собственного проживания я считаю мультипликатор 26,9 приемлемым.",
+    "ru": "Для объекта, который используется собственником, я считаю мультипликатор 26,9 приемлемым.",
     "de": "Bei einem eigengenutzten Objekt halte ich einen Rohertragsfaktor von 26,9 für vertretbar."
    },
    {
@@ -808,7 +809,7 @@ D.days[55] = {
    "Der Verkehrswert entspricht rund 2.584 Euro pro Quadratmeter Wohnfläche und liegt innerhalb der Spanne des Grundstücksmarktberichts.",
    "Einen Bodenwertanteil von 45 % halte ich bei einem Gebäude dieses Alters auf 720 m² Grundstück für vertretbar.",
    "Bei eigengenutzten Objekten ist ein höherer Rohertragsfaktor als bei Renditeobjekten durchaus üblich.",
-   "Den Sachwert habe ich auf volle 5.000 Euro gerundet, denn eine genauere Zahl würde nur eine Scheingenauigkeit erzeugen.",
+   "Den Verkehrswert habe ich auf volle 5.000 Euro gerundet, denn eine genauere Zahl würde nur eine Scheingenauigkeit erzeugen.",
    "Die Marktgängigkeit ist insgesamt als gut einzustufen.",
    "Zusammenfassend ist festzuhalten, dass die Kennzahlen das Ergebnis untermauern."
   ],

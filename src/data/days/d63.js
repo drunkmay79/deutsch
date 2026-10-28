@@ -179,7 +179,7 @@ D.days[63] = {
    },
    {
     "de": "die Erbengemeinschaft",
-    "ru": "сообщество наследников (совместные наследники)"
+    "ru": "общность наследников (сонаследники)"
    },
    {
     "de": "der Bewertungsauftrag",
@@ -253,7 +253,7 @@ D.days[63] = {
    "Erster Anruf: Auftrag klären, Ansprechpartner, Zugang, Termin – telefonisch vereinbaren, schriftlich bestätigen",
    "Unterlagen: klar anfordern, Frist setzen, rechtzeitig erinnern",
    "Ortstermin: Eigentümer und Mieter einbinden, Angaben im Gutachten kennzeichnen",
-   "Ergebnis laienverständlich erklären: Beispiel statt Fachbegriffe",
+   "Ergebnis laienverständlich erklären: Beispiel statt Fachbegriffen",
    "Einwände: zuhören, neue Fakten prüfen, nicht über den Wert verhandeln",
    "Fazit: Gute Kommunikation bringt bessere Informationen und damit ein besseres Gutachten"
   ],

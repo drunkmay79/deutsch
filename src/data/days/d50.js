@@ -112,7 +112,7 @@ D.days[50] = {
     "Ausfertigung Nr. 1 von 3",
     "die Ausfertigung für den Auftraggeber"
    ],
-   "note": "Экземпляр официального документа — die Ausfertigung, а не das Exemplar (так говорят о книге или журнале). На титульном листе: Ausfertigung Nr. 2 von 3. beim Sachverständigen — склонение как у прилагательного."
+   "note": "Экземпляр официального документа в официальном стиле — die Ausfertigung; das Exemplar — более нейтральное, бытовое слово. На титульном листе: Ausfertigung Nr. 2 von 3. beim Sachverständigen — склонение как у прилагательного."
   },
   {
    "id": "v50-007",
@@ -449,7 +449,7 @@ D.days[50] = {
     "a": [
      "beträgt"
     ],
-    "h": "erfolgen — только с существительными действия (Ermittlung, Besichtigung). Сумма: Der Wert beträgt … ergeben требует дополнения или sich: Der Wert ergibt sich zu …"
+    "h": "erfolgen — только с существительными действия (Ermittlung, Besichtigung). Сумма: Der Wert beträgt … — ergeben требует дополнения или sich: Der Wert ergibt sich zu …"
    },
    {
     "t": "order",
@@ -589,7 +589,8 @@ D.days[50] = {
      "Am 1. September wurde der Sachverständige von der Sparkasse Musterstadt beauftragt.",
      "Der Sachverständige wurde am 1. September durch die Sparkasse Musterstadt beauftragt.",
      "Der Sachverständige wurde durch die Sparkasse Musterstadt am 1. September beauftragt.",
-     "Am 1. September wurde der Sachverständige durch die Sparkasse Musterstadt beauftragt."
+     "Am 1. September wurde der Sachverständige durch die Sparkasse Musterstadt beauftragt.",
+     "Von der Sparkasse Musterstadt wurde der Sachverständige am 1. September beauftragt."
     ],
     "h": "Genitiv des Sachverständigen → подлежащее der Sachverständige; erfolgte → wurde … beauftragt; durch → von (или durch)."
    },
@@ -633,7 +634,9 @@ D.days[50] = {
      "Anhand des Bodenrichtwerts ermittle ich den Bodenwert.",
      "Anhand des Bodenrichtwertes ermittle ich den Bodenwert.",
      "Ich ermittele den Bodenwert anhand des Bodenrichtwerts.",
-     "Anhand des Bodenrichtwerts ermittele ich den Bodenwert."
+     "Anhand des Bodenrichtwerts ermittele ich den Bodenwert.",
+     "Ich ermittele den Bodenwert anhand des Bodenrichtwertes.",
+     "Anhand des Bodenrichtwertes ermittele ich den Bodenwert."
     ],
     "h": "Genitiv des Bodenwerts снова становится Akk.-дополнением: den Bodenwert ermitteln. anhand + Gen. остаётся."
    },
@@ -645,7 +648,8 @@ D.days[50] = {
      "Dem Gutachten sind der Grundbuchauszug und die Flurkarte als Anlage beigefügt.",
      "Als Anlage sind dem Gutachten der Grundbuchauszug und die Flurkarte beigefügt.",
      "Dem Gutachten sind als Anlage der Grundbuchauszug und die Flurkarte beigefügt.",
-     "Als Anlage sind der Grundbuchauszug und die Flurkarte dem Gutachten beigefügt."
+     "Als Anlage sind der Grundbuchauszug und die Flurkarte dem Gutachten beigefügt.",
+     "Der Grundbuchauszug und die Flurkarte sind als Anlage dem Gutachten beigefügt."
     ],
     "h": "sind — на втором месте, Partizip beigefügt — в конце. dem Gutachten — Dat. без предлога (beifügen + Dat.)."
    },
@@ -829,7 +833,7 @@ D.days[50] = {
   "steps": [
    "Deckblatt: Auftraggeber, Objekt, Aktenzeichen, Stichtage, Verkehrswert in Ziffern und in Worten, Umfang und Ausfertigungen",
    "Abschnitt 2 „Allgemeine Angaben“: Auftrag, Zweck, zwei Stichtage mit Begründung, Ortsbesichtigung mit Teilnehmern, Unterlagen mit Datum",
-   "Abschnitte 3 bis 5: Grundstück, rechtliche Gegebenheiten, Gebäude – jeder Abschnitt endet mit einer Beurteilung",
+   "Abschnitte 3 bis 5: Grundstück und rechtliche Gegebenheiten, Gebäude und Außenanlagen, Zusammenfassung der Grundstücksmerkmale – jeder Beschreibungsabschnitt endet mit einer Beurteilung",
    "Abschnitt 6: begründete Verfahrenswahl, Bodenwert, Sach- und Ertragswert, Ableitung des Verkehrswerts",
    "Schlusserklärung und Anlagen: Unterschrift, Fotos, Karten, Grundbuchauszug, Flächenberechnungen",
    "Gliederung in einer Minute zusammenfassen; Feedback von Herrn Krüger"

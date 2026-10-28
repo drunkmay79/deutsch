@@ -212,8 +212,8 @@ D.days[74] = {
    "ru": "относиться (к), касаться",
    "ex": "Alle Preisangaben im Bericht beziehen sich auf den Quadratmeter Wohnfläche.",
    "exRu": "Все ценовые данные в отчёте приведены в расчёте на квадратный метр жилой площади.",
-   "cloze": "Alle Preisangaben im Bericht beziehen sich auf den Quadratmeter ___.",
-   "ans": "Wohnfläche",
+   "cloze": "Alle Preisangaben im Bericht ___ sich auf den Quadratmeter Wohnfläche.",
+   "ans": "beziehen",
    "col": [
     "sich auf den Berichtszeitraum beziehen",
     "bezogen auf die Wohnfläche",
@@ -322,7 +322,7 @@ D.days[74] = {
   "id": "g-d74",
   "de": "Nominalisierung von Veränderungen: der Anstieg um, der Rückgang auf, ein deutlicher Zuwachs",
   "ru": "Номинализация изменений: der Anstieg um, der Rückgang auf, ein deutlicher Zuwachs",
-  "rule": "<p>В отчётах о рынке изменения почти всегда выражены существительными: <b>Anstieg der Kauffälle um 4,5 %</b>. Нужно знать род, предлог и окончание прилагательного — и уметь устно «развернуть» такую запись обратно в глагол.</p><table><tr><th>Глагол</th><th>Существительное</th></tr><tr><td>steigen, ansteigen</td><td><b>der Anstieg</b></td></tr><tr><td>zurückgehen</td><td><b>der Rückgang</b></td></tr><tr><td>zunehmen / abnehmen</td><td><b>die Zunahme / die Abnahme</b></td></tr><tr><td>wachsen</td><td><b>der Zuwachs, das Wachstum</b></td></tr><tr><td>sich erhöhen / sich verringern</td><td><b>die Erhöhung / die Verringerung</b></td></tr><tr><td>stagnieren / schwanken</td><td><b>die Stagnation / die Schwankung</b></td></tr></table><ul><li>Предлог сохраняется: <b>um</b> — на сколько, <b>auf</b> — до какого уровня, <b>von … auf</b> — с … до: <b>ein Rückgang des Medians um knapp 2 % auf 2.050 €/m²</b>. С Zuwachs, Plus, Minus часто <b>von</b>: <b>ein Plus von 9,4 %</b>.</li><li>Подлежащее → Genitiv или <b>bei</b> + Dat.: <b>die Zunahme der Kauffälle / eine Zunahme bei den Kauffällen</b> (Dat. Pl. ‑n!).</li><li>Наречие → прилагательное с окончанием: <b>deutlich steigen → ein deutlicher Anstieg; nach einem leichten Rückgang; trotz des starken Anstiegs; mit einer moderaten Zunahme</b>.</li><li>Типичные рамки: <b>einen Anstieg verzeichnen, es kam zu einem Rückgang, eine Zunahme ist zu beobachten</b>.</li></ul><p>Устно разворачиваем в глагол, Perfekt движения — с <b>sein</b>: <b>Die Zahl der Kauffälle ist um 35 % zurückgegangen.</b> Но <b>zunehmen</b> и <b>stagnieren</b> — с <b>haben</b>: <b>Der Geldumsatz hat deutlich zugenommen.</b></p>",
+  "rule": "<p>В отчётах о рынке изменения выражают существительными: <b>Anstieg der Kauffälle um 4,5 %</b>. Важны род, предлог и окончание прилагательного, а устно — умение вернуться к глаголу.</p><table><tr><th>Глагол</th><th>Существительное</th></tr><tr><td>steigen, ansteigen</td><td><b>der Anstieg</b></td></tr><tr><td>zurückgehen</td><td><b>der Rückgang</b></td></tr><tr><td>zunehmen / abnehmen</td><td><b>die Zunahme / die Abnahme</b></td></tr><tr><td>wachsen</td><td><b>der Zuwachs, das Wachstum</b></td></tr><tr><td>stagnieren / schwanken</td><td><b>die Stagnation / die Schwankung</b></td></tr></table><ul><li>Предлог сохраняется: <b>um</b> — на сколько, <b>auf</b> — до какого уровня, <b>von … auf</b> — с … до: <b>ein Rückgang des Medians um knapp 2 % auf 2.050 €/m²</b>. С Zuwachs, Plus, Minus часто <b>von</b>: <b>ein Plus von 9,4 %</b>.</li><li>Подлежащее → Genitiv или <b>bei</b> + Dat.: <b>die Zunahme der Kauffälle / eine Zunahme bei den Kauffällen</b> (Dat. Pl. ‑n!).</li><li>Наречие → прилагательное с окончанием: <b>deutlich steigen → ein deutlicher Anstieg; nach einem leichten Rückgang; trotz des starken Anstiegs; mit einer moderaten Zunahme</b>.</li><li>Рамки: <b>einen Anstieg verzeichnen, es kam zu einem Rückgang</b>.</li></ul><p>Устно — глагол; Perfekt глаголов изменения состояния — с <b>sein</b>: <b>Die Zahl der Kauffälle ist um 35 % zurückgegangen.</b> Но <b>zunehmen</b> и <b>stagnieren</b> — с <b>haben</b>: <b>Der Geldumsatz hat deutlich zugenommen.</b></p>",
   "examples": [
    {
     "de": "Gegenüber dem Vorjahr verzeichnete der Gutachterausschuss einen Anstieg der Kauffälle um 4,5 Prozent.",
@@ -337,8 +337,8 @@ D.days[74] = {
     "ru": "При вторичных продажах медиана немного снизилась — до 2 050 евро за квадратный метр."
    },
    {
-    "de": "Trotz des kräftigen Anstiegs beim Geldumsatz ist das Preisniveau im Weiterverkauf stabil geblieben.",
-    "ru": "Несмотря на сильный рост денежного оборота, уровень цен при вторичных продажах остался стабильным."
+    "de": "Trotz des kräftigen Anstiegs beim Geldumsatz ist der Median im Weiterverkauf leicht gesunken.",
+    "ru": "Несмотря на сильный рост денежного оборота, медиана при вторичных продажах немного снизилась."
    },
    {
     "de": "Im Erstverkauf ist eine deutliche Abnahme der Kauffälle zu beobachten.",
@@ -388,8 +388,8 @@ D.days[74] = {
    },
    {
     "t": "choice",
-    "q": "Der Geldumsatz stieg deutlich, nämlich ein Anstieg ___ 9,4 Prozent gegenüber dem Vorjahr.",
-    "o": ["um", "auf", "über"],
+    "q": "Beim Geldumsatz verzeichnete der Bericht einen Anstieg ___ 9,4 Prozent gegenüber dem Vorjahr.",
+    "o": ["um", "auf", "bei"],
     "a": ["um"],
     "h": "um — величина изменения (на сколько). auf — новый уровень (до какого значения)."
    },
@@ -644,7 +644,7 @@ D.days[74] = {
    },
    {
     "ru": "Денежный оборот вырос значительно сильнее — на 9,4 процента.",
-    "de": "Der Geldumsatz ist mit 9,4 Prozent deutlich stärker gestiegen."
+    "de": "Der Geldumsatz ist deutlich stärker gestiegen, nämlich um 9,4 Prozent."
    },
    {
     "ru": "После небольшого снижения в прошлом году цены стабилизировались.",
@@ -659,8 +659,8 @@ D.days[74] = {
     "de": "Im Erstverkauf kam es zu einem Rückgang der Kauffälle um mehr als ein Drittel."
    },
    {
-    "ru": "Заметное увеличение наблюдается прежде всего у квартир на вторичном рынке.",
-    "de": "Eine deutliche Zunahme ist vor allem bei den Wohnungen im Weiterverkauf zu beobachten."
+    "ru": "Заметный рост числа сделок наблюдается прежде всего при вторичных продажах.",
+    "de": "Eine deutliche Zunahme der Kauffälle ist vor allem im Weiterverkauf zu beobachten."
    },
    {
     "ru": "Несмотря на сильный рост оборота, я бы не говорил о буме.",

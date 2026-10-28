@@ -12,7 +12,7 @@ D.days[21] = {
    "de": "Ein Blick ins Grundbuch zeigt, dass …",
    "ru": "Взгляд в поземельную книгу показывает, что …",
    "ex": "Ein Blick ins Grundbuch zeigt, dass die alte Grundschuld nie gelöscht wurde.",
-   "exRu": "Взгляд в поземельную книгу показывает, что старый поземельный долг так и не был погашен в записи.",
+   "exRu": "Взгляд в поземельную книгу показывает, что старый поземельный долг так и не был удалён (gelöscht) из неё.",
    "cloze": "Ein ___ ins Grundbuch zeigt, dass die alte Grundschuld nie gelöscht wurde.",
    "ans": "Blick",
    "note": "ins = in das (Akk., направление взгляда). После dass глагол в конце: …, dass … gelöscht wurde."
@@ -109,9 +109,9 @@ D.days[21] = {
    "id": "v21-010",
    "kind": "phrase",
    "de": "Eine verbindliche Rechtsauskunft kann Ihnen nur ein Notar oder Rechtsanwalt geben.",
-   "ru": "Обязательную юридическую консультацию вам может дать только нотариус или адвокат.",
+   "ru": "Надёжную (юридически ответственную) консультацию вам может дать только нотариус или адвокат.",
    "ex": "Den Ablauf erkläre ich gern, aber eine verbindliche Rechtsauskunft kann Ihnen nur ein Notar oder Rechtsanwalt geben.",
-   "exRu": "Порядок действий я охотно объясню, но обязательную юридическую консультацию вам может дать только нотариус или адвокат.",
+   "exRu": "Порядок действий я охотно объясню, но надёжную юридическую консультацию вам может дать только нотариус или адвокат.",
    "cloze": "Den Ablauf erkläre ich gern, aber eine verbindliche ___ kann Ihnen nur ein Notar oder Rechtsanwalt geben.",
    "ans": "Rechtsauskunft",
    "note": "Оценщик не консультирует по правовым вопросам — это дело нотариуса или адвоката (Rechtsdienstleistungsgesetz). jemandem (Dat.) eine Auskunft geben: Ihnen."
@@ -122,7 +122,7 @@ D.days[21] = {
   "id": "t21",
   "kind": "Aktennotiz",
   "title": "Aktennotiz: Beleihungsanfrage Birkenweg 5",
-  "de": "Aktennotiz zur Beleihungsanfrage Birkenweg 5, Musterstadt. Objekt: Reihenendhaus, Baujahr 1985. Die Eheleute Schäfer möchten eine Modernisierung mit 150.000 Euro finanzieren.\n\nEin Blick ins Grundbuch zeigt Folgendes: In Abteilung I sind die Eheleute Schäfer als Eigentümer zu je 1/2 Anteil eingetragen. In Abteilung II ist ein Geh- und Fahrrecht zugunsten der jeweiligen Eigentümer der Nachbarflurstücke eingetragen. Es sichert den Nachbarn die Zufahrt zum gemeinsamen Garagenhof, über die auch die Eheleute ihre eigene Garage erreichen. Rechtlich gesehen handelt es sich um eine ortsübliche Grunddienstbarkeit, die nach erster Einschätzung als unschädlich angesehen werden kann. Der genaue Inhalt ergibt sich aus der Eintragungsbewilligung; sie wurde beim Grundbuchamt angefordert.\n\nIn Abteilung III ist noch eine Briefgrundschuld über 80.000 DM, also rund 40.900 Euro, zugunsten einer Bausparkasse eingetragen. Das Darlehen aus dem Jahr 1985 ist längst getilgt, die Grundschuld wurde aber nie gelöscht.\n\nDie fehlende Baugenehmigung ließ sich durch Einsicht in die Bauakte klären: Das Haus wurde 1984 genehmigt und plangemäß errichtet. Im Baulastenverzeichnis ist keine Baulast eingetragen. Altlasten und bergbauliche Einwirkungen sind nicht bekannt.\n\nOffene Punkte: Die Löschungsbewilligung der Bausparkasse ist zu beschaffen, und der Grundschuldbrief muss dem Grundbuchamt vorgelegt werden. Falls der Brief nicht auffindbar ist, wird ein Aufgebotsverfahren nötig, das mehrere Monate dauern kann. Aus Sicht der Bank ist entscheidend, dass die neue Grundschuld an erster Rangstelle in Abteilung III eingetragen wird. Ich empfehle, beide Punkte vor der Kreditzusage zu klären.",
+  "de": "Aktennotiz zur Beleihungsanfrage Birkenweg 5, Musterstadt. Objekt: Reihenendhaus, Baujahr 1985. Die Eheleute Schäfer möchten eine Modernisierung mit 150.000 Euro finanzieren.\n\nEin Blick ins Grundbuch zeigt Folgendes: In Abteilung I sind die Eheleute Schäfer als Eigentümer zu je 1/2 Anteil eingetragen. In Abteilung II ist ein Geh- und Fahrrecht zugunsten der jeweiligen Eigentümer der Nachbarflurstücke eingetragen. Es sichert den Nachbarn die Zufahrt zum gemeinsamen Garagenhof, über die auch die Eheleute ihre eigene Garage erreichen. Rechtlich gesehen handelt es sich um eine ortsübliche Grunddienstbarkeit, die nach erster Einschätzung als unschädlich angesehen werden kann. Der genaue Inhalt ergibt sich aus der Eintragungsbewilligung; sie wurde beim Grundbuchamt angefordert.\n\nIn Abteilung III ist noch eine Briefgrundschuld über 80.000 DM, also rund 40.900 Euro, zugunsten einer Bausparkasse eingetragen. Das Darlehen aus dem Jahr 1985 ist längst getilgt, die Grundschuld wurde aber nie gelöscht.\n\nDie Frage der Baugenehmigung ließ sich durch Einsicht in die Bauakte klären: Das Haus wurde 1984 genehmigt und plangemäß errichtet. Im Baulastenverzeichnis ist keine Baulast eingetragen. Altlasten und bergbauliche Einwirkungen sind nicht bekannt.\n\nOffene Punkte: Die Löschungsbewilligung der Bausparkasse ist zu beschaffen, und der Grundschuldbrief muss dem Grundbuchamt vorgelegt werden. Falls der Brief nicht auffindbar ist, ist ein Aufgebotsverfahren nötig, das mehrere Monate dauern kann. Aus Sicht der Bank ist entscheidend, dass die neue Grundschuld an erster Rangstelle in Abteilung III eingetragen wird. Ich empfehle, beide Punkte vor der Kreditzusage zu klären.",
   "ru": "Служебная записка оценщика по запросу на кредит под залог дома Birkenweg 5: результаты проверки поземельной книги, строительного дела и прочих правовых обстоятельств, а также открытые вопросы до одобрения кредита.",
   "q": [
    {
@@ -220,7 +220,7 @@ D.days[21] = {
   "kind": "fach",
   "title": "Probe-Fachgespräch: Der Fall Birkenweg 5",
   "ru": "Пробная профессиональная часть собеседования: случай Birkenweg 5",
-  "role": "Sie sind Herr Schulte, Leiter der Abteilung Kreditsicherheiten der Sparkasse Musterstadt, und führen den fachlichen Teil eines Vorstellungsgesprächs mit einem Bewerber für die Stelle als Gutachter beziehungsweise Sachbearbeiter Kreditsicherheiten; siezen Sie ihn. Legen Sie den Fall Birkenweg 5 aus dem Datenblatt vor und stellen Sie nacheinander sechs Fragen, immer nur eine pro Beitrag: Aufbau des Grundbuchs; das Geh- und Fahrrecht in Abteilung II und seine Bedeutung für die Beleihung; die alte DM-Briefgrundschuld und der Rang der neuen Grundschuld; Baugenehmigung und Bestandsschutz; als Zusatzfrage eine Eigentumswohnung im Erbbaurecht; Altlasten und Bergbau im Ruhrgebiet. Haken Sie kurz und freundlich nach, wenn eine Antwort ungenau ist oder der Bewerber Begriffe verwechselt, etwa tilgen und löschen, Baulast und Eintragung im Grundbuch oder Grundschuld und Hypothek. Nach der sechsten Frage beenden Sie das Fachgespräch und geben einen Bewertungsbogen mit je 1 bis 5 Punkten für fachliche Richtigkeit, Struktur und Sprache, besonders Genitiv, Passiv mit Modalverben, Passiversatz, Relativsätze mit Präposition und Konnektoren wie sofern, falls oder es sei denn, und nennen Sie zu jedem Punkt zwei konkrete verbesserte Formulierungen.",
+  "role": "Sie sind Herr Schulte, Leiter der Abteilung Kreditsicherheiten der Sparkasse Musterstadt, und führen den fachlichen Teil eines Vorstellungsgesprächs mit einem Bewerber für die Stelle als Gutachter beziehungsweise Sachbearbeiter Kreditsicherheiten; siezen Sie ihn. Legen Sie den Fall Birkenweg 5 aus dem Datenblatt vor und stellen Sie nacheinander sechs Fragen, immer nur eine pro Beitrag: Aufbau des Grundbuchs; das Geh- und Fahrrecht in Abteilung II und seine Bedeutung für die Beleihung; die alte DM-Briefgrundschuld und der Rang der neuen Grundschuld; Baugenehmigung und Bestandsschutz; als Zusatzfrage eine Eigentumswohnung im Erbbaurecht; Altlasten und Bergbau im Ruhrgebiet. Haken Sie kurz und freundlich nach, wenn eine Antwort ungenau ist oder der Bewerber Begriffe verwechselt, etwa tilgen und löschen, Baulast und Eintragung im Grundbuch oder Grundschuld und Hypothek. Nach der sechsten Frage beenden Sie das Fachgespräch, geben Sie einen Bewertungsbogen mit je 1 bis 5 Punkten für fachliche Richtigkeit, Struktur und Sprache, besonders Genitiv, Passiv mit Modalverben, Passiversatz, Relativsätze mit Präposition und Konnektoren wie sofern, falls oder es sei denn, und nennen Sie zu jedem Punkt zwei konkrete verbesserte Formulierungen.",
   "goal": "Пройти пробную профессиональную часть собеседования по случаю Birkenweg 5: связно и точно ответить на шесть вопросов по темам недели (поземельная книга, сервитут в разделе II, старый документарный поземельный долг и очерёдность, разрешение на строительство, квартира на праве застройки, загрязнения почвы и горные работы) и получить оценочный лист с конкретными улучшениями.",
   "open": "Guten Tag, kommen wir zum fachlichen Teil. Ich lege Ihnen einen typischen Fall vor: ein Reihenendhaus im Birkenweg 5, Baujahr 1985, die Eigentümer möchten 150.000 Euro für eine Modernisierung finanzieren. Hier ist der Grundbuchauszug. Erklären Sie mir bitte zuerst: Wie ist ein Grundbuch aufgebaut, und was sehen Sie hier in Abteilung I?",
   "steps": [
@@ -261,7 +261,7 @@ D.days[21] = {
   "shadow": [
    "Zuerst sehe ich mir das Grundbuch genau an.",
    "In Abteilung I steht, wer Eigentümer des Grundstücks ist.",
-   "Rechte und Lasten stehen in Abteilung II des Grundbuchs.",
+   "Lasten und Beschränkungen stehen in Abteilung II des Grundbuchs.",
    "Baulasten stehen nicht im Grundbuch, sondern im Baulastenverzeichnis.",
    "Bei einem Erbbaurecht ist die Restlaufzeit besonders wichtig.",
    "Im Ruhrgebiet frage ich immer auch nach dem Bergbau.",

@@ -22,7 +22,7 @@ D.days[45] = {
     "das Gebäudemodernisierungsgesetz (GModG)",
     "die frühere Energieeinsparverordnung (EnEV)"
    ],
-   "note": "GEG действовал с 1.11.2020 и заменил EnEV. Реформа 2026 года отменила требование 65 % возобновляемой энергии для новых систем отопления и изменила нумерацию параграфов; правила энергопаспортов меняются с 1.1.2027. В практике и в старых документах ещё долго будет «GEG»."
+   "note": "GEG действовал с 1.11.2020 и заменил EnEV. Закон от 23.07.2026 (BGBl. 2026 I Nr. 226) с 29.07.2026 переименовал его в GModG, отменил требование 65 % возобновляемой энергии для новых систем отопления и изменил нумерацию параграфов. Правила энергопаспортов меняются с 1.1.2027 (например, цифровой формат и другие обязательные данные в объявлениях); шкала A+–H для жилых домов и срок действия 10 лет сохраняются. В практике и в старых документах ещё долго будет «GEG»."
   },
   {
    "id": "v45-002",
@@ -76,7 +76,7 @@ D.days[45] = {
     "die Energieeffizienzklasse",
     "die Skala von A+ bis H"
    ],
-   "note": "Полностью — Energieeffizienzklasse. Для жилых домов шкала от A+ до H по конечной энергии: G — от 200 до менее 250 кВт·ч/(м²·год), H — от 250. in die Klasse G fallen — Akk. (куда?)."
+   "note": "Полностью — Energieeffizienzklasse. Для жилых домов шкала от A+ до H по конечной энергии: G — свыше 200 до 250 кВт·ч/(м²·год), H — свыше 250. in die Klasse G fallen — Akk. (куда?)."
   },
   {
    "id": "v45-005",
@@ -148,7 +148,7 @@ D.days[45] = {
     "innerhalb von zwei Jahren nach dem Eigentumsübergang",
     "nachrüsten"
    ],
-   "note": "Главное — утеплить верхнее перекрытие без минимальной теплозащиты (§ 35 GModG, раньше § 47 GEG) и доступные неутеплённые трубы отопления и горячей воды в неотапливаемых помещениях. Если прежний владелец сам жил в доме на 1.2.2002, обязанность переходит к новому владельцу: срок — два года после перехода собственности."
+   "note": "Главное — утеплить верхнее перекрытие без минимальной теплозащиты (§ 35 GModG, раньше § 47 GEG) и доступные неутеплённые трубы отопления и горячей воды в неотапливаемых помещениях (§ 69 GModG, раньше § 71 GEG). Если в доме не больше двух квартир и владелец жил в одной из них уже 1.2.2002, обязанность возникает только у нового владельца: срок — два года после перехода собственности."
   },
   {
    "id": "v45-009",
@@ -824,7 +824,7 @@ D.days[45] = {
    "Eine Wärmepumpe sollten Sie nicht einbauen, ohne vorher die Heizlast prüfen zu lassen.",
    "Für verbindliche Aussagen empfehle ich Ihnen einen Energieberater."
   ],
-  "facts": "Zechenstraße 7, Musterstadt (fiktiv): Zweifamilienhaus, Baujahr 1958, Wohnfläche 2 × 84 m², Gebäudenutzfläche laut Ausweis ca. 200 m². Energiebedarfsausweis vom März 2024, gültig bis März 2034: Endenergiebedarf 215 kWh/(m²·a), Effizienzklasse G (Skala für Wohngebäude A+ bis H; G = 200 bis unter 250 kWh), Primärenergiebedarf 252 kWh/(m²·a). Heizung: Gas-Zentralheizung von 1996, in der Dachgeschosswohnung zusätzlich zwei Nachtspeicheröfen (Asbestverdacht, Beprobung läuft). Fenster: Isolierverglasung von 1992; oberste Geschossdecke und Fassade ungedämmt. Der Verkäufer bewohnt seit 1992 eine Wohnung selbst, daher muss der Käufer die oberste Geschossdecke voraussichtlich innerhalb von zwei Jahren nach dem Eigentumsübergang dämmen. Grobe Rechnung: 215 × 200 ≈ 43.000 kWh im Jahr; bei angenommenen 12 Cent pro kWh rund 5.200 € (Strom für die Nachtspeicheröfen ist teurer; der tatsächliche Verbrauch kann deutlich abweichen, bei älteren Häusern liegt er oft darunter). Rechtslage: Seit dem 29.07.2026 heißt das GEG Gebäudemodernisierungsgesetz (GModG); die 65-%-Vorgabe für neue Heizungen ist entfallen. Eine funktionierende Heizung muss nicht ausgetauscht werden; neue Gas- oder Ölheizungen sind wieder erlaubt, müssen aber ab 2029 mit einem steigenden Anteil klimafreundlicher Brennstoffe betrieben werden. Für verbindliche Aussagen und Fördermittel: Energieberater."
+  "facts": "Zechenstraße 7, Musterstadt (fiktiv): Zweifamilienhaus, Baujahr 1958, Wohnfläche 2 × 84 m², Gebäudenutzfläche laut Ausweis ca. 200 m². Energiebedarfsausweis vom März 2024, gültig bis März 2034: Endenergiebedarf 215 kWh/(m²·a), Effizienzklasse G (Skala für Wohngebäude A+ bis H; G = über 200 bis 250 kWh), Primärenergiebedarf 252 kWh/(m²·a). Heizung: Gas-Zentralheizung von 1996, in der Dachgeschosswohnung zusätzlich zwei Nachtspeicheröfen (Asbestverdacht, Beprobung läuft). Fenster: Isolierverglasung von 1992; oberste Geschossdecke und Fassade ungedämmt. Der Verkäufer bewohnt seit 1992 eine Wohnung selbst, daher muss der Käufer die oberste Geschossdecke voraussichtlich innerhalb von zwei Jahren nach dem Eigentumsübergang dämmen. Grobe Rechnung: 215 × 200 ≈ 43.000 kWh im Jahr; bei angenommenen 12 Cent pro kWh rund 5.200 € (Strom für die Nachtspeicheröfen ist teurer; der tatsächliche Verbrauch kann deutlich abweichen, bei älteren Häusern liegt er oft darunter). Rechtslage: Seit dem 29.07.2026 heißt das GEG Gebäudemodernisierungsgesetz (GModG); die 65-%-Vorgabe für neue Heizungen ist entfallen. Eine funktionierende Heizung muss nicht ausgetauscht werden; neue Gas- oder Ölheizungen sind wieder erlaubt; wer sie nach dem 29.07.2026 einbaut, muss ab 2029 einen steigenden Anteil Biomethan, Bioöl oder Wasserstoff einsetzen (2029: 10 %, 2030: 15 %). Neue Regeln für Energieausweise gelten ab dem 01.01.2027; die Skala A+ bis H bleibt. Für verbindliche Aussagen und Fördermittel: Energieberater."
  },
  "fluency": {
   "id": "f45",

@@ -817,20 +817,20 @@ D.days[37] = {
   "ru": "Кредитный консультант Sparkasse Musterstadt обсуждает с вами (специалист по кредитному обеспечению) финансирование дома Ahornstraße 7",
   "role": "Sie sind Herr Wolff, Kreditberater der Sparkasse Musterstadt (fiktiv), und kommen mit dem Finanzierungswunsch von Herrn Brandt für die Ahornstraße 7 zum Lernenden, der als Sachbearbeiter Kreditsicherheiten arbeitet; siezen Sie ihn und sprechen Sie schnell, kollegial und im Bankjargon („480 finanziert“, „der Auslauf“, „blanko“). Fragen Sie nacheinander, wie viel davon Realkredit ist, wie hoch der Beleihungsauslauf ist, was das für den Blankoanteil und die Kreditentscheidung bedeutet, wie die Sparkasse trotz der Altgrundschuld des Verkäufers den ersten Rang bekommt und was vor der Auszahlung vorliegen muss. Drängen Sie einmal darauf, den Beleihungswert doch „etwas großzügiger“ zu sehen; eine gute Antwort lehnt das sachlich ab und schlägt Lösungen auf der Kreditseite vor (Bausparguthaben einsetzen, Zusatzsicherheit auf der Eigentumswohnung, geringeres Darlehen). Stellen Sie pro Beitrag nur eine Frage, verlangen Sie Erklärungen mit „man“, dem bekommen-Passiv und Funktionsverbgefügen wie „zur Auszahlung kommen“, und korrigieren Sie pro Antwort höchstens einen Fehler, vorzugsweise bei diesen Formen. Erfinden Sie keine Zahlen über die Datenkarte hinaus und sagen Sie am Ende in zwei Sätzen, was der Lernende gut erklärt hat und was er noch präziser sagen könnte.",
   "goal": "Быстро и уверенно объяснить кредитному консультанту цифры (Realkredit, Beleihungsauslauf, Blankoanteil), их значение для кредитного решения, нужную Grundschuld и условия выдачи; на давление ответить решениями на стороне кредита, не меняя залоговую стоимость; активно использовать man, bekommen-Passiv и пассивные Funktionsverbgefüge.",
-  "open": "Hallo, haben Sie kurz zwei Minuten? Brandt, Ahornstraße 7: Kaufpreis 560, er will 480 finanziert haben, der Beleihungswert ist mit 442 festgesetzt. Sagen Sie mal schnell: Wie viel davon ist Realkredit?",
+  "open": "Hallo, haben Sie kurz zwei Minuten? Brandt, Ahornstraße 7: Kaufpreis 560, er will 480 finanziert haben, der Beleihungswert ist mit 412 festgesetzt. Sagen Sie mal schnell: Wie viel davon ist Realkredit?",
   "steps": [
-   "Realkredit erfragen: 60 % von 442.000 € = 265.200 €; erwartet: „Innerhalb der Beleihungsgrenze liegen …“",
-   "Beleihungsauslauf erfragen: 480.000 : 442.000 = knapp 109 %; nachhaken, ob man den Auslauf auf den Kaufpreis oder auf den Beleihungswert bezieht",
-   "Blankoanteil und Folgen: nach der fiktiven Hausregel 126.400 €; was bedeutet das für die Kreditentscheidung (Kapitaldienstfähigkeit, Bonität, Kompetenz, Konditionen)?",
+   "Realkredit erfragen: 60 % von 412.000 € = 247.200 €; erwartet: „Innerhalb der Beleihungsgrenze liegen …“",
+   "Beleihungsauslauf erfragen: 480.000 : 412.000 = rund 117 %; nachhaken, ob man den Auslauf auf den Kaufpreis oder auf den Beleihungswert bezieht",
+   "Blankoanteil und Folgen: nach der fiktiven Hausregel 150.400 €; was bedeutet das für die Kreditentscheidung (Kapitaldienstfähigkeit, Bonität, Kompetenz, Konditionen)?",
    "Druck machen: „Kann man den Beleihungswert nicht etwas großzügiger sehen?“; erwartet: Der Wert bleibt, Lösungen auf der Kreditseite (Bausparguthaben, Zusatzsicherheit auf der Eigentumswohnung, geringeres Darlehen)",
    "Sicherheiten und Auszahlung: Grundschuld über 480.000 € an erster Rangstelle (Restschuld des Verkäufers wird aus dem Kaufpreis abgelöst, die Altgrundschuld gelöscht), Sicherungszweckerklärung; vor der Auszahlung: unterschriebener Vertrag, Notarbestätigung, Nachweis der Wohngebäudeversicherung",
    "Abschluss: kurzes Feedback, eine Formulierung mit „man“ oder dem bekommen-Passiv korrigiert wiederholen lassen"
   ],
   "use": [
-   "Innerhalb der Beleihungsgrenze liegen 265.200 Euro, das ist der Realkredit.",
-   "Der Beleihungsauslauf liegt bei knapp 109 Prozent.",
+   "Innerhalb der Beleihungsgrenze liegen 247.200 Euro, das ist der Realkredit.",
+   "Der Beleihungsauslauf liegt bei rund 117 Prozent.",
    "Den Auslauf berechnet man auf Basis des Beleihungswerts, nicht des Kaufpreises.",
-   "Nach unserer Hausregel ergibt sich ein Blankoanteil von 126.400 Euro.",
+   "Nach unserer Hausregel ergibt sich ein Blankoanteil von 150.400 Euro.",
    "Der hohe Blankoanteil erklärt sich aus dem geringen Eigenkapital.",
    "Am Beleihungswert ändert man nichts, aber man kann die Finanzierung anders strukturieren.",
    "Wenn Herr Brandt sein Bausparguthaben einsetzt, sinkt der Blankoanteil.",
@@ -838,7 +838,7 @@ D.days[37] = {
    "Mit diesen Zahlen liegt der Antrag dann zur Entscheidung vor.",
    "Herr Brandt bekommt das Darlehen erst ausgezahlt, wenn die Notarbestätigung vorliegt."
   ],
-  "facts": "Ahornstraße 7, Musterstadt (fiktiv): freistehendes Einfamilienhaus; Kaufpreis 560.000 €; gewünschtes Darlehen 480.000 €; Eigenmittel 80.000 € für den Kaufpreis, die Kaufnebenkosten zahlt der Kunde zusätzlich aus Ersparnissen; Beleihungswert 442.000 € (festgesetzt); Beleihungsgrenze 60 % = 265.200 € (Realkredit); Beleihungsauslauf 480.000 : 442.000 = knapp 109 %; Darlehen über dem Beleihungswert: 38.000 €; fiktive Hausregel: Sicherheitenwert 80 % des Beleihungswerts = 353.600 € → Blankoanteil 126.400 €; Grundbuch Abt. III: Grundschuld des Verkäufers über 150.000 € zugunsten einer anderen Bank; die Restschuld wird aus dem Kaufpreis abgelöst, danach wird die Grundschuld gelöscht; weiteres Vermögen laut Selbstauskunft: Bausparguthaben 30.000 €, vermietete Eigentumswohnung in Musterstadt ohne Belastungen."
+  "facts": "Ahornstraße 7, Musterstadt (fiktiv): Mehrfamilienhaus, 6 Wohnungen, 420 m² Wohnfläche, voll vermietet (dasselbe Objekt wie an den Tagen 31–36); Käufer Herr Brandt, privater Kapitalanleger; Kaufpreis 560.000 €; gewünschtes Darlehen 480.000 €; Eigenmittel 80.000 € für den Kaufpreis, die Kaufnebenkosten zahlt der Kunde zusätzlich aus Ersparnissen; Beleihungswert rund 412.000 € (Ertragswertrechnung nach BelWertV von Tag 36, festgesetzt); Beleihungsgrenze 60 % = 247.200 € (Realkredit); Beleihungsauslauf 480.000 : 412.000 = rund 117 %; Darlehen über dem Beleihungswert: 68.000 €; fiktive Hausregel: Sicherheitenwert 80 % des Beleihungswerts = 329.600 € → Blankoanteil 150.400 €; Grundbuch Abt. III: Grundschuld des Verkäufers über 150.000 € zugunsten einer anderen Bank; die Restschuld wird aus dem Kaufpreis abgelöst, danach wird die Grundschuld gelöscht; weiteres Vermögen laut Selbstauskunft: Bausparguthaben 30.000 €, vermietete Eigentumswohnung in Musterstadt ohne Belastungen."
  },
  "fluency": {
   "id": "f37",
